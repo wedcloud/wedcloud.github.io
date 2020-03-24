@@ -1,13 +1,12 @@
 ---
 title: Git
 date: 2020-03-24 15:32:56
-tags: [Git,git]
+tags: Git
 ---
 
 ## Git 命令
 
 #### 远程仓库相关命令
-<!-- more -->
 ```
 检出仓库：$ git clone <URL>
 查看远程仓库：$ git remote -v
