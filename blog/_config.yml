@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: 烟花云烟
+subtitle: 人间三月
+description: 个人技术博客
+keywords: java,vue,js,springboot,springcloud,redis,消息队列,分布式,mysql
+author: 许先生
 language: zh-CN
 timezone: ''
 
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
