@@ -7,6 +7,7 @@ tags: [Git,git]
 ## Git 命令
 
 #### 远程仓库相关命令
+<!-- more -->
 ```
 检出仓库：$ git clone <URL>
 查看远程仓库：$ git remote -v
