@@ -8,18 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Git | 烟花云烟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git 命令远程仓库相关命令">
+  <meta name="description" content="Git 命令远程仓库相关命令1234567检出仓库：$ git clone &lt;URL&gt;查看远程仓库：$ git remote -v添加远程仓库：$ git remote add [name] [url]删除远程仓库：$ git remote rm [name]修改远程仓库：$ git remote set-url --push[name][newUrl]拉取远程仓库：$ git pul">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="http://yoursite.com/2020/03/24/Git-md/index.html">
 <meta property="og:site_name" content="烟花云烟">
-<meta property="og:description" content="Git 命令远程仓库相关命令">
+<meta property="og:description" content="Git 命令远程仓库相关命令1234567检出仓库：$ git clone &lt;URL&gt;查看远程仓库：$ git remote -v添加远程仓库：$ git remote add [name] [url]删除远程仓库：$ git remote rm [name]修改远程仓库：$ git remote set-url --push[name][newUrl]拉取远程仓库：$ git pul">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-24T07:32:56.000Z">
-<meta property="article:modified_time" content="2020-03-24T09:27:56.664Z">
+<meta property="article:modified_time" content="2020-03-25T00:38:54.415Z">
 <meta property="article:author" content="许先生">
 <meta property="article:tag" content="Git">
-<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="烟花云烟" type="application/atom+xml">
@@ -184,9 +183,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><h4 id="远程仓库相关命令"><a href="#远程仓库相关命令" class="headerlink" title="远程仓库相关命令"></a>远程仓库相关命令</h4><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">检出仓库：$ git clone &lt;URL&gt;</span><br><span class="line">查看远程仓库：$ git remote -v</span><br><span class="line">添加远程仓库：$ git remote add [name] [url]</span><br><span class="line">删除远程仓库：$ git remote rm [name]</span><br><span class="line">修改远程仓库：$ git remote set-url --push[name][newUrl]</span><br><span class="line">拉取远程仓库：$ git pull [remoteName] [localBranchName]</span><br><span class="line">推送远程仓库：$ git push [remoteName] [localBranchName]</span><br></pre></td></tr></table></figure>
-
+        <h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><h4 id="远程仓库相关命令"><a href="#远程仓库相关命令" class="headerlink" title="远程仓库相关命令"></a>远程仓库相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">检出仓库：$ git clone &lt;URL&gt;</span><br><span class="line">查看远程仓库：$ git remote -v</span><br><span class="line">添加远程仓库：$ git remote add [name] [url]</span><br><span class="line">删除远程仓库：$ git remote rm [name]</span><br><span class="line">修改远程仓库：$ git remote set-url --push[name][newUrl]</span><br><span class="line">拉取远程仓库：$ git pull [remoteName] [localBranchName]</span><br><span class="line">推送远程仓库：$ git push [remoteName] [localBranchName]</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h4 id="分支-branch-操作相关命令"><a href="#分支-branch-操作相关命令" class="headerlink" title="分支(branch)操作相关命令"></a>分支(branch)操作相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">查看本地分支：$ git branch</span><br><span class="line">查看远程分支：$ git branch -r</span><br><span class="line">创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支</span><br><span class="line">切换分支：$ git checkout [name]</span><br><span class="line">创建新分支并立即切换到新分支：$ git checkout -b [name]</span><br><span class="line">删除分支：$ git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项</span><br><span class="line">合并分支：$ git merge [name] ----将名称为[name]的分支与当前分支合并</span><br><span class="line">创建远程分支(本地分支push到远程)：$ git push origin [name]</span><br><span class="line">删除远程分支：$ git push origin :heads&#x2F;[name]</span><br><span class="line">我从master分支创建了一个issue5560分支，做了一些修改后，使用git push origin master提交，但是显示的结果却是&#39;Everything up-to-date&#39;，发生问题的原因是git push origin master 在没有track远程分支的本地分支中默认提交的master分支，因为master分支默认指向了origin master 分支，这里要使用git push origin issue5560：master 就可以把issue5560推送到远程的master分支了。</span><br><span class="line"></span><br><span class="line">    如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，那么可以这么做。</span><br><span class="line"></span><br><span class="line">$ git push origin test:master         &#x2F;&#x2F; 提交本地test分支作为远程的master分支 &#x2F;&#x2F;好像只写这一句，远程的github就会自动创建一个test分支</span><br><span class="line">$ git push origin test:test              &#x2F;&#x2F; 提交本地test分支作为远程的test分支</span><br><span class="line"></span><br><span class="line">如果想删除远程的分支呢？类似于上面，如果:左边的分支为空，那么将删除:右边的远程的分支。</span><br><span class="line"></span><br><span class="line">$ git push origin :test              &#x2F;&#x2F; 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="版本-tag-操作相关命令"><a href="#版本-tag-操作相关命令" class="headerlink" title="版本(tag)操作相关命令"></a>版本(tag)操作相关命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看版本：$ git tag</span><br><span class="line">创建版本：$ git tag [name]</span><br><span class="line">删除版本：$ git tag -d [name]</span><br><span class="line">查看远程版本：$ git tag -r</span><br><span class="line">创建远程版本(本地版本push到远程)：$ git push origin [name]</span><br><span class="line">删除远程版本：$ git push origin :refs&#x2F;tags&#x2F;[name]</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="子模块-submodule-相关操作命令"><a href="#子模块-submodule-相关操作命令" class="headerlink" title="子模块(submodule)相关操作命令"></a>子模块(submodule)相关操作命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">添加子模块：$ git submodule add [url] [path]</span><br><span class="line">如：$ git submodule add git:&#x2F;&#x2F;github.com&#x2F;soberh&#x2F;ui-libs.git src&#x2F;main&#x2F;webapp&#x2F;ui-libs</span><br><span class="line">初始化子模块：$ git submodule init ----只在首次检出仓库时运行一次就行</span><br><span class="line">更新子模块：$ git submodule update ----每次更新或切换分支后都需要运行一下</span><br><span class="line">删除子模块：（分4步走哦）</span><br><span class="line">1)$ git rm --cached [path]</span><br><span class="line">1) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</span><br><span class="line">2) 编辑“.git&#x2F;config”文件，将子模块的相关配置节点删除掉</span><br><span class="line">3) 手动删除子模块残留的目录</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="忽略一些文件、文件夹不提交"><a href="#忽略一些文件、文件夹不提交" class="headerlink" title="忽略一些文件、文件夹不提交"></a>忽略一些文件、文件夹不提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如</span><br><span class="line">target</span><br><span class="line">bin</span><br><span class="line">*.db</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">git操作-删除文件</span><br><span class="line">日期:2012-05-20 来源: bg090721 分享至:</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">git删除文件</span><br><span class="line"></span><br><span class="line">rm add2.txt</span><br><span class="line"></span><br><span class="line">git rm add2.txt</span><br><span class="line"></span><br><span class="line">git commit -m &quot;rm test&quot;</span><br><span class="line"></span><br><span class="line">git push web</span><br><span class="line"></span><br><span class="line">-----------at server</span><br><span class="line"></span><br><span class="line">cd &#x2F;var&#x2F;www&#x2F;foo.git;sudo git update-server-info</span><br><span class="line"></span><br><span class="line">------------检查删除效果</span><br><span class="line"></span><br><span class="line">cd;rm foo3 -rf;git clone http:&#x2F;&#x2F;[某ip]&#x2F;foo.git foo3</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">------------更新已经存在的local code</span><br><span class="line"></span><br><span class="line">cd;cd foo2</span><br><span class="line"></span><br><span class="line">git remote add web [某user]@[某ip]:&#x2F;var&#x2F;www&#x2F;foo.git&#x2F;</span><br><span class="line"></span><br><span class="line">git pull web master</span><br></pre></td></tr></table></figure>
       
 
       
@@ -221,10 +227,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -294,11 +296,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2020/03/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2020/03/24/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git 关于版本控制
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -423,10 +429,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>

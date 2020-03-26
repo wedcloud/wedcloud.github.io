@@ -171,28 +171,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Git-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git-DIFF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/24/Git-md/">Git</a>
+      <a class="article-title" href="/2020/03/26/Git-DIFF/">Git-DIFF</a>
     </h1>
   
 
         
-        <a href="/2020/03/24/Git-md/" class="archive-article-date">
-  	<time datetime="2020-03-24T07:32:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+        <a href="/2020/03/26/Git-DIFF/" class="archive-article-date">
+  	<time datetime="2020-03-26T08:09:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><h4 id="远程仓库相关命令"><a href="#远程仓库相关命令" class="headerlink" title="远程仓库相关命令"></a>远程仓库相关命令</h4>
-        
+        <h2 id="Git-diff-详细使用"><a href="#Git-diff-详细使用" class="headerlink" title="Git diff 详细使用"></a>Git diff 详细使用</h2><h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><pre><code>当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件</code></pre><h3 id="git-diff-–cached-或-git-diff-–staged-两者作用相同"><a href="#git-diff-–cached-或-git-diff-–staged-两者作用相同" class="headerlink" title="git diff –cached 或 git diff –staged(两者作用相同)"></a>git diff –cached 或 git diff –staged(两者作用相同)</h3><pre><code>显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改</code></pre><h3 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3><pre><code>显示工作目录(已track但未add文件)和暂存区(已add但未commit文件)与最后一次commit之间的的所有不相同文件的增删改</code></pre><h3 id="git-diff-lt-分支名1-gt-lt-分支名2-gt"><a href="#git-diff-lt-分支名1-gt-lt-分支名2-gt" class="headerlink" title="git diff &lt;分支名1&gt; &lt;分支名2&gt;"></a>git diff &lt;分支名1&gt; &lt;分支名2&gt;</h3><pre><code>比较两个分支上最后 commit 的内容的差别</code></pre><h3 id="git-diff-branch1-branch2"><a href="#git-diff-branch1-branch2" class="headerlink" title="git diff branch1 branch2"></a>git diff branch1 branch2</h3><pre><code>显示出所有有差异的文件的详细差异(更详细)</code></pre><h3 id="git-diff-branch1-branch2-具体文件路径"><a href="#git-diff-branch1-branch2-具体文件路径" class="headerlink" title="git diff branch1 branch2 具体文件路径"></a>git diff branch1 branch2 具体文件路径</h3><pre><code>显示指定文件的详细差异(对比内容)</code></pre>
       
 
       
@@ -207,10 +206,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -219,7 +214,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/24/Git-md/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/26/Git-DIFF/">展开全文 >></a>
         </p>
       
 
@@ -249,40 +244,308 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git-查看提交历史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/24/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/">Git-查看提交历史</a>
     </h1>
   
 
         
-        <a href="/2020/03/24/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-24T06:43:23.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+        <a href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/" class="archive-article-date">
+  	<time datetime="2020-03-26T07:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h1><p>命令 &gt;&gt; <code>git log</code></p>
+<p>不传入任何参数的默认情况下，git log 会按时间先后顺序列出所有的提交，最近的更新排在最上面</p>
+<p>参数</p>
+<ul>
+<li><code>-p</code> 或 <code>--patch</code><blockquote>
+<blockquote>
+<p>显示每次提交所引入的差异（按补丁的格式输出）,可以限制显示的日志条目数量，例如：<code>git log -p -2</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li><code>--stat</code><blockquote>
+<blockquote>
+<p>附带一系列的总结性选项</p>
+</blockquote>
+</blockquote>
+</li>
+<li><code>--pretty</code><blockquote>
+<blockquote>
+<p>使用不同于默认格式的方式展示提交历史</p>
+<blockquote>
+<blockquote>
+<p>子选项:<br><code>--pretty=oneline</code> 将每个提交放在一行显示，在浏览大量的提交时非常有用<br>另外还有 <code>short</code>，<code>full</code> 和 <code>fuller</code> 选项，展示信息格式基本一致，但大同小异<br><code>--pretty=format</code> 定制输出格式,例如：<code>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</code></p>
+<blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%H</td>
+<td align="center">提交的完整哈希值</td>
+</tr>
+<tr>
+<td>%h</td>
+<td align="center">提交的简写哈希值</td>
+</tr>
+<tr>
+<td>%T</td>
+<td align="center">树的完整哈希值</td>
+</tr>
+<tr>
+<td>%t</td>
+<td align="center">树的简写哈希值</td>
+</tr>
+<tr>
+<td>%P</td>
+<td align="center">父提交的完整哈希值</td>
+</tr>
+<tr>
+<td>%p</td>
+<td align="center">父提交的简写哈希值</td>
+</tr>
+<tr>
+<td>%an</td>
+<td align="center">作者名字</td>
+</tr>
+<tr>
+<td>%ae</td>
+<td align="center">作者的电子邮件地址</td>
+</tr>
+<tr>
+<td>%ad</td>
+<td align="center">作者修订日期（可以用 –date=选项 来定制格式）</td>
+</tr>
+<tr>
+<td>%ar</td>
+<td align="center">作者修订日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td>%cn</td>
+<td align="center">提交者的名字</td>
+</tr>
+<tr>
+<td>%ce</td>
+<td align="center">提交者的电子邮件地址</td>
+</tr>
+<tr>
+<td>%cd</td>
+<td align="center">提交日期</td>
+</tr>
+<tr>
+<td>%cr</td>
+<td align="center">提交日期（距今多长时间）</td>
+</tr>
+<tr>
+<td>%s</td>
+<td align="center">提交说明</td>
+</tr>
+<tr>
+<td>当 <code>oneline</code> 或 <code>format</code> 与另一个 log 选项 <code>--graph</code> 结合使用时尤其有用。 这个选项添加了一些 ASCII 字符串来形象地展示你的分支、合并历史</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h2><blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td align="center">按补丁格式显示每个提交引入的差异</td>
+</tr>
+<tr>
+<td>–stat</td>
+<td align="center">显示每次提交的文件修改统计信息</td>
+</tr>
+<tr>
+<td>–shortstat</td>
+<td align="center">只显示 –stat 中最后的行数修改添加移除统计</td>
+</tr>
+<tr>
+<td>–name-only</td>
+<td align="center">仅在提交信息后显示已修改的文件清单</td>
+</tr>
+<tr>
+<td>–name-status</td>
+<td align="center">显示新增、修改、删除的文件清单</td>
+</tr>
+<tr>
+<td>–abbrev-commit</td>
+<td align="center">仅显示 SHA-1 校验和所有 40 个字符中的前几个字符</td>
+</tr>
+<tr>
+<td>–relative-date</td>
+<td align="center">使用较短的相对时间而不是完整格式显示日期（比如“2 weeks ago”）</td>
+</tr>
+<tr>
+<td>–graph</td>
+<td align="center">在日志旁以 ASCII 图形显示分支与合并历史</td>
+</tr>
+<tr>
+<td>–pretty</td>
+<td align="center">使用其他格式显示历史提交信息。可用的选项包括 oneline、short、full、fuller 和 format（用来定义自己的格式）</td>
+</tr>
+<tr>
+<td>–oneline</td>
+<td align="center">–pretty=oneline –abbrev-commit 合用的简写</td>
+</tr>
+</tbody></table>
+</blockquote>
+</blockquote>
+<h2 id="限制-git-log-输出的选项"><a href="#限制-git-log-输出的选项" class="headerlink" title="限制 git log 输出的选项"></a>限制 git log 输出的选项</h2><blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-<n></td>
+<td align="center">仅显示最近的 n 条提交</td>
+</tr>
+<tr>
+<td>–since, –after</td>
+<td align="center">仅显示指定时间之后的提交</td>
+</tr>
+<tr>
+<td>–until, –before</td>
+<td align="center">仅显示指定时间之前的提交</td>
+</tr>
+<tr>
+<td>–author</td>
+<td align="center">仅显示作者匹配指定字符串的提交</td>
+</tr>
+<tr>
+<td>–committer</td>
+<td align="center">仅显示提交者匹配指定字符串的提交</td>
+</tr>
+<tr>
+<td>–grep</td>
+<td align="center">仅显示提交说明中包含指定字符串的提交</td>
+</tr>
+<tr>
+<td>-S</td>
+<td align="center">仅显示添加或删除内容匹配指定字符串的提交</td>
+</tr>
+</tbody></table>
+</blockquote>
+</blockquote>
+<p>例如，列出最近两周的所有提交：<code>git log --since=2.weeks</code></p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/">展开全文 >></a>
+        </p>
+      
 
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-记录每次更新到仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/">Git-记录每次更新到仓库</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-03-25T15:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>Git 仓库中文件的状态 <code>已跟踪</code> 和 <code>未跟踪</code>;</p>
+<blockquote>
+<blockquote>
+<p>已跟踪的文件是指那些被纳入了版本控制的文件</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>未跟踪文件就是在工作目录中除已跟踪文件外的其它所有文件</p>
+</blockquote>
+</blockquote>
+        
       
 
       
@@ -294,7 +557,454 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/24/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-获取Git仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/">Git-获取Git仓库</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-03-25T14:34:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="获取Git仓库的两种方式"><a href="#获取Git仓库的两种方式" class="headerlink" title="获取Git仓库的两种方式"></a>获取Git仓库的两种方式</h1><ol>
+<li><p>将尚未进行版本控制的本地目录转换为 Git 仓库</p>
+</li>
+<li><p>从服务器 <strong>克隆</strong> 一个已经存在的 Git 仓库</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-起步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/24/Git-%E8%B5%B7%E6%AD%A5/">Git-起步</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/24/Git-%E8%B5%B7%E6%AD%A5/" class="archive-article-date">
+  	<time datetime="2020-03-24T14:50:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p><code>安装最新版Git</code> –&gt; <a href="https://git-scm.com" target="_blank" rel="noopener" title="点击跳转">点击跳转</a><br>或自行<a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/24/Git-%E8%B5%B7%E6%AD%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-是什么" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/24/Git-%E6%98%AF%E4%BB%80%E4%B9%88/">Git-是什么</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/24/Git-%E6%98%AF%E4%BB%80%E4%B9%88/" class="archive-article-date">
+  	<time datetime="2020-03-24T14:16:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-是什么？"><a href="#Git-是什么？" class="headerlink" title="Git 是什么？"></a>Git 是什么？</h1><h2 id="直接记录快照，而非差异比较"><a href="#直接记录快照，而非差异比较" class="headerlink" title="直接记录快照，而非差异比较"></a>直接记录快照，而非差异比较</h2><p>Git与其他的版本控制系统（SVN等）的主要差别是在于Git对待数据的方法；</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/24/Git-%E6%98%AF%E4%BB%80%E4%B9%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-简史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/24/Git-%E7%AE%80%E5%8F%B2/">Git-简史</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/24/Git-%E7%AE%80%E5%8F%B2/" class="archive-article-date">
+  	<time datetime="2020-03-24T14:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/24/Git-%E7%AE%80%E5%8F%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-版本控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/24/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">Git 关于版本控制</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/24/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-03-24T13:39:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-版本控制"><a href="#Git-版本控制" class="headerlink" title="Git 版本控制"></a>Git 版本控制</h1><p>  版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/24/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/24/Git-md/">Git</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/24/Git-md/" class="archive-article-date">
+  	<time datetime="2020-03-24T07:32:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><h4 id="远程仓库相关命令"><a href="#远程仓库相关命令" class="headerlink" title="远程仓库相关命令"></a>远程仓库相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">检出仓库：$ git clone &lt;URL&gt;</span><br><span class="line">查看远程仓库：$ git remote -v</span><br><span class="line">添加远程仓库：$ git remote add [name] [url]</span><br><span class="line">删除远程仓库：$ git remote rm [name]</span><br><span class="line">修改远程仓库：$ git remote set-url --push[name][newUrl]</span><br><span class="line">拉取远程仓库：$ git pull [remoteName] [localBranchName]</span><br><span class="line">推送远程仓库：$ git push [remoteName] [localBranchName]</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/24/Git-md/">展开全文 >></a>
         </p>
       
 
@@ -418,10 +1128,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
