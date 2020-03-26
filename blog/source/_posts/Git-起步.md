@@ -1,7 +1,7 @@
 ---
 title: Git-起步
 date: 2020-03-24 22:50:44
-tags:
+tags: Git
 ---
 
 ## 安装Git
