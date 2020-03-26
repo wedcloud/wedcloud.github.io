@@ -9,7 +9,7 @@ tags: Git
  如果你已经克隆了自己的仓库，那么至少应该能看到 `origin` ——这是 Git 给你克隆的仓库服务器的默认名字。
 
  指定选项 -v，会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL。
-
+<!-- more -->
  ## 添加远程仓库
  1. 自行添加远程仓库，`git clone`
  2. 手动添加仓库：`git remote add <shortname> <url>` ,`shortname` 远程仓库别名（默认 origin）
@@ -25,3 +25,10 @@ tags: Git
 
  ## 查看某个远程仓库
  命令：`git remote show <remote>`
+
+ ## 远程仓库的重命名
+ 修改远程仓库的简写名：`git remote rename`\
+ 值得注意的是这同样也会修改你所有远程跟踪的分支名字
+
+ ## 移除一个远程仓库
+ 命令：`git remote remove` 或 `git remote rm`
