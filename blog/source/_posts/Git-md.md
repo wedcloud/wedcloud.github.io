@@ -18,6 +18,7 @@ categories:
 拉取远程仓库：$ git pull [remoteName] [localBranchName]
 推送远程仓库：$ git push [remoteName] [localBranchName]
 ```
+<!-- more -->
 ---
 
 #### 分支(branch)操作相关命令

@@ -10,6 +10,7 @@ categories:
 
 `安装最新版Git` --> [点击跳转](https://git-scm.com "点击跳转")
 或自行[百度](https://www.baidu.com)
+<!-- more -->
 ## 初次运行Git前的配置
 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 
 
