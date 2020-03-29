@@ -85,3 +85,12 @@ Git 会在有冲突的文件中加入标准的冲突解决标记，这样你可�
 
 ### 查看分叉历史
 命令：`git log --oneline --decorate --graph --all`
+
+### 本地分支与远程分支建立跟踪分支
+命令：`git checkout -b <branch> <remote>/<branch>` \
+例如： 
+```
+$ git checkout -b serverfix origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'
+```

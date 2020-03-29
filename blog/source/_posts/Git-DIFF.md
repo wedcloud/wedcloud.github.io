@@ -11,7 +11,7 @@ tags: Git
 
 ### git diff --cached 或 git diff --staged(两者作用相同)
     显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改
-
+<!-- more -->
 ### git diff HEAD
     显示工作目录(已track但未add文件)和暂存区(已add但未commit文件)与最后一次commit之间的的所有不相同文件的增删改
 
