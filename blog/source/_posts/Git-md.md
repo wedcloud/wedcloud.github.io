@@ -1,7 +1,9 @@
 ---
-title: Git
+title: Git 命令收纳
 date: 2020-03-24 15:32:56
 tags: Git
+categories: 
+- Git
 ---
 
 ## Git 命令
@@ -16,7 +18,6 @@ tags: Git
 拉取远程仓库：$ git pull [remoteName] [localBranchName]
 推送远程仓库：$ git push [remoteName] [localBranchName]
 ```
-<!-- more -->
 ---
 
 #### 分支(branch)操作相关命令

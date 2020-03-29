@@ -2,6 +2,8 @@
 title: Git-打标签
 date: 2020-03-26 22:15:42
 tags: Git
+categories: 
+- Git
 ---
 ## 列出标签
 命令：`git tag` （可带上可选的 -l 选项 --list）

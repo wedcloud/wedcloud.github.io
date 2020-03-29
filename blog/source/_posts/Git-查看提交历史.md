@@ -2,6 +2,8 @@
 title: Git-查看提交历史
 date: 2020-03-26 15:49:19
 tags: Git
+categories: 
+- Git
 ---
 # 查看提交历史
 命令 >> `git log`

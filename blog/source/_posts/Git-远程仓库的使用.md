@@ -2,6 +2,8 @@
 title: Git-远程仓库的使用
 date: 2020-03-26 21:32:48
 tags: Git
+categories: 
+- Git
 ---
  ## 查看远程仓库
  查看已经配置好了的远程仓库,命令：`git remote`。

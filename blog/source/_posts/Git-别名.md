@@ -2,6 +2,8 @@
 title: Git-别名
 date: 2020-03-26 22:41:44
 tags: Git
+categories: 
+- Git
 ---
 ## Git 别名
 

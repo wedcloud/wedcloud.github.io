@@ -2,12 +2,13 @@
 title: Git-是什么
 date: 2020-03-24 22:16:09
 tags: Git
+categories: 
+- Git
 ---
 # Git 是什么？
 
 ## 直接记录快照，而非差异比较
 Git与其他的版本控制系统（SVN等）的主要差别是在于Git对待数据的方法；
-<!-- more -->
 一般的版本控制系统，如CVS、Subversion、Perforce、Bazaar 等等，将它们存储的信息看作是一组基本文件和每个文件随时间逐步累积的差异 （通常称作 **基于差异（delta-based）** 的版本控制）
 !["基于差异版本控制"](/source/image/deltas.png "基于差异版本控制")
 

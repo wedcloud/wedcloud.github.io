@@ -1,7 +1,9 @@
 ---
 title: Git-记录每次更新到仓库
 date: 2020-03-25 23:02:50
-tags:
+tags: Git
+categories: 
+- Git
 ---
 
 ## 状态
