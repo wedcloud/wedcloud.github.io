@@ -86,11 +86,39 @@ Git 会在有冲突的文件中加入标准的冲突解决标记，这样你可�
 ### 查看分叉历史
 命令：`git log --oneline --decorate --graph --all`
 
-### 本地分支与远程分支建立跟踪分支
+### 新建本地分支并跟踪远程分支
 命令：`git checkout -b <branch> <remote>/<branch>` \
+本地分支名和远程分支名可以不一致\
 例如： 
 ```
 $ git checkout -b serverfix origin/serverfix
 Branch serverfix set up to track remote branch serverfix from origin.
 Switched to a new branch 'serverfix'
 ```
+
+### 本地创建一个与远程分支同名的分支，并跟踪这个远程分支
+命令：`git checkout --track origin/branch_name` \
+本地会新建一个分支，且名字为 `branch_name`，并自动跟踪远程同名分支 `branch_name`
+
+### 在远程创建一个与本地分支同名的分支并跟踪
+命令：`git push --set-upstream origin branch_name `
+
+### 查看设置的所有跟踪分支
+命令：`git branch -vv`
+例如：
+```
+$ git branch -vv
+  iss53     7e424c3 [origin/iss53: ahead 2] forgot the brackets
+  master    1ae2a45 [origin/master] deploying index fix
+* serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] this should do it
+  testing   5ea463a trying something new
+```
+1. `ahead` 意味着本地有若干个提交还没有推送到服务器上
+2. `behind` 意味着服务器上有一次提交还没有合并入
+3. `origin/<branch>` 表示正在跟踪的分支
+
+>> 需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据\
+如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库，命令：`git fetch --all; git branch -vv`
+
+### 删除远程分支
+命令：`git push origin --delete <branch>`
