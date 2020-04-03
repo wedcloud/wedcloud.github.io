@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git-记录每次更新到仓库 | 烟花云烟</title>
+  <title>JMM | 烟花云烟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="状态Git 仓库中文件的状态 已跟踪 和 未跟踪;   已跟踪的文件是指那些被纳入了版本控制的文件     未跟踪文件就是在工作目录中除已跟踪文件外的其它所有文件">
+  <meta name="description" content="JMM内存模型 内存交互操作内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）  lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态 unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git-记录每次更新到仓库">
-<meta property="og:url" content="http://yoursite.com/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/index.html">
+<meta property="og:title" content="JMM">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/JMM/index.html">
 <meta property="og:site_name" content="烟花云烟">
-<meta property="og:description" content="状态Git 仓库中文件的状态 已跟踪 和 未跟踪;   已跟踪的文件是指那些被纳入了版本控制的文件     未跟踪文件就是在工作目录中除已跟踪文件外的其它所有文件">
+<meta property="og:description" content="JMM内存模型 内存交互操作内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）  lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态 unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://git-scm.com/book/en/v2/images/lifecycle.png">
-<meta property="article:published_time" content="2020-03-25T15:02:50.000Z">
-<meta property="article:modified_time" content="2020-04-03T05:45:36.821Z">
+<meta property="og:image" content="http://yoursite.com/source/image/111.jpg">
+<meta property="article:published_time" content="2020-04-03T05:44:48.000Z">
+<meta property="article:modified_time" content="2020-04-03T05:55:25.135Z">
 <meta property="article:author" content="许先生">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="并发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://git-scm.com/book/en/v2/images/lifecycle.png">
+<meta name="twitter:image" content="http://yoursite.com/source/image/111.jpg">
   
     <link rel="alternative" href="/atom.xml" title="烟花云烟" type="application/atom+xml">
   
@@ -171,115 +172,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git-记录每次更新到仓库" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JMM" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git-记录每次更新到仓库
+      JMM
     </h1>
   
 
         
-        <a href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-03-25T15:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
+        <a href="/2020/04/03/JMM/" class="archive-article-date">
+  	<time datetime="2020-04-03T05:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>Git 仓库中文件的状态 <code>已跟踪</code> 和 <code>未跟踪</code>;</p>
-<blockquote>
-<blockquote>
-<p>已跟踪的文件是指那些被纳入了版本控制的文件</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>未跟踪文件就是在工作目录中除已跟踪文件外的其它所有文件</p>
-</blockquote>
-</blockquote>
-<a id="more"></a>
-<p><img src="https://git-scm.com/book/en/v2/images/lifecycle.png" alt="&quot;文件变化周期&quot;" title="文件变化周期"></p>
-<h2 id="查看当前文件状态"><a href="#查看当前文件状态" class="headerlink" title="查看当前文件状态"></a>查看当前文件状态</h2><p>命令 &gt;&gt; <code>git status</code></p>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with &#39;origin&#x2F;master&#39;.</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
-<p>表示所有文件都在已跟踪状态,并且指明了分支（master）</p>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with &#39;origin&#x2F;master&#39;.</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">    README</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
-<p><code>Untracked files</code> 下面列出未跟踪的文件，并提示你如果需要跟踪，则需要提交</p>
-<h2 id="跟踪新文件-将文件提交到暂存区"><a href="#跟踪新文件-将文件提交到暂存区" class="headerlink" title="跟踪新文件(将文件提交到暂存区)"></a>跟踪新文件(将文件提交到暂存区)</h2><p>命令 &gt;&gt; <code>git add &lt;files&gt;</code> </p>
-<blockquote>
-<blockquote>
-<p><code>files</code>表示文件或目录的路径；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件</p>
-</blockquote>
-</blockquote>
-<p>此命令将文件添加到<code>暂存区</code></p>
-<p>使用<code>git status</code> 查看状态，<code>Changes to be committed</code> 下面列表，表示这些均是已暂存状态</p>
-<h2 id="暂存已修改的文件"><a href="#暂存已修改的文件" class="headerlink" title="暂存已修改的文件"></a>暂存已修改的文件</h2><p>将文件放入暂存区后，又修改了这个文件，这是使用 <code>git status</code> 会发现这个文件同时出现在 <code>暂存区</code> 和 <code>非暂存区</code>。</p>
-<p>如果现在提交，那这个文件版本是你最后一次运行 git add 命令时的那个版本，而不是你运行 git commit 时，在工作目录中的当前版本;</p>
-<p>若不想出现这种情况，则需要再次执行 <code>git add &lt;files&gt;</code> ，将文件最新版本放入暂存区。</p>
-<p>实际上 Git 只是暂存了你运行 git add 命令时的版本</p>
-<h2 id="状态简览"><a href="#状态简览" class="headerlink" title="状态简览"></a>状态简览</h2><p>命令 &gt;&gt; <code>git status -s</code> 或 <code>git status --short</code><br>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> M README</span><br><span class="line">MM Rakefile</span><br><span class="line">A  lib&#x2F;git.rb</span><br><span class="line">M  lib&#x2F;simplegit.rb</span><br><span class="line">?? LICENSE.txt</span><br></pre></td></tr></table></figure>
-<p>输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态</p>
+        <h2 id="JMM内存模型"><a href="#JMM内存模型" class="headerlink" title="JMM内存模型"></a>JMM内存模型</h2><p><img src="/source/image/111.jpg" alt="&quot;JMM&quot;" title="JMM"></p>
+<h2 id="内存交互操作"><a href="#内存交互操作" class="headerlink" title="内存交互操作"></a>内存交互操作</h2><p>内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）</p>
 <ul>
-<li><code>??</code> 新添加的未跟踪文件 </li>
-<li><code>A</code> 新添加到暂存区中的文件</li>
-<li><code>M</code> 修改过的文件</li>
+<li>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态</li>
+<li>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
+<li>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
+<li>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中</li>
+<li>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令</li>
+<li>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中</li>
+<li>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用</li>
+<li>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
 </ul>
-<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>不需要被Git管理的文件，可以将其记录在 <code>.gitignore</code> 的文件中</p>
-<p>文件 .gitignore 的格式规范如下：</p>
+<p>　　JMM对这八种指令的使用，制定了如下规则：</p>
 <ul>
-<li>所有空行或者以 # 开头的行都会被 Git 忽略。</li>
-<li>可以使用标准的 glob 模式匹配，它会递归地应用在整个工作区中。</li>
-<li>匹配模式可以以（/）开头防止递归。</li>
-<li>匹配模式可以以（/）结尾指定目录。</li>
-<li>要忽略指定模式以外的文件或目录，可以在模式前加上叹号（!）取反</li>
+<li>不允许read和load、store和write操作之一单独出现。即使用了read必须load，使用了store必须write</li>
+<li>不允许线程丢弃他最近的assign操作，即工作变量的数据改变了之后，必须告知主存</li>
+<li>不允许一个线程将没有assign的数据从工作内存同步回主内存</li>
+<li>一个新的变量必须在主内存中诞生，不允许工作内存直接使用一个未被初始化的变量。就是怼变量实施use、store操作之前，必须经过assign和load操作</li>
+<li>一个变量同一时间只有一个线程能对其进行lock。多次lock后，必须执行相同次数的unlock才能解锁</li>
+<li>如果对一个变量进行lock操作，会清空所有工作内存中此变量的值，在执行引擎使用这个变量前，必须重新load或assign操作初始化变量的值</li>
+<li>如果一个变量没有被lock，就不能对其进行unlock操作。也不能unlock一个被其他线程锁住的变量</li>
+<li>对一个变量进行unlock操作之前，必须把此变量同步回主内存</li>
 </ul>
-<p><code>glob</code> 模式 ： 指 shell 所使用的简化了的正则表达式;</p>
-<ul>
-<li>星号（*）匹配零个或多个任意字符</li>
-<li>[abc] 匹配任何一个列在方括号中的字符 （这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）</li>
-<li>问号（?）只匹配一个任意字符</li>
-<li>如果在方括号中使用短划线分隔两个字符， 表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）</li>
-<li>使用两个星号（<code>**</code>）表示匹配任意中间目录，比如 a/**/z 可以匹配 a/z 、 a/b/z 或 a/b/c/z 等</li>
+<h2 id="模型特征"><a href="#模型特征" class="headerlink" title="模型特征"></a>模型特征</h2><p>　　<strong>原子性</strong>：例如上面八项操作，在操作系统里面是不可分割的单元。被synchronized关键字或其他锁包裹起来的操作也可以认为是原子的。从一个线程观察另外一个线程的时候，看到的都是一个个原子性的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1         synchronized (this) &#123;</span><br><span class="line">2             a&#x3D;1;</span><br><span class="line">3             b&#x3D;2;</span><br><span class="line">4         &#125;</span><br></pre></td></tr></table></figure>
+<p>　　例如一个线程观察另外一个线程执行上面的代码，只能看到a、b都被赋值成功结果，或者a、b都尚未被赋值的结果。</p>
+<p>　　<strong>可见性</strong>：每个工作线程都有自己的工作内存，所以当某个线程修改完某个变量之后，在其他的线程中，未必能观察到该变量已经被修改。volatile关键字要求被修改之后的变量要求立即更新到主内存，每次使用前从主内存处进行读取。因此volatile可以保证可见性。除了volatile以外，synchronized和final也能实现可见性。synchronized保证unlock之前必须先把变量刷新回主内存。final修饰的字段在构造器中一旦完成初始化，并且构造器没有this逸出，那么其他线程就能看到final字段的值。</p>
+<p>　　<strong>有序性</strong>：java的有序性跟线程相关。如果在线程内部观察，会发现当前线程的一切操作都是有序的。如果在线程的外部来观察的话，会发现线程的所有操作都是无序的。因为JMM的工作内存和主内存之间存在延迟，而且java会对一些指令进行重新排序。volatile和synchronized可以保证程序的有序性，很多程序员只理解这两个关键字的执行互斥，而没有很好的理解到volatile和synchronized也能保证指令不进行重排序</p>
+<h2 id="Final域的内存语义"><a href="#Final域的内存语义" class="headerlink" title="Final域的内存语义"></a>Final域的内存语义</h2><p>　　被final修饰的变量，相比普通变量，内存语义有一些不同。具体如下：</p>
+<p>JMM禁止把Final域的写重排序到构造器的外部。<br>在一个线程中，初次读该对象和读该对象下的Final域，JMM禁止处理器重新排序这两个操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> 1 public class FinalConstructor &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     final int a;</span><br><span class="line"> 4 </span><br><span class="line"> 5     int b;</span><br><span class="line"> 6 </span><br><span class="line"> 7     static FinalConstructor finalConstructor;</span><br><span class="line"> 8 </span><br><span class="line"> 9     public FinalConstructor() &#123;</span><br><span class="line">10         a &#x3D; 1;</span><br><span class="line">11         b &#x3D; 2;</span><br><span class="line">12     &#125;</span><br><span class="line">13 </span><br><span class="line">14     public static void write() &#123;</span><br><span class="line">15         finalConstructor &#x3D; new FinalConstructor();</span><br><span class="line">16     &#125;</span><br><span class="line">17 </span><br><span class="line">18     public static void read() &#123;</span><br><span class="line">19         FinalConstructor constructor &#x3D; finalConstructor;</span><br><span class="line">20         int A &#x3D; constructor.a;</span><br><span class="line">21         int B &#x3D; constructor.b;</span><br><span class="line">22     &#125;</span><br><span class="line">23 &#125;</span><br></pre></td></tr></table></figure>
+<p>　　假设现在有线程A执行FinalConstructor.write()方法，线程B执行FinalConstructor.read()方法。</p>
+<p>　　对应上述的Final的第一条规则，因为JMM禁止把Final域的写重排序到构造器的外部，而对普通变量没有这种限制，所以变量A=1，而变量B可能会等于2（构造完成），也有可能等于0（第11行代码被重排序到构造器的外部）。</p>
+<p> 　　对应上述的Final的第二条规则，如果constructor的引用不为null，A必然为1，要么constructor为null，抛出空指针异常。保证读final域之前，一定会先读该对象的引用。但是普通对象就没有这种规则</p>
+<h2 id="Happen-Before（先行发生规则）"><a href="#Happen-Before（先行发生规则）" class="headerlink" title="Happen-Before（先行发生规则）"></a>Happen-Before（先行发生规则）</h2><p>　　在常规的开发中，如果我们通过上述规则来分析一个并发程序是否安全，估计脑壳会很疼。因为更多时候，我们是分析一个并发程序是否安全，其实都依赖Happen-Before原则进行分析。Happen-Before被翻译成先行发生原则，意思就是当A操作先行发生于B操作，则在发生B操作的时候，操作A产生的影响能被B观察到，“影响”包括修改了内存中的共享变量的值、发送了消息、调用了方法等。</p>
+<h3 id="Happen-Before的规则有以下几条"><a href="#Happen-Before的规则有以下几条" class="headerlink" title="Happen-Before的规则有以下几条"></a>Happen-Before的规则有以下几条</h3><ul>
+<li><p>程序次序规则（Program Order Rule）：在一个线程内，程序的执行规则跟程序的书写规则是一致的，从上往下执行。</p>
+</li>
+<li><p>管程锁定规则（Monitor Lock Rule）：一个Unlock的操作肯定先于下一次Lock的操作。这里必须是同一个锁。同理我们可以认为在synchronized同步同一个锁的时候，锁内先行执行的代码，对后续同步该锁的线程来说是完全可见的。</p>
+</li>
+<li><p>volatile变量规则（volatile Variable Rule）：对同一个volatile的变量，先行发生的写操作，肯定早于后续发生的读操作</p>
+</li>
+<li><p>线程启动规则（Thread Start Rule）：Thread对象的start()方法先行发生于此线程的没一个动作</p>
+</li>
+<li><p>线程中止规则（Thread Termination Rule）：Thread对象的中止检测（如：Thread.join()，Thread.isAlive()等）操作，必行晚于线程中所有操作</p>
+</li>
+<li><p>线程中断规则（Thread Interruption Rule）：对线程的interruption（）调用，先于被调用的线程检测中断事件(Thread.interrupted())的发生</p>
+</li>
+<li><p>对象中止规则（Finalizer Rule）：一个对象的初始化方法先于一个方法执行Finalizer()方法</p>
+</li>
+<li><p>传递性（Transitivity）：如果操作A先于操作B、操作B先于操作C,则操作A先于操作C</p>
+</li>
 </ul>
-<h2 id="查看已暂存和未暂存的修改"><a href="#查看已暂存和未暂存的修改" class="headerlink" title="查看已暂存和未暂存的修改"></a>查看已暂存和未暂存的修改</h2><p>命令 &gt;&gt; <code>git diff</code> </p>
-<blockquote>
-<blockquote>
-<p>此命令比较的是工作目录中当前文件和暂存区域快照之间的差异,也就是只显示尚未暂存的改的</p>
-</blockquote>
-</blockquote>
-<h2 id="提交更新"><a href="#提交更新" class="headerlink" title="提交更新"></a>提交更新</h2><p>命令 &gt;&gt; <code>git commit</code></p>
-<blockquote>
-<blockquote>
-<p>将暂存区的文件提交到Git仓库中</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>-m 表示提交信息，将提交信息与命令放在同一行</p>
-</blockquote>
-</blockquote>
-<p>提交前可以使用 <code>git status</code> 查看是否还有遗漏的文件未被 <code>add</code> 到暂存区</p>
-<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交</p>
-<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><p>命令 &gt;&gt; <code>git rm &lt;文件或者目录&gt;</code> ,也可以使用 glob 模式</p>
-<blockquote>
-<blockquote>
-<p>从工作目录中删除指定的文件</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>-f 删除之前修改过或已经放到暂存区的文件</p>
-</blockquote>
-</blockquote>
-<p>只将文件从缓存区移除，依然保留在工作目录中：<code>--cached</code></p>
-<h2 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h2><p>命令 &gt;&gt; <code>git mv oldfile newfile</code></p>
+<p>以上就是Happen-Before中的规则。通过这些条件的判定，仍然很难判断一个线程是否能安全执行，毕竟在我们的时候线程安全多数依赖于工具类的安全性来保证。想提高自己对线程是否安全的判断能力，必然需要理解所使用的框架或者工具的实现，并积累线程安全的经验</p>
 
       
 
@@ -314,7 +280,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
@@ -326,7 +296,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        			<a href="/categories/JMM//" class="article-tag-list-link color4">JMM</a>
         		</li>
       		
 		</ul>
@@ -381,7 +351,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/JMM/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -395,18 +365,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git-查看提交历史
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git-获取Git仓库</div>
+    <a href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java并发编程实战-02</div>
       <i class="icon-circle-right"></i>
     </a>
   

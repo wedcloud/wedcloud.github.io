@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Git-分支 | 烟花云烟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建分支的意义可以将各自的工作从开发主线上分离开来，以免影响开发主线 Git如何保存数据Git 保存的不是文件的变化或者差异，而是一系列不同时刻的 快照 在进行Gi提交时，Git会产生一个提交对象   该提交对象包含一个指向暂存内容快照的指针，还包含了作者的姓名和邮箱、提交时输入的信息以及指向它的父对象的指针     注意首次提交产生的提交对象没有父对象">
+  <meta name="description" content="创建分支的意义可以将各自的工作从开发主线上分离开来，以免影响开发主线">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git-分支">
 <meta property="og:url" content="http://yoursite.com/2020/03/26/Git-%E5%88%86%E6%94%AF/index.html">
 <meta property="og:site_name" content="烟花云烟">
-<meta property="og:description" content="创建分支的意义可以将各自的工作从开发主线上分离开来，以免影响开发主线 Git如何保存数据Git 保存的不是文件的变化或者差异，而是一系列不同时刻的 快照 在进行Gi提交时，Git会产生一个提交对象   该提交对象包含一个指向暂存内容快照的指针，还包含了作者的姓名和邮箱、提交时输入的信息以及指向它的父对象的指针     注意首次提交产生的提交对象没有父对象">
+<meta property="og:description" content="创建分支的意义可以将各自的工作从开发主线上分离开来，以免影响开发主线">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/commit-and-tree.png">
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/commits-and-parents.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/two-branches.png">
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/head-to-master.png">
 <meta property="article:published_time" content="2020-03-26T14:59:47.000Z">
-<meta property="article:modified_time" content="2020-03-27T06:57:08.464Z">
+<meta property="article:modified_time" content="2020-04-03T05:45:36.811Z">
 <meta property="article:author" content="许先生">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -69,6 +69,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -130,6 +132,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -149,12 +153,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -190,6 +196,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="创建分支的意义"><a href="#创建分支的意义" class="headerlink" title="创建分支的意义"></a>创建分支的意义</h2><p>可以将各自的工作从开发主线上分离开来，以免影响开发主线</p>
+<a id="more"></a>
 <h3 id="Git如何保存数据"><a href="#Git如何保存数据" class="headerlink" title="Git如何保存数据"></a>Git如何保存数据</h3><p>Git 保存的不是文件的变化或者差异，而是一系列不同时刻的 <strong>快照</strong></p>
 <p>在进行Gi提交时，Git会产生一个提交对象</p>
 <blockquote>
@@ -202,8 +209,6 @@
 <p><em>注意</em><br>首次提交产生的提交对象没有父对象</p>
 </blockquote>
 </blockquote>
-<a id="more"></a>
-
 <p>假设现在有一个工作目录，里面包含了三个将要被暂存和提交的文件:</p>
 <ol>
 <li>暂存操作会为每一个文件计算校验和（ SHA-1 哈希算法）</li>
@@ -255,6 +260,24 @@
 <p><code>HEAD</code> 所指示的版本（当前分支）在这个区段的上半部分（======= 的上半部分），而 iss53 分支所指示的版本在 ======= 的下半部分。 为了解决冲突，你必须选择使用由 ======= 分割的两部分中的一个，或者你也可以自行合并这些内容</p>
 <p>冲突解决后，对每个文件使用 <code>git add</code> 命令来将其标记为冲突已解决，最后采用<code>git commit</code> 完成合并提交</p>
 <h3 id="查看分叉历史"><a href="#查看分叉历史" class="headerlink" title="查看分叉历史"></a>查看分叉历史</h3><p>命令：<code>git log --oneline --decorate --graph --all</code></p>
+<h3 id="新建本地分支并跟踪远程分支"><a href="#新建本地分支并跟踪远程分支" class="headerlink" title="新建本地分支并跟踪远程分支"></a>新建本地分支并跟踪远程分支</h3><p>命令：<code>git checkout -b &lt;branch&gt; &lt;remote&gt;/&lt;branch&gt;</code> <br>本地分支名和远程分支名可以不一致<br>例如： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b serverfix origin&#x2F;serverfix</span><br><span class="line">Branch serverfix set up to track remote branch serverfix from origin.</span><br><span class="line">Switched to a new branch &#39;serverfix&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地创建一个与远程分支同名的分支，并跟踪这个远程分支"><a href="#本地创建一个与远程分支同名的分支，并跟踪这个远程分支" class="headerlink" title="本地创建一个与远程分支同名的分支，并跟踪这个远程分支"></a>本地创建一个与远程分支同名的分支，并跟踪这个远程分支</h3><p>命令：<code>git checkout --track origin/branch_name</code> <br>本地会新建一个分支，且名字为 <code>branch_name</code>，并自动跟踪远程同名分支 <code>branch_name</code></p>
+<h3 id="在远程创建一个与本地分支同名的分支并跟踪"><a href="#在远程创建一个与本地分支同名的分支并跟踪" class="headerlink" title="在远程创建一个与本地分支同名的分支并跟踪"></a>在远程创建一个与本地分支同名的分支并跟踪</h3><p>命令：<code>git push --set-upstream origin branch_name</code></p>
+<h3 id="查看设置的所有跟踪分支"><a href="#查看设置的所有跟踪分支" class="headerlink" title="查看设置的所有跟踪分支"></a>查看设置的所有跟踪分支</h3><p>命令：<code>git branch -vv</code><br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br><span class="line">  iss53     7e424c3 [origin&#x2F;iss53: ahead 2] forgot the brackets</span><br><span class="line">  master    1ae2a45 [origin&#x2F;master] deploying index fix</span><br><span class="line">* serverfix f8674d9 [teamone&#x2F;server-fix-good: ahead 3, behind 1] this should do it</span><br><span class="line">  testing   5ea463a trying something new</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>ahead</code> 意味着本地有若干个提交还没有推送到服务器上</li>
+<li><code>behind</code> 意味着服务器上有一次提交还没有合并入</li>
+<li><code>origin/&lt;branch&gt;</code> 表示正在跟踪的分支</li>
+</ol>
+<blockquote>
+<blockquote>
+<p>需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据<br>如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库，命令：<code>git fetch --all; git branch -vv</code></p>
+</blockquote>
+</blockquote>
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p>命令：<code>git push origin --delete &lt;branch&gt;</code> </p>
 
       
 
@@ -296,6 +319,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -497,6 +531,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
             
             <div class="clearfix"></div>

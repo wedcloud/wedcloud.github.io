@@ -70,6 +70,8 @@
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
+				<li><a href="/categories">分类</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -130,6 +132,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -149,12 +153,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -170,6 +176,343 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-JMM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/JMM/">JMM</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/03/JMM/" class="archive-article-date">
+  	<time datetime="2020-04-03T05:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JMM内存模型"><a href="#JMM内存模型" class="headerlink" title="JMM内存模型"></a>JMM内存模型</h2><p><img src="/source/image/111.jpg" alt="&quot;JMM&quot;" title="JMM"></p>
+<h2 id="内存交互操作"><a href="#内存交互操作" class="headerlink" title="内存交互操作"></a>内存交互操作</h2><p>内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）</p>
+<ul>
+<li>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态</li>
+<li>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
+<li>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
+<li>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中</li>
+<li>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令</li>
+<li>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中</li>
+<li>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用</li>
+<li>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
+</ul>
+<p>　　JMM对这八种指令的使用，制定了如下规则：</p>
+<ul>
+<li>不允许read和load、store和write操作之一单独出现。即使用了read必须load，使用了store必须write</li>
+<li>不允许线程丢弃他最近的assign操作，即工作变量的数据改变了之后，必须告知主存</li>
+<li>不允许一个线程将没有assign的数据从工作内存同步回主内存</li>
+<li>一个新的变量必须在主内存中诞生，不允许工作内存直接使用一个未被初始化的变量。就是怼变量实施use、store操作之前，必须经过assign和load操作</li>
+<li>一个变量同一时间只有一个线程能对其进行lock。多次lock后，必须执行相同次数的unlock才能解锁</li>
+<li>如果对一个变量进行lock操作，会清空所有工作内存中此变量的值，在执行引擎使用这个变量前，必须重新load或assign操作初始化变量的值</li>
+<li>如果一个变量没有被lock，就不能对其进行unlock操作。也不能unlock一个被其他线程锁住的变量</li>
+<li>对一个变量进行unlock操作之前，必须把此变量同步回主内存</li>
+</ul>
+<h2 id="模型特征"><a href="#模型特征" class="headerlink" title="模型特征"></a>模型特征</h2><p>　　<strong>原子性</strong>：例如上面八项操作，在操作系统里面是不可分割的单元。被synchronized关键字或其他锁包裹起来的操作也可以认为是原子的。从一个线程观察另外一个线程的时候，看到的都是一个个原子性的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1         synchronized (this) &#123;</span><br><span class="line">2             a&#x3D;1;</span><br><span class="line">3             b&#x3D;2;</span><br><span class="line">4         &#125;</span><br></pre></td></tr></table></figure>
+<p>　　例如一个线程观察另外一个线程执行上面的代码，只能看到a、b都被赋值成功结果，或者a、b都尚未被赋值的结果。</p>
+<p>　　<strong>可见性</strong>：每个工作线程都有自己的工作内存，所以当某个线程修改完某个变量之后，在其他的线程中，未必能观察到该变量已经被修改。volatile关键字要求被修改之后的变量要求立即更新到主内存，每次使用前从主内存处进行读取。因此volatile可以保证可见性。除了volatile以外，synchronized和final也能实现可见性。synchronized保证unlock之前必须先把变量刷新回主内存。final修饰的字段在构造器中一旦完成初始化，并且构造器没有this逸出，那么其他线程就能看到final字段的值。</p>
+<p>　　<strong>有序性</strong>：java的有序性跟线程相关。如果在线程内部观察，会发现当前线程的一切操作都是有序的。如果在线程的外部来观察的话，会发现线程的所有操作都是无序的。因为JMM的工作内存和主内存之间存在延迟，而且java会对一些指令进行重新排序。volatile和synchronized可以保证程序的有序性，很多程序员只理解这两个关键字的执行互斥，而没有很好的理解到volatile和synchronized也能保证指令不进行重排序</p>
+<h2 id="Final域的内存语义"><a href="#Final域的内存语义" class="headerlink" title="Final域的内存语义"></a>Final域的内存语义</h2><p>　　被final修饰的变量，相比普通变量，内存语义有一些不同。具体如下：</p>
+<p>JMM禁止把Final域的写重排序到构造器的外部。<br>在一个线程中，初次读该对象和读该对象下的Final域，JMM禁止处理器重新排序这两个操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> 1 public class FinalConstructor &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     final int a;</span><br><span class="line"> 4 </span><br><span class="line"> 5     int b;</span><br><span class="line"> 6 </span><br><span class="line"> 7     static FinalConstructor finalConstructor;</span><br><span class="line"> 8 </span><br><span class="line"> 9     public FinalConstructor() &#123;</span><br><span class="line">10         a &#x3D; 1;</span><br><span class="line">11         b &#x3D; 2;</span><br><span class="line">12     &#125;</span><br><span class="line">13 </span><br><span class="line">14     public static void write() &#123;</span><br><span class="line">15         finalConstructor &#x3D; new FinalConstructor();</span><br><span class="line">16     &#125;</span><br><span class="line">17 </span><br><span class="line">18     public static void read() &#123;</span><br><span class="line">19         FinalConstructor constructor &#x3D; finalConstructor;</span><br><span class="line">20         int A &#x3D; constructor.a;</span><br><span class="line">21         int B &#x3D; constructor.b;</span><br><span class="line">22     &#125;</span><br><span class="line">23 &#125;</span><br></pre></td></tr></table></figure>
+<p>　　假设现在有线程A执行FinalConstructor.write()方法，线程B执行FinalConstructor.read()方法。</p>
+<p>　　对应上述的Final的第一条规则，因为JMM禁止把Final域的写重排序到构造器的外部，而对普通变量没有这种限制，所以变量A=1，而变量B可能会等于2（构造完成），也有可能等于0（第11行代码被重排序到构造器的外部）。</p>
+<p> 　　对应上述的Final的第二条规则，如果constructor的引用不为null，A必然为1，要么constructor为null，抛出空指针异常。保证读final域之前，一定会先读该对象的引用。但是普通对象就没有这种规则</p>
+<h2 id="Happen-Before（先行发生规则）"><a href="#Happen-Before（先行发生规则）" class="headerlink" title="Happen-Before（先行发生规则）"></a>Happen-Before（先行发生规则）</h2><p>　　在常规的开发中，如果我们通过上述规则来分析一个并发程序是否安全，估计脑壳会很疼。因为更多时候，我们是分析一个并发程序是否安全，其实都依赖Happen-Before原则进行分析。Happen-Before被翻译成先行发生原则，意思就是当A操作先行发生于B操作，则在发生B操作的时候，操作A产生的影响能被B观察到，“影响”包括修改了内存中的共享变量的值、发送了消息、调用了方法等。</p>
+<h3 id="Happen-Before的规则有以下几条"><a href="#Happen-Before的规则有以下几条" class="headerlink" title="Happen-Before的规则有以下几条"></a>Happen-Before的规则有以下几条</h3><ul>
+<li><p>程序次序规则（Program Order Rule）：在一个线程内，程序的执行规则跟程序的书写规则是一致的，从上往下执行。</p>
+</li>
+<li><p>管程锁定规则（Monitor Lock Rule）：一个Unlock的操作肯定先于下一次Lock的操作。这里必须是同一个锁。同理我们可以认为在synchronized同步同一个锁的时候，锁内先行执行的代码，对后续同步该锁的线程来说是完全可见的。</p>
+</li>
+<li><p>volatile变量规则（volatile Variable Rule）：对同一个volatile的变量，先行发生的写操作，肯定早于后续发生的读操作</p>
+</li>
+<li><p>线程启动规则（Thread Start Rule）：Thread对象的start()方法先行发生于此线程的没一个动作</p>
+</li>
+<li><p>线程中止规则（Thread Termination Rule）：Thread对象的中止检测（如：Thread.join()，Thread.isAlive()等）操作，必行晚于线程中所有操作</p>
+</li>
+<li><p>线程中断规则（Thread Interruption Rule）：对线程的interruption（）调用，先于被调用的线程检测中断事件(Thread.interrupted())的发生</p>
+</li>
+<li><p>对象中止规则（Finalizer Rule）：一个对象的初始化方法先于一个方法执行Finalizer()方法</p>
+</li>
+<li><p>传递性（Transitivity）：如果操作A先于操作B、操作B先于操作C,则操作A先于操作C</p>
+</li>
+</ul>
+<p>以上就是Happen-Before中的规则。通过这些条件的判定，仍然很难判断一个线程是否能安全执行，毕竟在我们的时候线程安全多数依赖于工具类的安全性来保证。想提高自己对线程是否安全的判断能力，必然需要理解所使用的框架或者工具的实现，并积累线程安全的经验</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JMM//" class="article-tag-list-link color4">JMM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/03/JMM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java并发编程实战-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">Java并发编程实战-02</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:49:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="线程的安装型"><a href="#线程的安装型" class="headerlink" title="线程的安装型"></a>线程的安装型</h2><p>要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问</p>
+<p>“共享”意味着变量可以由多个线程同时访问<br>“可变”意味着变量的值在其生命周期内可以发生变化</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java并发编程实战-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">Java并发编程实战-01</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/" class="archive-article-date">
+  	<time datetime="2020-03-29T12:55:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>编写正确的程序很难，而编写正确的并发程序则是难上加难</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Git-分支管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -203,10 +546,7 @@
 <p><code>master</code> 分支前的 <code>*</code> 字符：它代表现在检出的那一个分支（也就是说，当前 HEAD 指针所指向的分支）</p>
 </blockquote>
 </blockquote>
-<h3 id="查看每一个分支的最后一次提交"><a href="#查看每一个分支的最后一次提交" class="headerlink" title="查看每一个分支的最后一次提交"></a>查看每一个分支的最后一次提交</h3><p>命令：<code>git branch -v</code></p>
-<h3 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h3><p>上面描述的选项 –merged 和 –no-merged 会在没有给定提交或分支名作为参数时， 分别列出已合并或未合并到 当前 分支的分支。</p>
-<p>你总是可以提供一个附加的参数来查看其它分支的合并状态而不必检出它们。 例如，尚未合并到 master 分支的有哪些？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout testing</span><br><span class="line">$ git branch --no-merged master</span><br><span class="line">  topicA</span><br><span class="line">  featureB</span><br></pre></td></tr></table></figure>
+        
       
 
       
@@ -226,6 +566,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -280,18 +631,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="创建分支的意义"><a href="#创建分支的意义" class="headerlink" title="创建分支的意义"></a>创建分支的意义</h2><p>可以将各自的工作从开发主线上分离开来，以免影响开发主线</p>
-<h3 id="Git如何保存数据"><a href="#Git如何保存数据" class="headerlink" title="Git如何保存数据"></a>Git如何保存数据</h3><p>Git 保存的不是文件的变化或者差异，而是一系列不同时刻的 <strong>快照</strong></p>
-<p>在进行Gi提交时，Git会产生一个提交对象</p>
-<blockquote>
-<blockquote>
-<p>该提交对象包含一个指向暂存内容快照的指针，还包含了作者的姓名和邮箱、提交时输入的信息以及指向它的父对象的指针</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><em>注意</em><br>首次提交产生的提交对象没有父对象</p>
-</blockquote>
-</blockquote>
         
       
 
@@ -312,6 +651,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -393,6 +743,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -468,6 +829,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -544,6 +916,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -618,6 +1001,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -671,7 +1065,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-diff-详细使用"><a href="#Git-diff-详细使用" class="headerlink" title="Git diff 详细使用"></a>Git diff 详细使用</h2><h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><pre><code>当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件</code></pre><h3 id="git-diff-–cached-或-git-diff-–staged-两者作用相同"><a href="#git-diff-–cached-或-git-diff-–staged-两者作用相同" class="headerlink" title="git diff –cached 或 git diff –staged(两者作用相同)"></a>git diff –cached 或 git diff –staged(两者作用相同)</h3><pre><code>显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改</code></pre><h3 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3><pre><code>显示工作目录(已track但未add文件)和暂存区(已add但未commit文件)与最后一次commit之间的的所有不相同文件的增删改</code></pre><h3 id="git-diff-lt-分支名1-gt-lt-分支名2-gt"><a href="#git-diff-lt-分支名1-gt-lt-分支名2-gt" class="headerlink" title="git diff &lt;分支名1&gt; &lt;分支名2&gt;"></a>git diff &lt;分支名1&gt; &lt;分支名2&gt;</h3><pre><code>比较两个分支上最后 commit 的内容的差别</code></pre><h3 id="git-diff-branch1-branch2"><a href="#git-diff-branch1-branch2" class="headerlink" title="git diff branch1 branch2"></a>git diff branch1 branch2</h3><pre><code>显示出所有有差异的文件的详细差异(更详细)</code></pre><h3 id="git-diff-branch1-branch2-具体文件路径"><a href="#git-diff-branch1-branch2-具体文件路径" class="headerlink" title="git diff branch1 branch2 具体文件路径"></a>git diff branch1 branch2 具体文件路径</h3><pre><code>显示指定文件的详细差异(对比内容)</code></pre>
+        <h2 id="Git-diff-详细使用"><a href="#Git-diff-详细使用" class="headerlink" title="Git diff 详细使用"></a>Git diff 详细使用</h2><h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><pre><code>当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件</code></pre><h3 id="git-diff-–cached-或-git-diff-–staged-两者作用相同"><a href="#git-diff-–cached-或-git-diff-–staged-两者作用相同" class="headerlink" title="git diff –cached 或 git diff –staged(两者作用相同)"></a>git diff –cached 或 git diff –staged(两者作用相同)</h3><pre><code>显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改</code></pre>
+        
       
 
       
@@ -691,430 +1086,21 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/26/Git-DIFF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-查看提交历史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/">Git-查看提交历史</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/" class="archive-article-date">
-  	<time datetime="2020-03-26T07:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h1><p>命令 &gt;&gt; <code>git log</code></p>
-<p>不传入任何参数的默认情况下，git log 会按时间先后顺序列出所有的提交，最近的更新排在最上面</p>
-<p>参数</p>
-<ul>
-<li><code>-p</code> 或 <code>--patch</code><blockquote>
-<blockquote>
-<p>显示每次提交所引入的差异（按补丁的格式输出）,可以限制显示的日志条目数量，例如：<code>git log -p -2</code></p>
-</blockquote>
-</blockquote>
-</li>
-<li><code>--stat</code><blockquote>
-<blockquote>
-<p>附带一系列的总结性选项</p>
-</blockquote>
-</blockquote>
-</li>
-<li><code>--pretty</code><blockquote>
-<blockquote>
-<p>使用不同于默认格式的方式展示提交历史</p>
-<blockquote>
-<blockquote>
-<p>子选项:<br><code>--pretty=oneline</code> 将每个提交放在一行显示，在浏览大量的提交时非常有用<br>另外还有 <code>short</code>，<code>full</code> 和 <code>fuller</code> 选项，展示信息格式基本一致，但大同小异<br><code>--pretty=format</code> 定制输出格式,例如：<code>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</code></p>
-<blockquote>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%H</td>
-<td align="center">提交的完整哈希值</td>
-</tr>
-<tr>
-<td>%h</td>
-<td align="center">提交的简写哈希值</td>
-</tr>
-<tr>
-<td>%T</td>
-<td align="center">树的完整哈希值</td>
-</tr>
-<tr>
-<td>%t</td>
-<td align="center">树的简写哈希值</td>
-</tr>
-<tr>
-<td>%P</td>
-<td align="center">父提交的完整哈希值</td>
-</tr>
-<tr>
-<td>%p</td>
-<td align="center">父提交的简写哈希值</td>
-</tr>
-<tr>
-<td>%an</td>
-<td align="center">作者名字</td>
-</tr>
-<tr>
-<td>%ae</td>
-<td align="center">作者的电子邮件地址</td>
-</tr>
-<tr>
-<td>%ad</td>
-<td align="center">作者修订日期（可以用 –date=选项 来定制格式）</td>
-</tr>
-<tr>
-<td>%ar</td>
-<td align="center">作者修订日期，按多久以前的方式显示</td>
-</tr>
-<tr>
-<td>%cn</td>
-<td align="center">提交者的名字</td>
-</tr>
-<tr>
-<td>%ce</td>
-<td align="center">提交者的电子邮件地址</td>
-</tr>
-<tr>
-<td>%cd</td>
-<td align="center">提交日期</td>
-</tr>
-<tr>
-<td>%cr</td>
-<td align="center">提交日期（距今多长时间）</td>
-</tr>
-<tr>
-<td>%s</td>
-<td align="center">提交说明</td>
-</tr>
-<tr>
-<td>当 <code>oneline</code> 或 <code>format</code> 与另一个 log 选项 <code>--graph</code> 结合使用时尤其有用。 这个选项添加了一些 ASCII 字符串来形象地展示你的分支、合并历史</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h2 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h2><blockquote>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-p</td>
-<td align="center">按补丁格式显示每个提交引入的差异</td>
-</tr>
-<tr>
-<td>–stat</td>
-<td align="center">显示每次提交的文件修改统计信息</td>
-</tr>
-<tr>
-<td>–shortstat</td>
-<td align="center">只显示 –stat 中最后的行数修改添加移除统计</td>
-</tr>
-<tr>
-<td>–name-only</td>
-<td align="center">仅在提交信息后显示已修改的文件清单</td>
-</tr>
-<tr>
-<td>–name-status</td>
-<td align="center">显示新增、修改、删除的文件清单</td>
-</tr>
-<tr>
-<td>–abbrev-commit</td>
-<td align="center">仅显示 SHA-1 校验和所有 40 个字符中的前几个字符</td>
-</tr>
-<tr>
-<td>–relative-date</td>
-<td align="center">使用较短的相对时间而不是完整格式显示日期（比如“2 weeks ago”）</td>
-</tr>
-<tr>
-<td>–graph</td>
-<td align="center">在日志旁以 ASCII 图形显示分支与合并历史</td>
-</tr>
-<tr>
-<td>–pretty</td>
-<td align="center">使用其他格式显示历史提交信息。可用的选项包括 oneline、short、full、fuller 和 format（用来定义自己的格式）</td>
-</tr>
-<tr>
-<td>–oneline</td>
-<td align="center">–pretty=oneline –abbrev-commit 合用的简写</td>
-</tr>
-</tbody></table>
-</blockquote>
-</blockquote>
-<h2 id="限制-git-log-输出的选项"><a href="#限制-git-log-输出的选项" class="headerlink" title="限制 git log 输出的选项"></a>限制 git log 输出的选项</h2><blockquote>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-<n></td>
-<td align="center">仅显示最近的 n 条提交</td>
-</tr>
-<tr>
-<td>–since, –after</td>
-<td align="center">仅显示指定时间之后的提交</td>
-</tr>
-<tr>
-<td>–until, –before</td>
-<td align="center">仅显示指定时间之前的提交</td>
-</tr>
-<tr>
-<td>–author</td>
-<td align="center">仅显示作者匹配指定字符串的提交</td>
-</tr>
-<tr>
-<td>–committer</td>
-<td align="center">仅显示提交者匹配指定字符串的提交</td>
-</tr>
-<tr>
-<td>–grep</td>
-<td align="center">仅显示提交说明中包含指定字符串的提交</td>
-</tr>
-<tr>
-<td>-S</td>
-<td align="center">仅显示添加或删除内容匹配指定字符串的提交</td>
-</tr>
-</tbody></table>
-</blockquote>
-</blockquote>
-<p>例如，列出最近两周的所有提交：<code>git log --since=2.weeks</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-记录每次更新到仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/">Git-记录每次更新到仓库</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-03-25T15:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>Git 仓库中文件的状态 <code>已跟踪</code> 和 <code>未跟踪</code>;</p>
-<blockquote>
-<blockquote>
-<p>已跟踪的文件是指那些被纳入了版本控制的文件</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>未跟踪文件就是在工作目录中除已跟踪文件外的其它所有文件</p>
-</blockquote>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-获取Git仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/">Git-获取Git仓库</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-03-25T14:34:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="获取Git仓库的两种方式"><a href="#获取Git仓库的两种方式" class="headerlink" title="获取Git仓库的两种方式"></a>获取Git仓库的两种方式</h1><ol>
-<li><p>将尚未进行版本控制的本地目录转换为 Git 仓库</p>
-</li>
-<li><p>从服务器 <strong>克隆</strong> 一个已经存在的 Git 仓库</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/">展开全文 >></a>
         </p>
       
 
@@ -1242,6 +1228,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
             
             <div class="clearfix"></div>
