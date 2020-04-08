@@ -177,6 +177,408 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">mysql-基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+  	<time datetime="2020-04-08T01:30:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ol>
+<li><p>连接数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p&lt;密码&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：数据库存储密码时，需要加密</p>
+</blockquote>
+</li>
+<li><p>刷新权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示数据库中所有的表的信息</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &#96;表名&#96;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出连接</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注释</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释 -- 注释内容</span><br><span class="line">多行注释 &#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>所有的语句都需要使用 ； 分好结尾</p>
+</blockquote>
+<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="操作数据库-1"><a href="#操作数据库-1" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>1、创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;数据库名&#96;；</span><br></pre></td></tr></table></figure>
+
+<p>2、删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;数据库名&#96;</span><br></pre></td></tr></table></figure>
+<p>3、查看所有的数据库</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<p>4、使用数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &#96;数据库名&#96;;</span><br></pre></td></tr></table></figure>
+
+<p>5、数据库排序规则</p>
+<ul>
+<li>特征<ul>
+<li>两个不同的字符集不能有相同的排序规则</li>
+<li>两个字符集有一个默认的排序规则</li>
+<li>有一些常用的命名规则。如_ci结尾表示大小写不敏感（caseinsensitive）,_cs表示大小写敏感（case sensitive）,_bin表示二进制的比较（binary）</li>
+</ul>
+</li>
+<li>区别<ul>
+<li>utf8_general_ci 不区分大小写，这个你在注册用户名和邮箱的时候就要使用</li>
+<li>utf8_general_cs 区分大小写，如果用户名和邮箱用这个 就会照成不良后果</li>
+<li>utf8_bin:字符串每个字符串用二进制数据编译存储。 区分大小写，而且可以存二进制的内容</li>
+<li>utf8_general_ci校对速度快，但准确度稍差</li>
+<li>utf8_unicode_ci准确度高，但校对速度稍慢</li>
+</ul>
+</li>
+<li>使用情况<br>utf8_unicode_ci比较准确，utf8_general_ci速度比较快。通常情况下，新建数据库时一般选用utf8_general_ci就可以了</li>
+</ul>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><ol>
+<li><p>用户权限赋值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on &#39;表名&#39;.* to &#39;用户名&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="所用"><a href="#所用" class="headerlink" title="所用"></a>所用</h3></li>
+<li><p>普通索引</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#39;表名&#39; ADD INDEX 索引名(&#96;字段名&#96;);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
+<p>数值</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>数据大小</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>十分小的数据库</td>
+<td>1</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>较小数据</td>
+<td>2</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td>中等</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td><strong>标准</strong></td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>较大</td>
+<td>8</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>浮点</td>
+<td>8</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>字符串形式浮点数（精度）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong></p>
+<p>​    int(a)，a只与<code>Zerofill</code>(0填充) 有关</p>
+<blockquote>
+<p>字符串</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>数据解释</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>定长字符串</td>
+<td>0~255</td>
+</tr>
+<tr>
+<td><strong>varchar</strong></td>
+<td><strong>可变字符串</strong></td>
+<td><strong>0~65535</strong></td>
+</tr>
+<tr>
+<td>tinytext</td>
+<td>微型文本</td>
+<td>2^8-1</td>
+</tr>
+<tr>
+<td><strong>text</strong></td>
+<td><strong>文本串</strong></td>
+<td><strong>2^16-1</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>时间日期</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>解释</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>日期</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间</td>
+<td>HH:mm:ss</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>日期+时间</td>
+<td>YYYY-MM-DD HH:mm:ss</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>时间戳</td>
+<td>1970.1.1到现在的毫秒数</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>null</p>
+</blockquote>
+<ul>
+<li>没有值</li>
+<li>==不要使用NULL进行运算，NULL参与运算结果始终为NULL==</li>
+</ul>
+<h2 id="数据字段属性"><a href="#数据字段属性" class="headerlink" title="数据字段属性"></a>数据字段属性</h2><ul>
+<li>默认 ，不设置值时，数据库会自动在当前字段添加上默认值</li>
+<li>主键</li>
+<li>非空</li>
+<li>Unsigned 无符号，字段要求是整形</li>
+<li>自增</li>
+<li>Zerofill  不足位数使用0填充，字段要求是整形</li>
+</ul>
+<h2 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [IF NOT EXISTS] &#96;表名&#96; (</span><br><span class="line">  &#96;id&#96; bigint(20) NOT NULL AUTO_INCREMENT COMMENT &#39;ID&#39;,</span><br><span class="line">  &#96;name&#96; varchar(100) COLLATE utf8mb4_bin DEFAULT &#39;匿名&#39; COMMENT &#39;名字&#39;,</span><br><span class="line">  &#96;cancel&#96; int(11) DEFAULT &#39;0&#39; COMMENT &#39;0位删除 1已删除&#39;,</span><br><span class="line">  &#96;created_at&#96; datetime NOT NULL COMMENT &#39;创建时间&#39;,</span><br><span class="line">  &#96;modified_at&#96; datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,</span><br><span class="line">  PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;124 DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_bin ROW_FORMAT&#x3D;COMPACT COMMENT&#x3D;&#39;中文表名&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><code>IF NOT EXISTS</code>  如果不存在</li>
+<li><code>IF EXISTS</code> 如果存在</li>
+<li><code>AUTO_INCREMENT</code> 自增关键字</li>
+<li><code>DEFAULT</code> 默认值设置</li>
+<li><code>COMMENT</code> 备注</li>
+<li><code>PRIMARY KEY (字段名)</code>设置主键</li>
+<li><code>ENGINE</code>设置表引擎</li>
+<li><code>AUTO_INCREMENT</code> 自增主键初始值</li>
+<li><code>CHARSET</code>字符集</li>
+</ul>
+<h3 id="InnoDB和MyISAM"><a href="#InnoDB和MyISAM" class="headerlink" title="InnoDB和MyISAM"></a>InnoDB和MyISAM</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>MyISAM</th>
+<th>InnoDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>数据行锁定</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>表空间大小</td>
+<td>较小</td>
+<td>较大，约MyISAM的2倍</td>
+</tr>
+</tbody></table>
+<p>常规操作：</p>
+<ul>
+<li>MyISAM 节约空间，速度快</li>
+<li>INNODB 安全性高，事务的处理，多表多用户操作</li>
+</ul>
+<h3 id="表的修改与删除"><a href="#表的修改与删除" class="headerlink" title="表的修改与删除"></a>表的修改与删除</h3><ol>
+<li><p>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;旧表名&#96; rename as &#96;新表名&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>增加表字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; add &#96;字段名&#96; &#96;列属性（int（11））&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>修改表字段</p>
+<ul>
+<li><p>修改约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; modify &#96;字段名&#96; &#96;新的列属性&#96;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字段重命名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; change &#96;旧字段名&#96; &#96;新字段名&#96; [&#96;新的列属性&#96;]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="4">
+<li><p>删除表字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; drop &#96;字段名&#96;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="6">
+<li><p>清空表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>delete和truncate区别</p>
+<p>相同点：都不会删除表结构，只会删除数据</p>
+<p>不同： </p>
+<ol>
+<li><p>truncate 会将自增列计数器归零</p>
+<pre><code>2. truncate 不会影响事务，也就是删除了数据无法回滚
+  3. 性能：truncate &gt; delete</code></pre></li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ol>
+<li>去重：<code>distinct</code></li>
+<li>查询版本 : <code>select version()</code></li>
+<li>计算：`select 100*3-1</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JMM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1045,91 +1447,6 @@
 
 
   
-    <article id="post-Git-DIFF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-DIFF/">Git-DIFF</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-DIFF/" class="archive-article-date">
-  	<time datetime="2020-03-26T08:09:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Git-diff-详细使用"><a href="#Git-diff-详细使用" class="headerlink" title="Git diff 详细使用"></a>Git diff 详细使用</h2><h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><pre><code>当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件</code></pre><h3 id="git-diff-–cached-或-git-diff-–staged-两者作用相同"><a href="#git-diff-–cached-或-git-diff-–staged-两者作用相同" class="headerlink" title="git diff –cached 或 git diff –staged(两者作用相同)"></a>git diff –cached 或 git diff –staged(两者作用相同)</h3><pre><code>显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-DIFF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1236,6 +1553,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
             <div class="clearfix"></div>

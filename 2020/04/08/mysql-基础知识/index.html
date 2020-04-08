@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java并发编程实战-02 | 烟花云烟</title>
+  <title>mysql-基础知识 | 烟花云烟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线程的安装型要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问 “共享”意味着变量可以由多个线程同时访问“可变”意味着变量的值在其生命周期内可以发生变化">
+  <meta name="description" content="mysql基础命令 连接数据库 1mysql -uroot -p&lt;密码&gt;;  修改密码 1ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;   注意：数据库存储密码时，需要加密   刷新权限 1flush privileges;  显">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java并发编程实战-02">
-<meta property="og:url" content="http://yoursite.com/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/index.html">
+<meta property="og:title" content="mysql-基础知识">
+<meta property="og:url" content="http://yoursite.com/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="烟花云烟">
-<meta property="og:description" content="线程的安装型要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问 “共享”意味着变量可以由多个线程同时访问“可变”意味着变量的值在其生命周期内可以发生变化">
+<meta property="og:description" content="mysql基础命令 连接数据库 1mysql -uroot -p&lt;密码&gt;;  修改密码 1ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;   注意：数据库存储密码时，需要加密   刷新权限 1flush privileges;  显">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-30T14:49:32.000Z">
-<meta property="article:modified_time" content="2020-04-03T05:45:36.823Z">
+<meta property="article:published_time" content="2020-04-08T01:30:42.000Z">
+<meta property="article:modified_time" content="2020-04-08T08:17:16.780Z">
 <meta property="article:author" content="许先生">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="并发">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="烟花云烟" type="application/atom+xml">
@@ -170,48 +169,344 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java并发编程实战-02" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql-基础知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java并发编程实战-02
+      mysql-基础知识
     </h1>
   
 
         
-        <a href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:49:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+        <a href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+  	<time datetime="2020-04-08T01:30:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="线程的安装型"><a href="#线程的安装型" class="headerlink" title="线程的安装型"></a>线程的安装型</h2><p>要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问</p>
-<p>“共享”意味着变量可以由多个线程同时访问<br>“可变”意味着变量的值在其生命周期内可以发生变化</p>
-<a id="more"></a>
+        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ol>
+<li><p>连接数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p&lt;密码&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="处理不可控的状态变量"><a href="#处理不可控的状态变量" class="headerlink" title="处理不可控的状态变量"></a>处理不可控的状态变量</h3><ol>
-<li>不在线程之间共享该状态变量</li>
-<li>状态变量修改为不可变的变量</li>
-<li>访问变量事使用同步机制</li>
+<blockquote>
+<p>注意：数据库存储密码时，需要加密</p>
+</blockquote>
+</li>
+<li><p>刷新权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示数据库中所有的表的信息</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &#96;表名&#96;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出连接</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注释</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释 -- 注释内容</span><br><span class="line">多行注释 &#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<p><strong>当设计线程安全的类时，良好的面向对象技术、不可修改性、以及明确的 <code>不变性规范</code> 都能起到一定的帮助作用</strong></p>
 <blockquote>
+<p>所有的语句都需要使用 ； 分好结尾</p>
+</blockquote>
+<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="操作数据库-1"><a href="#操作数据库-1" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>1、创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;数据库名&#96;；</span><br></pre></td></tr></table></figure>
+
+<p>2、删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;数据库名&#96;</span><br></pre></td></tr></table></figure>
+<p>3、查看所有的数据库</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<p>4、使用数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &#96;数据库名&#96;;</span><br></pre></td></tr></table></figure>
+
+<p>5、数据库排序规则</p>
+<ul>
+<li>特征<ul>
+<li>两个不同的字符集不能有相同的排序规则</li>
+<li>两个字符集有一个默认的排序规则</li>
+<li>有一些常用的命名规则。如_ci结尾表示大小写不敏感（caseinsensitive）,_cs表示大小写敏感（case sensitive）,_bin表示二进制的比较（binary）</li>
+</ul>
+</li>
+<li>区别<ul>
+<li>utf8_general_ci 不区分大小写，这个你在注册用户名和邮箱的时候就要使用</li>
+<li>utf8_general_cs 区分大小写，如果用户名和邮箱用这个 就会照成不良后果</li>
+<li>utf8_bin:字符串每个字符串用二进制数据编译存储。 区分大小写，而且可以存二进制的内容</li>
+<li>utf8_general_ci校对速度快，但准确度稍差</li>
+<li>utf8_unicode_ci准确度高，但校对速度稍慢</li>
+</ul>
+</li>
+<li>使用情况<br>utf8_unicode_ci比较准确，utf8_general_ci速度比较快。通常情况下，新建数据库时一般选用utf8_general_ci就可以了</li>
+</ul>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><ol>
+<li><p>用户权限赋值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on &#39;表名&#39;.* to &#39;用户名&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="所用"><a href="#所用" class="headerlink" title="所用"></a>所用</h3></li>
+<li><p>普通索引</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#39;表名&#39; ADD INDEX 索引名(&#96;字段名&#96;);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
+<p>数值</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>数据大小</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>十分小的数据库</td>
+<td>1</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>较小数据</td>
+<td>2</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td>中等</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td><strong>标准</strong></td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>较大</td>
+<td>8</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>浮点</td>
+<td>8</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>字符串形式浮点数（精度）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong></p>
+<p>​    int(a)，a只与<code>Zerofill</code>(0填充) 有关</p>
 <blockquote>
-<p>当调代码中不需要额外的同步或协同，这个类都能表现出正确的行为，那么就称这个类是线程安全的</p>
+<p>字符串</p>
 </blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>数据解释</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>定长字符串</td>
+<td>0~255</td>
+</tr>
+<tr>
+<td><strong>varchar</strong></td>
+<td><strong>可变字符串</strong></td>
+<td><strong>0~65535</strong></td>
+</tr>
+<tr>
+<td>tinytext</td>
+<td>微型文本</td>
+<td>2^8-1</td>
+</tr>
+<tr>
+<td><strong>text</strong></td>
+<td><strong>文本串</strong></td>
+<td><strong>2^16-1</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>时间日期</p>
 </blockquote>
-<p>最常见的竞态（race condition）条件类型就是：<code>先检查后执行操作</code>，即通过一个可能失效的观测结果来决定下一步的动作</p>
-<h3 id="内置锁重入"><a href="#内置锁重入" class="headerlink" title="内置锁重入"></a>内置锁重入</h3><p>例子：子类重写父类的<code>synchronized</code>方法，父类方法锁住的对象是谁？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class SynchronizedTest &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">    Cat c &#x3D; new Cat();</span><br><span class="line">    c.fun();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Animal &#123;</span><br><span class="line">  public synchronized void fun() &#123;</span><br><span class="line">    System.out.println(&quot;Animal --&gt;&quot; + this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">  @Override</span><br><span class="line">  public synchronized void fun() &#123;</span><br><span class="line">    super.fun();</span><br><span class="line">    System.out.println(&quot;Cat --&gt;&quot; + this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal --&gt;com.wedcloud.mylearn.syn.Cat@5b2133b1</span><br><span class="line">Cat --&gt;com.wedcloud.mylearn.syn.Cat@5b2133b1</span><br></pre></td></tr></table></figure>
-<p><code>super</code> 和 <code>this</code> 以及父类的 <code>this</code> 居然是同一个引用,所以才会说锁住的是同一个对象。也就是super本身仍然是子类的引用，只不过它可以调用到父类的方法或变量。</p>
-<p><strong><code>this</code> 指的是实例对象，多态原理，父类 <code>this</code> 指向的是子类 <code>Cat</code> 实例</strong></p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>解释</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>日期</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间</td>
+<td>HH:mm:ss</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>日期+时间</td>
+<td>YYYY-MM-DD HH:mm:ss</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>时间戳</td>
+<td>1970.1.1到现在的毫秒数</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>null</p>
+</blockquote>
+<ul>
+<li>没有值</li>
+<li>==不要使用NULL进行运算，NULL参与运算结果始终为NULL==</li>
+</ul>
+<h2 id="数据字段属性"><a href="#数据字段属性" class="headerlink" title="数据字段属性"></a>数据字段属性</h2><ul>
+<li>默认 ，不设置值时，数据库会自动在当前字段添加上默认值</li>
+<li>主键</li>
+<li>非空</li>
+<li>Unsigned 无符号，字段要求是整形</li>
+<li>自增</li>
+<li>Zerofill  不足位数使用0填充，字段要求是整形</li>
+</ul>
+<h2 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [IF NOT EXISTS] &#96;表名&#96; (</span><br><span class="line">  &#96;id&#96; bigint(20) NOT NULL AUTO_INCREMENT COMMENT &#39;ID&#39;,</span><br><span class="line">  &#96;name&#96; varchar(100) COLLATE utf8mb4_bin DEFAULT &#39;匿名&#39; COMMENT &#39;名字&#39;,</span><br><span class="line">  &#96;cancel&#96; int(11) DEFAULT &#39;0&#39; COMMENT &#39;0位删除 1已删除&#39;,</span><br><span class="line">  &#96;created_at&#96; datetime NOT NULL COMMENT &#39;创建时间&#39;,</span><br><span class="line">  &#96;modified_at&#96; datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,</span><br><span class="line">  PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;124 DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_bin ROW_FORMAT&#x3D;COMPACT COMMENT&#x3D;&#39;中文表名&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><code>IF NOT EXISTS</code>  如果不存在</li>
+<li><code>IF EXISTS</code> 如果存在</li>
+<li><code>AUTO_INCREMENT</code> 自增关键字</li>
+<li><code>DEFAULT</code> 默认值设置</li>
+<li><code>COMMENT</code> 备注</li>
+<li><code>PRIMARY KEY (字段名)</code>设置主键</li>
+<li><code>ENGINE</code>设置表引擎</li>
+<li><code>AUTO_INCREMENT</code> 自增主键初始值</li>
+<li><code>CHARSET</code>字符集</li>
+</ul>
+<h3 id="InnoDB和MyISAM"><a href="#InnoDB和MyISAM" class="headerlink" title="InnoDB和MyISAM"></a>InnoDB和MyISAM</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>MyISAM</th>
+<th>InnoDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>数据行锁定</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>表空间大小</td>
+<td>较小</td>
+<td>较大，约MyISAM的2倍</td>
+</tr>
+</tbody></table>
+<p>常规操作：</p>
+<ul>
+<li>MyISAM 节约空间，速度快</li>
+<li>INNODB 安全性高，事务的处理，多表多用户操作</li>
+</ul>
+<h3 id="表的修改与删除"><a href="#表的修改与删除" class="headerlink" title="表的修改与删除"></a>表的修改与删除</h3><ol>
+<li><p>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;旧表名&#96; rename as &#96;新表名&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>增加表字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; add &#96;字段名&#96; &#96;列属性（int（11））&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>修改表字段</p>
+<ul>
+<li><p>修改约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; modify &#96;字段名&#96; &#96;新的列属性&#96;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字段重命名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; change &#96;旧字段名&#96; &#96;新字段名&#96; [&#96;新的列属性&#96;]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="4">
+<li><p>删除表字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; drop &#96;字段名&#96;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="6">
+<li><p>清空表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>delete和truncate区别</p>
+<p>相同点：都不会删除表结构，只会删除数据</p>
+<p>不同： </p>
+<ol>
+<li><p>truncate 会将自增列计数器归零</p>
+<pre><code>2. truncate 不会影响事务，也就是删除了数据无法回滚
+  3. 性能：truncate &gt; delete</code></pre></li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ol>
+<li>去重：<code>distinct</code></li>
+<li>查询版本 : <code>select version()</code></li>
+<li>计算：`select 100*3-1</li>
+</ol>
 
       
 
@@ -246,11 +541,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -262,15 +553,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -325,7 +608,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -339,18 +622,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/03/JMM/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JMM
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java并发编程实战-01</div>
+    <a href="/2020/04/03/JMM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JMM</div>
       <i class="icon-circle-right"></i>
     </a>
   
