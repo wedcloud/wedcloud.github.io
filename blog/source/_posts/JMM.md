@@ -7,7 +7,7 @@ categories:
 ---
 
 ## JMM内存模型
-!["JMM"](/source/image/111.jpg "JMM")
+!["JMM"](/image/111.jpg "JMM")
 
 ## 内存交互操作
 内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）
