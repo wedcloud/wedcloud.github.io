@@ -1,0 +1,80 @@
+---
+title: mysql-join
+tags: [mysql]
+categories:
+  - mysql
+date: 2020-04-08 22:43:49
+---
+
+
+
+## 连表查询
+
+![image-20200408224438052](mysql-join/image-20200408224438052.png)
+
+
+
+### 内连接 `inner join`
+
+![image-20200408224524502](mysql-join/image-20200408224524502.png)
+
+```mysql
+SELECT * FROM TABLE_A  A  INNER JOIN TABLE_B B ON A.KEY = B.KEY
+```
+
+### 左连接 `LEFT JOIN `
+
+![image-20200408224633126](mysql-join/image-20200408224633126.png)
+
+```mysql
+SELECT * FROM TABLE_A A LEFT JOIN TABLE_B B ON A.KEY = B.KEY
+```
+
+
+
+### 右连接 `RIGHT JOIN`
+
+![image-20200408224751488](mysql-join/image-20200408224751488.png)
+
+```mysql
+SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON  A.KEY = B.KEY
+```
+
+
+
+### 外连接 `OUTER JOIN`
+
+![image-20200408225007102](mysql-join/image-20200408225007102.png)
+
+```mysql
+SELECT * FROM TABLE_A A FULL OUTER JOIN TABLE_B B ON A.KEY = B.KEY
+```
+
+
+
+### 左连接 - 内连接 ` LEFT JOIN EXCLUDING INNER JOIN `
+
+![image-20200408225121695](mysql-join/image-20200408225121695.png)
+
+```mysql
+SELECT * FROM TABLE_A A LEFT JOIN TABLE_B ON A.KEY = B.KEY WHERE B.KEY IS NULL
+```
+
+### 右连接 - 内连接 `RIGHT JOIN EXCLUDING INNER JOIN`
+
+![image-20200408225229477](mysql-join/image-20200408225229477.png)
+
+```mysql
+SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON A.KEY = B.KEY WHERE A.KEY IS NULL
+```
+
+
+
+### 外连接 - 内连接 `OUTER JOIN EXCLUDING INNER JOIN`
+
+![image-20200408225340689](mysql-join/image-20200408225340689.png)
+
+```mysql
+SELECT * FROM TABLE_A FULL OUTER JOIN TABLE_B B ON A.KEY = B.KEY WHERE A.KEY IS NULL OR B.KEY IS NULL
+```
+
