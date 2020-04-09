@@ -177,6 +177,2298 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql-索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/">mysql-索引</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/" class="archive-article-date">
+  	<time datetime="2020-04-09T08:40:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
+<li>主键索引（<code>PRIMARY KEY</code>）<ul>
+<li>唯一标识，主键不可重复</li>
+</ul>
+</li>
+<li>唯一索引 (<code>UNIQUE KEY</code>)<ul>
+<li>当前字段不可重复</li>
+</ul>
+</li>
+<li>常规索引 (<code>KEY/INDEX</code>)<ul>
+<li>默认的</li>
+</ul>
+</li>
+<li>全文索引 (<code>FullText</code>)<ul>
+<li>快速定位数据</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mysql-事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/">mysql-事务</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2020-04-09T07:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>特点：同生共死</p>
+<h3 id="事务ACID"><a href="#事务ACID" class="headerlink" title="事务ACID"></a>事务ACID</h3><ol>
+<li><p>原子性（atomicity)</p>
+<p>一个事务要么全部提交成功，要么全部失败回滚，不能只执行其中的一部分操作，这就是事务的原子性</p>
+</li>
+<li><p>一致性（consistency)</p>
+<p>事务的执行不能破坏数据库数据的完整性和一致性，一个事务在执行之前和执行之后，数据库都必须处于一致性状态。</p>
+<p>如果数据库系统在运行过程中发生故障，有些事务尚未完成就被迫中断，这些未完成的事务对数据库所作的修改有一部分已写入物理数据库，这是数据库就处于一种不正确的状态，也就是不一致的状态</p>
+</li>
+<li><p>隔离性（isolation）</p>
+<p>事务的隔离性是指在并发环境中，并发的事务时相互隔离的，一个事务的执行不能不被其他事务干扰。不同的事务并发操作相同的数据时，每个事务都有各自完成的数据空间，即一个事务内部的操作及使用的数据对其他并发事务时隔离的，并发执行的各个事务之间不能相互干扰。</p>
+<p>在标准SQL规范中，定义了<code>4个事务隔离级别</code>，不同的隔离级别对事务的处理不同，分别是：<code>未授权读取</code>，<code>授权读取</code>，<code>可重复读取</code>和<code>串行化</code></p>
+<ul>
+<li><p>读未提交（Read Uncommited）<br>该隔离级别允许脏读取，其隔离级别最低；比如事务A和事务B同时进行，事务A在整个执行阶段，会将某数据的值从1开始一直加到10，然后进行事务提交，此时，事务B能够看到这个数据项在事务A操作过程中的所有中间值（如1变成2，2变成3等），而对这一系列的中间值的读取就是未授权读取</p>
+<blockquote>
+<p>脏读：指一个事务读取了另外一个事务未提交的数据</p>
+</blockquote>
+</li>
+<li><p>授权读取也称为已提交读（Read Commited）<br>授权读取只允许获取已经提交的数据。比如事务A和事务B同时进行，事务A进行+1操作，此时，事务B无法看到这个数据项在事务A操作过程中的所有中间值，只能看到最终的10。另外，如果说有一个事务C，和事务A进行非常类似的操作，只是事务C是将数据项从10加到20，此时事务B也同样可以读取到20，即授权读取允许不可重复读取。</p>
+<blockquote>
+<p>不可重复读：在一个事务内读取表中的某一行数据，多次读取结果不同</p>
+</blockquote>
+</li>
+<li><p>可重复读（Repeatable Read)<br>就是保证在事务处理过程中，多次读取同一个数据时，其值都和事务开始时刻是一致的，因此该事务级别禁止不可重复读取和脏读取，但是有可能出现幻影数据。所谓幻影数据，就是指同样的事务操作，在前后两个时间段内执行对同一个数据项的读取，可能出现不一致的结果。在上面的例子中，可重复读取隔离级别能够保证事务B在第一次事务操作过程中，始终对数据项读取到1，但是在下一次事务操作中，即使事务B（注意，事务名字虽然相同，但是指的是另一个事务操作）采用同样的查询方式，就可能读取到10或20；</p>
+<blockquote>
+<p>虚读（幻读）：是指在一个事务内读取到了别的事务插入的数据，导致前后读取不一致</p>
+</blockquote>
+</li>
+<li><p>串行化<br>是最严格的事务隔离级别，它要求所有事务被串行执行，即事务只能一个接一个的进行处理，不能并发执行。</p>
+</li>
+</ul>
+</li>
+<li><p>持久性（durability）</p>
+<p>一旦事务提交，那么它对数据库中的对应数据的状态的变更就会永久保存到数据库中，不可逆转。–即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其恢复到事务成功结束的状态</p>
+</li>
+</ol>
+<h3 id="mysql-四种隔离级别"><a href="#mysql-四种隔离级别" class="headerlink" title="mysql 四种隔离级别"></a>mysql 四种隔离级别</h3><table>
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Serializable</td>
+<td>可避免脏读、不可重复读、虚读情况的发生。（串行化）</td>
+</tr>
+<tr>
+<td>Repeatable read</td>
+<td>可避免脏读、不可重复读情况的发生。（可重复读）</td>
+</tr>
+<tr>
+<td>Read committed</td>
+<td>可避免脏读情况发生（读已提交）</td>
+</tr>
+<tr>
+<td>Read uncommitted</td>
+<td>最低级别，以上情况均无法保证。(读未提交)</td>
+</tr>
+</tbody></table>
+<h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><p>mysql 是默认开启事务的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set transaction isolation level 设置事务隔离级别</span><br><span class="line">select @@tx_isolation 查询当前事务隔离级别</span><br><span class="line">start transaction 开启事务</span><br><span class="line">commit 提交</span><br><span class="line">rollback 回滚</span><br><span class="line">set autocommit&#x3D;0 -- 0关闭 1开启</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><p>适当的 Connection 方法，比如 <code>setAutoCommit</code> 或 <code>setTransactionIsolation</code></p>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TRANSACTION_SERIALIZABLE</td>
+<td>指示不可以发生脏读、不可重复读和虚读的常量</td>
+</tr>
+<tr>
+<td>TRANSACTION_REPEATABLE_READ</td>
+<td>指示不可以发生脏读和不可重复读的常量；虚读可以发生</td>
+</tr>
+<tr>
+<td>TRANSACTION_READ_UNCOMMITTED</td>
+<td>指示可以发生脏读 (dirty read)、不可重复读和虚读 (phantom read) 的常量</td>
+</tr>
+<tr>
+<td>TRANSACTION_READ_COMMITTED</td>
+<td>指示不可以发生脏读的常量；不可重复读和虚读可以发生</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mysql-聚合函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">mysql-聚合函数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-04-09T03:01:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count(*)</td>
+<td>统计</td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>AVG()</td>
+<td>平均值</td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>count(字段名)，会忽略null值</p>
+<p>count(1/*) 不会忽略null，性能上count(1)和count(*)基本没有差别</p>
+</blockquote>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><ol>
+<li>group by … having …</li>
+</ol>
+<h2 id="MYSQL-MD5"><a href="#MYSQL-MD5" class="headerlink" title="MYSQL MD5"></a>MYSQL MD5</h2><p>主要是增强算法复杂度和不可逆性</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mysql-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/">mysql-函数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-04-09T02:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数和运算符的运用"><a href="#函数和运算符的运用" class="headerlink" title="函数和运算符的运用"></a>函数和运算符的运用</h2><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>名字</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than operator</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>Right shift</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal operator</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than operator</td>
+</tr>
+<tr>
+<td>&lt;&gt;, !=</td>
+<td>Not equal operator</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>Left shift</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal operator</td>
+</tr>
+<tr>
+<td>&lt;=&gt;</td>
+<td>NULL-safe equal to operator</td>
+</tr>
+<tr>
+<td>%, MOD</td>
+<td>Modulo operator</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication operator</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Addition operator</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Minus operator</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Change the sign of the argument</td>
+</tr>
+<tr>
+<td>-&gt;</td>
+<td>Return value from JSON column after evaluating path; equivalent to JSON_EXTRACT()</td>
+</tr>
+<tr>
+<td>-&gt;&gt;</td>
+<td>Return value from JSON column after evaluating path and unquoting the result; equivalent to JSON_UNQUOTE(JSON_EXTRACT()</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division operator</td>
+</tr>
+<tr>
+<td>:=</td>
+<td>Assign a value</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Assign a value (as part of a SET statement, or as part of the SET clause in an UPDATE statement)</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Equal operator</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td>ABS()</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>ACOS()</td>
+<td>返回反余弦</td>
+</tr>
+<tr>
+<td>ADDDATE()</td>
+<td>Add time values (intervals) to a date value</td>
+</tr>
+<tr>
+<td>ADDTIME()</td>
+<td>Add time</td>
+</tr>
+<tr>
+<td>AES_DECRYPT()</td>
+<td>Decrypt using AES</td>
+</tr>
+<tr>
+<td>AES_ENCRYPT()</td>
+<td>Encrypt using AES</td>
+</tr>
+<tr>
+<td>AND, &amp;&amp;</td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td>ANY_VALUE()</td>
+<td>Suppress ONLY_FULL_GROUP_BY value rejection</td>
+</tr>
+<tr>
+<td>ASCII()</td>
+<td>Return numeric value of left-most character</td>
+</tr>
+<tr>
+<td>ASIN()</td>
+<td>Return the arc sine</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_DECRYPT()</td>
+<td>Decrypt ciphertext using private or public key</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_DERIVE()</td>
+<td>Derive symmetric key from asymmetric keys</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_ENCRYPT()</td>
+<td>Encrypt cleartext using private or public key</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_SIGN()</td>
+<td>Generate signature from digest</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_VERIFY()</td>
+<td>Verify that signature matches digest</td>
+</tr>
+<tr>
+<td>ATAN()</td>
+<td>Return the arc tangent</td>
+</tr>
+<tr>
+<td>ATAN2(), ATAN()</td>
+<td>Return the arc tangent of the two arguments</td>
+</tr>
+<tr>
+<td>AVG()</td>
+<td>Return the average value of the argument</td>
+</tr>
+<tr>
+<td>BENCHMARK()</td>
+<td>Repeatedly execute an expression</td>
+</tr>
+<tr>
+<td>BETWEEN … AND …</td>
+<td>Whether a value is within a range of values</td>
+</tr>
+<tr>
+<td>BIN()</td>
+<td>Return a string containing binary representation of a number</td>
+</tr>
+<tr>
+<td>BIN_TO_UUID()</td>
+<td>Convert binary UUID to string</td>
+</tr>
+<tr>
+<td>BINARY</td>
+<td>Cast a string to a binary string</td>
+</tr>
+<tr>
+<td>BIT_AND()</td>
+<td>Return bitwise AND</td>
+</tr>
+<tr>
+<td>BIT_COUNT()</td>
+<td>Return the number of bits that are set</td>
+</tr>
+<tr>
+<td>BIT_LENGTH()</td>
+<td>Return length of argument in bits</td>
+</tr>
+<tr>
+<td>BIT_OR()</td>
+<td>Return bitwise OR</td>
+</tr>
+<tr>
+<td>BIT_XOR()</td>
+<td>Return bitwise XOR</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_COLUMN()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_DATABASE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_TABLE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_VIEW()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CASE</td>
+<td>Case operator</td>
+</tr>
+<tr>
+<td>CAST()</td>
+<td>Cast a value as a certain type</td>
+</tr>
+<tr>
+<td>CEIL()</td>
+<td>Return the smallest integer value not less than the argument</td>
+</tr>
+<tr>
+<td>CEILING</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>CHAR()</td>
+<td>Return the character for each integer passed</td>
+</tr>
+<tr>
+<td>CHAR_LENGTH()</td>
+<td>字符串长度</td>
+</tr>
+<tr>
+<td>CHARACTER_LENGTH()</td>
+<td>Synonym for CHAR_LENGTH()</td>
+</tr>
+<tr>
+<td>CHARSET()</td>
+<td>Return the character set of the argument</td>
+</tr>
+<tr>
+<td>COALESCE()</td>
+<td>Return the first non-NULL argument</td>
+</tr>
+<tr>
+<td>COERCIBILITY()</td>
+<td>Return the collation coercibility value of the string argument</td>
+</tr>
+<tr>
+<td>COLLATION()</td>
+<td>Return the collation of the string argument</td>
+</tr>
+<tr>
+<td>COMPRESS()</td>
+<td>Return result as a binary string</td>
+</tr>
+<tr>
+<td>CONCAT()</td>
+<td>拼接字符串</td>
+</tr>
+<tr>
+<td>CONCAT_WS()</td>
+<td>Return concatenate with separator</td>
+</tr>
+<tr>
+<td>CONNECTION_ID()</td>
+<td>Return the connection ID (thread ID) for the connection</td>
+</tr>
+<tr>
+<td>CONV()</td>
+<td>Convert numbers between different number bases</td>
+</tr>
+<tr>
+<td>CONVERT()</td>
+<td>Cast a value as a certain type</td>
+</tr>
+<tr>
+<td>CONVERT_TZ()</td>
+<td>Convert from one time zone to another</td>
+</tr>
+<tr>
+<td>COS()</td>
+<td>Return the cosine</td>
+</tr>
+<tr>
+<td>COT()</td>
+<td>Return the cotangent</td>
+</tr>
+<tr>
+<td>COUNT()</td>
+<td>Return a count of the number of rows returned</td>
+</tr>
+<tr>
+<td>COUNT(DISTINCT)</td>
+<td>Return the count of a number of different values</td>
+</tr>
+<tr>
+<td>CRC32()</td>
+<td>Compute a cyclic redundancy check value</td>
+</tr>
+<tr>
+<td>CREATE_ASYMMETRIC_PRIV_KEY()</td>
+<td>Create private key</td>
+</tr>
+<tr>
+<td>CREATE_ASYMMETRIC_PUB_KEY()</td>
+<td>Create public key</td>
+</tr>
+<tr>
+<td>CREATE_DH_PARAMETERS()</td>
+<td>Generate shared DH secret</td>
+</tr>
+<tr>
+<td>CREATE_DIGEST()</td>
+<td>Generate digest from string</td>
+</tr>
+<tr>
+<td>CUME_DIST()</td>
+<td>Cumulative distribution value</td>
+</tr>
+<tr>
+<td>CURDATE()</td>
+<td>Return the current date</td>
+</tr>
+<tr>
+<td>CURRENT_DATE()  , CURRENT_DATE</td>
+<td>Synonyms for CURDATE()</td>
+</tr>
+<tr>
+<td>CURRENT_ROLE()</td>
+<td>Return the current active roles</td>
+</tr>
+<tr>
+<td>CURRENT_TIME() , CURRENT_TIME</td>
+<td>Synonyms for CURTIME()</td>
+</tr>
+<tr>
+<td>CURRENT_TIMESTAMP()  , CURRENT_TIMESTAMP</td>
+<td>Synonyms for NOW()</td>
+</tr>
+<tr>
+<td>CURRENT_USER(), CURRENT_USER</td>
+<td>The authenticated user name and host name</td>
+</tr>
+<tr>
+<td>CURTIME()</td>
+<td>Return the current time</td>
+</tr>
+<tr>
+<td>DATABASE()</td>
+<td>Return the default (current) database name</td>
+</tr>
+<tr>
+<td>DATE()</td>
+<td>Extract the date part of a date or datetime expression</td>
+</tr>
+<tr>
+<td>DATE_ADD()</td>
+<td>Add time values (intervals) to a date value</td>
+</tr>
+<tr>
+<td>DATE_FORMAT()</td>
+<td>Format date as specified</td>
+</tr>
+<tr>
+<td>DATE_SUB()</td>
+<td>Subtract a time value (interval) from a date</td>
+</tr>
+<tr>
+<td>DATEDIFF()</td>
+<td>Subtract two dates</td>
+</tr>
+<tr>
+<td>DAY()</td>
+<td>Synonym for DAYOFMONTH()</td>
+</tr>
+<tr>
+<td>DAYNAME()</td>
+<td>Return the name of the weekday</td>
+</tr>
+<tr>
+<td>DAYOFMONTH()</td>
+<td>Return the day of the month (0-31)</td>
+</tr>
+<tr>
+<td>DAYOFWEEK()</td>
+<td>Return the weekday index of the argument</td>
+</tr>
+<tr>
+<td>DAYOFYEAR()</td>
+<td>Return the day of the year (1-366)</td>
+</tr>
+<tr>
+<td>DEFAULT()</td>
+<td>Return the default value for a table column</td>
+</tr>
+<tr>
+<td>DEGREES()</td>
+<td>Convert radians to degrees</td>
+</tr>
+<tr>
+<td>DENSE_RANK()</td>
+<td>Rank of current row within its partition, without gaps</td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>Integer division</td>
+</tr>
+<tr>
+<td>ELT()</td>
+<td>Return string at index number</td>
+</tr>
+<tr>
+<td>EXP()</td>
+<td>Raise to the power of</td>
+</tr>
+<tr>
+<td>EXPORT_SET()</td>
+<td>Return a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string</td>
+</tr>
+<tr>
+<td>EXTRACT()</td>
+<td>Extract part of a date</td>
+</tr>
+<tr>
+<td>ExtractValue()</td>
+<td>Extract a value from an XML string using XPath notation</td>
+</tr>
+<tr>
+<td>FIELD()</td>
+<td>Index (position) of first argument in subsequent arguments</td>
+</tr>
+<tr>
+<td>FIND_IN_SET()</td>
+<td>Index (position) of first argument within second argument</td>
+</tr>
+<tr>
+<td>FIRST_VALUE()</td>
+<td>Value of argument from first row of window frame</td>
+</tr>
+<tr>
+<td>FLOOR()</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>FORMAT()</td>
+<td>Return a number formatted to specified number of decimal places</td>
+</tr>
+<tr>
+<td>FORMAT_BYTES()</td>
+<td>(introduced 8.0.16)    Convert byte count to value with units</td>
+</tr>
+<tr>
+<td>FORMAT_PICO_TIME()</td>
+<td>(introduced 8.0.16)    Convert time in picoseconds to value with units</td>
+</tr>
+<tr>
+<td>FOUND_ROWS()</td>
+<td>For a SELECT with a LIMIT clause, the number of rows that would be returned were there no LIMIT clause</td>
+</tr>
+<tr>
+<td>FROM_BASE64()</td>
+<td>Decode base64 encoded string and return result</td>
+</tr>
+<tr>
+<td>FROM_DAYS()</td>
+<td>Convert a day number to a date</td>
+</tr>
+<tr>
+<td>FROM_UNIXTIME()</td>
+<td>Format Unix timestamp as a date</td>
+</tr>
+<tr>
+<td>GeomCollection()</td>
+<td>Construct geometry collection from geometries</td>
+</tr>
+<tr>
+<td>GeometryCollection()</td>
+<td>Construct geometry collection from geometries</td>
+</tr>
+<tr>
+<td>GET_DD_COLUMN_PRIVILEGES()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_DD_CREATE_OPTIONS()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_DD_INDEX_SUB_PART_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_FORMAT()</td>
+<td>Return a date format string</td>
+</tr>
+<tr>
+<td>GET_LOCK()</td>
+<td>Get a named lock</td>
+</tr>
+<tr>
+<td>GREATEST()</td>
+<td>Return the largest argument</td>
+</tr>
+<tr>
+<td>GROUP_CONCAT()</td>
+<td>Return a concatenated string</td>
+</tr>
+<tr>
+<td>GROUPING()</td>
+<td>Distinguish super-aggregate ROLLUP rows from regular rows</td>
+</tr>
+<tr>
+<td>GTID_SUBSET()</td>
+<td>Return true if all GTIDs in subset are also in set; otherwise false.</td>
+</tr>
+<tr>
+<td>GTID_SUBTRACT()</td>
+<td>Return all GTIDs in set that are not in subset.</td>
+</tr>
+<tr>
+<td>HEX()</td>
+<td>Hexadecimal representation of decimal or string value</td>
+</tr>
+<tr>
+<td>HOUR()</td>
+<td>Extract the hour</td>
+</tr>
+<tr>
+<td>ICU_VERSION()</td>
+<td>ICU library version</td>
+</tr>
+<tr>
+<td>IF()</td>
+<td>If/else construct</td>
+</tr>
+<tr>
+<td>IFNULL()</td>
+<td>Null if/else construct</td>
+</tr>
+<tr>
+<td>IN()</td>
+<td>Whether a value is within a set of values</td>
+</tr>
+<tr>
+<td>INET_ATON()</td>
+<td>Return the numeric value of an IP address</td>
+</tr>
+<tr>
+<td>INET_NTOA()</td>
+<td>Return the IP address from a numeric value</td>
+</tr>
+<tr>
+<td>INET6_ATON()</td>
+<td>Return the numeric value of an IPv6 address</td>
+</tr>
+<tr>
+<td>INET6_NTOA()</td>
+<td>Return the IPv6 address from a numeric value</td>
+</tr>
+<tr>
+<td>INSERT()</td>
+<td>Insert substring at specified position up to specified number of characters</td>
+</tr>
+<tr>
+<td>INSTR()</td>
+<td>Return the index of the first occurrence of substring</td>
+</tr>
+<tr>
+<td>INTERNAL_AUTO_INCREMENT()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_AVG_ROW_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_CHECK_TIME()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_CHECKSUM()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DATA_FREE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DATA_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DD_CHAR_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_COMMENT_OR_ERROR()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_ENABLED_ROLE_JSON()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_HOSTNAME()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_USERNAME()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_VIEW_WARNING_OR_ERROR()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_INDEX_COLUMN_CARDINALITY()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_INDEX_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_IS_ENABLED_ROLE()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_IS_MANDATORY_ROLE()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_KEYS_DISABLED()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_MAX_DATA_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_TABLE_ROWS()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_UPDATE_TIME()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERVAL()</td>
+<td>Return the index of the argument that is less than the first argument</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>Test a value against a boolean</td>
+</tr>
+<tr>
+<td>IS_FREE_LOCK()</td>
+<td>Whether the named lock is free</td>
+</tr>
+<tr>
+<td>IS_IPV4()</td>
+<td>Whether argument is an IPv4 address</td>
+</tr>
+<tr>
+<td>IS_IPV4_COMPAT()</td>
+<td>Whether argument is an IPv4-compatible address</td>
+</tr>
+<tr>
+<td>IS_IPV4_MAPPED()</td>
+<td>Whether argument is an IPv4-mapped address</td>
+</tr>
+<tr>
+<td>IS_IPV6()</td>
+<td>Whether argument is an IPv6 address</td>
+</tr>
+<tr>
+<td>IS NOT</td>
+<td>Test a value against a boolean</td>
+</tr>
+<tr>
+<td>IS NOT NULL</td>
+<td>NOT NULL value test</td>
+</tr>
+<tr>
+<td>IS NULL</td>
+<td>NULL value test</td>
+</tr>
+<tr>
+<td>IS_USED_LOCK()</td>
+<td>Whether the named lock is in use; return connection identifier if true</td>
+</tr>
+<tr>
+<td>IS_UUID()</td>
+<td>Whether argument is a valid UUID</td>
+</tr>
+<tr>
+<td>ISNULL()</td>
+<td>Test whether the argument is NULL</td>
+</tr>
+<tr>
+<td>JSON_ARRAY()</td>
+<td>Create JSON array</td>
+</tr>
+<tr>
+<td>JSON_ARRAY_APPEND()</td>
+<td>Append data to JSON document</td>
+</tr>
+<tr>
+<td>JSON_ARRAY_INSERT()</td>
+<td>Insert into JSON array</td>
+</tr>
+<tr>
+<td>JSON_ARRAYAGG()</td>
+<td>Return result set as a single JSON array</td>
+</tr>
+<tr>
+<td>JSON_CONTAINS()</td>
+<td>Whether JSON document contains specific object at path</td>
+</tr>
+<tr>
+<td>JSON_CONTAINS_PATH()</td>
+<td>Whether JSON document contains any data at path</td>
+</tr>
+<tr>
+<td>JSON_DEPTH()</td>
+<td>Maximum depth of JSON document</td>
+</tr>
+<tr>
+<td>JSON_EXTRACT()</td>
+<td>Return data from JSON document</td>
+</tr>
+<tr>
+<td>JSON_INSERT()</td>
+<td>Insert data into JSON document</td>
+</tr>
+<tr>
+<td>JSON_KEYS()</td>
+<td>Array of keys from JSON document</td>
+</tr>
+<tr>
+<td>JSON_LENGTH()</td>
+<td>Number of elements in JSON document</td>
+</tr>
+<tr>
+<td>JSON_MERGE()</td>
+<td>(deprecated)    Merge JSON documents, preserving duplicate keys. Deprecated synonym for JSON_MERGE_PRESERVE()</td>
+</tr>
+<tr>
+<td>JSON_MERGE_PATCH()</td>
+<td>Merge JSON documents, replacing values of duplicate keys</td>
+</tr>
+<tr>
+<td>JSON_MERGE_PRESERVE()</td>
+<td>Merge JSON documents, preserving duplicate keys</td>
+</tr>
+<tr>
+<td>JSON_OBJECT()</td>
+<td>Create JSON object</td>
+</tr>
+<tr>
+<td>JSON_OBJECTAGG()</td>
+<td>Return result set as a single JSON object</td>
+</tr>
+<tr>
+<td>JSON_OVERLAPS()</td>
+<td>(introduced 8.0.17)    Compares two JSON documents, returns TRUE (1) if these have any key-value pairs or array elements in common, otherwise FALSE (0)</td>
+</tr>
+<tr>
+<td>JSON_PRETTY()</td>
+<td>Print a JSON document in human-readable format</td>
+</tr>
+<tr>
+<td>JSON_QUOTE()</td>
+<td>Quote JSON document</td>
+</tr>
+<tr>
+<td>JSON_REMOVE()</td>
+<td>Remove data from JSON document</td>
+</tr>
+<tr>
+<td>JSON_REPLACE()</td>
+<td>Replace values in JSON document</td>
+</tr>
+<tr>
+<td>JSON_SCHEMA_VALID()</td>
+<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns TRUE/1 if document validates against schema, or FALSE/0 if it does not</td>
+</tr>
+<tr>
+<td>JSON_SCHEMA_VALIDATION_REPORT()</td>
+<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns report in JSON format on outcome on validation including success or failure and reasons for failure</td>
+</tr>
+<tr>
+<td>JSON_SEARCH()</td>
+<td>Path to value within JSON document</td>
+</tr>
+<tr>
+<td>JSON_SET()</td>
+<td>Insert data into JSON document</td>
+</tr>
+<tr>
+<td>JSON_STORAGE_FREE()</td>
+<td>Freed space within binary representation of JSON column value following partial update</td>
+</tr>
+<tr>
+<td>JSON_STORAGE_SIZE()</td>
+<td>Space used for storage of binary representation of a JSON document</td>
+</tr>
+<tr>
+<td>JSON_TABLE()</td>
+<td>Return data from a JSON expression as a relational table</td>
+</tr>
+<tr>
+<td>JSON_TYPE()</td>
+<td>Type of JSON value</td>
+</tr>
+<tr>
+<td>JSON_UNQUOTE()</td>
+<td>Unquote JSON value</td>
+</tr>
+<tr>
+<td>JSON_VALID()</td>
+<td>Whether JSON value is valid</td>
+</tr>
+<tr>
+<td>JSON_VALUE()</td>
+<td>(introduced 8.0.21)    Extract value from JSON document at location pointed to by path provided; return this value as VARCHAR(512) or specified type</td>
+</tr>
+<tr>
+<td>LAG()</td>
+<td>Value of argument from row lagging current row within partition</td>
+</tr>
+<tr>
+<td>LAST_DAY</td>
+<td>Return the last day of the month for the argument</td>
+</tr>
+<tr>
+<td>LAST_INSERT_ID()</td>
+<td>Value of the AUTOINCREMENT column for the last INSERT</td>
+</tr>
+<tr>
+<td>LAST_VALUE()</td>
+<td>Value of argument from last row of window frame</td>
+</tr>
+<tr>
+<td>LCASE()</td>
+<td>Synonym for LOWER()</td>
+</tr>
+<tr>
+<td>LEAD()</td>
+<td>Value of argument from row leading current row within partition</td>
+</tr>
+<tr>
+<td>LEAST()</td>
+<td>Return the smallest argument</td>
+</tr>
+<tr>
+<td>LEFT()</td>
+<td>Return the leftmost number of characters as specified</td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>Return the length of a string in bytes</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td>Simple pattern matching</td>
+</tr>
+<tr>
+<td>LineString()</td>
+<td>Construct LineString from Point values</td>
+</tr>
+<tr>
+<td>LN()</td>
+<td>Return the natural logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOAD_FILE()</td>
+<td>Load the named file</td>
+</tr>
+<tr>
+<td>LOCALTIME()   , LOCALTIME</td>
+<td>Synonym for NOW()</td>
+</tr>
+<tr>
+<td>LOCALTIMESTAMP, LOCALTIMESTAMP()</td>
+<td>Synonym for NOW()</td>
+</tr>
+<tr>
+<td>LOCATE()</td>
+<td>Return the position of the first occurrence of substring</td>
+</tr>
+<tr>
+<td>LOG()</td>
+<td>Return the natural logarithm of the first argument</td>
+</tr>
+<tr>
+<td>LOG10()</td>
+<td>Return the base-10 logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOG2()</td>
+<td>Return the base-2 logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>Return the argument in lowercase</td>
+</tr>
+<tr>
+<td>LPAD()</td>
+<td>Return the string argument, left-padded with the specified string</td>
+</tr>
+<tr>
+<td>LTRIM()</td>
+<td>Remove leading spaces</td>
+</tr>
+<tr>
+<td>MAKE_SET()</td>
+<td>Return a set of comma-separated strings that have the corresponding bit in bits set</td>
+</tr>
+<tr>
+<td>MAKEDATE()</td>
+<td>Create a date from the year and day of year</td>
+</tr>
+<tr>
+<td>MAKETIME()</td>
+<td>Create time from hour, minute, second</td>
+</tr>
+<tr>
+<td>MASTER_POS_WAIT()</td>
+<td>Block until the slave has read and applied all updates up to the specified position</td>
+</tr>
+<tr>
+<td>MATCH</td>
+<td>Perform full-text search</td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>Return the maximum value</td>
+</tr>
+<tr>
+<td>MBRContains()</td>
+<td>Whether MBR of one geometry contains MBR of another</td>
+</tr>
+<tr>
+<td>MBRCoveredBy()</td>
+<td>Whether one MBR is covered by another</td>
+</tr>
+<tr>
+<td>MBRCovers()</td>
+<td>Whether one MBR covers another</td>
+</tr>
+<tr>
+<td>MBRDisjoint()</td>
+<td>Whether MBRs of two geometries are disjoint</td>
+</tr>
+<tr>
+<td>MBREquals()</td>
+<td>Whether MBRs of two geometries are equal</td>
+</tr>
+<tr>
+<td>MBRIntersects()</td>
+<td>Whether MBRs of two geometries intersect</td>
+</tr>
+<tr>
+<td>MBROverlaps()</td>
+<td>Whether MBRs of two geometries overlap</td>
+</tr>
+<tr>
+<td>MBRTouches()</td>
+<td>Whether MBRs of two geometries touch</td>
+</tr>
+<tr>
+<td>MBRWithin()</td>
+<td>Whether MBR of one geometry is within MBR of another</td>
+</tr>
+<tr>
+<td>MD5()</td>
+<td>Calculate MD5 checksum</td>
+</tr>
+<tr>
+<td>MEMBER OF()</td>
+<td>(introduced 8.0.17)    Returns true (1) if first operand matches any element of JSON array passed as second operand, otherwise returns false (0)</td>
+</tr>
+<tr>
+<td>MICROSECOND()</td>
+<td>Return the microseconds from argument</td>
+</tr>
+<tr>
+<td>MID()</td>
+<td>Return a substring starting from the specified position</td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>Return the minimum value</td>
+</tr>
+<tr>
+<td>MINUTE()</td>
+<td>Return the minute from the argument</td>
+</tr>
+<tr>
+<td>MOD()</td>
+<td>Return the remainder</td>
+</tr>
+<tr>
+<td>MONTH()</td>
+<td>Return the month from the date passed</td>
+</tr>
+<tr>
+<td>MONTHNAME()</td>
+<td>Return the name of the month</td>
+</tr>
+<tr>
+<td>MultiLineString()</td>
+<td>Contruct MultiLineString from LineString values</td>
+</tr>
+<tr>
+<td>MultiPoint()</td>
+<td>Construct MultiPoint from Point values</td>
+</tr>
+<tr>
+<td>MultiPolygon()</td>
+<td>Construct MultiPolygon from Polygon values</td>
+</tr>
+<tr>
+<td>NAME_CONST()</td>
+<td>Cause the column to have the given name</td>
+</tr>
+<tr>
+<td>NOT, !</td>
+<td>Negates value</td>
+</tr>
+<tr>
+<td>NOT BETWEEN … AND …</td>
+<td>Whether a value is not within a range of values</td>
+</tr>
+<tr>
+<td>NOT IN()</td>
+<td>Whether a value is not within a set of values</td>
+</tr>
+<tr>
+<td>NOT LIKE</td>
+<td>Negation of simple pattern matching</td>
+</tr>
+<tr>
+<td>NOT REGEXP</td>
+<td>Negation of REGEXP</td>
+</tr>
+<tr>
+<td>NOW()</td>
+<td>Return the current date and time</td>
+</tr>
+<tr>
+<td>NTH_VALUE()</td>
+<td>Value of argument from N-th row of window frame</td>
+</tr>
+<tr>
+<td>NTILE()</td>
+<td>Bucket number of current row within its partition.</td>
+</tr>
+<tr>
+<td>NULLIF()</td>
+<td>Return NULL if expr1 = expr2</td>
+</tr>
+<tr>
+<td>OCT()</td>
+<td>Return a string containing octal representation of a number</td>
+</tr>
+<tr>
+<td>OCTET_LENGTH()</td>
+<td>Synonym for LENGTH()</td>
+</tr>
+<tr>
+<td>OR, ||</td>
+<td>Logical OR</td>
+</tr>
+<tr>
+<td>ORD()</td>
+<td>Return character code for leftmost character of the argument</td>
+</tr>
+<tr>
+<td>PERCENT_RANK()</td>
+<td>Percentage rank value</td>
+</tr>
+<tr>
+<td>PERIOD_ADD()</td>
+<td>Add a period to a year-month</td>
+</tr>
+<tr>
+<td>PERIOD_DIFF()</td>
+<td>Return the number of months between periods</td>
+</tr>
+<tr>
+<td>PI()</td>
+<td>Return the value of pi</td>
+</tr>
+<tr>
+<td>Point()</td>
+<td>Construct Point from coordinates</td>
+</tr>
+<tr>
+<td>Polygon()</td>
+<td>Construct Polygon from LineString arguments</td>
+</tr>
+<tr>
+<td>POSITION()</td>
+<td>Synonym for LOCATE()</td>
+</tr>
+<tr>
+<td>POW()</td>
+<td>Return the argument raised to the specified power</td>
+</tr>
+<tr>
+<td>POWER()</td>
+<td>Return the argument raised to the specified power</td>
+</tr>
+<tr>
+<td>PS_CURRENT_THREAD_ID()</td>
+<td>(introduced 8.0.16)    Performance Schema thread ID for current thread</td>
+</tr>
+<tr>
+<td>PS_THREAD_ID()</td>
+<td>(introduced 8.0.16)    Performance Schema thread ID for given thread</td>
+</tr>
+<tr>
+<td>QUARTER()</td>
+<td>Return the quarter from a date argument</td>
+</tr>
+<tr>
+<td>QUOTE()</td>
+<td>Escape the argument for use in an SQL statement</td>
+</tr>
+<tr>
+<td>RADIANS()</td>
+<td>Return argument converted to radians</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>返回0~1 之间的随机数</td>
+</tr>
+<tr>
+<td>RANDOM_BYTES()</td>
+<td>Return a random byte vector</td>
+</tr>
+<tr>
+<td>RANK()</td>
+<td>Rank of current row within its partition, with gaps</td>
+</tr>
+<tr>
+<td>REGEXP</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_INSTR()</td>
+<td>Starting index of substring matching regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_LIKE()</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_REPLACE()</td>
+<td>Replace substrings matching regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_SUBSTR()</td>
+<td>Return substring matching regular expression</td>
+</tr>
+<tr>
+<td>RELEASE_ALL_LOCKS()</td>
+<td>Release all current named locks</td>
+</tr>
+<tr>
+<td>RELEASE_LOCK()</td>
+<td>Release the named lock</td>
+</tr>
+<tr>
+<td>REPEAT()</td>
+<td>Repeat a string the specified number of times</td>
+</tr>
+<tr>
+<td>REPLACE()</td>
+<td>Replace occurrences of a specified string</td>
+</tr>
+<tr>
+<td>REVERSE()</td>
+<td>Reverse the characters in a string</td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>Return the specified rightmost number of characters</td>
+</tr>
+<tr>
+<td>RLIKE</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>ROLES_GRAPHML()</td>
+<td>Return a GraphML document representing memory role subgraphs</td>
+</tr>
+<tr>
+<td>ROUND()</td>
+<td>Round the argument</td>
+</tr>
+<tr>
+<td>ROW_COUNT()</td>
+<td>The number of rows updated</td>
+</tr>
+<tr>
+<td>ROW_NUMBER()</td>
+<td>Number of current row within its partition</td>
+</tr>
+<tr>
+<td>RPAD()</td>
+<td>Append string the specified number of times</td>
+</tr>
+<tr>
+<td>RTRIM()</td>
+<td>Remove trailing spaces</td>
+</tr>
+<tr>
+<td>SCHEMA()</td>
+<td>Synonym for DATABASE()</td>
+</tr>
+<tr>
+<td>SEC_TO_TIME()</td>
+<td>Converts seconds to ‘hh:mm:ss’ format</td>
+</tr>
+<tr>
+<td>SECOND()</td>
+<td>Return the second (0-59)</td>
+</tr>
+<tr>
+<td>SESSION_USER()</td>
+<td>Synonym for USER()</td>
+</tr>
+<tr>
+<td>SHA1() , SHA()</td>
+<td>Calculate an SHA-1 160-bit checksum</td>
+</tr>
+<tr>
+<td>SHA2()</td>
+<td>Calculate an SHA-2 checksum</td>
+</tr>
+<tr>
+<td>SIGN()</td>
+<td>Return the sign of the argument</td>
+</tr>
+<tr>
+<td>SIN()</td>
+<td>Return the sine of the argument</td>
+</tr>
+<tr>
+<td>SLEEP()</td>
+<td>Sleep for a number of seconds</td>
+</tr>
+<tr>
+<td>SOUNDEX()</td>
+<td>Return a soundex string</td>
+</tr>
+<tr>
+<td>SOUNDS LIKE    Compare sounds</td>
+<td></td>
+</tr>
+<tr>
+<td>SPACE()</td>
+<td>Return a string of the specified number of spaces</td>
+</tr>
+<tr>
+<td>SQRT()</td>
+<td>Return the square root of the argument</td>
+</tr>
+<tr>
+<td>ST_Area()</td>
+<td>Return Polygon or MultiPolygon area</td>
+</tr>
+<tr>
+<td>ST_AsBinary()  , ST_AsWKB()</td>
+<td>Convert from internal geometry format to WKB</td>
+</tr>
+<tr>
+<td>ST_AsGeoJSON()</td>
+<td>Generate GeoJSON object from geometry</td>
+</tr>
+<tr>
+<td>ST_AsText() , ST_AsWKT()</td>
+<td>Convert from internal geometry format to WKT</td>
+</tr>
+<tr>
+<td>ST_Buffer()</td>
+<td>Return geometry of points within given distance from geometry</td>
+</tr>
+<tr>
+<td>ST_Buffer_Strategy()</td>
+<td>Produce strategy option for ST_Buffer()</td>
+</tr>
+<tr>
+<td>ST_Centroid()</td>
+<td>Return centroid as a point</td>
+</tr>
+<tr>
+<td>ST_Contains()</td>
+<td>Whether one geometry contains another</td>
+</tr>
+<tr>
+<td>ST_ConvexHull()</td>
+<td>Return convex hull of geometry</td>
+</tr>
+<tr>
+<td>ST_Crosses()</td>
+<td>Whether one geometry crosses another</td>
+</tr>
+<tr>
+<td>ST_Difference()</td>
+<td>Return point set difference of two geometries</td>
+</tr>
+<tr>
+<td>ST_Dimension()</td>
+<td>Dimension of geometry</td>
+</tr>
+<tr>
+<td>ST_Disjoint()</td>
+<td>Whether one geometry is disjoint from another</td>
+</tr>
+<tr>
+<td>ST_Distance()</td>
+<td>The distance of one geometry from another</td>
+</tr>
+<tr>
+<td>ST_Distance_Sphere()</td>
+<td>Minimum distance on earth between two geometries</td>
+</tr>
+<tr>
+<td>ST_EndPoint()</td>
+<td>End Point of LineString</td>
+</tr>
+<tr>
+<td>ST_Envelope()</td>
+<td>Return MBR of geometry</td>
+</tr>
+<tr>
+<td>ST_Equals()</td>
+<td>Whether one geometry is equal to another</td>
+</tr>
+<tr>
+<td>ST_ExteriorRing()</td>
+<td>Return exterior ring of Polygon</td>
+</tr>
+<tr>
+<td>ST_GeoHash()</td>
+<td>Produce a geohash value</td>
+</tr>
+<tr>
+<td>ST_GeomCollFromText(), ST_GeometryCollectionFromText(), ST_GeomCollFromTxt()</td>
+<td>Return geometry collection from WKT</td>
+</tr>
+<tr>
+<td>ST_GeomCollFromWKB(), ST_GeometryCollectionFromWKB()</td>
+<td>Return geometry collection from WKB</td>
+</tr>
+<tr>
+<td>ST_GeometryN()</td>
+<td>Return N-th geometry from geometry collection</td>
+</tr>
+<tr>
+<td>ST_GeometryType()</td>
+<td>Return name of geometry type</td>
+</tr>
+<tr>
+<td>ST_GeomFromGeoJSON()</td>
+<td>Generate geometry from GeoJSON object</td>
+</tr>
+<tr>
+<td>ST_GeomFromText() , ST_GeometryFromText()</td>
+<td>Return geometry from WKT</td>
+</tr>
+<tr>
+<td>ST_GeomFromWKB(), ST_GeometryFromWKB()</td>
+<td>Return geometry from WKB</td>
+</tr>
+<tr>
+<td>ST_InteriorRingN()</td>
+<td>Return N-th interior ring of Polygon</td>
+</tr>
+<tr>
+<td>ST_Intersection()</td>
+<td>Return point set intersection of two geometries</td>
+</tr>
+<tr>
+<td>ST_Intersects()</td>
+<td>Whether one geometry intersects another</td>
+</tr>
+<tr>
+<td>ST_IsClosed()</td>
+<td>Whether a geometry is closed and simple</td>
+</tr>
+<tr>
+<td>ST_IsEmpty()</td>
+<td>Placeholder function</td>
+</tr>
+<tr>
+<td>ST_IsSimple()</td>
+<td>Whether a geometry is simple</td>
+</tr>
+<tr>
+<td>ST_IsValid()</td>
+<td>Whether a geometry is valid</td>
+</tr>
+<tr>
+<td>ST_LatFromGeoHash()</td>
+<td>Return latitude from geohash value</td>
+</tr>
+<tr>
+<td>ST_Latitude()</td>
+<td>(introduced 8.0.12)    Return latitude of Point</td>
+</tr>
+<tr>
+<td>ST_Length()</td>
+<td>Return length of LineString</td>
+</tr>
+<tr>
+<td>ST_LineFromText() , ST_LineStringFromText()</td>
+<td>Construct LineString from WKT</td>
+</tr>
+<tr>
+<td>ST_LineFromWKB() , ST_LineStringFromWKB()</td>
+<td>Construct LineString from WKB</td>
+</tr>
+<tr>
+<td>ST_LongFromGeoHash()</td>
+<td>Return longitude from geohash value</td>
+</tr>
+<tr>
+<td>ST_Longitude()</td>
+<td>(introduced 8.0.12)    Return longitude of Point</td>
+</tr>
+<tr>
+<td>ST_MakeEnvelope()</td>
+<td>Rectangle around two points</td>
+</tr>
+<tr>
+<td>ST_MLineFromText()  , ST_MultiLineStringFromText()</td>
+<td>Construct MultiLineString from WKT</td>
+</tr>
+<tr>
+<td>ST_MLineFromWKB()  , ST_MultiLineStringFromWKB()</td>
+<td>Construct MultiLineString from WKB</td>
+</tr>
+<tr>
+<td>ST_MPointFromText()  , ST_MultiPointFromText()</td>
+<td>Construct MultiPoint from WKT</td>
+</tr>
+<tr>
+<td>ST_MPointFromWKB()  , ST_MultiPointFromWKB()</td>
+<td>Construct MultiPoint from WKB</td>
+</tr>
+<tr>
+<td>ST_MPolyFromText()  , ST_MultiPolygonFromText()</td>
+<td>Construct MultiPolygon from WKT</td>
+</tr>
+<tr>
+<td>ST_MPolyFromWKB()  , ST_MultiPolygonFromWKB()</td>
+<td>Construct MultiPolygon from WKB</td>
+</tr>
+<tr>
+<td>ST_NumGeometries()</td>
+<td>Return number of geometries in geometry collection</td>
+</tr>
+<tr>
+<td>ST_NumInteriorRing()  , ST_NumInteriorRings()</td>
+<td>Return number of interior rings in Polygon</td>
+</tr>
+<tr>
+<td>ST_NumPoints()</td>
+<td>Return number of points in LineString</td>
+</tr>
+<tr>
+<td>ST_Overlaps()</td>
+<td>Whether one geometry overlaps another</td>
+</tr>
+<tr>
+<td>ST_PointFromGeoHash()</td>
+<td>Convert geohash value to POINT value</td>
+</tr>
+<tr>
+<td>ST_PointFromText()</td>
+<td>Construct Point from WKT</td>
+</tr>
+<tr>
+<td>ST_PointFromWKB()</td>
+<td>Construct Point from WKB</td>
+</tr>
+<tr>
+<td>ST_PointN()</td>
+<td>Return N-th point from LineString</td>
+</tr>
+<tr>
+<td>ST_PolyFromText()  , ST_PolygonFromText()</td>
+<td>Construct Polygon from WKT</td>
+</tr>
+<tr>
+<td>ST_PolyFromWKB()  , ST_PolygonFromWKB()</td>
+<td>Construct Polygon from WKB</td>
+</tr>
+<tr>
+<td>ST_Simplify()</td>
+<td>Return simplified geometry</td>
+</tr>
+<tr>
+<td>ST_SRID()</td>
+<td>Return spatial reference system ID for geometry</td>
+</tr>
+<tr>
+<td>ST_StartPoint()</td>
+<td>Start Point of LineString</td>
+</tr>
+<tr>
+<td>ST_SwapXY()</td>
+<td>Return argument with X/Y coordinates swapped</td>
+</tr>
+<tr>
+<td>ST_SymDifference()</td>
+<td>Return point set symmetric difference of two geometries</td>
+</tr>
+<tr>
+<td>ST_Touches()</td>
+<td>Whether one geometry touches another</td>
+</tr>
+<tr>
+<td>ST_Transform()</td>
+<td>(introduced 8.0.13)    Transform coordinates of geometry</td>
+</tr>
+<tr>
+<td>ST_Union()</td>
+<td>Return point set union of two geometries</td>
+</tr>
+<tr>
+<td>ST_Validate()</td>
+<td>Return validated geometry</td>
+</tr>
+<tr>
+<td>ST_Within()</td>
+<td>Whether one geometry is within another</td>
+</tr>
+<tr>
+<td>ST_X()</td>
+<td>Return X coordinate of Point</td>
+</tr>
+<tr>
+<td>ST_Y()</td>
+<td>Return Y coordinate of Point</td>
+</tr>
+<tr>
+<td>STATEMENT_DIGEST()</td>
+<td>Compute statement digest hash value</td>
+</tr>
+<tr>
+<td>STATEMENT_DIGEST_TEXT()</td>
+<td>Compute normalized statement digest</td>
+</tr>
+<tr>
+<td>STD()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV_POP()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV_SAMP()</td>
+<td>Return the sample standard deviation</td>
+</tr>
+<tr>
+<td>STR_TO_DATE()</td>
+<td>Convert a string to a date</td>
+</tr>
+<tr>
+<td>STRCMP()</td>
+<td>Compare two strings</td>
+</tr>
+<tr>
+<td>SUBDATE()</td>
+<td>Synonym for DATE_SUB()</td>
+</tr>
+<tr>
+<td>SUBSTR()</td>
+<td>Return the substring as specified</td>
+</tr>
+<tr>
+<td>SUBSTRING()</td>
+<td>Return the substring as specified</td>
+</tr>
+<tr>
+<td>SUBSTRING_INDEX()</td>
+<td>Return a substring from a string before the specified number of occurrences of the delimiter</td>
+</tr>
+<tr>
+<td>SUBTIME()</td>
+<td>Subtract times</td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>Return the sum</td>
+</tr>
+<tr>
+<td>SYSDATE()</td>
+<td>Return the time at which the function executes</td>
+</tr>
+<tr>
+<td>SYSTEM_USER()</td>
+<td>Synonym for USER()</td>
+</tr>
+<tr>
+<td>TAN()</td>
+<td>Return the tangent of the argument</td>
+</tr>
+<tr>
+<td>TIME()</td>
+<td>Extract the time portion of the expression passed</td>
+</tr>
+<tr>
+<td>TIME_FORMAT()</td>
+<td>Format as time</td>
+</tr>
+<tr>
+<td>TIME_TO_SEC()</td>
+<td>Return the argument converted to seconds</td>
+</tr>
+<tr>
+<td>TIMEDIFF()</td>
+<td>Subtract time</td>
+</tr>
+<tr>
+<td>TIMESTAMP()</td>
+<td>With a single argument, this function returns the date or datetime expression; with two arguments, the sum of the arguments</td>
+</tr>
+<tr>
+<td>TIMESTAMPADD()</td>
+<td>Add an interval to a datetime expression</td>
+</tr>
+<tr>
+<td>TIMESTAMPDIFF()</td>
+<td>Subtract an interval from a datetime expression</td>
+</tr>
+<tr>
+<td>TO_BASE64()</td>
+<td>Return the argument converted to a base-64 string</td>
+</tr>
+<tr>
+<td>TO_DAYS()</td>
+<td>Return the date argument converted to days</td>
+</tr>
+<tr>
+<td>TO_SECONDS()</td>
+<td>Return the date or datetime argument converted to seconds since Year 0</td>
+</tr>
+<tr>
+<td>TRIM()</td>
+<td>Remove leading and trailing spaces</td>
+</tr>
+<tr>
+<td>TRUNCATE()</td>
+<td>Truncate to specified number of decimal places</td>
+</tr>
+<tr>
+<td>UCASE()</td>
+<td>Synonym for UPPER()</td>
+</tr>
+<tr>
+<td>UNCOMPRESS()</td>
+<td>Uncompress a string compressed</td>
+</tr>
+<tr>
+<td>UNCOMPRESSED_LENGTH()</td>
+<td>Return the length of a string before compression</td>
+</tr>
+<tr>
+<td>UNHEX()</td>
+<td>Return a string containing hex representation of a number</td>
+</tr>
+<tr>
+<td>UNIX_TIMESTAMP()</td>
+<td>Return a Unix timestamp</td>
+</tr>
+<tr>
+<td>UpdateXML()</td>
+<td>Return replaced XML fragment</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>Convert to uppercase</td>
+</tr>
+<tr>
+<td>USER()</td>
+<td>The user name and host name provided by the client</td>
+</tr>
+<tr>
+<td>UTC_DATE()</td>
+<td>Return the current UTC date</td>
+</tr>
+<tr>
+<td>UTC_TIME()</td>
+<td>Return the current UTC time</td>
+</tr>
+<tr>
+<td>UTC_TIMESTAMP()</td>
+<td>Return the current UTC date and time</td>
+</tr>
+<tr>
+<td>UUID()</td>
+<td>Return a Universal Unique Identifier (UUID)</td>
+</tr>
+<tr>
+<td>UUID_SHORT()</td>
+<td>Return an integer-valued universal identifier</td>
+</tr>
+<tr>
+<td>UUID_TO_BIN()</td>
+<td>Convert string UUID to binary</td>
+</tr>
+<tr>
+<td>VALIDATE_PASSWORD_STRENGTH()</td>
+<td>Determine strength of password</td>
+</tr>
+<tr>
+<td>VALUES()</td>
+<td>Define the values to be used during an INSERT</td>
+</tr>
+<tr>
+<td>VAR_POP()</td>
+<td>Return the population standard variance</td>
+</tr>
+<tr>
+<td>VAR_SAMP()</td>
+<td>Return the sample variance</td>
+</tr>
+<tr>
+<td>VARIANCE()</td>
+<td>Return the population standard variance</td>
+</tr>
+<tr>
+<td>VERSION()</td>
+<td>Return a string that indicates the MySQL server version</td>
+</tr>
+<tr>
+<td>WAIT_FOR_EXECUTED_GTID_SET()</td>
+<td>Wait until the given GTIDs have executed on the slave.</td>
+</tr>
+<tr>
+<td>WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS()</td>
+<td>(deprecated 8.0.18)    Use WAIT_FOR_EXECUTED_GTID_SET()</td>
+</tr>
+<tr>
+<td>WEEK()</td>
+<td>Return the week number</td>
+</tr>
+<tr>
+<td>WEEKDAY()</td>
+<td>Return the weekday index</td>
+</tr>
+<tr>
+<td>WEEKOFYEAR()</td>
+<td>Return the calendar week of the date (1-53)</td>
+</tr>
+<tr>
+<td>WEIGHT_STRING()</td>
+<td>Return the weight string for a string</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>Logical XOR</td>
+</tr>
+<tr>
+<td>YEAR()</td>
+<td>Return the year</td>
+</tr>
+<tr>
+<td>YEARWEEK()</td>
+<td>Return the year and week</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td>~</td>
+<td>Bitwise inversion</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mysql-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -219,7 +2511,8 @@
 </li>
 <li><p>注释</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释 -- 注释内容</span><br><span class="line">多行注释 &#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
-
+</li>
+<li><p><code>EXPLAIN</code> 分析SQL</p>
 </li>
 </ol>
 <blockquote>
@@ -505,7 +2798,7 @@
 <ol>
 <li><p>truncate 会将自增列计数器归零</p>
 <pre><code>2. truncate 不会影响事务，也就是删除了数据无法回滚
-  3. 性能：truncate &gt; delete</code></pre></li>
+     3. 性能：truncate &gt; delete</code></pre></li>
 </ol>
 </blockquote>
 </li>
@@ -1097,359 +3390,9 @@
 
 
   
-    <article id="post-Git-别名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/">Git-别名</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:41:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Git-别名"><a href="#Git-别名" class="headerlink" title="Git 别名"></a>Git 别名</h2><h3 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h3><p>命令：<code>git config</code><br>例子：</p>
-<ul>
-<li>$ <code>git config --global alias.co checkout</code></li>
-<li>$ <code>git config --global alias.br branch</code></li>
-<li>$ <code>git config --global alias.ci commit</code></li>
-<li>$ <code>git config --global alias.st status</code></li>
-</ul>
-<p>当要输入 git commit 时，只需要输入 git ci</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-打标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/">Git-打标签</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:15:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="列出标签"><a href="#列出标签" class="headerlink" title="列出标签"></a>列出标签</h2><p>命令：<code>git tag</code> （可带上可选的 -l 选项 –list）</p>
-<h3 id="轻量标签（lightweight）"><a href="#轻量标签（lightweight）" class="headerlink" title="轻量标签（lightweight）"></a>轻量标签（lightweight）</h3><p>轻量标签很像一个不会改变的分支——它只是某个特定提交的引用</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-远程仓库的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">Git-远程仓库的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h2><p> 查看已经配置好了的远程仓库,命令：<code>git remote</code>。</p>
-<p> 如果你已经克隆了自己的仓库，那么至少应该能看到 <code>origin</code> ——这是 Git 给你克隆的仓库服务器的默认名字。</p>
-<p> 指定选项 -v，会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-撤销操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/">Git-撤销操作</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="修补提交"><a href="#修补提交" class="headerlink" title="修补提交"></a>修补提交</h2><p>有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了，<br>可以使用 <code>--amend</code> 选项来重新提交<br><code>git commit --amend</code> <br>这个命令会将暂存区中的文件提交。<br>如果自上次提交以来你还未做任何修改， 那么快照会保持不变，而你所修改的只是提交信息;<br>如果提交后对已跟踪的文件做了修改，使用 <code>--amend</code> ，则第二次提交将 <strong>替换</strong> 掉第一次提交结果；</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

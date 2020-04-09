@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 烟花云烟</title>
+  <title>mysql-函数 | 烟花云烟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="烟花云烟">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="函数和运算符的运用   名字 描述    名字 描述   &amp; Bitwise AND   &gt; Greater than operator   &gt;&gt; Right shift   &gt;&#x3D; Greater than or equal operator   &lt; Less than operator   &lt;&gt;, !&#x3D; Not equal operator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql-函数">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/mysql-%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="烟花云烟">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="函数和运算符的运用   名字 描述    名字 描述   &amp; Bitwise AND   &gt; Greater than operator   &gt;&gt; Right shift   &gt;&#x3D; Greater than or equal operator   &lt; Less than operator   &lt;&gt;, !&#x3D; Not equal operator">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-09T02:02:05.000Z">
+<meta property="article:modified_time" content="2020-04-09T02:56:32.150Z">
 <meta property="article:author" content="许先生">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="js">
-<meta property="article:tag" content="springboot">
-<meta property="article:tag" content="springcloud">
-<meta property="article:tag" content="redis">
-<meta property="article:tag" content="消息队列">
-<meta property="article:tag" content="分布式">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
@@ -175,515 +169,1993 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mysql-函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql-函数
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-04-09T02:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数和运算符的运用"><a href="#函数和运算符的运用" class="headerlink" title="函数和运算符的运用"></a>函数和运算符的运用</h2><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>名字</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than operator</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>Right shift</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal operator</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than operator</td>
+</tr>
+<tr>
+<td>&lt;&gt;, !=</td>
+<td>Not equal operator</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>Left shift</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal operator</td>
+</tr>
+<tr>
+<td>&lt;=&gt;</td>
+<td>NULL-safe equal to operator</td>
+</tr>
+<tr>
+<td>%, MOD</td>
+<td>Modulo operator</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication operator</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Addition operator</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Minus operator</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Change the sign of the argument</td>
+</tr>
+<tr>
+<td>-&gt;</td>
+<td>Return value from JSON column after evaluating path; equivalent to JSON_EXTRACT()</td>
+</tr>
+<tr>
+<td>-&gt;&gt;</td>
+<td>Return value from JSON column after evaluating path and unquoting the result; equivalent to JSON_UNQUOTE(JSON_EXTRACT()</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division operator</td>
+</tr>
+<tr>
+<td>:=</td>
+<td>Assign a value</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Assign a value (as part of a SET statement, or as part of the SET clause in an UPDATE statement)</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Equal operator</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td>ABS()</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>ACOS()</td>
+<td>返回反余弦</td>
+</tr>
+<tr>
+<td>ADDDATE()</td>
+<td>Add time values (intervals) to a date value</td>
+</tr>
+<tr>
+<td>ADDTIME()</td>
+<td>Add time</td>
+</tr>
+<tr>
+<td>AES_DECRYPT()</td>
+<td>Decrypt using AES</td>
+</tr>
+<tr>
+<td>AES_ENCRYPT()</td>
+<td>Encrypt using AES</td>
+</tr>
+<tr>
+<td>AND, &amp;&amp;</td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td>ANY_VALUE()</td>
+<td>Suppress ONLY_FULL_GROUP_BY value rejection</td>
+</tr>
+<tr>
+<td>ASCII()</td>
+<td>Return numeric value of left-most character</td>
+</tr>
+<tr>
+<td>ASIN()</td>
+<td>Return the arc sine</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_DECRYPT()</td>
+<td>Decrypt ciphertext using private or public key</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_DERIVE()</td>
+<td>Derive symmetric key from asymmetric keys</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_ENCRYPT()</td>
+<td>Encrypt cleartext using private or public key</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_SIGN()</td>
+<td>Generate signature from digest</td>
+</tr>
+<tr>
+<td>ASYMMETRIC_VERIFY()</td>
+<td>Verify that signature matches digest</td>
+</tr>
+<tr>
+<td>ATAN()</td>
+<td>Return the arc tangent</td>
+</tr>
+<tr>
+<td>ATAN2(), ATAN()</td>
+<td>Return the arc tangent of the two arguments</td>
+</tr>
+<tr>
+<td>AVG()</td>
+<td>Return the average value of the argument</td>
+</tr>
+<tr>
+<td>BENCHMARK()</td>
+<td>Repeatedly execute an expression</td>
+</tr>
+<tr>
+<td>BETWEEN … AND …</td>
+<td>Whether a value is within a range of values</td>
+</tr>
+<tr>
+<td>BIN()</td>
+<td>Return a string containing binary representation of a number</td>
+</tr>
+<tr>
+<td>BIN_TO_UUID()</td>
+<td>Convert binary UUID to string</td>
+</tr>
+<tr>
+<td>BINARY</td>
+<td>Cast a string to a binary string</td>
+</tr>
+<tr>
+<td>BIT_AND()</td>
+<td>Return bitwise AND</td>
+</tr>
+<tr>
+<td>BIT_COUNT()</td>
+<td>Return the number of bits that are set</td>
+</tr>
+<tr>
+<td>BIT_LENGTH()</td>
+<td>Return length of argument in bits</td>
+</tr>
+<tr>
+<td>BIT_OR()</td>
+<td>Return bitwise OR</td>
+</tr>
+<tr>
+<td>BIT_XOR()</td>
+<td>Return bitwise XOR</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_COLUMN()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_DATABASE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_TABLE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CAN_ACCESS_VIEW()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>CASE</td>
+<td>Case operator</td>
+</tr>
+<tr>
+<td>CAST()</td>
+<td>Cast a value as a certain type</td>
+</tr>
+<tr>
+<td>CEIL()</td>
+<td>Return the smallest integer value not less than the argument</td>
+</tr>
+<tr>
+<td>CEILING</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>CHAR()</td>
+<td>Return the character for each integer passed</td>
+</tr>
+<tr>
+<td>CHAR_LENGTH()</td>
+<td>字符串长度</td>
+</tr>
+<tr>
+<td>CHARACTER_LENGTH()</td>
+<td>Synonym for CHAR_LENGTH()</td>
+</tr>
+<tr>
+<td>CHARSET()</td>
+<td>Return the character set of the argument</td>
+</tr>
+<tr>
+<td>COALESCE()</td>
+<td>Return the first non-NULL argument</td>
+</tr>
+<tr>
+<td>COERCIBILITY()</td>
+<td>Return the collation coercibility value of the string argument</td>
+</tr>
+<tr>
+<td>COLLATION()</td>
+<td>Return the collation of the string argument</td>
+</tr>
+<tr>
+<td>COMPRESS()</td>
+<td>Return result as a binary string</td>
+</tr>
+<tr>
+<td>CONCAT()</td>
+<td>拼接字符串</td>
+</tr>
+<tr>
+<td>CONCAT_WS()</td>
+<td>Return concatenate with separator</td>
+</tr>
+<tr>
+<td>CONNECTION_ID()</td>
+<td>Return the connection ID (thread ID) for the connection</td>
+</tr>
+<tr>
+<td>CONV()</td>
+<td>Convert numbers between different number bases</td>
+</tr>
+<tr>
+<td>CONVERT()</td>
+<td>Cast a value as a certain type</td>
+</tr>
+<tr>
+<td>CONVERT_TZ()</td>
+<td>Convert from one time zone to another</td>
+</tr>
+<tr>
+<td>COS()</td>
+<td>Return the cosine</td>
+</tr>
+<tr>
+<td>COT()</td>
+<td>Return the cotangent</td>
+</tr>
+<tr>
+<td>COUNT()</td>
+<td>Return a count of the number of rows returned</td>
+</tr>
+<tr>
+<td>COUNT(DISTINCT)</td>
+<td>Return the count of a number of different values</td>
+</tr>
+<tr>
+<td>CRC32()</td>
+<td>Compute a cyclic redundancy check value</td>
+</tr>
+<tr>
+<td>CREATE_ASYMMETRIC_PRIV_KEY()</td>
+<td>Create private key</td>
+</tr>
+<tr>
+<td>CREATE_ASYMMETRIC_PUB_KEY()</td>
+<td>Create public key</td>
+</tr>
+<tr>
+<td>CREATE_DH_PARAMETERS()</td>
+<td>Generate shared DH secret</td>
+</tr>
+<tr>
+<td>CREATE_DIGEST()</td>
+<td>Generate digest from string</td>
+</tr>
+<tr>
+<td>CUME_DIST()</td>
+<td>Cumulative distribution value</td>
+</tr>
+<tr>
+<td>CURDATE()</td>
+<td>Return the current date</td>
+</tr>
+<tr>
+<td>CURRENT_DATE()  , CURRENT_DATE</td>
+<td>Synonyms for CURDATE()</td>
+</tr>
+<tr>
+<td>CURRENT_ROLE()</td>
+<td>Return the current active roles</td>
+</tr>
+<tr>
+<td>CURRENT_TIME() , CURRENT_TIME</td>
+<td>Synonyms for CURTIME()</td>
+</tr>
+<tr>
+<td>CURRENT_TIMESTAMP()  , CURRENT_TIMESTAMP</td>
+<td>Synonyms for NOW()</td>
+</tr>
+<tr>
+<td>CURRENT_USER(), CURRENT_USER</td>
+<td>The authenticated user name and host name</td>
+</tr>
+<tr>
+<td>CURTIME()</td>
+<td>Return the current time</td>
+</tr>
+<tr>
+<td>DATABASE()</td>
+<td>Return the default (current) database name</td>
+</tr>
+<tr>
+<td>DATE()</td>
+<td>Extract the date part of a date or datetime expression</td>
+</tr>
+<tr>
+<td>DATE_ADD()</td>
+<td>Add time values (intervals) to a date value</td>
+</tr>
+<tr>
+<td>DATE_FORMAT()</td>
+<td>Format date as specified</td>
+</tr>
+<tr>
+<td>DATE_SUB()</td>
+<td>Subtract a time value (interval) from a date</td>
+</tr>
+<tr>
+<td>DATEDIFF()</td>
+<td>Subtract two dates</td>
+</tr>
+<tr>
+<td>DAY()</td>
+<td>Synonym for DAYOFMONTH()</td>
+</tr>
+<tr>
+<td>DAYNAME()</td>
+<td>Return the name of the weekday</td>
+</tr>
+<tr>
+<td>DAYOFMONTH()</td>
+<td>Return the day of the month (0-31)</td>
+</tr>
+<tr>
+<td>DAYOFWEEK()</td>
+<td>Return the weekday index of the argument</td>
+</tr>
+<tr>
+<td>DAYOFYEAR()</td>
+<td>Return the day of the year (1-366)</td>
+</tr>
+<tr>
+<td>DEFAULT()</td>
+<td>Return the default value for a table column</td>
+</tr>
+<tr>
+<td>DEGREES()</td>
+<td>Convert radians to degrees</td>
+</tr>
+<tr>
+<td>DENSE_RANK()</td>
+<td>Rank of current row within its partition, without gaps</td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>Integer division</td>
+</tr>
+<tr>
+<td>ELT()</td>
+<td>Return string at index number</td>
+</tr>
+<tr>
+<td>EXP()</td>
+<td>Raise to the power of</td>
+</tr>
+<tr>
+<td>EXPORT_SET()</td>
+<td>Return a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string</td>
+</tr>
+<tr>
+<td>EXTRACT()</td>
+<td>Extract part of a date</td>
+</tr>
+<tr>
+<td>ExtractValue()</td>
+<td>Extract a value from an XML string using XPath notation</td>
+</tr>
+<tr>
+<td>FIELD()</td>
+<td>Index (position) of first argument in subsequent arguments</td>
+</tr>
+<tr>
+<td>FIND_IN_SET()</td>
+<td>Index (position) of first argument within second argument</td>
+</tr>
+<tr>
+<td>FIRST_VALUE()</td>
+<td>Value of argument from first row of window frame</td>
+</tr>
+<tr>
+<td>FLOOR()</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>FORMAT()</td>
+<td>Return a number formatted to specified number of decimal places</td>
+</tr>
+<tr>
+<td>FORMAT_BYTES()</td>
+<td>(introduced 8.0.16)    Convert byte count to value with units</td>
+</tr>
+<tr>
+<td>FORMAT_PICO_TIME()</td>
+<td>(introduced 8.0.16)    Convert time in picoseconds to value with units</td>
+</tr>
+<tr>
+<td>FOUND_ROWS()</td>
+<td>For a SELECT with a LIMIT clause, the number of rows that would be returned were there no LIMIT clause</td>
+</tr>
+<tr>
+<td>FROM_BASE64()</td>
+<td>Decode base64 encoded string and return result</td>
+</tr>
+<tr>
+<td>FROM_DAYS()</td>
+<td>Convert a day number to a date</td>
+</tr>
+<tr>
+<td>FROM_UNIXTIME()</td>
+<td>Format Unix timestamp as a date</td>
+</tr>
+<tr>
+<td>GeomCollection()</td>
+<td>Construct geometry collection from geometries</td>
+</tr>
+<tr>
+<td>GeometryCollection()</td>
+<td>Construct geometry collection from geometries</td>
+</tr>
+<tr>
+<td>GET_DD_COLUMN_PRIVILEGES()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_DD_CREATE_OPTIONS()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_DD_INDEX_SUB_PART_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>GET_FORMAT()</td>
+<td>Return a date format string</td>
+</tr>
+<tr>
+<td>GET_LOCK()</td>
+<td>Get a named lock</td>
+</tr>
+<tr>
+<td>GREATEST()</td>
+<td>Return the largest argument</td>
+</tr>
+<tr>
+<td>GROUP_CONCAT()</td>
+<td>Return a concatenated string</td>
+</tr>
+<tr>
+<td>GROUPING()</td>
+<td>Distinguish super-aggregate ROLLUP rows from regular rows</td>
+</tr>
+<tr>
+<td>GTID_SUBSET()</td>
+<td>Return true if all GTIDs in subset are also in set; otherwise false.</td>
+</tr>
+<tr>
+<td>GTID_SUBTRACT()</td>
+<td>Return all GTIDs in set that are not in subset.</td>
+</tr>
+<tr>
+<td>HEX()</td>
+<td>Hexadecimal representation of decimal or string value</td>
+</tr>
+<tr>
+<td>HOUR()</td>
+<td>Extract the hour</td>
+</tr>
+<tr>
+<td>ICU_VERSION()</td>
+<td>ICU library version</td>
+</tr>
+<tr>
+<td>IF()</td>
+<td>If/else construct</td>
+</tr>
+<tr>
+<td>IFNULL()</td>
+<td>Null if/else construct</td>
+</tr>
+<tr>
+<td>IN()</td>
+<td>Whether a value is within a set of values</td>
+</tr>
+<tr>
+<td>INET_ATON()</td>
+<td>Return the numeric value of an IP address</td>
+</tr>
+<tr>
+<td>INET_NTOA()</td>
+<td>Return the IP address from a numeric value</td>
+</tr>
+<tr>
+<td>INET6_ATON()</td>
+<td>Return the numeric value of an IPv6 address</td>
+</tr>
+<tr>
+<td>INET6_NTOA()</td>
+<td>Return the IPv6 address from a numeric value</td>
+</tr>
+<tr>
+<td>INSERT()</td>
+<td>Insert substring at specified position up to specified number of characters</td>
+</tr>
+<tr>
+<td>INSTR()</td>
+<td>Return the index of the first occurrence of substring</td>
+</tr>
+<tr>
+<td>INTERNAL_AUTO_INCREMENT()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_AVG_ROW_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_CHECK_TIME()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_CHECKSUM()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DATA_FREE()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DATA_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_DD_CHAR_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_COMMENT_OR_ERROR()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_ENABLED_ROLE_JSON()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_HOSTNAME()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_USERNAME()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_GET_VIEW_WARNING_OR_ERROR()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_INDEX_COLUMN_CARDINALITY()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_INDEX_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_IS_ENABLED_ROLE()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_IS_MANDATORY_ROLE()</td>
+<td>(introduced 8.0.19)    Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_KEYS_DISABLED()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_MAX_DATA_LENGTH()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_TABLE_ROWS()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERNAL_UPDATE_TIME()</td>
+<td>Internal use only</td>
+</tr>
+<tr>
+<td>INTERVAL()</td>
+<td>Return the index of the argument that is less than the first argument</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>Test a value against a boolean</td>
+</tr>
+<tr>
+<td>IS_FREE_LOCK()</td>
+<td>Whether the named lock is free</td>
+</tr>
+<tr>
+<td>IS_IPV4()</td>
+<td>Whether argument is an IPv4 address</td>
+</tr>
+<tr>
+<td>IS_IPV4_COMPAT()</td>
+<td>Whether argument is an IPv4-compatible address</td>
+</tr>
+<tr>
+<td>IS_IPV4_MAPPED()</td>
+<td>Whether argument is an IPv4-mapped address</td>
+</tr>
+<tr>
+<td>IS_IPV6()</td>
+<td>Whether argument is an IPv6 address</td>
+</tr>
+<tr>
+<td>IS NOT</td>
+<td>Test a value against a boolean</td>
+</tr>
+<tr>
+<td>IS NOT NULL</td>
+<td>NOT NULL value test</td>
+</tr>
+<tr>
+<td>IS NULL</td>
+<td>NULL value test</td>
+</tr>
+<tr>
+<td>IS_USED_LOCK()</td>
+<td>Whether the named lock is in use; return connection identifier if true</td>
+</tr>
+<tr>
+<td>IS_UUID()</td>
+<td>Whether argument is a valid UUID</td>
+</tr>
+<tr>
+<td>ISNULL()</td>
+<td>Test whether the argument is NULL</td>
+</tr>
+<tr>
+<td>JSON_ARRAY()</td>
+<td>Create JSON array</td>
+</tr>
+<tr>
+<td>JSON_ARRAY_APPEND()</td>
+<td>Append data to JSON document</td>
+</tr>
+<tr>
+<td>JSON_ARRAY_INSERT()</td>
+<td>Insert into JSON array</td>
+</tr>
+<tr>
+<td>JSON_ARRAYAGG()</td>
+<td>Return result set as a single JSON array</td>
+</tr>
+<tr>
+<td>JSON_CONTAINS()</td>
+<td>Whether JSON document contains specific object at path</td>
+</tr>
+<tr>
+<td>JSON_CONTAINS_PATH()</td>
+<td>Whether JSON document contains any data at path</td>
+</tr>
+<tr>
+<td>JSON_DEPTH()</td>
+<td>Maximum depth of JSON document</td>
+</tr>
+<tr>
+<td>JSON_EXTRACT()</td>
+<td>Return data from JSON document</td>
+</tr>
+<tr>
+<td>JSON_INSERT()</td>
+<td>Insert data into JSON document</td>
+</tr>
+<tr>
+<td>JSON_KEYS()</td>
+<td>Array of keys from JSON document</td>
+</tr>
+<tr>
+<td>JSON_LENGTH()</td>
+<td>Number of elements in JSON document</td>
+</tr>
+<tr>
+<td>JSON_MERGE()</td>
+<td>(deprecated)    Merge JSON documents, preserving duplicate keys. Deprecated synonym for JSON_MERGE_PRESERVE()</td>
+</tr>
+<tr>
+<td>JSON_MERGE_PATCH()</td>
+<td>Merge JSON documents, replacing values of duplicate keys</td>
+</tr>
+<tr>
+<td>JSON_MERGE_PRESERVE()</td>
+<td>Merge JSON documents, preserving duplicate keys</td>
+</tr>
+<tr>
+<td>JSON_OBJECT()</td>
+<td>Create JSON object</td>
+</tr>
+<tr>
+<td>JSON_OBJECTAGG()</td>
+<td>Return result set as a single JSON object</td>
+</tr>
+<tr>
+<td>JSON_OVERLAPS()</td>
+<td>(introduced 8.0.17)    Compares two JSON documents, returns TRUE (1) if these have any key-value pairs or array elements in common, otherwise FALSE (0)</td>
+</tr>
+<tr>
+<td>JSON_PRETTY()</td>
+<td>Print a JSON document in human-readable format</td>
+</tr>
+<tr>
+<td>JSON_QUOTE()</td>
+<td>Quote JSON document</td>
+</tr>
+<tr>
+<td>JSON_REMOVE()</td>
+<td>Remove data from JSON document</td>
+</tr>
+<tr>
+<td>JSON_REPLACE()</td>
+<td>Replace values in JSON document</td>
+</tr>
+<tr>
+<td>JSON_SCHEMA_VALID()</td>
+<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns TRUE/1 if document validates against schema, or FALSE/0 if it does not</td>
+</tr>
+<tr>
+<td>JSON_SCHEMA_VALIDATION_REPORT()</td>
+<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns report in JSON format on outcome on validation including success or failure and reasons for failure</td>
+</tr>
+<tr>
+<td>JSON_SEARCH()</td>
+<td>Path to value within JSON document</td>
+</tr>
+<tr>
+<td>JSON_SET()</td>
+<td>Insert data into JSON document</td>
+</tr>
+<tr>
+<td>JSON_STORAGE_FREE()</td>
+<td>Freed space within binary representation of JSON column value following partial update</td>
+</tr>
+<tr>
+<td>JSON_STORAGE_SIZE()</td>
+<td>Space used for storage of binary representation of a JSON document</td>
+</tr>
+<tr>
+<td>JSON_TABLE()</td>
+<td>Return data from a JSON expression as a relational table</td>
+</tr>
+<tr>
+<td>JSON_TYPE()</td>
+<td>Type of JSON value</td>
+</tr>
+<tr>
+<td>JSON_UNQUOTE()</td>
+<td>Unquote JSON value</td>
+</tr>
+<tr>
+<td>JSON_VALID()</td>
+<td>Whether JSON value is valid</td>
+</tr>
+<tr>
+<td>JSON_VALUE()</td>
+<td>(introduced 8.0.21)    Extract value from JSON document at location pointed to by path provided; return this value as VARCHAR(512) or specified type</td>
+</tr>
+<tr>
+<td>LAG()</td>
+<td>Value of argument from row lagging current row within partition</td>
+</tr>
+<tr>
+<td>LAST_DAY</td>
+<td>Return the last day of the month for the argument</td>
+</tr>
+<tr>
+<td>LAST_INSERT_ID()</td>
+<td>Value of the AUTOINCREMENT column for the last INSERT</td>
+</tr>
+<tr>
+<td>LAST_VALUE()</td>
+<td>Value of argument from last row of window frame</td>
+</tr>
+<tr>
+<td>LCASE()</td>
+<td>Synonym for LOWER()</td>
+</tr>
+<tr>
+<td>LEAD()</td>
+<td>Value of argument from row leading current row within partition</td>
+</tr>
+<tr>
+<td>LEAST()</td>
+<td>Return the smallest argument</td>
+</tr>
+<tr>
+<td>LEFT()</td>
+<td>Return the leftmost number of characters as specified</td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>Return the length of a string in bytes</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td>Simple pattern matching</td>
+</tr>
+<tr>
+<td>LineString()</td>
+<td>Construct LineString from Point values</td>
+</tr>
+<tr>
+<td>LN()</td>
+<td>Return the natural logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOAD_FILE()</td>
+<td>Load the named file</td>
+</tr>
+<tr>
+<td>LOCALTIME()   , LOCALTIME</td>
+<td>Synonym for NOW()</td>
+</tr>
+<tr>
+<td>LOCALTIMESTAMP, LOCALTIMESTAMP()</td>
+<td>Synonym for NOW()</td>
+</tr>
+<tr>
+<td>LOCATE()</td>
+<td>Return the position of the first occurrence of substring</td>
+</tr>
+<tr>
+<td>LOG()</td>
+<td>Return the natural logarithm of the first argument</td>
+</tr>
+<tr>
+<td>LOG10()</td>
+<td>Return the base-10 logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOG2()</td>
+<td>Return the base-2 logarithm of the argument</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>Return the argument in lowercase</td>
+</tr>
+<tr>
+<td>LPAD()</td>
+<td>Return the string argument, left-padded with the specified string</td>
+</tr>
+<tr>
+<td>LTRIM()</td>
+<td>Remove leading spaces</td>
+</tr>
+<tr>
+<td>MAKE_SET()</td>
+<td>Return a set of comma-separated strings that have the corresponding bit in bits set</td>
+</tr>
+<tr>
+<td>MAKEDATE()</td>
+<td>Create a date from the year and day of year</td>
+</tr>
+<tr>
+<td>MAKETIME()</td>
+<td>Create time from hour, minute, second</td>
+</tr>
+<tr>
+<td>MASTER_POS_WAIT()</td>
+<td>Block until the slave has read and applied all updates up to the specified position</td>
+</tr>
+<tr>
+<td>MATCH</td>
+<td>Perform full-text search</td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>Return the maximum value</td>
+</tr>
+<tr>
+<td>MBRContains()</td>
+<td>Whether MBR of one geometry contains MBR of another</td>
+</tr>
+<tr>
+<td>MBRCoveredBy()</td>
+<td>Whether one MBR is covered by another</td>
+</tr>
+<tr>
+<td>MBRCovers()</td>
+<td>Whether one MBR covers another</td>
+</tr>
+<tr>
+<td>MBRDisjoint()</td>
+<td>Whether MBRs of two geometries are disjoint</td>
+</tr>
+<tr>
+<td>MBREquals()</td>
+<td>Whether MBRs of two geometries are equal</td>
+</tr>
+<tr>
+<td>MBRIntersects()</td>
+<td>Whether MBRs of two geometries intersect</td>
+</tr>
+<tr>
+<td>MBROverlaps()</td>
+<td>Whether MBRs of two geometries overlap</td>
+</tr>
+<tr>
+<td>MBRTouches()</td>
+<td>Whether MBRs of two geometries touch</td>
+</tr>
+<tr>
+<td>MBRWithin()</td>
+<td>Whether MBR of one geometry is within MBR of another</td>
+</tr>
+<tr>
+<td>MD5()</td>
+<td>Calculate MD5 checksum</td>
+</tr>
+<tr>
+<td>MEMBER OF()</td>
+<td>(introduced 8.0.17)    Returns true (1) if first operand matches any element of JSON array passed as second operand, otherwise returns false (0)</td>
+</tr>
+<tr>
+<td>MICROSECOND()</td>
+<td>Return the microseconds from argument</td>
+</tr>
+<tr>
+<td>MID()</td>
+<td>Return a substring starting from the specified position</td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>Return the minimum value</td>
+</tr>
+<tr>
+<td>MINUTE()</td>
+<td>Return the minute from the argument</td>
+</tr>
+<tr>
+<td>MOD()</td>
+<td>Return the remainder</td>
+</tr>
+<tr>
+<td>MONTH()</td>
+<td>Return the month from the date passed</td>
+</tr>
+<tr>
+<td>MONTHNAME()</td>
+<td>Return the name of the month</td>
+</tr>
+<tr>
+<td>MultiLineString()</td>
+<td>Contruct MultiLineString from LineString values</td>
+</tr>
+<tr>
+<td>MultiPoint()</td>
+<td>Construct MultiPoint from Point values</td>
+</tr>
+<tr>
+<td>MultiPolygon()</td>
+<td>Construct MultiPolygon from Polygon values</td>
+</tr>
+<tr>
+<td>NAME_CONST()</td>
+<td>Cause the column to have the given name</td>
+</tr>
+<tr>
+<td>NOT, !</td>
+<td>Negates value</td>
+</tr>
+<tr>
+<td>NOT BETWEEN … AND …</td>
+<td>Whether a value is not within a range of values</td>
+</tr>
+<tr>
+<td>NOT IN()</td>
+<td>Whether a value is not within a set of values</td>
+</tr>
+<tr>
+<td>NOT LIKE</td>
+<td>Negation of simple pattern matching</td>
+</tr>
+<tr>
+<td>NOT REGEXP</td>
+<td>Negation of REGEXP</td>
+</tr>
+<tr>
+<td>NOW()</td>
+<td>Return the current date and time</td>
+</tr>
+<tr>
+<td>NTH_VALUE()</td>
+<td>Value of argument from N-th row of window frame</td>
+</tr>
+<tr>
+<td>NTILE()</td>
+<td>Bucket number of current row within its partition.</td>
+</tr>
+<tr>
+<td>NULLIF()</td>
+<td>Return NULL if expr1 = expr2</td>
+</tr>
+<tr>
+<td>OCT()</td>
+<td>Return a string containing octal representation of a number</td>
+</tr>
+<tr>
+<td>OCTET_LENGTH()</td>
+<td>Synonym for LENGTH()</td>
+</tr>
+<tr>
+<td>OR, ||</td>
+<td>Logical OR</td>
+</tr>
+<tr>
+<td>ORD()</td>
+<td>Return character code for leftmost character of the argument</td>
+</tr>
+<tr>
+<td>PERCENT_RANK()</td>
+<td>Percentage rank value</td>
+</tr>
+<tr>
+<td>PERIOD_ADD()</td>
+<td>Add a period to a year-month</td>
+</tr>
+<tr>
+<td>PERIOD_DIFF()</td>
+<td>Return the number of months between periods</td>
+</tr>
+<tr>
+<td>PI()</td>
+<td>Return the value of pi</td>
+</tr>
+<tr>
+<td>Point()</td>
+<td>Construct Point from coordinates</td>
+</tr>
+<tr>
+<td>Polygon()</td>
+<td>Construct Polygon from LineString arguments</td>
+</tr>
+<tr>
+<td>POSITION()</td>
+<td>Synonym for LOCATE()</td>
+</tr>
+<tr>
+<td>POW()</td>
+<td>Return the argument raised to the specified power</td>
+</tr>
+<tr>
+<td>POWER()</td>
+<td>Return the argument raised to the specified power</td>
+</tr>
+<tr>
+<td>PS_CURRENT_THREAD_ID()</td>
+<td>(introduced 8.0.16)    Performance Schema thread ID for current thread</td>
+</tr>
+<tr>
+<td>PS_THREAD_ID()</td>
+<td>(introduced 8.0.16)    Performance Schema thread ID for given thread</td>
+</tr>
+<tr>
+<td>QUARTER()</td>
+<td>Return the quarter from a date argument</td>
+</tr>
+<tr>
+<td>QUOTE()</td>
+<td>Escape the argument for use in an SQL statement</td>
+</tr>
+<tr>
+<td>RADIANS()</td>
+<td>Return argument converted to radians</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>返回0~1 之间的随机数</td>
+</tr>
+<tr>
+<td>RANDOM_BYTES()</td>
+<td>Return a random byte vector</td>
+</tr>
+<tr>
+<td>RANK()</td>
+<td>Rank of current row within its partition, with gaps</td>
+</tr>
+<tr>
+<td>REGEXP</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_INSTR()</td>
+<td>Starting index of substring matching regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_LIKE()</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_REPLACE()</td>
+<td>Replace substrings matching regular expression</td>
+</tr>
+<tr>
+<td>REGEXP_SUBSTR()</td>
+<td>Return substring matching regular expression</td>
+</tr>
+<tr>
+<td>RELEASE_ALL_LOCKS()</td>
+<td>Release all current named locks</td>
+</tr>
+<tr>
+<td>RELEASE_LOCK()</td>
+<td>Release the named lock</td>
+</tr>
+<tr>
+<td>REPEAT()</td>
+<td>Repeat a string the specified number of times</td>
+</tr>
+<tr>
+<td>REPLACE()</td>
+<td>Replace occurrences of a specified string</td>
+</tr>
+<tr>
+<td>REVERSE()</td>
+<td>Reverse the characters in a string</td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>Return the specified rightmost number of characters</td>
+</tr>
+<tr>
+<td>RLIKE</td>
+<td>Whether string matches regular expression</td>
+</tr>
+<tr>
+<td>ROLES_GRAPHML()</td>
+<td>Return a GraphML document representing memory role subgraphs</td>
+</tr>
+<tr>
+<td>ROUND()</td>
+<td>Round the argument</td>
+</tr>
+<tr>
+<td>ROW_COUNT()</td>
+<td>The number of rows updated</td>
+</tr>
+<tr>
+<td>ROW_NUMBER()</td>
+<td>Number of current row within its partition</td>
+</tr>
+<tr>
+<td>RPAD()</td>
+<td>Append string the specified number of times</td>
+</tr>
+<tr>
+<td>RTRIM()</td>
+<td>Remove trailing spaces</td>
+</tr>
+<tr>
+<td>SCHEMA()</td>
+<td>Synonym for DATABASE()</td>
+</tr>
+<tr>
+<td>SEC_TO_TIME()</td>
+<td>Converts seconds to ‘hh:mm:ss’ format</td>
+</tr>
+<tr>
+<td>SECOND()</td>
+<td>Return the second (0-59)</td>
+</tr>
+<tr>
+<td>SESSION_USER()</td>
+<td>Synonym for USER()</td>
+</tr>
+<tr>
+<td>SHA1() , SHA()</td>
+<td>Calculate an SHA-1 160-bit checksum</td>
+</tr>
+<tr>
+<td>SHA2()</td>
+<td>Calculate an SHA-2 checksum</td>
+</tr>
+<tr>
+<td>SIGN()</td>
+<td>Return the sign of the argument</td>
+</tr>
+<tr>
+<td>SIN()</td>
+<td>Return the sine of the argument</td>
+</tr>
+<tr>
+<td>SLEEP()</td>
+<td>Sleep for a number of seconds</td>
+</tr>
+<tr>
+<td>SOUNDEX()</td>
+<td>Return a soundex string</td>
+</tr>
+<tr>
+<td>SOUNDS LIKE    Compare sounds</td>
+<td></td>
+</tr>
+<tr>
+<td>SPACE()</td>
+<td>Return a string of the specified number of spaces</td>
+</tr>
+<tr>
+<td>SQRT()</td>
+<td>Return the square root of the argument</td>
+</tr>
+<tr>
+<td>ST_Area()</td>
+<td>Return Polygon or MultiPolygon area</td>
+</tr>
+<tr>
+<td>ST_AsBinary()  , ST_AsWKB()</td>
+<td>Convert from internal geometry format to WKB</td>
+</tr>
+<tr>
+<td>ST_AsGeoJSON()</td>
+<td>Generate GeoJSON object from geometry</td>
+</tr>
+<tr>
+<td>ST_AsText() , ST_AsWKT()</td>
+<td>Convert from internal geometry format to WKT</td>
+</tr>
+<tr>
+<td>ST_Buffer()</td>
+<td>Return geometry of points within given distance from geometry</td>
+</tr>
+<tr>
+<td>ST_Buffer_Strategy()</td>
+<td>Produce strategy option for ST_Buffer()</td>
+</tr>
+<tr>
+<td>ST_Centroid()</td>
+<td>Return centroid as a point</td>
+</tr>
+<tr>
+<td>ST_Contains()</td>
+<td>Whether one geometry contains another</td>
+</tr>
+<tr>
+<td>ST_ConvexHull()</td>
+<td>Return convex hull of geometry</td>
+</tr>
+<tr>
+<td>ST_Crosses()</td>
+<td>Whether one geometry crosses another</td>
+</tr>
+<tr>
+<td>ST_Difference()</td>
+<td>Return point set difference of two geometries</td>
+</tr>
+<tr>
+<td>ST_Dimension()</td>
+<td>Dimension of geometry</td>
+</tr>
+<tr>
+<td>ST_Disjoint()</td>
+<td>Whether one geometry is disjoint from another</td>
+</tr>
+<tr>
+<td>ST_Distance()</td>
+<td>The distance of one geometry from another</td>
+</tr>
+<tr>
+<td>ST_Distance_Sphere()</td>
+<td>Minimum distance on earth between two geometries</td>
+</tr>
+<tr>
+<td>ST_EndPoint()</td>
+<td>End Point of LineString</td>
+</tr>
+<tr>
+<td>ST_Envelope()</td>
+<td>Return MBR of geometry</td>
+</tr>
+<tr>
+<td>ST_Equals()</td>
+<td>Whether one geometry is equal to another</td>
+</tr>
+<tr>
+<td>ST_ExteriorRing()</td>
+<td>Return exterior ring of Polygon</td>
+</tr>
+<tr>
+<td>ST_GeoHash()</td>
+<td>Produce a geohash value</td>
+</tr>
+<tr>
+<td>ST_GeomCollFromText(), ST_GeometryCollectionFromText(), ST_GeomCollFromTxt()</td>
+<td>Return geometry collection from WKT</td>
+</tr>
+<tr>
+<td>ST_GeomCollFromWKB(), ST_GeometryCollectionFromWKB()</td>
+<td>Return geometry collection from WKB</td>
+</tr>
+<tr>
+<td>ST_GeometryN()</td>
+<td>Return N-th geometry from geometry collection</td>
+</tr>
+<tr>
+<td>ST_GeometryType()</td>
+<td>Return name of geometry type</td>
+</tr>
+<tr>
+<td>ST_GeomFromGeoJSON()</td>
+<td>Generate geometry from GeoJSON object</td>
+</tr>
+<tr>
+<td>ST_GeomFromText() , ST_GeometryFromText()</td>
+<td>Return geometry from WKT</td>
+</tr>
+<tr>
+<td>ST_GeomFromWKB(), ST_GeometryFromWKB()</td>
+<td>Return geometry from WKB</td>
+</tr>
+<tr>
+<td>ST_InteriorRingN()</td>
+<td>Return N-th interior ring of Polygon</td>
+</tr>
+<tr>
+<td>ST_Intersection()</td>
+<td>Return point set intersection of two geometries</td>
+</tr>
+<tr>
+<td>ST_Intersects()</td>
+<td>Whether one geometry intersects another</td>
+</tr>
+<tr>
+<td>ST_IsClosed()</td>
+<td>Whether a geometry is closed and simple</td>
+</tr>
+<tr>
+<td>ST_IsEmpty()</td>
+<td>Placeholder function</td>
+</tr>
+<tr>
+<td>ST_IsSimple()</td>
+<td>Whether a geometry is simple</td>
+</tr>
+<tr>
+<td>ST_IsValid()</td>
+<td>Whether a geometry is valid</td>
+</tr>
+<tr>
+<td>ST_LatFromGeoHash()</td>
+<td>Return latitude from geohash value</td>
+</tr>
+<tr>
+<td>ST_Latitude()</td>
+<td>(introduced 8.0.12)    Return latitude of Point</td>
+</tr>
+<tr>
+<td>ST_Length()</td>
+<td>Return length of LineString</td>
+</tr>
+<tr>
+<td>ST_LineFromText() , ST_LineStringFromText()</td>
+<td>Construct LineString from WKT</td>
+</tr>
+<tr>
+<td>ST_LineFromWKB() , ST_LineStringFromWKB()</td>
+<td>Construct LineString from WKB</td>
+</tr>
+<tr>
+<td>ST_LongFromGeoHash()</td>
+<td>Return longitude from geohash value</td>
+</tr>
+<tr>
+<td>ST_Longitude()</td>
+<td>(introduced 8.0.12)    Return longitude of Point</td>
+</tr>
+<tr>
+<td>ST_MakeEnvelope()</td>
+<td>Rectangle around two points</td>
+</tr>
+<tr>
+<td>ST_MLineFromText()  , ST_MultiLineStringFromText()</td>
+<td>Construct MultiLineString from WKT</td>
+</tr>
+<tr>
+<td>ST_MLineFromWKB()  , ST_MultiLineStringFromWKB()</td>
+<td>Construct MultiLineString from WKB</td>
+</tr>
+<tr>
+<td>ST_MPointFromText()  , ST_MultiPointFromText()</td>
+<td>Construct MultiPoint from WKT</td>
+</tr>
+<tr>
+<td>ST_MPointFromWKB()  , ST_MultiPointFromWKB()</td>
+<td>Construct MultiPoint from WKB</td>
+</tr>
+<tr>
+<td>ST_MPolyFromText()  , ST_MultiPolygonFromText()</td>
+<td>Construct MultiPolygon from WKT</td>
+</tr>
+<tr>
+<td>ST_MPolyFromWKB()  , ST_MultiPolygonFromWKB()</td>
+<td>Construct MultiPolygon from WKB</td>
+</tr>
+<tr>
+<td>ST_NumGeometries()</td>
+<td>Return number of geometries in geometry collection</td>
+</tr>
+<tr>
+<td>ST_NumInteriorRing()  , ST_NumInteriorRings()</td>
+<td>Return number of interior rings in Polygon</td>
+</tr>
+<tr>
+<td>ST_NumPoints()</td>
+<td>Return number of points in LineString</td>
+</tr>
+<tr>
+<td>ST_Overlaps()</td>
+<td>Whether one geometry overlaps another</td>
+</tr>
+<tr>
+<td>ST_PointFromGeoHash()</td>
+<td>Convert geohash value to POINT value</td>
+</tr>
+<tr>
+<td>ST_PointFromText()</td>
+<td>Construct Point from WKT</td>
+</tr>
+<tr>
+<td>ST_PointFromWKB()</td>
+<td>Construct Point from WKB</td>
+</tr>
+<tr>
+<td>ST_PointN()</td>
+<td>Return N-th point from LineString</td>
+</tr>
+<tr>
+<td>ST_PolyFromText()  , ST_PolygonFromText()</td>
+<td>Construct Polygon from WKT</td>
+</tr>
+<tr>
+<td>ST_PolyFromWKB()  , ST_PolygonFromWKB()</td>
+<td>Construct Polygon from WKB</td>
+</tr>
+<tr>
+<td>ST_Simplify()</td>
+<td>Return simplified geometry</td>
+</tr>
+<tr>
+<td>ST_SRID()</td>
+<td>Return spatial reference system ID for geometry</td>
+</tr>
+<tr>
+<td>ST_StartPoint()</td>
+<td>Start Point of LineString</td>
+</tr>
+<tr>
+<td>ST_SwapXY()</td>
+<td>Return argument with X/Y coordinates swapped</td>
+</tr>
+<tr>
+<td>ST_SymDifference()</td>
+<td>Return point set symmetric difference of two geometries</td>
+</tr>
+<tr>
+<td>ST_Touches()</td>
+<td>Whether one geometry touches another</td>
+</tr>
+<tr>
+<td>ST_Transform()</td>
+<td>(introduced 8.0.13)    Transform coordinates of geometry</td>
+</tr>
+<tr>
+<td>ST_Union()</td>
+<td>Return point set union of two geometries</td>
+</tr>
+<tr>
+<td>ST_Validate()</td>
+<td>Return validated geometry</td>
+</tr>
+<tr>
+<td>ST_Within()</td>
+<td>Whether one geometry is within another</td>
+</tr>
+<tr>
+<td>ST_X()</td>
+<td>Return X coordinate of Point</td>
+</tr>
+<tr>
+<td>ST_Y()</td>
+<td>Return Y coordinate of Point</td>
+</tr>
+<tr>
+<td>STATEMENT_DIGEST()</td>
+<td>Compute statement digest hash value</td>
+</tr>
+<tr>
+<td>STATEMENT_DIGEST_TEXT()</td>
+<td>Compute normalized statement digest</td>
+</tr>
+<tr>
+<td>STD()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV_POP()</td>
+<td>Return the population standard deviation</td>
+</tr>
+<tr>
+<td>STDDEV_SAMP()</td>
+<td>Return the sample standard deviation</td>
+</tr>
+<tr>
+<td>STR_TO_DATE()</td>
+<td>Convert a string to a date</td>
+</tr>
+<tr>
+<td>STRCMP()</td>
+<td>Compare two strings</td>
+</tr>
+<tr>
+<td>SUBDATE()</td>
+<td>Synonym for DATE_SUB()</td>
+</tr>
+<tr>
+<td>SUBSTR()</td>
+<td>Return the substring as specified</td>
+</tr>
+<tr>
+<td>SUBSTRING()</td>
+<td>Return the substring as specified</td>
+</tr>
+<tr>
+<td>SUBSTRING_INDEX()</td>
+<td>Return a substring from a string before the specified number of occurrences of the delimiter</td>
+</tr>
+<tr>
+<td>SUBTIME()</td>
+<td>Subtract times</td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>Return the sum</td>
+</tr>
+<tr>
+<td>SYSDATE()</td>
+<td>Return the time at which the function executes</td>
+</tr>
+<tr>
+<td>SYSTEM_USER()</td>
+<td>Synonym for USER()</td>
+</tr>
+<tr>
+<td>TAN()</td>
+<td>Return the tangent of the argument</td>
+</tr>
+<tr>
+<td>TIME()</td>
+<td>Extract the time portion of the expression passed</td>
+</tr>
+<tr>
+<td>TIME_FORMAT()</td>
+<td>Format as time</td>
+</tr>
+<tr>
+<td>TIME_TO_SEC()</td>
+<td>Return the argument converted to seconds</td>
+</tr>
+<tr>
+<td>TIMEDIFF()</td>
+<td>Subtract time</td>
+</tr>
+<tr>
+<td>TIMESTAMP()</td>
+<td>With a single argument, this function returns the date or datetime expression; with two arguments, the sum of the arguments</td>
+</tr>
+<tr>
+<td>TIMESTAMPADD()</td>
+<td>Add an interval to a datetime expression</td>
+</tr>
+<tr>
+<td>TIMESTAMPDIFF()</td>
+<td>Subtract an interval from a datetime expression</td>
+</tr>
+<tr>
+<td>TO_BASE64()</td>
+<td>Return the argument converted to a base-64 string</td>
+</tr>
+<tr>
+<td>TO_DAYS()</td>
+<td>Return the date argument converted to days</td>
+</tr>
+<tr>
+<td>TO_SECONDS()</td>
+<td>Return the date or datetime argument converted to seconds since Year 0</td>
+</tr>
+<tr>
+<td>TRIM()</td>
+<td>Remove leading and trailing spaces</td>
+</tr>
+<tr>
+<td>TRUNCATE()</td>
+<td>Truncate to specified number of decimal places</td>
+</tr>
+<tr>
+<td>UCASE()</td>
+<td>Synonym for UPPER()</td>
+</tr>
+<tr>
+<td>UNCOMPRESS()</td>
+<td>Uncompress a string compressed</td>
+</tr>
+<tr>
+<td>UNCOMPRESSED_LENGTH()</td>
+<td>Return the length of a string before compression</td>
+</tr>
+<tr>
+<td>UNHEX()</td>
+<td>Return a string containing hex representation of a number</td>
+</tr>
+<tr>
+<td>UNIX_TIMESTAMP()</td>
+<td>Return a Unix timestamp</td>
+</tr>
+<tr>
+<td>UpdateXML()</td>
+<td>Return replaced XML fragment</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>Convert to uppercase</td>
+</tr>
+<tr>
+<td>USER()</td>
+<td>The user name and host name provided by the client</td>
+</tr>
+<tr>
+<td>UTC_DATE()</td>
+<td>Return the current UTC date</td>
+</tr>
+<tr>
+<td>UTC_TIME()</td>
+<td>Return the current UTC time</td>
+</tr>
+<tr>
+<td>UTC_TIMESTAMP()</td>
+<td>Return the current UTC date and time</td>
+</tr>
+<tr>
+<td>UUID()</td>
+<td>Return a Universal Unique Identifier (UUID)</td>
+</tr>
+<tr>
+<td>UUID_SHORT()</td>
+<td>Return an integer-valued universal identifier</td>
+</tr>
+<tr>
+<td>UUID_TO_BIN()</td>
+<td>Convert string UUID to binary</td>
+</tr>
+<tr>
+<td>VALIDATE_PASSWORD_STRENGTH()</td>
+<td>Determine strength of password</td>
+</tr>
+<tr>
+<td>VALUES()</td>
+<td>Define the values to be used during an INSERT</td>
+</tr>
+<tr>
+<td>VAR_POP()</td>
+<td>Return the population standard variance</td>
+</tr>
+<tr>
+<td>VAR_SAMP()</td>
+<td>Return the sample variance</td>
+</tr>
+<tr>
+<td>VARIANCE()</td>
+<td>Return the population standard variance</td>
+</tr>
+<tr>
+<td>VERSION()</td>
+<td>Return a string that indicates the MySQL server version</td>
+</tr>
+<tr>
+<td>WAIT_FOR_EXECUTED_GTID_SET()</td>
+<td>Wait until the given GTIDs have executed on the slave.</td>
+</tr>
+<tr>
+<td>WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS()</td>
+<td>(deprecated 8.0.18)    Use WAIT_FOR_EXECUTED_GTID_SET()</td>
+</tr>
+<tr>
+<td>WEEK()</td>
+<td>Return the week number</td>
+</tr>
+<tr>
+<td>WEEKDAY()</td>
+<td>Return the weekday index</td>
+</tr>
+<tr>
+<td>WEEKOFYEAR()</td>
+<td>Return the calendar week of the date (1-53)</td>
+</tr>
+<tr>
+<td>WEIGHT_STRING()</td>
+<td>Return the weight string for a string</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>Logical XOR</td>
+</tr>
+<tr>
+<td>YEAR()</td>
+<td>Return the year</td>
+</tr>
+<tr>
+<td>YEARWEEK()</td>
+<td>Return the year and week</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td>~</td>
+<td>Bitwise inversion</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:41:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/">Git-别名</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/09/mysql-%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:15:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          mysql-聚合函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql-基础知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/">Git-打标签</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">Git-远程仓库的使用</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/">Git-撤销操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-DIFF/" class="archive-article-date">
-  	<time datetime="2020-03-26T08:09:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-DIFF/">Git-DIFF</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/" class="archive-article-date">
-  	<time datetime="2020-03-26T07:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/26/Git-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/">Git-查看提交历史</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-03-25T15:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/25/Git-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93/">Git-记录每次更新到仓库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-03-25T14:34:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/25/Git-%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93/">Git-获取Git仓库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/24/Git-%E8%B5%B7%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-24T14:50:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/24/Git-%E8%B5%B7%E6%AD%A5/">Git-起步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/24/Git-%E6%98%AF%E4%BB%80%E4%B9%88/" class="archive-article-date">
-  	<time datetime="2020-03-24T14:16:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/24/Git-%E6%98%AF%E4%BB%80%E4%B9%88/">Git-是什么</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -707,8 +2179,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
