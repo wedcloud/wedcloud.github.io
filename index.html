@@ -177,6 +177,453 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Arthas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/10/Arthas/">Arthas</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/10/Arthas/" class="archive-article-date">
+  	<time datetime="2020-04-10T05:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Arthas"><a href="#Arthas" class="headerlink" title="Arthas"></a>Arthas</h2><h3 id="启动-arthas-boot"><a href="#启动-arthas-boot" class="headerlink" title="启动 arthas-boot"></a>启动 arthas-boot</h3><ul>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;alibaba.github.io&#x2F;arthas&#x2F;arthas-boot.jar</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar arthas-boot.jar --target-ip 0.0.0.0</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>选择进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 输入&#96;1&#96;</span><br><span class="line">2. Enter&#x2F;回车</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+<h3 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h3><p><code>dashboard</code> 查看当前系统的实时数据面板</p>
+<p><code>Q</code>或者<code>Ctrl+C</code>退出<code>dashboard</code></p>
+<h3 id="thread"><a href="#thread" class="headerlink" title="thread"></a>thread</h3><p> 通过thread命令来获取到<code>arthas-demo</code>进程的Main Class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ thread 1 | grep &#39;main(&#39;</span><br><span class="line">	at demo.MathGame.main(MathGame.java:17)</span><br></pre></td></tr></table></figure>
+
+<h3 id="jad-反编译"><a href="#jad-反编译" class="headerlink" title="jad 反编译"></a>jad 反编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">$ jad demo.MathGame</span><br><span class="line"></span><br><span class="line">ClassLoader:</span><br><span class="line">+-sun.misc.Launcher$AppClassLoader@3d4eac69</span><br><span class="line">  +-sun.misc.Launcher$ExtClassLoader@66350f69</span><br><span class="line"> </span><br><span class="line">Location:</span><br><span class="line">&#x2F;tmp&#x2F;arthas-demo.jar</span><br><span class="line"> </span><br><span class="line">&#x2F;*</span><br><span class="line"> * Decompiled with CFR 0_132.</span><br><span class="line"> *&#x2F;</span><br><span class="line">package demo;</span><br><span class="line"> </span><br><span class="line">import java.io.PrintStream;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"> </span><br><span class="line">public class MathGame &#123;</span><br><span class="line">    private static Random random &#x3D; new Random();</span><br><span class="line">    private int illegalArgumentCount &#x3D; 0;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        MathGame game &#x3D; new MathGame();</span><br><span class="line">        do &#123;</span><br><span class="line">            game.run();</span><br><span class="line">            TimeUnit.SECONDS.sleep(1L);</span><br><span class="line">        &#125; while (true);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void run() throws InterruptedException &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int number &#x3D; random.nextInt();</span><br><span class="line">            List&lt;Integer&gt; primeFactors &#x3D; this.primeFactors(number);</span><br><span class="line">            MathGame.print(number, primeFactors);</span><br><span class="line">        &#125;</span><br><span class="line">        catch (Exception e) &#123;</span><br><span class="line">            System.out.println(String.format(&quot;illegalArgumentCount:%3d, &quot;, this.illegalArgumentCount) + e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void print(int number, List&lt;Integer&gt; primeFactors) &#123;</span><br><span class="line">        StringBuffer sb &#x3D; new StringBuffer(&quot;&quot; + number + &quot;&#x3D;&quot;);</span><br><span class="line">        Iterator&lt;Integer&gt; iterator &#x3D; primeFactors.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            int factor &#x3D; iterator.next();</span><br><span class="line">            sb.append(factor).append(&#39;*&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (sb.charAt(sb.length() - 1) &#x3D;&#x3D; &#39;*&#39;) &#123;</span><br><span class="line">            sb.deleteCharAt(sb.length() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public List&lt;Integer&gt; primeFactors(int number) &#123;</span><br><span class="line">        if (number &lt; 2) &#123;</span><br><span class="line">            ++this.illegalArgumentCount;</span><br><span class="line">            throw new IllegalArgumentException(&quot;number is: &quot; + number + &quot;, need &gt;&#x3D; 2&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        ArrayList&lt;Integer&gt; result &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        while (i &lt;&#x3D; number) &#123;</span><br><span class="line">            if (number % i &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                result.add(i);</span><br><span class="line">                number &#x2F;&#x3D; i;</span><br><span class="line">                i &#x3D; 2;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Affect(row-cnt:1) cost in 970 ms.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>通过<a href="https://alibaba.github.io/arthas/watch.html" target="_blank" rel="noopener">watch</a>命令来查看<code>demo.MathGame#primeFactors</code>函数的返回值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ watch demo.MathGame primeFactors returnObj</span><br><span class="line">Press Ctrl+C to abort.</span><br><span class="line">Affect(class-cnt:1 , method-cnt:1) cost in 107 ms.</span><br><span class="line">ts&#x3D;2018-11-28 19:22:30; [cost&#x3D;1.715367ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:31; [cost&#x3D;0.185203ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:32; [cost&#x3D;19.012416ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[47],</span><br><span class="line">    @Integer[2675531],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:33; [cost&#x3D;0.311395ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[317],</span><br><span class="line">    @Integer[503],</span><br><span class="line">    @Integer[887],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:34; [cost&#x3D;10.136007ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[31],</span><br><span class="line">    @Integer[717593],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:35; [cost&#x3D;29.969732ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[29],</span><br><span class="line">    @Integer[7651739],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="退出arthas"><a href="#退出arthas" class="headerlink" title="退出arthas"></a>退出arthas</h3><p>如果只是退出当前的连接，可以用<code>quit</code>或者<code>exit</code>命令。Attach到目标进程上的arthas还会继续运行，端口会保持开放，下次连接时可以直接连接上。</p>
+<p>如果想完全退出arthas，可以执行<code>stop</code>命令</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Arthas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Arthas//" class="article-tag-list-link color2">Arthas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/10/Arthas/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/10/spring/">spring</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/10/spring/" class="archive-article-date">
+  	<time datetime="2020-04-10T00:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><blockquote>
+<p>解决企业级开发的复杂性，使现有的技术更加容易使用</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>Spring 开源免费的框架（容器）</li>
+<li>轻量级、非入侵式的框架</li>
+<li>控制翻转（<code>IOC</code>），面向切面编程（<code>AOP</code>）</li>
+<li>支持事务</li>
+<li>框架整合的支持</li>
+</ul>
+<h3 id="7大模块"><a href="#7大模块" class="headerlink" title="7大模块"></a>7大模块</h3><p><img src="spring/image-20200410090322458.png" alt="image-20200410090322458"></p>
+<ol>
+<li>核心容器：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 <code>BeanFactory</code>，它是工厂模式的实现。<code>BeanFactory</code> 使用控制反转 （<code>IOC</code>） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开</li>
+<li><code>Spring</code> 上下文：Spring 上下文是一个配置文件，向 Spring 框架提供上下文信息。Spring 上下文包括企业服务，例如 <code>JNDI</code>、<code>EJB</code>、电子邮件、国际化、校验和调度功能</li>
+<li><code>Spring AOP</code>：通过配置管理特性，<code>Spring AOP</code> 模块直接将面向方面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 <code>AOP</code>。<code>Spring AOP</code> 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。通过使用 <code>Spring AOP</code>，不用依赖<code>EJB</code> 组件，就可以将声明性事务管理集成到应用程序中</li>
+<li><code>Spring DAO</code>：<code>JDBC DAO</code> 抽象层提供了有意义的异常层次结构，可用该结构来管理异常处理和不同数据库供应商抛出的错误消息。异常层次结构简化了错误处理，并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）。<code>Spring DAO</code> 的面向 <code>JDBC</code>的异常遵从通用的 <code>DAO</code> 异常层次结构</li>
+<li><code>Spring ORM</code>：Spring 框架插入了若干个<code>ORM</code> 框架，从而提供了 <code>ORM</code> 的对象关系工具，其中包括 <code>JDO</code>、<code>Hibernate</code> 和 <code>iBatis SQL Map</code>。所有这些都遵从 Spring 的通用事务和 <code>DAO</code> 异常层次结构</li>
+<li><code>Spring Web</code> 模块：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作</li>
+<li><code>Spring MVC</code> 框架：<code>MVC</code> 框架是一个全功能的构建 Web 应用程序的 <code>MVC</code> 实现。通过策略接口，<code>MVC</code> 框架变成为高度可配置的，<code>MVC</code> 容纳了大量视图技术，其中包括 <code>JSP</code>、<code>Velocity</code>、<code>Tiles</code>、<code>iText</code> 和 <code>POI</code></li>
+</ol>
+<h3 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/10/spring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mysql-数据库设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">mysql-数据库设计</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2020-04-09T14:00:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="规范数据库设计"><a href="#规范数据库设计" class="headerlink" title="规范数据库设计"></a>规范数据库设计</h2><blockquote>
+<p>当数据库比较复杂的时候，就需要设计</p>
+</blockquote>
+<h3 id="糟糕的设计"><a href="#糟糕的设计" class="headerlink" title="糟糕的设计"></a>糟糕的设计</h3><ul>
+<li>数据冗余，浪费空间</li>
+<li>数据库插入和删除都会非常麻烦异常【屏蔽使用物理外键】</li>
+<li>程序的性能差</li>
+</ul>
+<h3 id="良好的设计"><a href="#良好的设计" class="headerlink" title="良好的设计"></a>良好的设计</h3><ul>
+<li>节省空间</li>
+<li>保证数据库的完整性</li>
+<li>方便系统开发</li>
+</ul>
+<h3 id="设计数据库"><a href="#设计数据库" class="headerlink" title="设计数据库"></a>设计数据库</h3><ul>
+<li>分析需求：分析业务和需要处理的数据库需求</li>
+<li>概要设计：设计关系图 E-R 图</li>
+<li>创建表：字段名，字段类型等</li>
+</ul>
+<h2 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h2><h3 id="为什么需要数据规范化"><a href="#为什么需要数据规范化" class="headerlink" title="为什么需要数据规范化"></a>为什么需要数据规范化</h3><ul>
+<li>信息重复</li>
+<li>更新异常</li>
+<li>插入异常<ul>
+<li>无法正常显示信息</li>
+</ul>
+</li>
+<li>删除异常<ul>
+<li>丢失有效信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="三大范式-1"><a href="#三大范式-1" class="headerlink" title="三大范式"></a>三大范式</h3><h4 id="第一范式（1NF）"><a href="#第一范式（1NF）" class="headerlink" title="第一范式（1NF）"></a>第一范式（1NF）</h4><blockquote>
+<p>原子性：要求数据库表的每一列都是不可分割的原子数据项</p>
+</blockquote>
+<h4 id="第二范式（2NF）"><a href="#第二范式（2NF）" class="headerlink" title="第二范式（2NF）"></a>第二范式（2NF）</h4><p>前提：满足第一范式</p>
+<blockquote>
+<p>确保表中的每一列都和主键相关，而不能只与主键的某一部分相关</p>
+<p>（每张表只描述一件事情）</p>
+</blockquote>
+<h4 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h4><p>前提：满足第一范式和第二范式</p>
+<blockquote>
+<p>确保表中的每一列数据都和主键直接相关，而不能间接相关</p>
+</blockquote>
+<h3 id="规范性和性能问题"><a href="#规范性和性能问题" class="headerlink" title="规范性和性能问题"></a>规范性和性能问题</h3><p><strong>关联查询的表不得超过三张表</strong></p>
+<ul>
+<li>考虑商业化的需求和目标，数据库的性能更加重要</li>
+<li>在性能和规范需求最优解</li>
+<li>估计增加一些冗余字段（多变变单表查询）</li>
+<li>故意增加计算列（从大数据量降低为小数据量查询）</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mysql-用户管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">mysql-用户管理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-04-09T13:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="新增用户"><a href="#新增用户" class="headerlink" title="新增用户"></a>新增用户</h3><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mysql-索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -197,7 +644,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
+        <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>查询表的索引信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
 <li>主键索引（<code>PRIMARY KEY</code>）<ul>
 <li>唯一标识，主键不可重复</li>
 </ul>
@@ -214,6 +666,15 @@
 <li>快速定位数据</li>
 </ul>
 </li>
+</ul>
+<blockquote>
+<p>存储过程</p>
+</blockquote>
+<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
+<li>索引不是越多越好</li>
+<li>不要对经常变动的数据加索引</li>
+<li>小数据量的表不需要加索引</li>
+<li>索引一般加在常用来查询的字段</li>
 </ul>
 
       
@@ -2469,6 +2930,120 @@
 
 
   
+    <article id="post-mysql-join" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/08/mysql-join/">mysql-join</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/08/mysql-join/" class="archive-article-date">
+  	<time datetime="2020-04-08T14:43:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="连表查询"><a href="#连表查询" class="headerlink" title="连表查询"></a>连表查询</h2><p><img src="mysql-join/image-20200408224438052.png" alt="image-20200409214546598"></p>
+<h3 id="内连接-inner-join"><a href="#内连接-inner-join" class="headerlink" title="内连接 inner join"></a>内连接 <code>inner join</code></h3><p><img src="mysql-join/image-20200408224524502.png" alt="image-20200408224524502"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A  A  INNER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
+
+<h3 id="左连接-LEFT-JOIN"><a href="#左连接-LEFT-JOIN" class="headerlink" title="左连接 LEFT JOIN"></a>左连接 <code>LEFT JOIN</code></h3><p><img src="mysql-join/image-20200408224633126.png" alt="image-20200408224633126"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A LEFT JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="右连接-RIGHT-JOIN"><a href="#右连接-RIGHT-JOIN" class="headerlink" title="右连接 RIGHT JOIN"></a>右连接 <code>RIGHT JOIN</code></h3><p><img src="mysql-join/image-20200408224751488.png" alt="image-20200408224751488"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON  A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="外连接-OUTER-JOIN"><a href="#外连接-OUTER-JOIN" class="headerlink" title="外连接 OUTER JOIN"></a>外连接 <code>OUTER JOIN</code></h3><p><img src="mysql-join/image-20200408225007102.png" alt="image-20200408225007102"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A FULL OUTER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="左连接-内连接-LEFT-JOIN-EXCLUDING-INNER-JOIN"><a href="#左连接-内连接-LEFT-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="左连接 - 内连接 LEFT JOIN EXCLUDING INNER JOIN"></a>左连接 - 内连接 <code>LEFT JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225121695.png" alt="image-20200408225121695"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A LEFT JOIN TABLE_B ON A.KEY &#x3D; B.KEY WHERE B.KEY IS NULL</span><br></pre></td></tr></table></figure>
+
+<h3 id="右连接-内连接-RIGHT-JOIN-EXCLUDING-INNER-JOIN"><a href="#右连接-内连接-RIGHT-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="右连接 - 内连接 RIGHT JOIN EXCLUDING INNER JOIN"></a>右连接 - 内连接 <code>RIGHT JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225229477.png" alt="image-20200408225229477"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON A.KEY &#x3D; B.KEY WHERE A.KEY IS NULL</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="外连接-内连接-OUTER-JOIN-EXCLUDING-INNER-JOIN"><a href="#外连接-内连接-OUTER-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="外连接 - 内连接 OUTER JOIN EXCLUDING INNER JOIN"></a>外连接 - 内连接 <code>OUTER JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225340689.png" alt="image-20200408225340689"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A FULL OUTER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY WHERE A.KEY IS NULL OR B.KEY IS NULL</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/08/mysql-join/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mysql-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2872,524 +3447,6 @@
 
 
   
-    <article id="post-JMM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/JMM/">JMM</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/03/JMM/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JMM内存模型"><a href="#JMM内存模型" class="headerlink" title="JMM内存模型"></a>JMM内存模型</h2><p><img src="/source/image/111.jpg" alt="&quot;JMM&quot;" title="JMM"></p>
-<h2 id="内存交互操作"><a href="#内存交互操作" class="headerlink" title="内存交互操作"></a>内存交互操作</h2><p>内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）</p>
-<ul>
-<li>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态</li>
-<li>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
-<li>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
-<li>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中</li>
-<li>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令</li>
-<li>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中</li>
-<li>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用</li>
-<li>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
-</ul>
-<p>　　JMM对这八种指令的使用，制定了如下规则：</p>
-<ul>
-<li>不允许read和load、store和write操作之一单独出现。即使用了read必须load，使用了store必须write</li>
-<li>不允许线程丢弃他最近的assign操作，即工作变量的数据改变了之后，必须告知主存</li>
-<li>不允许一个线程将没有assign的数据从工作内存同步回主内存</li>
-<li>一个新的变量必须在主内存中诞生，不允许工作内存直接使用一个未被初始化的变量。就是怼变量实施use、store操作之前，必须经过assign和load操作</li>
-<li>一个变量同一时间只有一个线程能对其进行lock。多次lock后，必须执行相同次数的unlock才能解锁</li>
-<li>如果对一个变量进行lock操作，会清空所有工作内存中此变量的值，在执行引擎使用这个变量前，必须重新load或assign操作初始化变量的值</li>
-<li>如果一个变量没有被lock，就不能对其进行unlock操作。也不能unlock一个被其他线程锁住的变量</li>
-<li>对一个变量进行unlock操作之前，必须把此变量同步回主内存</li>
-</ul>
-<h2 id="模型特征"><a href="#模型特征" class="headerlink" title="模型特征"></a>模型特征</h2><p>　　<strong>原子性</strong>：例如上面八项操作，在操作系统里面是不可分割的单元。被synchronized关键字或其他锁包裹起来的操作也可以认为是原子的。从一个线程观察另外一个线程的时候，看到的都是一个个原子性的操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1         synchronized (this) &#123;</span><br><span class="line">2             a&#x3D;1;</span><br><span class="line">3             b&#x3D;2;</span><br><span class="line">4         &#125;</span><br></pre></td></tr></table></figure>
-<p>　　例如一个线程观察另外一个线程执行上面的代码，只能看到a、b都被赋值成功结果，或者a、b都尚未被赋值的结果。</p>
-<p>　　<strong>可见性</strong>：每个工作线程都有自己的工作内存，所以当某个线程修改完某个变量之后，在其他的线程中，未必能观察到该变量已经被修改。volatile关键字要求被修改之后的变量要求立即更新到主内存，每次使用前从主内存处进行读取。因此volatile可以保证可见性。除了volatile以外，synchronized和final也能实现可见性。synchronized保证unlock之前必须先把变量刷新回主内存。final修饰的字段在构造器中一旦完成初始化，并且构造器没有this逸出，那么其他线程就能看到final字段的值。</p>
-<p>　　<strong>有序性</strong>：java的有序性跟线程相关。如果在线程内部观察，会发现当前线程的一切操作都是有序的。如果在线程的外部来观察的话，会发现线程的所有操作都是无序的。因为JMM的工作内存和主内存之间存在延迟，而且java会对一些指令进行重新排序。volatile和synchronized可以保证程序的有序性，很多程序员只理解这两个关键字的执行互斥，而没有很好的理解到volatile和synchronized也能保证指令不进行重排序</p>
-<h2 id="Final域的内存语义"><a href="#Final域的内存语义" class="headerlink" title="Final域的内存语义"></a>Final域的内存语义</h2><p>　　被final修饰的变量，相比普通变量，内存语义有一些不同。具体如下：</p>
-<p>JMM禁止把Final域的写重排序到构造器的外部。<br>在一个线程中，初次读该对象和读该对象下的Final域，JMM禁止处理器重新排序这两个操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> 1 public class FinalConstructor &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     final int a;</span><br><span class="line"> 4 </span><br><span class="line"> 5     int b;</span><br><span class="line"> 6 </span><br><span class="line"> 7     static FinalConstructor finalConstructor;</span><br><span class="line"> 8 </span><br><span class="line"> 9     public FinalConstructor() &#123;</span><br><span class="line">10         a &#x3D; 1;</span><br><span class="line">11         b &#x3D; 2;</span><br><span class="line">12     &#125;</span><br><span class="line">13 </span><br><span class="line">14     public static void write() &#123;</span><br><span class="line">15         finalConstructor &#x3D; new FinalConstructor();</span><br><span class="line">16     &#125;</span><br><span class="line">17 </span><br><span class="line">18     public static void read() &#123;</span><br><span class="line">19         FinalConstructor constructor &#x3D; finalConstructor;</span><br><span class="line">20         int A &#x3D; constructor.a;</span><br><span class="line">21         int B &#x3D; constructor.b;</span><br><span class="line">22     &#125;</span><br><span class="line">23 &#125;</span><br></pre></td></tr></table></figure>
-<p>　　假设现在有线程A执行FinalConstructor.write()方法，线程B执行FinalConstructor.read()方法。</p>
-<p>　　对应上述的Final的第一条规则，因为JMM禁止把Final域的写重排序到构造器的外部，而对普通变量没有这种限制，所以变量A=1，而变量B可能会等于2（构造完成），也有可能等于0（第11行代码被重排序到构造器的外部）。</p>
-<p> 　　对应上述的Final的第二条规则，如果constructor的引用不为null，A必然为1，要么constructor为null，抛出空指针异常。保证读final域之前，一定会先读该对象的引用。但是普通对象就没有这种规则</p>
-<h2 id="Happen-Before（先行发生规则）"><a href="#Happen-Before（先行发生规则）" class="headerlink" title="Happen-Before（先行发生规则）"></a>Happen-Before（先行发生规则）</h2><p>　　在常规的开发中，如果我们通过上述规则来分析一个并发程序是否安全，估计脑壳会很疼。因为更多时候，我们是分析一个并发程序是否安全，其实都依赖Happen-Before原则进行分析。Happen-Before被翻译成先行发生原则，意思就是当A操作先行发生于B操作，则在发生B操作的时候，操作A产生的影响能被B观察到，“影响”包括修改了内存中的共享变量的值、发送了消息、调用了方法等。</p>
-<h3 id="Happen-Before的规则有以下几条"><a href="#Happen-Before的规则有以下几条" class="headerlink" title="Happen-Before的规则有以下几条"></a>Happen-Before的规则有以下几条</h3><ul>
-<li><p>程序次序规则（Program Order Rule）：在一个线程内，程序的执行规则跟程序的书写规则是一致的，从上往下执行。</p>
-</li>
-<li><p>管程锁定规则（Monitor Lock Rule）：一个Unlock的操作肯定先于下一次Lock的操作。这里必须是同一个锁。同理我们可以认为在synchronized同步同一个锁的时候，锁内先行执行的代码，对后续同步该锁的线程来说是完全可见的。</p>
-</li>
-<li><p>volatile变量规则（volatile Variable Rule）：对同一个volatile的变量，先行发生的写操作，肯定早于后续发生的读操作</p>
-</li>
-<li><p>线程启动规则（Thread Start Rule）：Thread对象的start()方法先行发生于此线程的没一个动作</p>
-</li>
-<li><p>线程中止规则（Thread Termination Rule）：Thread对象的中止检测（如：Thread.join()，Thread.isAlive()等）操作，必行晚于线程中所有操作</p>
-</li>
-<li><p>线程中断规则（Thread Interruption Rule）：对线程的interruption（）调用，先于被调用的线程检测中断事件(Thread.interrupted())的发生</p>
-</li>
-<li><p>对象中止规则（Finalizer Rule）：一个对象的初始化方法先于一个方法执行Finalizer()方法</p>
-</li>
-<li><p>传递性（Transitivity）：如果操作A先于操作B、操作B先于操作C,则操作A先于操作C</p>
-</li>
-</ul>
-<p>以上就是Happen-Before中的规则。通过这些条件的判定，仍然很难判断一个线程是否能安全执行，毕竟在我们的时候线程安全多数依赖于工具类的安全性来保证。想提高自己对线程是否安全的判断能力，必然需要理解所使用的框架或者工具的实现，并积累线程安全的经验</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JMM//" class="article-tag-list-link color4">JMM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/JMM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java并发编程实战-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">Java并发编程实战-02</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:49:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="线程的安装型"><a href="#线程的安装型" class="headerlink" title="线程的安装型"></a>线程的安装型</h2><p>要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问</p>
-<p>“共享”意味着变量可以由多个线程同时访问<br>“可变”意味着变量的值在其生命周期内可以发生变化</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java并发编程实战-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">Java并发编程实战-01</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/" class="archive-article-date">
-  	<time datetime="2020-03-29T12:55:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>编写正确的程序很难，而编写正确的并发程序则是难上加难</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-分支管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">Git-分支管理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-03-27T05:50:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><p>命令：<code>git branch</code> </p>
-<blockquote>
-<blockquote>
-<p><code>--merged</code> （已合并） 与 <code>--no-merged</code> （未合并） 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支</p>
-</blockquote>
-</blockquote>
-<p>注意 </p>
-<blockquote>
-<blockquote>
-<p><code>master</code> 分支前的 <code>*</code> 字符：它代表现在检出的那一个分支（也就是说，当前 HEAD 指针所指向的分支）</p>
-</blockquote>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E5%88%86%E6%94%AF/">Git-分支</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E5%88%86%E6%94%AF/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:59:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="创建分支的意义"><a href="#创建分支的意义" class="headerlink" title="创建分支的意义"></a>创建分支的意义</h2><p>可以将各自的工作从开发主线上分离开来，以免影响开发主线</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E5%88%86%E6%94%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -3491,6 +3548,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -3500,6 +3561,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
             
             <div class="clearfix"></div>
