@@ -8,6 +8,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>spring</module>
+        <module>spring-javaconfig</module>
+        <module>spring-aop</module>
     </modules>
     <name>blog</name>
     <description>Demo project for Spring</description>

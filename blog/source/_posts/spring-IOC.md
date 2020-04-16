@@ -116,3 +116,74 @@ ApplicationContext 粉红色的 “高级容器”，依赖着 “低级容器�
 ###### 初始化时期
 
 在xml文件加载的时候，容器中管理的对象就已经初始化了，而且是单例的；
+
+
+
+## 依赖注入
+
+### 构造器注入
+
+### Set方式注入
+
+* 依赖注入：Set注入
+  - 依赖：bean对象的创建依赖于容器
+  - 注入：bean对象中的所有属性，有容器来注入
+
+### bean 作用域
+
+* singleton（单例）
+* prototype（原型【多例】）
+* request
+* session
+* application
+* websocket
+
+
+
+## Bean的自动装配
+
+* 自动装配是Spring满足bean依赖的一种方式
+* Spring会在上下文中自动查找，并给bean自动装配属性
+
+Spring三种装配方式：
+
+1. 在XML中显示的配置
+2. 在java中显示配置
+3. 隐式的自动装配bean
+
+自动装配方式:byName和byType；
+
+byName 保证bean id 唯一，id与属性名一致；
+
+byType:保证bean的class唯一，class与属性类型一致
+
+
+
+## 注解实现自动装配
+
+@Autowired是Spring提供的注解，只按照ByType注入；
+
+默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用
+
+> @Autowired(required=false) 说明该注入对象可以为null
+>
+> @Qualifier(value="name") 指定注入对象的bean的name
+
+@Resource 是J2EE支持（jdk1.6）
+
+@Resource装配顺序：
+
+①如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常。
+
+②如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常。
+
+③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。
+
+④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。
+
+@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入
+
+扩展：
+
+> @Nullable 表示标注字段可以为null
+
