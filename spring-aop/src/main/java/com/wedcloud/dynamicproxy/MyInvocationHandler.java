@@ -38,6 +38,7 @@ public class MyInvocationHandler implements InvocationHandler {
      * @throws Throwable
      * 方法区内可以插入公共业务或附属方法
      */
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object o = method.invoke(obj,args);
         return o;
