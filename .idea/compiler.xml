@@ -10,10 +10,12 @@
         <module name="wedcloud" />
         <module name="spring-javaconfig" />
         <module name="spring" />
+        <module name="mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="blog" target="1.5" />
+      <module name="mybatis" target="1.5" />
       <module name="spring" target="1.5" />
       <module name="spring-aop" target="6" />
       <module name="spring-javaconfig" target="1.5" />
