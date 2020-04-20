@@ -3,19 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="club.wedcloud.mapper.SysUserMapper">
-    <select id="selectList" resultType="club.wedcloud.pojo.SysUser">
-        SELECT * FROM `sys_user`
+    <select id="selectList" resultType="sysUser">
+        SELECT `id`,`name`,`passwd`,`phone`,`cancel`,`created_at`,`modified_at` FROM `sys_user`
     </select>
 
-    <select id="findById" resultType="club.wedcloud.pojo.SysUser">
+    <select id="findById" resultType="sysUser">
         SELECT * FROM `sys_user` where `id`=#{id}
     </select>
 
-    <insert id="add" parameterType="club.wedcloud.pojo.SysUser">
+    <insert id="add" parameterType="sysUser">
         INSERT INTO `sys_user` (`name`,`passwd`,`phone`,`cancel`,`created_at`,`modified_at`) VALUES(#{name},#{passwd},#{phone},0,NOW(3),NOW(3))
     </insert>
 
-    <update id="modify" parameterType="club.wedcloud.pojo.SysUser">
+    <update id="modify" parameterType="sysUser">
         UPDATE `sys_user` SET `name`=#{name},`passwd`=#{passwd},`phone`=#{phone},`modified_at`=NOW(3) where `id`=#{id}
     </update>
 

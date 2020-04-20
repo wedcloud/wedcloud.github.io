@@ -25,9 +25,31 @@ public class SysUserMapperTest {
     try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
       SysUserMapper mapper = sqlSession.getMapper(SysUserMapper.class);
       SysUser user = SysUser.builder().name("赵柳").passwd("1234").phone("1919").build();
-      int add = mapper.add(user);
+      int result = mapper.add(user);
       sqlSession.commit();
-      System.out.println(add);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Test
+  public void update() {
+    try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
+      SysUserMapper mapper = sqlSession.getMapper(SysUserMapper.class);
+      SysUser user = SysUser.builder().name("赵柳123").passwd("1111").phone("111232").id(3).build();
+      int result = mapper.modify(user);
+      sqlSession.commit();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Test
+  public void del() {
+    try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
+      SysUserMapper mapper = sqlSession.getMapper(SysUserMapper.class);
+      int result = mapper.del(3);
+      sqlSession.commit();
     } catch (Exception e) {
       e.printStackTrace();
     }

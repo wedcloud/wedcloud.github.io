@@ -145,3 +145,10 @@ date: 2020-04-19 22:22:17
 
 
 
+##### 参数
+
+Map传递参数时，直接在sql中取出key即可【parameterType="map"】
+
+对象传递参数时，直接在sqk中取出对象的属性即可【parameterType="pojo"】
+
+只有一个基本参数的情况下，可以直接在sql中取到【parameterType 可以不写】
