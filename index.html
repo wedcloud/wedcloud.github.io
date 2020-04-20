@@ -177,6 +177,697 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/19/mybatis/">mybatis</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/19/mybatis/" class="archive-article-date">
+  	<time datetime="2020-04-19T14:22:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h2><ul>
+<li>MyBatis 是一款优秀的<code>持久层框架</code></li>
+<li>它支持自定义 SQL、存储过程以及高级映射</li>
+<li>MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作</li>
+<li>MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录</li>
+</ul>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>简单易学</li>
+<li>灵活</li>
+<li>sql与代码分离，提高可维护性</li>
+<li>提供映射标签，支持对象与数据库的orm关系映射</li>
+<li>提供对象关系映射标签，支持对象关系组维护</li>
+<li>提供xml标签，支持编写动态sql</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/19/mybatis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-aop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-aop/">spring-aop</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-aop/" class="archive-article-date">
+  	<time datetime="2020-04-16T08:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Spring AOP 底层 – 代理模式</p>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><h4 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h4><p>角色分析：</p>
+<ul>
+<li>抽象角色：一般使用接口或者抽象类来解决</li>
+<li>真实角色：被代理的角色</li>
+<li>代理角色：代理真实角色，代理真实角色之后，通常还会做一些附属操作（公共的业务）</li>
+</ul>
+<p>静态代理模式的好处：</p>
+<ul>
+<li>使真实角色的操作更加纯粹</li>
+<li>公共业务交给代理角色，实现业务分工</li>
+<li>公共业务发生扩展的时候，方便集中管理</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>一个真实角色就会产生一个代理角色，代码量大，开发效率低</li>
+</ul>
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><ul>
+<li>动态代理和静态代理角色一样</li>
+<li>动态代理的代理类是动态生成的，不是我们直接写好的</li>
+<li>动态代理分为两大类：基于接口的动态代理，基于类动态代理<ul>
+<li>基于接口的：JDK动态代理【常用】</li>
+<li>基于类： cglib</li>
+<li>Java字节码实现：Javasist</li>
+</ul>
+</li>
+</ul>
+<p>好处：</p>
+<ul>
+<li>使真实角色的操作更加纯粹</li>
+<li>公共业务交给代理角色，实现业务分工</li>
+<li>公共业务发生扩展的时候，方便集中管理</li>
+<li>一个动态代理类，代理的是一个接口，一般每一个接口对应的就是一类业务</li>
+<li>一个动态代理类，可以代理多个类，只要实现统一接口即可</li>
+</ul>
+<h3 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h3><ul>
+<li><p>AOP（Aspect Oriented Programming）称为面向切面编程，在程序开发中主要用来解决一些系统层面上的问题，比如日志，事务，权限等待，Struts2的拦截器设计就是基于AOP的思想，是个比较经典的例子。</p>
+</li>
+<li><p>在不改变原有的逻辑的基础上，增加一些额外的功能。代理也是这个功能，读写分离也能用aop来做。</p>
+</li>
+<li><p>AOP可以说是OOP（Object Oriented Programming，面向对象编程）的补充和完善。OOP引入封装、继承、多态等概念来建立一种对象层次结构，用于模拟公共行为的一个集合。不过OOP允许开发者定义纵向的关系，但并不适合定义横向的关系，例如日志功能。日志代码往往横向地散布在所有对象层次中，而与它对应的对象的核心功能毫无关系对于其他类型的代码，如安全性、异常处理和透明的持续性也都是如此，这种散布在各处的无关的代码被称为横切（cross cutting），在OOP设计中，它导致了大量代码的重复，而不利于各个模块的重用</p>
+</li>
+<li><p>AOP技术恰恰相反，它利用一种称为”横切”的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其命名为”Aspect”，即切面。所谓”切面”，简单说就是那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低模块之间的耦合度，并有利于未来的可操作性和可维护性</p>
+</li>
+<li><p>使用”横切”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处基本相似，比如权限认证、日志、事物。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来</p>
+</li>
+</ul>
+<h3 id="AOP相关概念"><a href="#AOP相关概念" class="headerlink" title="AOP相关概念"></a>AOP相关概念</h3><ol>
+<li>横切关注点：对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点</li>
+<li>Aspect(切面):通常是一个类，里面可以定义切入点和通知</li>
+<li>JointPoint(连接点):程序执行过程中明确的点，一般是方法的调用。被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器</li>
+<li>Advice(通知):AOP在特定的切入点上执行的增强处理，有before(前置),after(后置),afterReturning(最终),afterThrowing(异常),around(环绕)</li>
+<li>Pointcut(切入点):就是带有通知的连接点，在程序中主要体现为书写切入点表达式</li>
+<li>weave(织入)：将切面应用到目标对象并导致代理对象创建的过程</li>
+<li>introduction(引入)：在不修改代码的前提下，引入可以在<strong>运行期</strong>为类动态地添加一些方法或字段</li>
+<li>AOP代理(AOP Proxy)：AOP框架创建的对象，代理就是目标对象的加强。Spring中的AOP代理可以使JDK动态代理，也可以是CGLIB代理，前者基于接口，后者基于子类</li>
+<li>目标对象（Target Object）: 包含连接点的对象。也被称作被通知或被代理对象</li>
+</ol>
+<h3 id="Advice-类型"><a href="#Advice-类型" class="headerlink" title="Advice 类型"></a>Advice 类型</h3><ol>
+<li><p>Before:在目标方法被调用之前做增强处理,@Before只需要指定切入点表达式即可</p>
+</li>
+<li><p>AfterReturning:在目标方法正常完成后做增强,@AfterReturning除了指定切入点表达式后，还可以指定一个返回值形参名returning,代表目标方法的返回值</p>
+</li>
+<li><p>AfterThrowing:主要用来处理程序中未处理的异常,@AfterThrowing除了指定切入点表达式后，还可以指定一个throwing的返回值形参名,可以通过该形参名来访问目标方法中所抛出的异常对象</p>
+</li>
+<li><p>After:在目标方法完成之后做增强，无论目标方法时候成功完成。@After可以指定一个切入点表达式</p>
+</li>
+<li><p>Around:环绕通知,在目标方法完成前后做增强处理,环绕通知是最重要的通知类型,像事务,日志等都是环绕通知,注意编程中核心是一个ProceedingJoinPoint</p>
+</li>
+</ol>
+<h3 id="AOP-场景"><a href="#AOP-场景" class="headerlink" title="AOP 场景"></a>AOP 场景</h3><blockquote>
+<p><em>Authentication 权限</em><br> <em>Caching 缓存</em><br> <em>Context passing 内容传递</em><br> <em>Error handling 错误处理</em><br> <em>Lazy loading　懒加载</em><br> <em>Debugging　　调试</em><br> <em>logging, tracing, profiling and monitoring　记录跟踪　优化　校准</em><br> <em>Performance optimization　性能优化</em><br> <em>Persistence　　持久化</em><br> <em>Resource pooling　资源池</em><br> <em>Synchronization　同步</em><br> <em>Transactions 事务</em></p>
+</blockquote>
+<h3 id="AOP依赖包"><a href="#AOP依赖包" class="headerlink" title="AOP依赖包"></a>AOP依赖包</h3><p>使用aop依赖包除了Spring提供给开发者的jar包外，还需额外上网下载两个jar包：<br>1、aopalliance.jar<br>2、aspectjweaver.jar</p>
+<h3 id="使用AOP方式"><a href="#使用AOP方式" class="headerlink" title="使用AOP方式"></a>使用AOP方式</h3><ol>
+<li><p>经典的基于代理的AOP</p>
+</li>
+<li><p>@AspectJ注解驱动的切面</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnotationLogAspect</span> </span>&#123;</span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"after"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"before"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>XML开启注解AOP</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:aspectj-autoproxy/&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>纯POJO切面（纯粹通过<a href="aop:fonfig">aop:fonfig</a>标签配置）</p>
+<p><img src="spring-aop/image-20200417143720315.png" alt="image-20200417143720315"></p>
+</li>
+<li><p>注入式AspectJ切面<br><img src="spring-aop/image-20200417143907193.png" alt="image-20200417143907193"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/aop//" class="article-tag-list-link color4">aop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-aop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-java实现配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/">spring-java实现配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-16T06:57:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用Java的方式配置Spring"><a href="#使用Java的方式配置Spring" class="headerlink" title="使用Java的方式配置Spring"></a>使用Java的方式配置Spring</h2><p>POJO</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"123"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>CONFIG</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> User();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Test</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfigTest</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      ApplicationContext context = <span class="keyword">new</span> AnnotationConfigApplicationContext(JavaConfig<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">      User user = context.getBean(<span class="string">"getUser"</span>,User<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">      System.out.println(user);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/javaConfig//" class="article-tag-list-link color1">javaConfig</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/">spring-注解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-16T06:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>使用注解开发，必须导入AOP的包；</p>
+<p>@component （把普通pojo实例化到spring容器中，相当于配置文件中的<code>&lt;bean id=&quot;&quot; class=&quot;&quot;/&gt;</code>）</p>
+<blockquote>
+<p>@component衍生注解：</p>
+<ul>
+<li>dao层 【@Repository】</li>
+<li>service层 【@Service】</li>
+<li>controller层 【@Controller】</li>
+</ul>
+<p>这四个注解都是一样的，都代表将某个类注册到spring容器中，装配bean</p>
+</blockquote>
+<p>@Value(“value”) 将value注入到属性中 </p>
+<p>@Scope 配置作用域 （<code>singleton</code>,<code>prototype</code>等）</p>
+<h3 id="xml-与-注解"><a href="#xml-与-注解" class="headerlink" title="xml 与 注解"></a>xml 与 注解</h3><p>xml使用面广，适用于任何场合，维护简单方便</p>
+<p>注解只能使用自己的类，维护相对复杂</p>
+<p>XML与注解最佳实践：</p>
+<ul>
+<li>xml管理bean</li>
+<li>注解只负责完成属性注入</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/注解//" class="article-tag-list-link color3">注解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-IOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/spring-IOC/">spring-IOC</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/spring-IOC/" class="archive-article-date">
+  	<time datetime="2020-04-12T05:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><h3 id="广义的IOC"><a href="#广义的IOC" class="headerlink" title="广义的IOC"></a>广义的IOC</h3><ul>
+<li><p>IOC(Inversion of control) 控制反转，即“不用打电话过来，我们会打给你”</p>
+<p>两种实现： 依赖查找（DL）和依赖注入（DI）<br>IOC 和 DI 、DL 的关系（这个 DL，Avalon 和 EJB 就是使用的这种方式实现的 IoC）:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-c415d1c39ed74772.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
+</li>
+<li><p>DL 已经被抛弃，因为他需要用户自己去使用API 进行查找资源好组装对象，也就是说这个是有入侵性的</p>
+</li>
+<li><p>DI 是 Spring 使用的方式，容器负责组件的装配</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：Java 使用 DI 方式实现 IoC 的不止 Spring，包括 Google 的 Guice，还有一个冷门的 PicoContainer（极度轻量，但只提供 IoC）</p>
+</blockquote>
+<h2 id="Spring-的-IOC"><a href="#Spring-的-IOC" class="headerlink" title="Spring 的 IOC"></a>Spring 的 IOC</h2><p>Spring 的 IoC 设计支持以下功能:</p>
+<ul>
+<li>依赖注入</li>
+<li>依赖检查</li>
+<li>自动装配</li>
+<li>支持集合</li>
+<li>指定初始化方法和销毁方法</li>
+<li>支持回调某些方法（但是需要实现Spring 接口，略有入侵性）</li>
+</ul>
+<blockquote>
+<p>其中，最重要的就是依赖注入，从 XML 的配置上说， 即 ref 标签。对应 Spring RuntimeBeanReference 对象</p>
+</blockquote>
+<p>对于 IoC 来说，最重要的就是容器。容器管理着 Bean 的生命周期，控制着 Bean 的依赖注入。</p>
+<h3 id="那么，-Spring-如何设计容器的呢？"><a href="#那么，-Spring-如何设计容器的呢？" class="headerlink" title="那么， Spring 如何设计容器的呢？"></a>那么， Spring 如何设计容器的呢？</h3><p>Spring 作者 Rod Johnson 设计了两个接口用以表示容器:</p>
+<ul>
+<li>BeanFactory</li>
+<li>ApplicationContext</li>
+</ul>
+<p>BeanFactory 粗暴简单，可以理解为就是个 HashMap，Key 是 BeanName，Value 是 Bean 实例。通常只提供注册（put），获取（get）这两个功能。我们可以称之为 <strong><code>低级容器</code></strong></p>
+<p>ApplicationContext 可以称之为 <strong><code>高级容器</code></strong>。因为他比 BeanFactory 多了更多的功能。他继承了多个接口。因此具备了更多的功能。例如资源的获取，支持多种消息（例如 JSP tag 的支持），对 BeanFactory 多了工具级别的支持等待。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。该接口定义了一个 refresh 方法，此方法是所有阅读 Spring 源码的人的最熟悉的方法，用于刷新整个容器，即重新加载/刷新所有的 bean</p>
+<p>为了更直观的展示 “低级容器” 和 “高级容器” 的关系，我这里通过常用的 ClassPathXmlApplicationContext 类，来展示整个容器的层级 UML 关系</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-1e6ca4c8a58c9e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1170/format/webp" alt=""></p>
+<p>ApplicationContext 粉红色的 “高级容器”，依赖着 “低级容器”，这里说的是依赖，不是继承，他依赖着 “低级容器” 的 getBean 功能。而高级容器有更多的功能：支持不同的信息源头，可以访问文件资源，支持应用事件（Observer 模式）</p>
+<p>左边灰色区域的是 “低级容器”， 只负载加载 Bean，获取 Bean。</p>
+<h3 id="IoC-启动过程"><a href="#IoC-启动过程" class="headerlink" title="IoC 启动过程"></a>IoC 启动过程</h3><p><img src="https://upload-images.jianshu.io/upload_images/4236553-db065eecf16176c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
+<blockquote>
+<p>注意，这里为了理解方便，有所简化</p>
+</blockquote>
+<h4 id="用文字来描述这个过程"><a href="#用文字来描述这个过程" class="headerlink" title="用文字来描述这个过程"></a>用文字来描述这个过程</h4><ol>
+<li>用户构造 ClassPathXmlApplicationContext（简称 CPAC）</li>
+<li>CPAC 首先访问了 “抽象高级容器” 的 final 的 refresh 方法，这个方法是模板方法。所以要回调子类（低级容器）的 refreshBeanFactory 方法，这个方法的作用是使用低级容器加载所有 BeanDefinition 和  Properties 到容器中</li>
+<li>低级容器加载成功后，高级容器开始处理一些回调，例如 Bean 后置处理器。回调 setBeanFactory 方法。或者注册监听器等，发布事件，实例化单例 Bean 等等功能</li>
+</ol>
+<p>简单说就是:</p>
+<ul>
+<li>低级容器 加载配置文件（从 XML，数据库，Applet），并解析成 BeanDefinition 到低级容器中</li>
+<li>加载成功后，高级容器启动高级功能，例如接口回调，监听器，自动实例化单例，发布事件等等功能</li>
+</ul>
+<blockquote>
+<p>所以，一定要把 “低级容器” 和“高级容器” 的区别弄清楚。不能一叶障目不见泰山</p>
+</blockquote>
+<p>当我们创建好容器，就会使用 getBean 方法，获取 Bean，而 getBean 的流程如下:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-da9a2f92e4dfa9db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/530/format/webp" alt=""></p>
+<h6 id="从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"><a href="#从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？" class="headerlink" title="从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"></a>从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？</h6><p>假设 ： 当 Bean_A 依赖着 Bean_B，而这个 Bean_A 在加载的时候，其配置的 ref = “Bean_B” 在解析的时候只是一个占位符，被放入了 Bean_A 的属性集合中，当调用 getBean 时，需要真正 Bean_B 注入到 Bean_A 内部时，就需要从容器中获取这个 Bean_B，因此产生了递归。</p>
+<p>为什么不是在加载的时候，就直接注入呢？因为加载的顺序不同，很可能 Bean_A 依赖的 Bean_B 还没有加载好，也就无法从容器中获取，你不能要求用户把 Bean 的加载顺序排列好，这是不人道的。</p>
+<p>所以，Spring 将其分为了 2 个步骤:</p>
+<ol>
+<li><p>加载所有的 Bean 配置成 BeanDefinition 到容器中，如果 Bean 有依赖关系，则使用占位符暂时代替</p>
+</li>
+<li><p>在调用 getBean 的时候，进行真正的依赖注入，即如果碰到了属性是 ref 的（占位符），那么就从容器里获取这个 Bean，然后注入到实例中 —— 称之为依赖注入</p>
+</li>
+</ol>
+<blockquote>
+<p>可以看到，依赖注入实际上，只需要 “低级容器” 就可以实现</p>
+</blockquote>
+<p>所以 ApplicationContext refresh 方法里面的操作不只是 IoC，是高级容器的所有功能（包括 IoC），IoC 的功能在低级容器里就可以实现</p>
+<p><strong>控制反转 是一种通过描述（XML或注解）并通过第三方去生产或获取特定对象的方式，在Spring 中实现控制反转的是IOC容器，其实现方法时依赖注入（Dependency Injection，DI）</strong></p>
+<h3 id="IOC创建初始化对象"><a href="#IOC创建初始化对象" class="headerlink" title="IOC创建初始化对象"></a>IOC创建初始化对象</h3><p>默认使用对象的无参构造器进行初始化对象，也可以手动调用有参或无参构造函数初始化对象；</p>
+<h6 id="初始化时期"><a href="#初始化时期" class="headerlink" title="初始化时期"></a>初始化时期</h6><p>在xml文件加载的时候，容器中管理的对象就已经初始化了，而且是单例的；</p>
+<h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><h3 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h3><h3 id="Set方式注入"><a href="#Set方式注入" class="headerlink" title="Set方式注入"></a>Set方式注入</h3><ul>
+<li>依赖注入：Set注入<ul>
+<li>依赖：bean对象的创建依赖于容器</li>
+<li>注入：bean对象中的所有属性，有容器来注入</li>
+</ul>
+</li>
+</ul>
+<h3 id="bean-作用域"><a href="#bean-作用域" class="headerlink" title="bean 作用域"></a>bean 作用域</h3><ul>
+<li>singleton（单例）</li>
+<li>prototype（原型【多例】）</li>
+<li>request</li>
+<li>session</li>
+<li>application</li>
+<li>websocket</li>
+</ul>
+<h2 id="Bean的自动装配"><a href="#Bean的自动装配" class="headerlink" title="Bean的自动装配"></a>Bean的自动装配</h2><ul>
+<li>自动装配是Spring满足bean依赖的一种方式</li>
+<li>Spring会在上下文中自动查找，并给bean自动装配属性</li>
+</ul>
+<p>Spring三种装配方式：</p>
+<ol>
+<li>在XML中显示的配置</li>
+<li>在java中显示配置</li>
+<li>隐式的自动装配bean</li>
+</ol>
+<p>自动装配方式:byName和byType；</p>
+<p>byName 保证bean id 唯一，id与属性名一致；</p>
+<p>byType:保证bean的class唯一，class与属性类型一致</p>
+<h2 id="注解实现自动装配"><a href="#注解实现自动装配" class="headerlink" title="注解实现自动装配"></a>注解实现自动装配</h2><p>@Autowired是Spring提供的注解，只按照ByType注入；</p>
+<p>默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用</p>
+<blockquote>
+<p>@Autowired(required=false) 说明该注入对象可以为null</p>
+<p>@Qualifier(value=”name”) 指定注入对象的bean的name</p>
+</blockquote>
+<p>@Resource 是J2EE支持（jdk1.6）</p>
+<p>@Resource装配顺序：</p>
+<p>①如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常。</p>
+<p>②如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常。</p>
+<p>③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。</p>
+<p>④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。</p>
+<p>@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入</p>
+<p>扩展：</p>
+<blockquote>
+<p>@Nullable 表示标注字段可以为null</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/ioc//" class="article-tag-list-link color4">ioc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/spring-IOC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Arthas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -343,7 +1034,7 @@
 <li><code>Spring Web</code> 模块：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作</li>
 <li><code>Spring MVC</code> 框架：<code>MVC</code> 框架是一个全功能的构建 Web 应用程序的 <code>MVC</code> 实现。通过策略接口，<code>MVC</code> 框架变成为高度可配置的，<code>MVC</code> 容纳了大量视图技术，其中包括 <code>JSP</code>、<code>Velocity</code>、<code>Tiles</code>、<code>iText</code> 和 <code>POI</code></li>
 </ol>
-<h3 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h3>
+
       
 
       
@@ -740,2716 +1431,9 @@
 
 
   
-    <article id="post-mysql-事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/">mysql-事务</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2020-04-09T07:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>特点：同生共死</p>
-<h3 id="事务ACID"><a href="#事务ACID" class="headerlink" title="事务ACID"></a>事务ACID</h3><ol>
-<li><p>原子性（atomicity)</p>
-<p>一个事务要么全部提交成功，要么全部失败回滚，不能只执行其中的一部分操作，这就是事务的原子性</p>
-</li>
-<li><p>一致性（consistency)</p>
-<p>事务的执行不能破坏数据库数据的完整性和一致性，一个事务在执行之前和执行之后，数据库都必须处于一致性状态。</p>
-<p>如果数据库系统在运行过程中发生故障，有些事务尚未完成就被迫中断，这些未完成的事务对数据库所作的修改有一部分已写入物理数据库，这是数据库就处于一种不正确的状态，也就是不一致的状态</p>
-</li>
-<li><p>隔离性（isolation）</p>
-<p>事务的隔离性是指在并发环境中，并发的事务时相互隔离的，一个事务的执行不能不被其他事务干扰。不同的事务并发操作相同的数据时，每个事务都有各自完成的数据空间，即一个事务内部的操作及使用的数据对其他并发事务时隔离的，并发执行的各个事务之间不能相互干扰。</p>
-<p>在标准SQL规范中，定义了<code>4个事务隔离级别</code>，不同的隔离级别对事务的处理不同，分别是：<code>未授权读取</code>，<code>授权读取</code>，<code>可重复读取</code>和<code>串行化</code></p>
-<ul>
-<li><p>读未提交（Read Uncommited）<br>该隔离级别允许脏读取，其隔离级别最低；比如事务A和事务B同时进行，事务A在整个执行阶段，会将某数据的值从1开始一直加到10，然后进行事务提交，此时，事务B能够看到这个数据项在事务A操作过程中的所有中间值（如1变成2，2变成3等），而对这一系列的中间值的读取就是未授权读取</p>
-<blockquote>
-<p>脏读：指一个事务读取了另外一个事务未提交的数据</p>
-</blockquote>
-</li>
-<li><p>授权读取也称为已提交读（Read Commited）<br>授权读取只允许获取已经提交的数据。比如事务A和事务B同时进行，事务A进行+1操作，此时，事务B无法看到这个数据项在事务A操作过程中的所有中间值，只能看到最终的10。另外，如果说有一个事务C，和事务A进行非常类似的操作，只是事务C是将数据项从10加到20，此时事务B也同样可以读取到20，即授权读取允许不可重复读取。</p>
-<blockquote>
-<p>不可重复读：在一个事务内读取表中的某一行数据，多次读取结果不同</p>
-</blockquote>
-</li>
-<li><p>可重复读（Repeatable Read)<br>就是保证在事务处理过程中，多次读取同一个数据时，其值都和事务开始时刻是一致的，因此该事务级别禁止不可重复读取和脏读取，但是有可能出现幻影数据。所谓幻影数据，就是指同样的事务操作，在前后两个时间段内执行对同一个数据项的读取，可能出现不一致的结果。在上面的例子中，可重复读取隔离级别能够保证事务B在第一次事务操作过程中，始终对数据项读取到1，但是在下一次事务操作中，即使事务B（注意，事务名字虽然相同，但是指的是另一个事务操作）采用同样的查询方式，就可能读取到10或20；</p>
-<blockquote>
-<p>虚读（幻读）：是指在一个事务内读取到了别的事务插入的数据，导致前后读取不一致</p>
-</blockquote>
-</li>
-<li><p>串行化<br>是最严格的事务隔离级别，它要求所有事务被串行执行，即事务只能一个接一个的进行处理，不能并发执行。</p>
-</li>
-</ul>
-</li>
-<li><p>持久性（durability）</p>
-<p>一旦事务提交，那么它对数据库中的对应数据的状态的变更就会永久保存到数据库中，不可逆转。–即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其恢复到事务成功结束的状态</p>
-</li>
-</ol>
-<h3 id="mysql-四种隔离级别"><a href="#mysql-四种隔离级别" class="headerlink" title="mysql 四种隔离级别"></a>mysql 四种隔离级别</h3><table>
-<thead>
-<tr>
-<th>设置</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Serializable</td>
-<td>可避免脏读、不可重复读、虚读情况的发生。（串行化）</td>
-</tr>
-<tr>
-<td>Repeatable read</td>
-<td>可避免脏读、不可重复读情况的发生。（可重复读）</td>
-</tr>
-<tr>
-<td>Read committed</td>
-<td>可避免脏读情况发生（读已提交）</td>
-</tr>
-<tr>
-<td>Read uncommitted</td>
-<td>最低级别，以上情况均无法保证。(读未提交)</td>
-</tr>
-</tbody></table>
-<h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><p>mysql 是默认开启事务的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set transaction isolation level 设置事务隔离级别</span><br><span class="line">select @@tx_isolation 查询当前事务隔离级别</span><br><span class="line">start transaction 开启事务</span><br><span class="line">commit 提交</span><br><span class="line">rollback 回滚</span><br><span class="line">set autocommit&#x3D;0 -- 0关闭 1开启</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><p>适当的 Connection 方法，比如 <code>setAutoCommit</code> 或 <code>setTransactionIsolation</code></p>
-<table>
-<thead>
-<tr>
-<th>设置</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>TRANSACTION_SERIALIZABLE</td>
-<td>指示不可以发生脏读、不可重复读和虚读的常量</td>
-</tr>
-<tr>
-<td>TRANSACTION_REPEATABLE_READ</td>
-<td>指示不可以发生脏读和不可重复读的常量；虚读可以发生</td>
-</tr>
-<tr>
-<td>TRANSACTION_READ_UNCOMMITTED</td>
-<td>指示可以发生脏读 (dirty read)、不可重复读和虚读 (phantom read) 的常量</td>
-</tr>
-<tr>
-<td>TRANSACTION_READ_COMMITTED</td>
-<td>指示不可以发生脏读的常量；不可重复读和虚读可以发生</td>
-</tr>
-</tbody></table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-聚合函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">mysql-聚合函数</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:01:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><table>
-<thead>
-<tr>
-<th>名字</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>count(*)</td>
-<td>统计</td>
-</tr>
-<tr>
-<td>SUM()</td>
-<td>求和</td>
-</tr>
-<tr>
-<td>AVG()</td>
-<td>平均值</td>
-</tr>
-<tr>
-<td>MAX()</td>
-<td>最大值</td>
-</tr>
-<tr>
-<td>MIN()</td>
-<td>最小值</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>count(字段名)，会忽略null值</p>
-<p>count(1/*) 不会忽略null，性能上count(1)和count(*)基本没有差别</p>
-</blockquote>
-<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><ol>
-<li>group by … having …</li>
-</ol>
-<h2 id="MYSQL-MD5"><a href="#MYSQL-MD5" class="headerlink" title="MYSQL MD5"></a>MYSQL MD5</h2><p>主要是增强算法复杂度和不可逆性</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/">mysql-函数</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-04-09T02:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="函数和运算符的运用"><a href="#函数和运算符的运用" class="headerlink" title="函数和运算符的运用"></a>函数和运算符的运用</h2><table>
-<thead>
-<tr>
-<th>名字</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>名字</td>
-<td>描述</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>Bitwise AND</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>Greater than operator</td>
-</tr>
-<tr>
-<td>&gt;&gt;</td>
-<td>Right shift</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>Greater than or equal operator</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>Less than operator</td>
-</tr>
-<tr>
-<td>&lt;&gt;, !=</td>
-<td>Not equal operator</td>
-</tr>
-<tr>
-<td>&lt;&lt;</td>
-<td>Left shift</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>Less than or equal operator</td>
-</tr>
-<tr>
-<td>&lt;=&gt;</td>
-<td>NULL-safe equal to operator</td>
-</tr>
-<tr>
-<td>%, MOD</td>
-<td>Modulo operator</td>
-</tr>
-<tr>
-<td>*</td>
-<td>Multiplication operator</td>
-</tr>
-<tr>
-<td>+</td>
-<td>Addition operator</td>
-</tr>
-<tr>
-<td>-</td>
-<td>Minus operator</td>
-</tr>
-<tr>
-<td>-</td>
-<td>Change the sign of the argument</td>
-</tr>
-<tr>
-<td>-&gt;</td>
-<td>Return value from JSON column after evaluating path; equivalent to JSON_EXTRACT()</td>
-</tr>
-<tr>
-<td>-&gt;&gt;</td>
-<td>Return value from JSON column after evaluating path and unquoting the result; equivalent to JSON_UNQUOTE(JSON_EXTRACT()</td>
-</tr>
-<tr>
-<td>/</td>
-<td>Division operator</td>
-</tr>
-<tr>
-<td>:=</td>
-<td>Assign a value</td>
-</tr>
-<tr>
-<td>=</td>
-<td>Assign a value (as part of a SET statement, or as part of the SET clause in an UPDATE statement)</td>
-</tr>
-<tr>
-<td>=</td>
-<td>Equal operator</td>
-</tr>
-<tr>
-<td>^</td>
-<td>Bitwise XOR</td>
-</tr>
-<tr>
-<td>ABS()</td>
-<td>绝对值</td>
-</tr>
-<tr>
-<td>ACOS()</td>
-<td>返回反余弦</td>
-</tr>
-<tr>
-<td>ADDDATE()</td>
-<td>Add time values (intervals) to a date value</td>
-</tr>
-<tr>
-<td>ADDTIME()</td>
-<td>Add time</td>
-</tr>
-<tr>
-<td>AES_DECRYPT()</td>
-<td>Decrypt using AES</td>
-</tr>
-<tr>
-<td>AES_ENCRYPT()</td>
-<td>Encrypt using AES</td>
-</tr>
-<tr>
-<td>AND, &amp;&amp;</td>
-<td>Logical AND</td>
-</tr>
-<tr>
-<td>ANY_VALUE()</td>
-<td>Suppress ONLY_FULL_GROUP_BY value rejection</td>
-</tr>
-<tr>
-<td>ASCII()</td>
-<td>Return numeric value of left-most character</td>
-</tr>
-<tr>
-<td>ASIN()</td>
-<td>Return the arc sine</td>
-</tr>
-<tr>
-<td>ASYMMETRIC_DECRYPT()</td>
-<td>Decrypt ciphertext using private or public key</td>
-</tr>
-<tr>
-<td>ASYMMETRIC_DERIVE()</td>
-<td>Derive symmetric key from asymmetric keys</td>
-</tr>
-<tr>
-<td>ASYMMETRIC_ENCRYPT()</td>
-<td>Encrypt cleartext using private or public key</td>
-</tr>
-<tr>
-<td>ASYMMETRIC_SIGN()</td>
-<td>Generate signature from digest</td>
-</tr>
-<tr>
-<td>ASYMMETRIC_VERIFY()</td>
-<td>Verify that signature matches digest</td>
-</tr>
-<tr>
-<td>ATAN()</td>
-<td>Return the arc tangent</td>
-</tr>
-<tr>
-<td>ATAN2(), ATAN()</td>
-<td>Return the arc tangent of the two arguments</td>
-</tr>
-<tr>
-<td>AVG()</td>
-<td>Return the average value of the argument</td>
-</tr>
-<tr>
-<td>BENCHMARK()</td>
-<td>Repeatedly execute an expression</td>
-</tr>
-<tr>
-<td>BETWEEN … AND …</td>
-<td>Whether a value is within a range of values</td>
-</tr>
-<tr>
-<td>BIN()</td>
-<td>Return a string containing binary representation of a number</td>
-</tr>
-<tr>
-<td>BIN_TO_UUID()</td>
-<td>Convert binary UUID to string</td>
-</tr>
-<tr>
-<td>BINARY</td>
-<td>Cast a string to a binary string</td>
-</tr>
-<tr>
-<td>BIT_AND()</td>
-<td>Return bitwise AND</td>
-</tr>
-<tr>
-<td>BIT_COUNT()</td>
-<td>Return the number of bits that are set</td>
-</tr>
-<tr>
-<td>BIT_LENGTH()</td>
-<td>Return length of argument in bits</td>
-</tr>
-<tr>
-<td>BIT_OR()</td>
-<td>Return bitwise OR</td>
-</tr>
-<tr>
-<td>BIT_XOR()</td>
-<td>Return bitwise XOR</td>
-</tr>
-<tr>
-<td>CAN_ACCESS_COLUMN()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>CAN_ACCESS_DATABASE()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>CAN_ACCESS_TABLE()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>CAN_ACCESS_VIEW()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>CASE</td>
-<td>Case operator</td>
-</tr>
-<tr>
-<td>CAST()</td>
-<td>Cast a value as a certain type</td>
-</tr>
-<tr>
-<td>CEIL()</td>
-<td>Return the smallest integer value not less than the argument</td>
-</tr>
-<tr>
-<td>CEILING</td>
-<td>向上取整</td>
-</tr>
-<tr>
-<td>CHAR()</td>
-<td>Return the character for each integer passed</td>
-</tr>
-<tr>
-<td>CHAR_LENGTH()</td>
-<td>字符串长度</td>
-</tr>
-<tr>
-<td>CHARACTER_LENGTH()</td>
-<td>Synonym for CHAR_LENGTH()</td>
-</tr>
-<tr>
-<td>CHARSET()</td>
-<td>Return the character set of the argument</td>
-</tr>
-<tr>
-<td>COALESCE()</td>
-<td>Return the first non-NULL argument</td>
-</tr>
-<tr>
-<td>COERCIBILITY()</td>
-<td>Return the collation coercibility value of the string argument</td>
-</tr>
-<tr>
-<td>COLLATION()</td>
-<td>Return the collation of the string argument</td>
-</tr>
-<tr>
-<td>COMPRESS()</td>
-<td>Return result as a binary string</td>
-</tr>
-<tr>
-<td>CONCAT()</td>
-<td>拼接字符串</td>
-</tr>
-<tr>
-<td>CONCAT_WS()</td>
-<td>Return concatenate with separator</td>
-</tr>
-<tr>
-<td>CONNECTION_ID()</td>
-<td>Return the connection ID (thread ID) for the connection</td>
-</tr>
-<tr>
-<td>CONV()</td>
-<td>Convert numbers between different number bases</td>
-</tr>
-<tr>
-<td>CONVERT()</td>
-<td>Cast a value as a certain type</td>
-</tr>
-<tr>
-<td>CONVERT_TZ()</td>
-<td>Convert from one time zone to another</td>
-</tr>
-<tr>
-<td>COS()</td>
-<td>Return the cosine</td>
-</tr>
-<tr>
-<td>COT()</td>
-<td>Return the cotangent</td>
-</tr>
-<tr>
-<td>COUNT()</td>
-<td>Return a count of the number of rows returned</td>
-</tr>
-<tr>
-<td>COUNT(DISTINCT)</td>
-<td>Return the count of a number of different values</td>
-</tr>
-<tr>
-<td>CRC32()</td>
-<td>Compute a cyclic redundancy check value</td>
-</tr>
-<tr>
-<td>CREATE_ASYMMETRIC_PRIV_KEY()</td>
-<td>Create private key</td>
-</tr>
-<tr>
-<td>CREATE_ASYMMETRIC_PUB_KEY()</td>
-<td>Create public key</td>
-</tr>
-<tr>
-<td>CREATE_DH_PARAMETERS()</td>
-<td>Generate shared DH secret</td>
-</tr>
-<tr>
-<td>CREATE_DIGEST()</td>
-<td>Generate digest from string</td>
-</tr>
-<tr>
-<td>CUME_DIST()</td>
-<td>Cumulative distribution value</td>
-</tr>
-<tr>
-<td>CURDATE()</td>
-<td>Return the current date</td>
-</tr>
-<tr>
-<td>CURRENT_DATE()  , CURRENT_DATE</td>
-<td>Synonyms for CURDATE()</td>
-</tr>
-<tr>
-<td>CURRENT_ROLE()</td>
-<td>Return the current active roles</td>
-</tr>
-<tr>
-<td>CURRENT_TIME() , CURRENT_TIME</td>
-<td>Synonyms for CURTIME()</td>
-</tr>
-<tr>
-<td>CURRENT_TIMESTAMP()  , CURRENT_TIMESTAMP</td>
-<td>Synonyms for NOW()</td>
-</tr>
-<tr>
-<td>CURRENT_USER(), CURRENT_USER</td>
-<td>The authenticated user name and host name</td>
-</tr>
-<tr>
-<td>CURTIME()</td>
-<td>Return the current time</td>
-</tr>
-<tr>
-<td>DATABASE()</td>
-<td>Return the default (current) database name</td>
-</tr>
-<tr>
-<td>DATE()</td>
-<td>Extract the date part of a date or datetime expression</td>
-</tr>
-<tr>
-<td>DATE_ADD()</td>
-<td>Add time values (intervals) to a date value</td>
-</tr>
-<tr>
-<td>DATE_FORMAT()</td>
-<td>Format date as specified</td>
-</tr>
-<tr>
-<td>DATE_SUB()</td>
-<td>Subtract a time value (interval) from a date</td>
-</tr>
-<tr>
-<td>DATEDIFF()</td>
-<td>Subtract two dates</td>
-</tr>
-<tr>
-<td>DAY()</td>
-<td>Synonym for DAYOFMONTH()</td>
-</tr>
-<tr>
-<td>DAYNAME()</td>
-<td>Return the name of the weekday</td>
-</tr>
-<tr>
-<td>DAYOFMONTH()</td>
-<td>Return the day of the month (0-31)</td>
-</tr>
-<tr>
-<td>DAYOFWEEK()</td>
-<td>Return the weekday index of the argument</td>
-</tr>
-<tr>
-<td>DAYOFYEAR()</td>
-<td>Return the day of the year (1-366)</td>
-</tr>
-<tr>
-<td>DEFAULT()</td>
-<td>Return the default value for a table column</td>
-</tr>
-<tr>
-<td>DEGREES()</td>
-<td>Convert radians to degrees</td>
-</tr>
-<tr>
-<td>DENSE_RANK()</td>
-<td>Rank of current row within its partition, without gaps</td>
-</tr>
-<tr>
-<td>DIV</td>
-<td>Integer division</td>
-</tr>
-<tr>
-<td>ELT()</td>
-<td>Return string at index number</td>
-</tr>
-<tr>
-<td>EXP()</td>
-<td>Raise to the power of</td>
-</tr>
-<tr>
-<td>EXPORT_SET()</td>
-<td>Return a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string</td>
-</tr>
-<tr>
-<td>EXTRACT()</td>
-<td>Extract part of a date</td>
-</tr>
-<tr>
-<td>ExtractValue()</td>
-<td>Extract a value from an XML string using XPath notation</td>
-</tr>
-<tr>
-<td>FIELD()</td>
-<td>Index (position) of first argument in subsequent arguments</td>
-</tr>
-<tr>
-<td>FIND_IN_SET()</td>
-<td>Index (position) of first argument within second argument</td>
-</tr>
-<tr>
-<td>FIRST_VALUE()</td>
-<td>Value of argument from first row of window frame</td>
-</tr>
-<tr>
-<td>FLOOR()</td>
-<td>向下取整</td>
-</tr>
-<tr>
-<td>FORMAT()</td>
-<td>Return a number formatted to specified number of decimal places</td>
-</tr>
-<tr>
-<td>FORMAT_BYTES()</td>
-<td>(introduced 8.0.16)    Convert byte count to value with units</td>
-</tr>
-<tr>
-<td>FORMAT_PICO_TIME()</td>
-<td>(introduced 8.0.16)    Convert time in picoseconds to value with units</td>
-</tr>
-<tr>
-<td>FOUND_ROWS()</td>
-<td>For a SELECT with a LIMIT clause, the number of rows that would be returned were there no LIMIT clause</td>
-</tr>
-<tr>
-<td>FROM_BASE64()</td>
-<td>Decode base64 encoded string and return result</td>
-</tr>
-<tr>
-<td>FROM_DAYS()</td>
-<td>Convert a day number to a date</td>
-</tr>
-<tr>
-<td>FROM_UNIXTIME()</td>
-<td>Format Unix timestamp as a date</td>
-</tr>
-<tr>
-<td>GeomCollection()</td>
-<td>Construct geometry collection from geometries</td>
-</tr>
-<tr>
-<td>GeometryCollection()</td>
-<td>Construct geometry collection from geometries</td>
-</tr>
-<tr>
-<td>GET_DD_COLUMN_PRIVILEGES()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>GET_DD_CREATE_OPTIONS()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>GET_DD_INDEX_SUB_PART_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>GET_FORMAT()</td>
-<td>Return a date format string</td>
-</tr>
-<tr>
-<td>GET_LOCK()</td>
-<td>Get a named lock</td>
-</tr>
-<tr>
-<td>GREATEST()</td>
-<td>Return the largest argument</td>
-</tr>
-<tr>
-<td>GROUP_CONCAT()</td>
-<td>Return a concatenated string</td>
-</tr>
-<tr>
-<td>GROUPING()</td>
-<td>Distinguish super-aggregate ROLLUP rows from regular rows</td>
-</tr>
-<tr>
-<td>GTID_SUBSET()</td>
-<td>Return true if all GTIDs in subset are also in set; otherwise false.</td>
-</tr>
-<tr>
-<td>GTID_SUBTRACT()</td>
-<td>Return all GTIDs in set that are not in subset.</td>
-</tr>
-<tr>
-<td>HEX()</td>
-<td>Hexadecimal representation of decimal or string value</td>
-</tr>
-<tr>
-<td>HOUR()</td>
-<td>Extract the hour</td>
-</tr>
-<tr>
-<td>ICU_VERSION()</td>
-<td>ICU library version</td>
-</tr>
-<tr>
-<td>IF()</td>
-<td>If/else construct</td>
-</tr>
-<tr>
-<td>IFNULL()</td>
-<td>Null if/else construct</td>
-</tr>
-<tr>
-<td>IN()</td>
-<td>Whether a value is within a set of values</td>
-</tr>
-<tr>
-<td>INET_ATON()</td>
-<td>Return the numeric value of an IP address</td>
-</tr>
-<tr>
-<td>INET_NTOA()</td>
-<td>Return the IP address from a numeric value</td>
-</tr>
-<tr>
-<td>INET6_ATON()</td>
-<td>Return the numeric value of an IPv6 address</td>
-</tr>
-<tr>
-<td>INET6_NTOA()</td>
-<td>Return the IPv6 address from a numeric value</td>
-</tr>
-<tr>
-<td>INSERT()</td>
-<td>Insert substring at specified position up to specified number of characters</td>
-</tr>
-<tr>
-<td>INSTR()</td>
-<td>Return the index of the first occurrence of substring</td>
-</tr>
-<tr>
-<td>INTERNAL_AUTO_INCREMENT()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_AVG_ROW_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_CHECK_TIME()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_CHECKSUM()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_DATA_FREE()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_DATA_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_DD_CHAR_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_GET_COMMENT_OR_ERROR()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_GET_ENABLED_ROLE_JSON()</td>
-<td>(introduced 8.0.19)    Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_GET_HOSTNAME()</td>
-<td>(introduced 8.0.19)    Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_GET_USERNAME()</td>
-<td>(introduced 8.0.19)    Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_GET_VIEW_WARNING_OR_ERROR()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_INDEX_COLUMN_CARDINALITY()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_INDEX_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_IS_ENABLED_ROLE()</td>
-<td>(introduced 8.0.19)    Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_IS_MANDATORY_ROLE()</td>
-<td>(introduced 8.0.19)    Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_KEYS_DISABLED()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_MAX_DATA_LENGTH()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_TABLE_ROWS()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERNAL_UPDATE_TIME()</td>
-<td>Internal use only</td>
-</tr>
-<tr>
-<td>INTERVAL()</td>
-<td>Return the index of the argument that is less than the first argument</td>
-</tr>
-<tr>
-<td>IS</td>
-<td>Test a value against a boolean</td>
-</tr>
-<tr>
-<td>IS_FREE_LOCK()</td>
-<td>Whether the named lock is free</td>
-</tr>
-<tr>
-<td>IS_IPV4()</td>
-<td>Whether argument is an IPv4 address</td>
-</tr>
-<tr>
-<td>IS_IPV4_COMPAT()</td>
-<td>Whether argument is an IPv4-compatible address</td>
-</tr>
-<tr>
-<td>IS_IPV4_MAPPED()</td>
-<td>Whether argument is an IPv4-mapped address</td>
-</tr>
-<tr>
-<td>IS_IPV6()</td>
-<td>Whether argument is an IPv6 address</td>
-</tr>
-<tr>
-<td>IS NOT</td>
-<td>Test a value against a boolean</td>
-</tr>
-<tr>
-<td>IS NOT NULL</td>
-<td>NOT NULL value test</td>
-</tr>
-<tr>
-<td>IS NULL</td>
-<td>NULL value test</td>
-</tr>
-<tr>
-<td>IS_USED_LOCK()</td>
-<td>Whether the named lock is in use; return connection identifier if true</td>
-</tr>
-<tr>
-<td>IS_UUID()</td>
-<td>Whether argument is a valid UUID</td>
-</tr>
-<tr>
-<td>ISNULL()</td>
-<td>Test whether the argument is NULL</td>
-</tr>
-<tr>
-<td>JSON_ARRAY()</td>
-<td>Create JSON array</td>
-</tr>
-<tr>
-<td>JSON_ARRAY_APPEND()</td>
-<td>Append data to JSON document</td>
-</tr>
-<tr>
-<td>JSON_ARRAY_INSERT()</td>
-<td>Insert into JSON array</td>
-</tr>
-<tr>
-<td>JSON_ARRAYAGG()</td>
-<td>Return result set as a single JSON array</td>
-</tr>
-<tr>
-<td>JSON_CONTAINS()</td>
-<td>Whether JSON document contains specific object at path</td>
-</tr>
-<tr>
-<td>JSON_CONTAINS_PATH()</td>
-<td>Whether JSON document contains any data at path</td>
-</tr>
-<tr>
-<td>JSON_DEPTH()</td>
-<td>Maximum depth of JSON document</td>
-</tr>
-<tr>
-<td>JSON_EXTRACT()</td>
-<td>Return data from JSON document</td>
-</tr>
-<tr>
-<td>JSON_INSERT()</td>
-<td>Insert data into JSON document</td>
-</tr>
-<tr>
-<td>JSON_KEYS()</td>
-<td>Array of keys from JSON document</td>
-</tr>
-<tr>
-<td>JSON_LENGTH()</td>
-<td>Number of elements in JSON document</td>
-</tr>
-<tr>
-<td>JSON_MERGE()</td>
-<td>(deprecated)    Merge JSON documents, preserving duplicate keys. Deprecated synonym for JSON_MERGE_PRESERVE()</td>
-</tr>
-<tr>
-<td>JSON_MERGE_PATCH()</td>
-<td>Merge JSON documents, replacing values of duplicate keys</td>
-</tr>
-<tr>
-<td>JSON_MERGE_PRESERVE()</td>
-<td>Merge JSON documents, preserving duplicate keys</td>
-</tr>
-<tr>
-<td>JSON_OBJECT()</td>
-<td>Create JSON object</td>
-</tr>
-<tr>
-<td>JSON_OBJECTAGG()</td>
-<td>Return result set as a single JSON object</td>
-</tr>
-<tr>
-<td>JSON_OVERLAPS()</td>
-<td>(introduced 8.0.17)    Compares two JSON documents, returns TRUE (1) if these have any key-value pairs or array elements in common, otherwise FALSE (0)</td>
-</tr>
-<tr>
-<td>JSON_PRETTY()</td>
-<td>Print a JSON document in human-readable format</td>
-</tr>
-<tr>
-<td>JSON_QUOTE()</td>
-<td>Quote JSON document</td>
-</tr>
-<tr>
-<td>JSON_REMOVE()</td>
-<td>Remove data from JSON document</td>
-</tr>
-<tr>
-<td>JSON_REPLACE()</td>
-<td>Replace values in JSON document</td>
-</tr>
-<tr>
-<td>JSON_SCHEMA_VALID()</td>
-<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns TRUE/1 if document validates against schema, or FALSE/0 if it does not</td>
-</tr>
-<tr>
-<td>JSON_SCHEMA_VALIDATION_REPORT()</td>
-<td>(introduced 8.0.17)    Validate JSON document against JSON schema; returns report in JSON format on outcome on validation including success or failure and reasons for failure</td>
-</tr>
-<tr>
-<td>JSON_SEARCH()</td>
-<td>Path to value within JSON document</td>
-</tr>
-<tr>
-<td>JSON_SET()</td>
-<td>Insert data into JSON document</td>
-</tr>
-<tr>
-<td>JSON_STORAGE_FREE()</td>
-<td>Freed space within binary representation of JSON column value following partial update</td>
-</tr>
-<tr>
-<td>JSON_STORAGE_SIZE()</td>
-<td>Space used for storage of binary representation of a JSON document</td>
-</tr>
-<tr>
-<td>JSON_TABLE()</td>
-<td>Return data from a JSON expression as a relational table</td>
-</tr>
-<tr>
-<td>JSON_TYPE()</td>
-<td>Type of JSON value</td>
-</tr>
-<tr>
-<td>JSON_UNQUOTE()</td>
-<td>Unquote JSON value</td>
-</tr>
-<tr>
-<td>JSON_VALID()</td>
-<td>Whether JSON value is valid</td>
-</tr>
-<tr>
-<td>JSON_VALUE()</td>
-<td>(introduced 8.0.21)    Extract value from JSON document at location pointed to by path provided; return this value as VARCHAR(512) or specified type</td>
-</tr>
-<tr>
-<td>LAG()</td>
-<td>Value of argument from row lagging current row within partition</td>
-</tr>
-<tr>
-<td>LAST_DAY</td>
-<td>Return the last day of the month for the argument</td>
-</tr>
-<tr>
-<td>LAST_INSERT_ID()</td>
-<td>Value of the AUTOINCREMENT column for the last INSERT</td>
-</tr>
-<tr>
-<td>LAST_VALUE()</td>
-<td>Value of argument from last row of window frame</td>
-</tr>
-<tr>
-<td>LCASE()</td>
-<td>Synonym for LOWER()</td>
-</tr>
-<tr>
-<td>LEAD()</td>
-<td>Value of argument from row leading current row within partition</td>
-</tr>
-<tr>
-<td>LEAST()</td>
-<td>Return the smallest argument</td>
-</tr>
-<tr>
-<td>LEFT()</td>
-<td>Return the leftmost number of characters as specified</td>
-</tr>
-<tr>
-<td>LENGTH()</td>
-<td>Return the length of a string in bytes</td>
-</tr>
-<tr>
-<td>LIKE</td>
-<td>Simple pattern matching</td>
-</tr>
-<tr>
-<td>LineString()</td>
-<td>Construct LineString from Point values</td>
-</tr>
-<tr>
-<td>LN()</td>
-<td>Return the natural logarithm of the argument</td>
-</tr>
-<tr>
-<td>LOAD_FILE()</td>
-<td>Load the named file</td>
-</tr>
-<tr>
-<td>LOCALTIME()   , LOCALTIME</td>
-<td>Synonym for NOW()</td>
-</tr>
-<tr>
-<td>LOCALTIMESTAMP, LOCALTIMESTAMP()</td>
-<td>Synonym for NOW()</td>
-</tr>
-<tr>
-<td>LOCATE()</td>
-<td>Return the position of the first occurrence of substring</td>
-</tr>
-<tr>
-<td>LOG()</td>
-<td>Return the natural logarithm of the first argument</td>
-</tr>
-<tr>
-<td>LOG10()</td>
-<td>Return the base-10 logarithm of the argument</td>
-</tr>
-<tr>
-<td>LOG2()</td>
-<td>Return the base-2 logarithm of the argument</td>
-</tr>
-<tr>
-<td>LOWER()</td>
-<td>Return the argument in lowercase</td>
-</tr>
-<tr>
-<td>LPAD()</td>
-<td>Return the string argument, left-padded with the specified string</td>
-</tr>
-<tr>
-<td>LTRIM()</td>
-<td>Remove leading spaces</td>
-</tr>
-<tr>
-<td>MAKE_SET()</td>
-<td>Return a set of comma-separated strings that have the corresponding bit in bits set</td>
-</tr>
-<tr>
-<td>MAKEDATE()</td>
-<td>Create a date from the year and day of year</td>
-</tr>
-<tr>
-<td>MAKETIME()</td>
-<td>Create time from hour, minute, second</td>
-</tr>
-<tr>
-<td>MASTER_POS_WAIT()</td>
-<td>Block until the slave has read and applied all updates up to the specified position</td>
-</tr>
-<tr>
-<td>MATCH</td>
-<td>Perform full-text search</td>
-</tr>
-<tr>
-<td>MAX()</td>
-<td>Return the maximum value</td>
-</tr>
-<tr>
-<td>MBRContains()</td>
-<td>Whether MBR of one geometry contains MBR of another</td>
-</tr>
-<tr>
-<td>MBRCoveredBy()</td>
-<td>Whether one MBR is covered by another</td>
-</tr>
-<tr>
-<td>MBRCovers()</td>
-<td>Whether one MBR covers another</td>
-</tr>
-<tr>
-<td>MBRDisjoint()</td>
-<td>Whether MBRs of two geometries are disjoint</td>
-</tr>
-<tr>
-<td>MBREquals()</td>
-<td>Whether MBRs of two geometries are equal</td>
-</tr>
-<tr>
-<td>MBRIntersects()</td>
-<td>Whether MBRs of two geometries intersect</td>
-</tr>
-<tr>
-<td>MBROverlaps()</td>
-<td>Whether MBRs of two geometries overlap</td>
-</tr>
-<tr>
-<td>MBRTouches()</td>
-<td>Whether MBRs of two geometries touch</td>
-</tr>
-<tr>
-<td>MBRWithin()</td>
-<td>Whether MBR of one geometry is within MBR of another</td>
-</tr>
-<tr>
-<td>MD5()</td>
-<td>Calculate MD5 checksum</td>
-</tr>
-<tr>
-<td>MEMBER OF()</td>
-<td>(introduced 8.0.17)    Returns true (1) if first operand matches any element of JSON array passed as second operand, otherwise returns false (0)</td>
-</tr>
-<tr>
-<td>MICROSECOND()</td>
-<td>Return the microseconds from argument</td>
-</tr>
-<tr>
-<td>MID()</td>
-<td>Return a substring starting from the specified position</td>
-</tr>
-<tr>
-<td>MIN()</td>
-<td>Return the minimum value</td>
-</tr>
-<tr>
-<td>MINUTE()</td>
-<td>Return the minute from the argument</td>
-</tr>
-<tr>
-<td>MOD()</td>
-<td>Return the remainder</td>
-</tr>
-<tr>
-<td>MONTH()</td>
-<td>Return the month from the date passed</td>
-</tr>
-<tr>
-<td>MONTHNAME()</td>
-<td>Return the name of the month</td>
-</tr>
-<tr>
-<td>MultiLineString()</td>
-<td>Contruct MultiLineString from LineString values</td>
-</tr>
-<tr>
-<td>MultiPoint()</td>
-<td>Construct MultiPoint from Point values</td>
-</tr>
-<tr>
-<td>MultiPolygon()</td>
-<td>Construct MultiPolygon from Polygon values</td>
-</tr>
-<tr>
-<td>NAME_CONST()</td>
-<td>Cause the column to have the given name</td>
-</tr>
-<tr>
-<td>NOT, !</td>
-<td>Negates value</td>
-</tr>
-<tr>
-<td>NOT BETWEEN … AND …</td>
-<td>Whether a value is not within a range of values</td>
-</tr>
-<tr>
-<td>NOT IN()</td>
-<td>Whether a value is not within a set of values</td>
-</tr>
-<tr>
-<td>NOT LIKE</td>
-<td>Negation of simple pattern matching</td>
-</tr>
-<tr>
-<td>NOT REGEXP</td>
-<td>Negation of REGEXP</td>
-</tr>
-<tr>
-<td>NOW()</td>
-<td>Return the current date and time</td>
-</tr>
-<tr>
-<td>NTH_VALUE()</td>
-<td>Value of argument from N-th row of window frame</td>
-</tr>
-<tr>
-<td>NTILE()</td>
-<td>Bucket number of current row within its partition.</td>
-</tr>
-<tr>
-<td>NULLIF()</td>
-<td>Return NULL if expr1 = expr2</td>
-</tr>
-<tr>
-<td>OCT()</td>
-<td>Return a string containing octal representation of a number</td>
-</tr>
-<tr>
-<td>OCTET_LENGTH()</td>
-<td>Synonym for LENGTH()</td>
-</tr>
-<tr>
-<td>OR, ||</td>
-<td>Logical OR</td>
-</tr>
-<tr>
-<td>ORD()</td>
-<td>Return character code for leftmost character of the argument</td>
-</tr>
-<tr>
-<td>PERCENT_RANK()</td>
-<td>Percentage rank value</td>
-</tr>
-<tr>
-<td>PERIOD_ADD()</td>
-<td>Add a period to a year-month</td>
-</tr>
-<tr>
-<td>PERIOD_DIFF()</td>
-<td>Return the number of months between periods</td>
-</tr>
-<tr>
-<td>PI()</td>
-<td>Return the value of pi</td>
-</tr>
-<tr>
-<td>Point()</td>
-<td>Construct Point from coordinates</td>
-</tr>
-<tr>
-<td>Polygon()</td>
-<td>Construct Polygon from LineString arguments</td>
-</tr>
-<tr>
-<td>POSITION()</td>
-<td>Synonym for LOCATE()</td>
-</tr>
-<tr>
-<td>POW()</td>
-<td>Return the argument raised to the specified power</td>
-</tr>
-<tr>
-<td>POWER()</td>
-<td>Return the argument raised to the specified power</td>
-</tr>
-<tr>
-<td>PS_CURRENT_THREAD_ID()</td>
-<td>(introduced 8.0.16)    Performance Schema thread ID for current thread</td>
-</tr>
-<tr>
-<td>PS_THREAD_ID()</td>
-<td>(introduced 8.0.16)    Performance Schema thread ID for given thread</td>
-</tr>
-<tr>
-<td>QUARTER()</td>
-<td>Return the quarter from a date argument</td>
-</tr>
-<tr>
-<td>QUOTE()</td>
-<td>Escape the argument for use in an SQL statement</td>
-</tr>
-<tr>
-<td>RADIANS()</td>
-<td>Return argument converted to radians</td>
-</tr>
-<tr>
-<td>RAND()</td>
-<td>返回0~1 之间的随机数</td>
-</tr>
-<tr>
-<td>RANDOM_BYTES()</td>
-<td>Return a random byte vector</td>
-</tr>
-<tr>
-<td>RANK()</td>
-<td>Rank of current row within its partition, with gaps</td>
-</tr>
-<tr>
-<td>REGEXP</td>
-<td>Whether string matches regular expression</td>
-</tr>
-<tr>
-<td>REGEXP_INSTR()</td>
-<td>Starting index of substring matching regular expression</td>
-</tr>
-<tr>
-<td>REGEXP_LIKE()</td>
-<td>Whether string matches regular expression</td>
-</tr>
-<tr>
-<td>REGEXP_REPLACE()</td>
-<td>Replace substrings matching regular expression</td>
-</tr>
-<tr>
-<td>REGEXP_SUBSTR()</td>
-<td>Return substring matching regular expression</td>
-</tr>
-<tr>
-<td>RELEASE_ALL_LOCKS()</td>
-<td>Release all current named locks</td>
-</tr>
-<tr>
-<td>RELEASE_LOCK()</td>
-<td>Release the named lock</td>
-</tr>
-<tr>
-<td>REPEAT()</td>
-<td>Repeat a string the specified number of times</td>
-</tr>
-<tr>
-<td>REPLACE()</td>
-<td>Replace occurrences of a specified string</td>
-</tr>
-<tr>
-<td>REVERSE()</td>
-<td>Reverse the characters in a string</td>
-</tr>
-<tr>
-<td>RIGHT()</td>
-<td>Return the specified rightmost number of characters</td>
-</tr>
-<tr>
-<td>RLIKE</td>
-<td>Whether string matches regular expression</td>
-</tr>
-<tr>
-<td>ROLES_GRAPHML()</td>
-<td>Return a GraphML document representing memory role subgraphs</td>
-</tr>
-<tr>
-<td>ROUND()</td>
-<td>Round the argument</td>
-</tr>
-<tr>
-<td>ROW_COUNT()</td>
-<td>The number of rows updated</td>
-</tr>
-<tr>
-<td>ROW_NUMBER()</td>
-<td>Number of current row within its partition</td>
-</tr>
-<tr>
-<td>RPAD()</td>
-<td>Append string the specified number of times</td>
-</tr>
-<tr>
-<td>RTRIM()</td>
-<td>Remove trailing spaces</td>
-</tr>
-<tr>
-<td>SCHEMA()</td>
-<td>Synonym for DATABASE()</td>
-</tr>
-<tr>
-<td>SEC_TO_TIME()</td>
-<td>Converts seconds to ‘hh:mm:ss’ format</td>
-</tr>
-<tr>
-<td>SECOND()</td>
-<td>Return the second (0-59)</td>
-</tr>
-<tr>
-<td>SESSION_USER()</td>
-<td>Synonym for USER()</td>
-</tr>
-<tr>
-<td>SHA1() , SHA()</td>
-<td>Calculate an SHA-1 160-bit checksum</td>
-</tr>
-<tr>
-<td>SHA2()</td>
-<td>Calculate an SHA-2 checksum</td>
-</tr>
-<tr>
-<td>SIGN()</td>
-<td>Return the sign of the argument</td>
-</tr>
-<tr>
-<td>SIN()</td>
-<td>Return the sine of the argument</td>
-</tr>
-<tr>
-<td>SLEEP()</td>
-<td>Sleep for a number of seconds</td>
-</tr>
-<tr>
-<td>SOUNDEX()</td>
-<td>Return a soundex string</td>
-</tr>
-<tr>
-<td>SOUNDS LIKE    Compare sounds</td>
-<td></td>
-</tr>
-<tr>
-<td>SPACE()</td>
-<td>Return a string of the specified number of spaces</td>
-</tr>
-<tr>
-<td>SQRT()</td>
-<td>Return the square root of the argument</td>
-</tr>
-<tr>
-<td>ST_Area()</td>
-<td>Return Polygon or MultiPolygon area</td>
-</tr>
-<tr>
-<td>ST_AsBinary()  , ST_AsWKB()</td>
-<td>Convert from internal geometry format to WKB</td>
-</tr>
-<tr>
-<td>ST_AsGeoJSON()</td>
-<td>Generate GeoJSON object from geometry</td>
-</tr>
-<tr>
-<td>ST_AsText() , ST_AsWKT()</td>
-<td>Convert from internal geometry format to WKT</td>
-</tr>
-<tr>
-<td>ST_Buffer()</td>
-<td>Return geometry of points within given distance from geometry</td>
-</tr>
-<tr>
-<td>ST_Buffer_Strategy()</td>
-<td>Produce strategy option for ST_Buffer()</td>
-</tr>
-<tr>
-<td>ST_Centroid()</td>
-<td>Return centroid as a point</td>
-</tr>
-<tr>
-<td>ST_Contains()</td>
-<td>Whether one geometry contains another</td>
-</tr>
-<tr>
-<td>ST_ConvexHull()</td>
-<td>Return convex hull of geometry</td>
-</tr>
-<tr>
-<td>ST_Crosses()</td>
-<td>Whether one geometry crosses another</td>
-</tr>
-<tr>
-<td>ST_Difference()</td>
-<td>Return point set difference of two geometries</td>
-</tr>
-<tr>
-<td>ST_Dimension()</td>
-<td>Dimension of geometry</td>
-</tr>
-<tr>
-<td>ST_Disjoint()</td>
-<td>Whether one geometry is disjoint from another</td>
-</tr>
-<tr>
-<td>ST_Distance()</td>
-<td>The distance of one geometry from another</td>
-</tr>
-<tr>
-<td>ST_Distance_Sphere()</td>
-<td>Minimum distance on earth between two geometries</td>
-</tr>
-<tr>
-<td>ST_EndPoint()</td>
-<td>End Point of LineString</td>
-</tr>
-<tr>
-<td>ST_Envelope()</td>
-<td>Return MBR of geometry</td>
-</tr>
-<tr>
-<td>ST_Equals()</td>
-<td>Whether one geometry is equal to another</td>
-</tr>
-<tr>
-<td>ST_ExteriorRing()</td>
-<td>Return exterior ring of Polygon</td>
-</tr>
-<tr>
-<td>ST_GeoHash()</td>
-<td>Produce a geohash value</td>
-</tr>
-<tr>
-<td>ST_GeomCollFromText(), ST_GeometryCollectionFromText(), ST_GeomCollFromTxt()</td>
-<td>Return geometry collection from WKT</td>
-</tr>
-<tr>
-<td>ST_GeomCollFromWKB(), ST_GeometryCollectionFromWKB()</td>
-<td>Return geometry collection from WKB</td>
-</tr>
-<tr>
-<td>ST_GeometryN()</td>
-<td>Return N-th geometry from geometry collection</td>
-</tr>
-<tr>
-<td>ST_GeometryType()</td>
-<td>Return name of geometry type</td>
-</tr>
-<tr>
-<td>ST_GeomFromGeoJSON()</td>
-<td>Generate geometry from GeoJSON object</td>
-</tr>
-<tr>
-<td>ST_GeomFromText() , ST_GeometryFromText()</td>
-<td>Return geometry from WKT</td>
-</tr>
-<tr>
-<td>ST_GeomFromWKB(), ST_GeometryFromWKB()</td>
-<td>Return geometry from WKB</td>
-</tr>
-<tr>
-<td>ST_InteriorRingN()</td>
-<td>Return N-th interior ring of Polygon</td>
-</tr>
-<tr>
-<td>ST_Intersection()</td>
-<td>Return point set intersection of two geometries</td>
-</tr>
-<tr>
-<td>ST_Intersects()</td>
-<td>Whether one geometry intersects another</td>
-</tr>
-<tr>
-<td>ST_IsClosed()</td>
-<td>Whether a geometry is closed and simple</td>
-</tr>
-<tr>
-<td>ST_IsEmpty()</td>
-<td>Placeholder function</td>
-</tr>
-<tr>
-<td>ST_IsSimple()</td>
-<td>Whether a geometry is simple</td>
-</tr>
-<tr>
-<td>ST_IsValid()</td>
-<td>Whether a geometry is valid</td>
-</tr>
-<tr>
-<td>ST_LatFromGeoHash()</td>
-<td>Return latitude from geohash value</td>
-</tr>
-<tr>
-<td>ST_Latitude()</td>
-<td>(introduced 8.0.12)    Return latitude of Point</td>
-</tr>
-<tr>
-<td>ST_Length()</td>
-<td>Return length of LineString</td>
-</tr>
-<tr>
-<td>ST_LineFromText() , ST_LineStringFromText()</td>
-<td>Construct LineString from WKT</td>
-</tr>
-<tr>
-<td>ST_LineFromWKB() , ST_LineStringFromWKB()</td>
-<td>Construct LineString from WKB</td>
-</tr>
-<tr>
-<td>ST_LongFromGeoHash()</td>
-<td>Return longitude from geohash value</td>
-</tr>
-<tr>
-<td>ST_Longitude()</td>
-<td>(introduced 8.0.12)    Return longitude of Point</td>
-</tr>
-<tr>
-<td>ST_MakeEnvelope()</td>
-<td>Rectangle around two points</td>
-</tr>
-<tr>
-<td>ST_MLineFromText()  , ST_MultiLineStringFromText()</td>
-<td>Construct MultiLineString from WKT</td>
-</tr>
-<tr>
-<td>ST_MLineFromWKB()  , ST_MultiLineStringFromWKB()</td>
-<td>Construct MultiLineString from WKB</td>
-</tr>
-<tr>
-<td>ST_MPointFromText()  , ST_MultiPointFromText()</td>
-<td>Construct MultiPoint from WKT</td>
-</tr>
-<tr>
-<td>ST_MPointFromWKB()  , ST_MultiPointFromWKB()</td>
-<td>Construct MultiPoint from WKB</td>
-</tr>
-<tr>
-<td>ST_MPolyFromText()  , ST_MultiPolygonFromText()</td>
-<td>Construct MultiPolygon from WKT</td>
-</tr>
-<tr>
-<td>ST_MPolyFromWKB()  , ST_MultiPolygonFromWKB()</td>
-<td>Construct MultiPolygon from WKB</td>
-</tr>
-<tr>
-<td>ST_NumGeometries()</td>
-<td>Return number of geometries in geometry collection</td>
-</tr>
-<tr>
-<td>ST_NumInteriorRing()  , ST_NumInteriorRings()</td>
-<td>Return number of interior rings in Polygon</td>
-</tr>
-<tr>
-<td>ST_NumPoints()</td>
-<td>Return number of points in LineString</td>
-</tr>
-<tr>
-<td>ST_Overlaps()</td>
-<td>Whether one geometry overlaps another</td>
-</tr>
-<tr>
-<td>ST_PointFromGeoHash()</td>
-<td>Convert geohash value to POINT value</td>
-</tr>
-<tr>
-<td>ST_PointFromText()</td>
-<td>Construct Point from WKT</td>
-</tr>
-<tr>
-<td>ST_PointFromWKB()</td>
-<td>Construct Point from WKB</td>
-</tr>
-<tr>
-<td>ST_PointN()</td>
-<td>Return N-th point from LineString</td>
-</tr>
-<tr>
-<td>ST_PolyFromText()  , ST_PolygonFromText()</td>
-<td>Construct Polygon from WKT</td>
-</tr>
-<tr>
-<td>ST_PolyFromWKB()  , ST_PolygonFromWKB()</td>
-<td>Construct Polygon from WKB</td>
-</tr>
-<tr>
-<td>ST_Simplify()</td>
-<td>Return simplified geometry</td>
-</tr>
-<tr>
-<td>ST_SRID()</td>
-<td>Return spatial reference system ID for geometry</td>
-</tr>
-<tr>
-<td>ST_StartPoint()</td>
-<td>Start Point of LineString</td>
-</tr>
-<tr>
-<td>ST_SwapXY()</td>
-<td>Return argument with X/Y coordinates swapped</td>
-</tr>
-<tr>
-<td>ST_SymDifference()</td>
-<td>Return point set symmetric difference of two geometries</td>
-</tr>
-<tr>
-<td>ST_Touches()</td>
-<td>Whether one geometry touches another</td>
-</tr>
-<tr>
-<td>ST_Transform()</td>
-<td>(introduced 8.0.13)    Transform coordinates of geometry</td>
-</tr>
-<tr>
-<td>ST_Union()</td>
-<td>Return point set union of two geometries</td>
-</tr>
-<tr>
-<td>ST_Validate()</td>
-<td>Return validated geometry</td>
-</tr>
-<tr>
-<td>ST_Within()</td>
-<td>Whether one geometry is within another</td>
-</tr>
-<tr>
-<td>ST_X()</td>
-<td>Return X coordinate of Point</td>
-</tr>
-<tr>
-<td>ST_Y()</td>
-<td>Return Y coordinate of Point</td>
-</tr>
-<tr>
-<td>STATEMENT_DIGEST()</td>
-<td>Compute statement digest hash value</td>
-</tr>
-<tr>
-<td>STATEMENT_DIGEST_TEXT()</td>
-<td>Compute normalized statement digest</td>
-</tr>
-<tr>
-<td>STD()</td>
-<td>Return the population standard deviation</td>
-</tr>
-<tr>
-<td>STDDEV()</td>
-<td>Return the population standard deviation</td>
-</tr>
-<tr>
-<td>STDDEV_POP()</td>
-<td>Return the population standard deviation</td>
-</tr>
-<tr>
-<td>STDDEV_SAMP()</td>
-<td>Return the sample standard deviation</td>
-</tr>
-<tr>
-<td>STR_TO_DATE()</td>
-<td>Convert a string to a date</td>
-</tr>
-<tr>
-<td>STRCMP()</td>
-<td>Compare two strings</td>
-</tr>
-<tr>
-<td>SUBDATE()</td>
-<td>Synonym for DATE_SUB()</td>
-</tr>
-<tr>
-<td>SUBSTR()</td>
-<td>Return the substring as specified</td>
-</tr>
-<tr>
-<td>SUBSTRING()</td>
-<td>Return the substring as specified</td>
-</tr>
-<tr>
-<td>SUBSTRING_INDEX()</td>
-<td>Return a substring from a string before the specified number of occurrences of the delimiter</td>
-</tr>
-<tr>
-<td>SUBTIME()</td>
-<td>Subtract times</td>
-</tr>
-<tr>
-<td>SUM()</td>
-<td>Return the sum</td>
-</tr>
-<tr>
-<td>SYSDATE()</td>
-<td>Return the time at which the function executes</td>
-</tr>
-<tr>
-<td>SYSTEM_USER()</td>
-<td>Synonym for USER()</td>
-</tr>
-<tr>
-<td>TAN()</td>
-<td>Return the tangent of the argument</td>
-</tr>
-<tr>
-<td>TIME()</td>
-<td>Extract the time portion of the expression passed</td>
-</tr>
-<tr>
-<td>TIME_FORMAT()</td>
-<td>Format as time</td>
-</tr>
-<tr>
-<td>TIME_TO_SEC()</td>
-<td>Return the argument converted to seconds</td>
-</tr>
-<tr>
-<td>TIMEDIFF()</td>
-<td>Subtract time</td>
-</tr>
-<tr>
-<td>TIMESTAMP()</td>
-<td>With a single argument, this function returns the date or datetime expression; with two arguments, the sum of the arguments</td>
-</tr>
-<tr>
-<td>TIMESTAMPADD()</td>
-<td>Add an interval to a datetime expression</td>
-</tr>
-<tr>
-<td>TIMESTAMPDIFF()</td>
-<td>Subtract an interval from a datetime expression</td>
-</tr>
-<tr>
-<td>TO_BASE64()</td>
-<td>Return the argument converted to a base-64 string</td>
-</tr>
-<tr>
-<td>TO_DAYS()</td>
-<td>Return the date argument converted to days</td>
-</tr>
-<tr>
-<td>TO_SECONDS()</td>
-<td>Return the date or datetime argument converted to seconds since Year 0</td>
-</tr>
-<tr>
-<td>TRIM()</td>
-<td>Remove leading and trailing spaces</td>
-</tr>
-<tr>
-<td>TRUNCATE()</td>
-<td>Truncate to specified number of decimal places</td>
-</tr>
-<tr>
-<td>UCASE()</td>
-<td>Synonym for UPPER()</td>
-</tr>
-<tr>
-<td>UNCOMPRESS()</td>
-<td>Uncompress a string compressed</td>
-</tr>
-<tr>
-<td>UNCOMPRESSED_LENGTH()</td>
-<td>Return the length of a string before compression</td>
-</tr>
-<tr>
-<td>UNHEX()</td>
-<td>Return a string containing hex representation of a number</td>
-</tr>
-<tr>
-<td>UNIX_TIMESTAMP()</td>
-<td>Return a Unix timestamp</td>
-</tr>
-<tr>
-<td>UpdateXML()</td>
-<td>Return replaced XML fragment</td>
-</tr>
-<tr>
-<td>UPPER()</td>
-<td>Convert to uppercase</td>
-</tr>
-<tr>
-<td>USER()</td>
-<td>The user name and host name provided by the client</td>
-</tr>
-<tr>
-<td>UTC_DATE()</td>
-<td>Return the current UTC date</td>
-</tr>
-<tr>
-<td>UTC_TIME()</td>
-<td>Return the current UTC time</td>
-</tr>
-<tr>
-<td>UTC_TIMESTAMP()</td>
-<td>Return the current UTC date and time</td>
-</tr>
-<tr>
-<td>UUID()</td>
-<td>Return a Universal Unique Identifier (UUID)</td>
-</tr>
-<tr>
-<td>UUID_SHORT()</td>
-<td>Return an integer-valued universal identifier</td>
-</tr>
-<tr>
-<td>UUID_TO_BIN()</td>
-<td>Convert string UUID to binary</td>
-</tr>
-<tr>
-<td>VALIDATE_PASSWORD_STRENGTH()</td>
-<td>Determine strength of password</td>
-</tr>
-<tr>
-<td>VALUES()</td>
-<td>Define the values to be used during an INSERT</td>
-</tr>
-<tr>
-<td>VAR_POP()</td>
-<td>Return the population standard variance</td>
-</tr>
-<tr>
-<td>VAR_SAMP()</td>
-<td>Return the sample variance</td>
-</tr>
-<tr>
-<td>VARIANCE()</td>
-<td>Return the population standard variance</td>
-</tr>
-<tr>
-<td>VERSION()</td>
-<td>Return a string that indicates the MySQL server version</td>
-</tr>
-<tr>
-<td>WAIT_FOR_EXECUTED_GTID_SET()</td>
-<td>Wait until the given GTIDs have executed on the slave.</td>
-</tr>
-<tr>
-<td>WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS()</td>
-<td>(deprecated 8.0.18)    Use WAIT_FOR_EXECUTED_GTID_SET()</td>
-</tr>
-<tr>
-<td>WEEK()</td>
-<td>Return the week number</td>
-</tr>
-<tr>
-<td>WEEKDAY()</td>
-<td>Return the weekday index</td>
-</tr>
-<tr>
-<td>WEEKOFYEAR()</td>
-<td>Return the calendar week of the date (1-53)</td>
-</tr>
-<tr>
-<td>WEIGHT_STRING()</td>
-<td>Return the weight string for a string</td>
-</tr>
-<tr>
-<td>XOR</td>
-<td>Logical XOR</td>
-</tr>
-<tr>
-<td>YEAR()</td>
-<td>Return the year</td>
-</tr>
-<tr>
-<td>YEARWEEK()</td>
-<td>Return the year and week</td>
-</tr>
-<tr>
-<td>|</td>
-<td>Bitwise OR</td>
-</tr>
-<tr>
-<td>~</td>
-<td>Bitwise inversion</td>
-</tr>
-</tbody></table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E5%87%BD%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-join" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/mysql-join/">mysql-join</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/08/mysql-join/" class="archive-article-date">
-  	<time datetime="2020-04-08T14:43:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="连表查询"><a href="#连表查询" class="headerlink" title="连表查询"></a>连表查询</h2><p><img src="mysql-join/image-20200408224438052.png" alt="image-20200409214546598"></p>
-<h3 id="内连接-inner-join"><a href="#内连接-inner-join" class="headerlink" title="内连接 inner join"></a>内连接 <code>inner join</code></h3><p><img src="mysql-join/image-20200408224524502.png" alt="image-20200408224524502"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A  A  INNER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
-
-<h3 id="左连接-LEFT-JOIN"><a href="#左连接-LEFT-JOIN" class="headerlink" title="左连接 LEFT JOIN"></a>左连接 <code>LEFT JOIN</code></h3><p><img src="mysql-join/image-20200408224633126.png" alt="image-20200408224633126"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A LEFT JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="右连接-RIGHT-JOIN"><a href="#右连接-RIGHT-JOIN" class="headerlink" title="右连接 RIGHT JOIN"></a>右连接 <code>RIGHT JOIN</code></h3><p><img src="mysql-join/image-20200408224751488.png" alt="image-20200408224751488"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON  A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="外连接-OUTER-JOIN"><a href="#外连接-OUTER-JOIN" class="headerlink" title="外连接 OUTER JOIN"></a>外连接 <code>OUTER JOIN</code></h3><p><img src="mysql-join/image-20200408225007102.png" alt="image-20200408225007102"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A FULL OUTER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="左连接-内连接-LEFT-JOIN-EXCLUDING-INNER-JOIN"><a href="#左连接-内连接-LEFT-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="左连接 - 内连接 LEFT JOIN EXCLUDING INNER JOIN"></a>左连接 - 内连接 <code>LEFT JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225121695.png" alt="image-20200408225121695"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A LEFT JOIN TABLE_B ON A.KEY &#x3D; B.KEY WHERE B.KEY IS NULL</span><br></pre></td></tr></table></figure>
-
-<h3 id="右连接-内连接-RIGHT-JOIN-EXCLUDING-INNER-JOIN"><a href="#右连接-内连接-RIGHT-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="右连接 - 内连接 RIGHT JOIN EXCLUDING INNER JOIN"></a>右连接 - 内连接 <code>RIGHT JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225229477.png" alt="image-20200408225229477"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A A RIGHT JOIN TABLE_B B ON A.KEY &#x3D; B.KEY WHERE A.KEY IS NULL</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="外连接-内连接-OUTER-JOIN-EXCLUDING-INNER-JOIN"><a href="#外连接-内连接-OUTER-JOIN-EXCLUDING-INNER-JOIN" class="headerlink" title="外连接 - 内连接 OUTER JOIN EXCLUDING INNER JOIN"></a>外连接 - 内连接 <code>OUTER JOIN EXCLUDING INNER JOIN</code></h3><p><img src="mysql-join/image-20200408225340689.png" alt="image-20200408225340689"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM TABLE_A FULL OUTER JOIN TABLE_B B ON A.KEY &#x3D; B.KEY WHERE A.KEY IS NULL OR B.KEY IS NULL</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/08/mysql-join/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">mysql-基础知识</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-04-08T01:30:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ol>
-<li><p>连接数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p&lt;密码&gt;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：数据库存储密码时，需要加密</p>
-</blockquote>
-</li>
-<li><p>刷新权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示数据库中所有的表的信息</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &#96;表名&#96;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出连接</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注释</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释 -- 注释内容</span><br><span class="line">多行注释 &#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>EXPLAIN</code> 分析SQL</p>
-</li>
-</ol>
-<blockquote>
-<p>所有的语句都需要使用 ； 分好结尾</p>
-</blockquote>
-<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="操作数据库-1"><a href="#操作数据库-1" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>1、创建数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;数据库名&#96;；</span><br></pre></td></tr></table></figure>
-
-<p>2、删除数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;数据库名&#96;</span><br></pre></td></tr></table></figure>
-<p>3、查看所有的数据库</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-
-<p>4、使用数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &#96;数据库名&#96;;</span><br></pre></td></tr></table></figure>
-
-<p>5、数据库排序规则</p>
-<ul>
-<li>特征<ul>
-<li>两个不同的字符集不能有相同的排序规则</li>
-<li>两个字符集有一个默认的排序规则</li>
-<li>有一些常用的命名规则。如_ci结尾表示大小写不敏感（caseinsensitive）,_cs表示大小写敏感（case sensitive）,_bin表示二进制的比较（binary）</li>
-</ul>
-</li>
-<li>区别<ul>
-<li>utf8_general_ci 不区分大小写，这个你在注册用户名和邮箱的时候就要使用</li>
-<li>utf8_general_cs 区分大小写，如果用户名和邮箱用这个 就会照成不良后果</li>
-<li>utf8_bin:字符串每个字符串用二进制数据编译存储。 区分大小写，而且可以存二进制的内容</li>
-<li>utf8_general_ci校对速度快，但准确度稍差</li>
-<li>utf8_unicode_ci准确度高，但校对速度稍慢</li>
-</ul>
-</li>
-<li>使用情况<br>utf8_unicode_ci比较准确，utf8_general_ci速度比较快。通常情况下，新建数据库时一般选用utf8_general_ci就可以了</li>
-</ul>
-<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><ol>
-<li><p>用户权限赋值</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on &#39;表名&#39;.* to &#39;用户名&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
-<h3 id="所用"><a href="#所用" class="headerlink" title="所用"></a>所用</h3></li>
-<li><p>普通索引</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#39;表名&#39; ADD INDEX 索引名(&#96;字段名&#96;);</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
-<p>数值</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>数据大小</th>
-<th>字节</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>tinyint</td>
-<td>十分小的数据库</td>
-<td>1</td>
-</tr>
-<tr>
-<td>smallint</td>
-<td>较小数据</td>
-<td>2</td>
-</tr>
-<tr>
-<td>mediumint</td>
-<td>中等</td>
-<td>3</td>
-</tr>
-<tr>
-<td><strong>int</strong></td>
-<td><strong>标准</strong></td>
-<td><strong>4</strong></td>
-</tr>
-<tr>
-<td>bigint</td>
-<td>较大</td>
-<td>8</td>
-</tr>
-<tr>
-<td>float</td>
-<td>浮点</td>
-<td>4</td>
-</tr>
-<tr>
-<td>double</td>
-<td>浮点</td>
-<td>8</td>
-</tr>
-<tr>
-<td>decimal</td>
-<td>字符串形式浮点数（精度）</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>注意</strong></p>
-<p>​    int(a)，a只与<code>Zerofill</code>(0填充) 有关</p>
-<blockquote>
-<p>字符串</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>数据解释</th>
-<th>字节</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>char</td>
-<td>定长字符串</td>
-<td>0~255</td>
-</tr>
-<tr>
-<td><strong>varchar</strong></td>
-<td><strong>可变字符串</strong></td>
-<td><strong>0~65535</strong></td>
-</tr>
-<tr>
-<td>tinytext</td>
-<td>微型文本</td>
-<td>2^8-1</td>
-</tr>
-<tr>
-<td><strong>text</strong></td>
-<td><strong>文本串</strong></td>
-<td><strong>2^16-1</strong></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>时间日期</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>解释</th>
-<th>格式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>date</td>
-<td>日期</td>
-<td>YYYY-MM-DD</td>
-</tr>
-<tr>
-<td>time</td>
-<td>时间</td>
-<td>HH:mm:ss</td>
-</tr>
-<tr>
-<td>datetime</td>
-<td>日期+时间</td>
-<td>YYYY-MM-DD HH:mm:ss</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>时间戳</td>
-<td>1970.1.1到现在的毫秒数</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>null</p>
-</blockquote>
-<ul>
-<li>没有值</li>
-<li>==不要使用NULL进行运算，NULL参与运算结果始终为NULL==</li>
-</ul>
-<h2 id="数据字段属性"><a href="#数据字段属性" class="headerlink" title="数据字段属性"></a>数据字段属性</h2><ul>
-<li>默认 ，不设置值时，数据库会自动在当前字段添加上默认值</li>
-<li>主键</li>
-<li>非空</li>
-<li>Unsigned 无符号，字段要求是整形</li>
-<li>自增</li>
-<li>Zerofill  不足位数使用0填充，字段要求是整形</li>
-</ul>
-<h2 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [IF NOT EXISTS] &#96;表名&#96; (</span><br><span class="line">  &#96;id&#96; bigint(20) NOT NULL AUTO_INCREMENT COMMENT &#39;ID&#39;,</span><br><span class="line">  &#96;name&#96; varchar(100) COLLATE utf8mb4_bin DEFAULT &#39;匿名&#39; COMMENT &#39;名字&#39;,</span><br><span class="line">  &#96;cancel&#96; int(11) DEFAULT &#39;0&#39; COMMENT &#39;0位删除 1已删除&#39;,</span><br><span class="line">  &#96;created_at&#96; datetime NOT NULL COMMENT &#39;创建时间&#39;,</span><br><span class="line">  &#96;modified_at&#96; datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,</span><br><span class="line">  PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;124 DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_bin ROW_FORMAT&#x3D;COMPACT COMMENT&#x3D;&#39;中文表名&#39;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><code>IF NOT EXISTS</code>  如果不存在</li>
-<li><code>IF EXISTS</code> 如果存在</li>
-<li><code>AUTO_INCREMENT</code> 自增关键字</li>
-<li><code>DEFAULT</code> 默认值设置</li>
-<li><code>COMMENT</code> 备注</li>
-<li><code>PRIMARY KEY (字段名)</code>设置主键</li>
-<li><code>ENGINE</code>设置表引擎</li>
-<li><code>AUTO_INCREMENT</code> 自增主键初始值</li>
-<li><code>CHARSET</code>字符集</li>
-</ul>
-<h3 id="InnoDB和MyISAM"><a href="#InnoDB和MyISAM" class="headerlink" title="InnoDB和MyISAM"></a>InnoDB和MyISAM</h3><table>
-<thead>
-<tr>
-<th>功能</th>
-<th>MyISAM</th>
-<th>InnoDB</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>事务支持</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>数据行锁定</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>外键约束</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>全文索引</td>
-<td>支持</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>表空间大小</td>
-<td>较小</td>
-<td>较大，约MyISAM的2倍</td>
-</tr>
-</tbody></table>
-<p>常规操作：</p>
-<ul>
-<li>MyISAM 节约空间，速度快</li>
-<li>INNODB 安全性高，事务的处理，多表多用户操作</li>
-</ul>
-<h3 id="表的修改与删除"><a href="#表的修改与删除" class="headerlink" title="表的修改与删除"></a>表的修改与删除</h3><ol>
-<li><p>修改表名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;旧表名&#96; rename as &#96;新表名&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>增加表字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; add &#96;字段名&#96; &#96;列属性（int（11））&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>修改表字段</p>
-<ul>
-<li><p>修改约束</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; modify &#96;字段名&#96; &#96;新的列属性&#96;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字段重命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; change &#96;旧字段名&#96; &#96;新字段名&#96; [&#96;新的列属性&#96;]</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-<ol start="4">
-<li><p>删除表字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; drop &#96;字段名&#96;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table &#96;表名&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="6">
-<li><p>清空表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate &#96;表名&#96;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>delete和truncate区别</p>
-<p>相同点：都不会删除表结构，只会删除数据</p>
-<p>不同： </p>
-<ol>
-<li><p>truncate 会将自增列计数器归零</p>
-<pre><code>2. truncate 不会影响事务，也就是删除了数据无法回滚
-     3. 性能：truncate &gt; delete</code></pre></li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ol>
-<li>去重：<code>distinct</code></li>
-<li>查询版本 : <code>select version()</code></li>
-<li>计算：`select 100*3-1</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -3549,6 +1533,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
