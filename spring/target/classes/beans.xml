@@ -5,7 +5,6 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="hello" class="pojo.Hello">
-        <!-- collaborators and configuration for this bean go here -->
         <property name="name" value="spring"/>
     </bean>
 

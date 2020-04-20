@@ -10,17 +10,17 @@
     <bean id="aspect" class="com.wedcloud.springapiaop.log.LogAspect"/>
     <bean id="annotationLogAspect" class="com.wedcloud.springapiaop.log.AnnotationLogAspect"/>
 
-    <!-- <aop:config> -->
+    <aop:config>
         <!-- 切点 -->
-        <!-- <aop:pointcut id="pointcut" expression="execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"/>
-        <aop:advisor advice-ref="after" pointcut-ref="pointcut" order=""/>
+        <!--<aop:pointcut id="pointcut" expression="execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="after" pointcut-ref="pointcut"/>
         <aop:advisor advice-ref="before" pointcut-ref="pointcut"/> -->
         <!-- 切面 -->
-        <!--<aop:aspect id="logAspect" ref="aspect">
+        <aop:aspect id="logAspect" ref="aspect">
             <aop:pointcut id="point" expression="execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"/>
             <aop:after method="after" pointcut-ref="point"/>
             <aop:before method="before" pointcut-ref="point"/>
-        </aop:aspect> -->
-    <!-- </aop:config> -->
+        </aop:aspect>
+    </aop:config>
     <aop:aspectj-autoproxy/>
 </beans>
