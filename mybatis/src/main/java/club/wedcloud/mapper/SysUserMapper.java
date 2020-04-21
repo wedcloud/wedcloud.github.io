@@ -11,11 +11,17 @@ import java.util.List;
  */
 public interface SysUserMapper {
   /**
-   * 列表
+   * 列表（嵌套查询）
    *
    * @return
    */
   List<SysUser> selectList();
+  /**
+   * 列表（结果嵌套查询）
+   *
+   * @return
+   */
+  List<SysUser> selectList2();
 
   /**
    * 单查

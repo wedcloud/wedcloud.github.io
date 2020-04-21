@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.wedcloud.mapper.SysUserMapper">
+
+    <resultMap id="sysUserMap" type="sysUser">
+        <result property="id" column="id"/>
+        <association property="userDepartment" column="id" javaType="userDepartment" select="selectUserDepart"/>
+    </resultMap>
+
+    <resultMap id="userDepartmentMap" type="userDepartment">
+        <result property="did" column="did"/>
+        <association property="department" column="did" javaType="department" select="selectDepart"/>
+    </resultMap>
+
+    <!-- 一对一查询 select嵌套查询 -->
+    <select id="selectList" resultMap="sysUserMap">
+        select id, name, passwd, phone, cancel, created_at, modified_at
+        from wedcloud_dev.sys_user
+    </select>
+
+    <select id="selectUserDepart" resultMap="userDepartmentMap">
+        select id, did, uid
+        from wedcloud_dev.user_department
+        where uid = #{id}
+    </select>
+
+    <select id="selectDepart" resultType="department">
+        select id, name, cancel, created_at, modified_at
+        from wedcloud_dev.department
+        where id = #{id}
+    </select>
+
+    <!-- ============================================================= -->
+
+    <resultMap id="resultMapUser" type="sysUser">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="passwd" column="passwd"/>
+        <result property="phone" column="phone"/>
+        <result property="cancel" column="cancel"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="modifiedAt" column="modified_at"/>
+        <result property="dname" column="dname"/>
+    </resultMap>
+
+    <select id="selectList2" resultMap="resultMapUser">
+        SELECT u.id          as id,
+               u.name        as name,
+               u.passwd      as passwd,
+               u.phone       as phone,
+               u.cancel      as cancel,
+               u.created_at  as created_at,
+               u.modified_at as modified_at,
+               d.name        as dname
+        FROM wedcloud_dev.sys_user u
+                 LEFT JOIN wedcloud_dev.user_department ud ON u.`id` = ud.`uid`
+                 LEFT JOIN wedcloud_dev.department d ON d.`id` = ud.`did`
+    </select>
+
+    <!-- ============================================================= -->
+    <select id="findById" resultType="sysUser">
+        SELECT id, name, passwd, phone, cancel, created_at, modified_at
+        FROM wedcloud_dev.sys_user
+        where id = #{id}
+    </select>
+
+    <insert id="add" parameterType="sysUser">
+        INSERT INTO wedcloud_dev.sys_user (name, passwd, phone, cancel, created_at, modified_at)
+        VALUES (#{name}, #{passwd}, #{phone}, 0, NOW(3), NOW(3))
+    </insert>
+
+    <update id="modify" parameterType="sysUser">
+        UPDATE wedcloud_dev.sys_user
+        <set>
+            <if test="name != null">name=#{name},</if>
+            <if test="passwd != null">passwd=#{passwd},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="modifiedAt == null">modified_at=NOW(3)</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="del">
+        UPDATE wedcloud_dev.sys_user
+        SET cancel=1,
+            modified_at=NOW(3)
+        where id = #{id}
+    </delete>
+</mapper>
