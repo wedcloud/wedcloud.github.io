@@ -177,6 +177,391 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-学习计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">学习计划</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-04-21T05:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>拒绝封闭学习</strong></p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
+<li>语言本身</li>
+<li>数据结构</li>
+<li>算法</li>
+<li>计算机网络协议</li>
+<li>操作系统</li>
+<li>数据库</li>
+<li>设计模式</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习计划</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习计划//" class="article-tag-list-link color5">学习计划</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis-配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/">mybatis-配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-20T14:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mybatis-配置"><a href="#mybatis-配置" class="headerlink" title="mybatis 配置"></a>mybatis 配置</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><img src="mybatis-%E9%85%8D%E7%BD%AE/image-20200420231109395.png" alt="image-20200420231109395"></p>
+<p>引用</p>
+<p><img src="mybatis-%E9%85%8D%E7%BD%AE/image-20200420231217964.png" alt="image-20200420231217964"></p>
+<p>MyBatis 将按照下面的顺序来加载：</p>
+<ul>
+<li>首先读取在 properties 元素体内指定的属性。</li>
+<li>然后根据 properties 元素中的 resource 属性读取类路径下属性文件，或根据 url 属性指定的路径读取属性文件，并覆盖之前读取过的同名属性。</li>
+<li>最后读取作为方法参数传递的属性，并覆盖之前读取过的同名属性。</li>
+</ul>
+<p>因此，通过方法参数传递的属性具有最高优先级，resource/url 属性中指定的配置文件次之，最低优先级的则是 properties 元素中指定的属性。</p>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>类型别名可为 Java 类型设置一个缩写名字。 它仅用于 XML 配置，意在降低冗余的全限定类名书写</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Author"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Author"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Blog"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Blog"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Comment"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Comment"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Post"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Post"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Section"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Section"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Tag"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Tag"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"domain.blog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>每一个在包 <code>domain.blog</code> 中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。 比如 <code>domain.blog.Author</code> 的别名为 <code>author</code>；若有注解，则别名为其注解值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Alias</span>(<span class="string">"author"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Author</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><table>
+<thead>
+<tr>
+<th>设置名</th>
+<th>描述</th>
+<th>有效值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cacheEnabled</td>
+<td>全局性地开启或关闭所有映射器配置文件中已配置的任何缓存</td>
+<td>true/false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>lazyLoadingEnabled</td>
+<td>延迟加载的全局开关。<br />当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 <code>fetchType</code> 属性来覆盖该项的开关状态</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>useGeneratedKeys</td>
+<td>允许 JDBC 支持自动生成主键</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>mapUnderscoreToCamelCase</td>
+<td>是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id="映射器"><a href="#映射器" class="headerlink" title="映射器"></a>映射器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用相对于类路径的资源引用（推荐使用） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/AuthorMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/PostMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 不要使用 ---&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用完全限定资源定位符（URL） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/AuthorMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/PostMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用映射器接口实现类的完全限定类名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.AuthorMapper"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.BlogMapper"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.PostMapper"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">注意：</span></span><br><span class="line"><span class="comment">1.接口和对应的Mapper.xml文件必须同名</span></span><br><span class="line"><span class="comment">2.接口和Mapper.xml必须在同一个包下</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 将包内的映射器接口实现全部注册为映射器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"org.mybatis.builder"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">注意：</span></span><br><span class="line"><span class="comment">1.接口和对应的Mapper.xml文件必须同名</span></span><br><span class="line"><span class="comment">2.接口和Mapper.xml必须在同一个包下</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的<code>并发问题</code></p>
+<p><strong>SqlSessionFactoryBuilder</strong></p>
+<blockquote>
+<p>1.只需要创建一次</p>
+<p>2.最佳作用域是方法作用域（也就是局部方法变量）</p>
+</blockquote>
+<p><strong>SqlSessionFactory</strong></p>
+<blockquote>
+<p>1.创建后就一直存在</p>
+<p>2.最佳作用域是应用作用域（application 全局）</p>
+<p>3.最简单的就是使用单例模式或者静态单例模式</p>
+</blockquote>
+<p><strong>SqlSession</strong></p>
+<blockquote>
+<p>1.SqlSession 的实例不是线程安全的，所以每个线程都应该有自己的SqlSession </p>
+<p>2.最佳的作用域是请求或方法作用域</p>
+<p>3.使用后需要及时关闭，避免资源长期占有</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lombok" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/20/lombok/">lombok</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/20/lombok/" class="archive-article-date">
+  	<time datetime="2020-04-20T01:32:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><h3 id="常规注解"><a href="#常规注解" class="headerlink" title="常规注解"></a>常规注解</h3><ul>
+<li><p>@Data</p>
+<blockquote>
+<p>注解在类上，会为类的所有属性自动生成setter/getter、equals、canEqual、hashCode、toString方法，如为final属性，则不会为该属性生成setter方法</p>
+</blockquote>
+</li>
+<li><p>@Getter/@Setter</p>
+<blockquote>
+<p>注解在属性上，可以为相应的属性自动生成Getter/Setter方法</p>
+</blockquote>
+</li>
+<li><p>@NonNull</p>
+<blockquote>
+<p>注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针</p>
+</blockquote>
+</li>
+<li><p>@Cleanup</p>
+<blockquote>
+<p>注解能帮助我们自动调用close()方法，很大的简化了代码</p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">@Cleanup</span> InputStream in = <span class="keyword">new</span> FileInputStream(args[<span class="number">0</span>]);</span><br><span class="line">  <span class="meta">@Cleanup</span> OutputStream out = <span class="keyword">new</span> FileOutputStream(args[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>@EqualsAndHashCode</p>
+<blockquote>
+<p>注解在类上，默认情况下，会使用所有非静态（non-static）和非瞬态（non-transient）属性来生成equals和hasCode，也能通过exclude注解来排除一些属性</p>
+<p>例：@EqualsAndHashCode(exclude={“id”, “shape”})</p>
+</blockquote>
+</li>
+<li><p>@ToString</p>
+<blockquote>
+<p>类使用@ToString注解，Lombok会生成一个toString()方法，默认情况下，会输出类名、所有属性（会按照属性定义顺序），用逗号来分割</p>
+<p>通过将<code>includeFieldNames</code>参数设为true，就能明确的输出toString()属性</p>
+</blockquote>
+</li>
+<li><p>@NoArgsConstructor，@RequiredArgsConstructor ，@AllArgsConstructor</p>
+<blockquote>
+<p>无参构造器、部分参数构造器、全参构造器</p>
+<p>注意：Lombok没法实现多种参数构造器的重载</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">lombok</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/lombok//" class="article-tag-list-link color2">lombok</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/20/lombok/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -211,6 +596,335 @@
 <li>提供对象关系映射标签，支持对象关系组维护</li>
 <li>提供xml标签，支持编写动态sql</li>
 </ul>
+<h3 id="mybatis-XML"><a href="#mybatis-XML" class="headerlink" title="mybatis XML"></a>mybatis XML</h3><ul>
+<li>namespace 与 Mapper接口全限定名一直（<code>com.mypackage.UserMapper</code>）</li>
+</ul>
+<h4 id="XML标签"><a href="#XML标签" class="headerlink" title="XML标签"></a>XML标签</h4><ul>
+<li>cache - 该命名空间的缓存配置</li>
+<li>cache-ref  - 引用其他命名空间的缓存配置</li>
+<li>resultMap - 描述如何从数据库结果集中加载对象，是最复杂也是最强大的元素</li>
+<li>sql - 可被其它语句引用的可重用语句块</li>
+<li>insert - 映射插入语句</li>
+<li>update - 映射更新语句</li>
+<li>delete - 映射删除语句</li>
+<li>select - 映射查询语句</li>
+</ul>
+<h5 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"selectPerson"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"int"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterMap</span>=<span class="string">"deprecated"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultType</span>=<span class="string">"hashmap"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultMap</span>=<span class="string">"personResultMap"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">useCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"10"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">fetchSize</span>=<span class="string">"256"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultSetType</span>=<span class="string">"FORWARD_ONLY"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>在命名空间中唯一的标识符，可以被用来引用这条语句</td>
+</tr>
+<tr>
+<td>parameterType</td>
+<td>将会传入这条语句的参数的类全限定名或别名（可选）</td>
+</tr>
+<tr>
+<td>resultType</td>
+<td>返回结果的类全限定名或别名。 <br/>注意，如果返回的是集合，那应该设置为集合包含的类型，而不是集合本身的类型。<br/> resultType 和 resultMap 之间只能同时使用一个</td>
+</tr>
+<tr>
+<td>resultMap</td>
+<td>对外部 resultMap 的命名引用。结果映射是 MyBatis 最强大的特性， resultType 和 resultMap 之间只能同时使用一个</td>
+</tr>
+<tr>
+<td>flushCache</td>
+<td>将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被<code>清空</code>，默认值：false</td>
+</tr>
+<tr>
+<td>useCache</td>
+<td>将其设置为 true 后，将会导致本条语句的结果被二级缓存<code>缓存</code>起来，默认值：对 select 元素为 true</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为未设置（unset）（依赖数据库驱动）</td>
+</tr>
+<tr>
+<td>statementType</td>
+<td>可选 <br />STATEMENT（直接操作sql，不进行预编译，获取数据：$），<br />PREPARED（预处理，参数，进行预编译，获取数据：# ），<br /> CALLABLE（执行存储过程）<br />默认值：PREPARED</td>
+</tr>
+</tbody></table>
+<h5 id="insert-update-和-delete"><a href="#insert-update-和-delete" class="headerlink" title="insert , update 和 delete"></a>insert , update 和 delete</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"insertAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyProperty</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyColumn</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">useGeneratedKeys</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">update</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"updateAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">delete</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"deleteAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>在命名空间中唯一的标识符，可以被用来引用这条语句</td>
+</tr>
+<tr>
+<td>parameterType</td>
+<td>将会传入这条语句的参数的类全限定名或别名（可选）</td>
+</tr>
+<tr>
+<td>flushCache</td>
+<td>将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被清空，默认值：（对 insert、update 和 delete 语句）true</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>在抛出异常前，等待超时设置</td>
+</tr>
+<tr>
+<td>statementType</td>
+<td>可选 STATEMENT，PREPARED 或 CALLABLE，默认：PREPARED</td>
+</tr>
+<tr>
+<td>useGeneratedKeys</td>
+<td>（仅适用于 insert 和 update）这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键，默认：false</td>
+</tr>
+<tr>
+<td>keyProperty</td>
+<td>（仅适用于 insert 和 update）指定能够唯一识别对象的属性，MyBatis 会使用 getGeneratedKeys 的返回值或 insert 语句的 selectKey 子元素设置它的值，如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>keyColumn</td>
+<td>（仅适用于 insert 和 update）设置生成键值在表中的列名，在某些数据库（像 PostgreSQL）中，当主键列不是表中的第一列的时候，是必须设置的。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>databaseId</td>
+<td>如果配置了数据库厂商标识（databaseIdProvider），MyBatis 会加载所有不带 databaseId 或匹配当前 databaseId 的语句；如果带和不带的语句都有，则不带的会被忽略</td>
+</tr>
+</tbody></table>
+<h5 id="selectKey"><a href="#selectKey" class="headerlink" title="selectKey"></a>selectKey</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selectKey</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyProperty</span>=<span class="string">"id"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultType</span>=<span class="string">"int"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">order</span>=<span class="string">"BEFORE"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keyProperty</td>
+<td><code>selectKey</code> 语句结果应该被设置到的目标属性。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>keyColumn</td>
+<td>返回结果集中生成列属性的列名。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>resultType</td>
+<td>结果的类型</td>
+</tr>
+<tr>
+<td>order</td>
+<td>可以设置为 <code>BEFORE</code> 或 <code>AFTER</code>。如果设置为 <code>BEFORE</code>，那么它首先会生成主键，设置 <code>keyProperty</code> 再执行插入语句。如果设置为 <code>AFTER</code>，那么先执行插入语句，然后是 <code>selectKey</code> 中的语句</td>
+</tr>
+<tr>
+<td>statementType</td>
+<td>可选 STATEMENT，PREPARED 或 CALLABLE，默认：PREPARED</td>
+</tr>
+</tbody></table>
+<h5 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h5><p>这个元素可以用来定义可重用的 SQL 代码片段，以便在其它语句中使用。 参数可以静态地（在加载的时候）确定下来，并且可以在不同的 include 元素中定义不同的参数值</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"userColumns"</span>&gt;</span> $&#123;alias&#125;.id,$&#123;alias&#125;.username,$&#123;alias&#125;.password <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">  select</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>,</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">  from some_table t1</span><br><span class="line">    cross join some_table t2</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>Map传递参数时，直接在sql中取出key即可【parameterType=”map”】</p>
+<p>对象传递参数时，直接在sqk中取出对象的属性即可【parameterType=”pojo”】</p>
+<p>只有一个基本参数的情况下，可以直接在sql中取到【parameterType 可以不写】</p>
+<h3 id="结果映射"><a href="#结果映射" class="headerlink" title="结果映射"></a>结果映射</h3><ul>
+<li><code>constructor</code> - 用于在实例化类时，注入结果到构造方法中<ul>
+<li><code>idArg</code> - ID 参数；标记出作为 ID 的结果可以帮助提高整体性能</li>
+<li><code>arg</code> - 将被注入到构造方法的一个普通结果</li>
+</ul>
+</li>
+<li><code>id</code> – 一个 ID 结果；标记出作为 ID 的结果可以帮助提高整体性能</li>
+<li><code>result</code> – 注入到字段或 JavaBean 属性的普通结果</li>
+<li><code>association</code> – 一个复杂类型的关联；许多结果将包装成这种类型<ul>
+<li>嵌套结果映射 – 关联可以是 <code>resultMap</code> 元素，或是对其它结果映射的引用</li>
+</ul>
+</li>
+<li><code>collection</code> – 一个复杂类型的集合<ul>
+<li>嵌套结果映射 – 集合可以是 <code>resultMap</code> 元素，或是对其它结果映射的引用</li>
+</ul>
+</li>
+<li><code>discriminator</code> – 使用结果值来决定使用哪个<code>resultMap</code><ul>
+<li><code>case</code> – 基于某些值的结果映射<ul>
+<li>嵌套结果映射 – <code>case</code> 也是一个结果映射，因此具有相同的结构和元素；或者引用其它的结果映射</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="id-amp-result"><a href="#id-amp-result" class="headerlink" title="id &amp; result"></a>id &amp; result</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>property</td>
+<td>映射到列结果的字段或属性</td>
+</tr>
+<tr>
+<td>column</td>
+<td>数据库中的列名，或者是列的别名</td>
+</tr>
+<tr>
+<td>javaType</td>
+<td>一个 Java 类的全限定名，或一个类型别名</td>
+</tr>
+<tr>
+<td>jdbcType</td>
+<td>JDBC 类型，所支持的 JDBC 类型参见这个表格之后的“支持的 JDBC 类型”</td>
+</tr>
+<tr>
+<td>typeHandler</td>
+<td>属性值是一个类型处理器实现类的全限定名，或者是类型别名</td>
+</tr>
+</tbody></table>
+<p>id 和 result 元素都将一个列的值映射到一个属性字段，id 元素对应的属性会被标记为对象的标识符，在比较对象实例时使用。 这样可以提高整体的性能，尤其是进行缓存和嵌套结果映射（也就是连接映射）的时候。</p>
+<h4 id="关联（association）"><a href="#关联（association）" class="headerlink" title="关联（association）"></a>关联（association）</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"blog_author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"author_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"author_username"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>property</td>
+<td>映射到列结果的字段或属性</td>
+</tr>
+<tr>
+<td>javaType</td>
+<td>一个 Java 类的全限定名，或一个类型别名</td>
+</tr>
+<tr>
+<td>jdbcType</td>
+<td>JDBC 类型</td>
+</tr>
+<tr>
+<td>typeHandler</td>
+<td>属性值是一个类型处理器实现类的全限定名，或者是类型别名</td>
+</tr>
+</tbody></table>
+<p>MyBatis 有两种不同的方式加载关联：</p>
+<ul>
+<li>嵌套 Select 查询：通过执行另外一个 SQL 映射语句来加载期望的复杂类型</li>
+<li>嵌套结果映射：使用嵌套的结果映射来处理连接结果的重复子集</li>
+</ul>
+<h5 id="嵌套-Select-查询"><a href="#嵌套-Select-查询" class="headerlink" title="嵌套 Select 查询"></a>嵌套 Select 查询</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>column</td>
+<td>数据库中的列名，或者是列的别名。<br />一般情况下，这和传递给 <code>resultSet.getString(columnName)</code> 方法的参数一样</td>
+</tr>
+<tr>
+<td>select</td>
+<td>用于加载复杂类型属性的映射语句的 ID，它会从 column 属性指定的列中检索数据，作为参数传递给目标 select 语句</td>
+</tr>
+<tr>
+<td>fetchType</td>
+<td>可选的。有效值为 <code>lazy</code> 和 <code>eager</code>。 指定属性后，将在映射中忽略全局配置参数 <code>lazyLoadingEnabled</code>，使用属性的值</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：在使用复合主键的时候，你可以使用 <code>column=&quot;{prop1=col1,prop2=col2}&quot;</code> 这样的语法来指定多个传递给嵌套 Select 查询语句的列名。这会使得 <code>prop1</code> 和 <code>prop2</code> 作为参数对象，被设置为对应嵌套 Select 语句的参数</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">select</span>=<span class="string">"selectAuthor"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAuthor"</span> <span class="attr">resultType</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  SELECT * FROM AUTHOR WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式虽然很简单，但在大型数据集或大型数据表上表现不佳。这个问题被称为<code>“N+1 查询问题”</code></p>
+<blockquote>
+<p><code>N+1</code>问题:</p>
+<p>1.你执行了一个单独的 SQL 语句来获取结果的一个列表（就是“+1”）</p>
+<p>2.对列表返回的每条记录，你执行一个 select 查询语句来为每条记录加载详细信息（就是“N”）</p>
+<p>这个问题会导致成百上千的 SQL 语句被执行</p>
+</blockquote>
+<p>MyBatis 能够对这样的查询进行延迟加载，因此可以将大量语句同时运行的开销分散开来。 然而，如果你加载记录列表之后立刻就遍历列表以获取嵌套的数据，就会触发所有的延迟加载查询，性能可能会变得很糟糕</p>
+<h5 id="嵌套结果映射"><a href="#嵌套结果映射" class="headerlink" title="嵌套结果映射"></a>嵌套结果映射</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>resultMap</td>
+<td>1.结果映射的 ID，可以将此关联的嵌套结果集映射到一个合适的对象树中。<br /> 2.它可以作为使用额外 select 语句的替代方案。它可以将多表连接操作的结果映射成一个单一的 <code>ResultSet</code>。这样的 <code>ResultSet</code> 有部分数据是重复的。<br /> 3.为了将结果集正确地映射到嵌套的对象树中, MyBatis 允许你“串联”结果映射，以便解决嵌套结果集的问题</td>
+</tr>
+<tr>
+<td>columnPrefix</td>
+<td>1.当连接多个表时，你可能会不得不使用列别名来避免在 <code>ResultSet</code> 中产生重复的列名<br />2.指定 columnPrefix 列名前缀允许你将带有这些前缀的列映射到一个外部的结果映射中</td>
+</tr>
+<tr>
+<td>notNullColumn</td>
+<td>1.默认情况下，在至少一个被映射到属性的列不为空时，子对象才会被创建<br />2.你可以在这个属性上指定非空的列来改变默认行为，指定后，Mybatis 将只在这些列非空时才创建一个子对象。可以使用逗号分隔来指定多个列。默认值：未设置（unset）。</td>
+</tr>
+<tr>
+<td>autoMapping</td>
+<td>1.如果设置这个属性，MyBatis 将会为本结果映射开启或者关闭自动映射。 这个属性会覆盖全局的属性 autoMappingBehavior。<br />2.注意，本属性对外部的结果映射无效，所以不能搭配 <code>select</code> 或 <code>resultMap</code> 元素使用。<br />3.默认值：未设置（unset）。</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id="selectBlog" resultMap="blogResult"&gt;</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">    B.id            <span class="keyword">as</span> blog_id,</span><br><span class="line">    B.title         <span class="keyword">as</span> blog_title,</span><br><span class="line">    B.author_id     <span class="keyword">as</span> blog_author_id,</span><br><span class="line">    A.id            <span class="keyword">as</span> author_id,</span><br><span class="line">    A.username      <span class="keyword">as</span> author_username,</span><br><span class="line">    A.password      <span class="keyword">as</span> author_password,</span><br><span class="line">    A.email         <span class="keyword">as</span> author_email,</span><br><span class="line">    A.bio           <span class="keyword">as</span> author_bio</span><br><span class="line">  <span class="keyword">from</span> Blog B <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> Author A <span class="keyword">on</span> B.author_id = A.id</span><br><span class="line">  <span class="keyword">where</span> B.id = <span class="comment">#&#123;id&#125;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"blog_id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"blog_title"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"blog_author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">resultMap</span>=<span class="string">"authorResult"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"authorResult"</span> <span class="attr">type</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"author_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"author_username"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"password"</span> <span class="attr">column</span>=<span class="string">"author_password"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"email"</span> <span class="attr">column</span>=<span class="string">"author_email"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"bio"</span> <span class="attr">column</span>=<span class="string">"author_bio"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="关联的多结果集（ResultSet）"><a href="#关联的多结果集（ResultSet）" class="headerlink" title="关联的多结果集（ResultSet）"></a>关联的多结果集（ResultSet）</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>column</td>
+<td>当使用多个结果集时，该属性指定结果集中用于与 <code>foreignColumn</code> 匹配的列（多个列名以逗号隔开），以识别关系中的父类型与子类型</td>
+</tr>
+<tr>
+<td>foreignColumn</td>
+<td>指定外键对应的列名，指定的列将与父类型中 <code>column</code> 的给出的列进行匹配</td>
+</tr>
+<tr>
+<td>resultSet</td>
+<td>指定用于加载复杂类型的结果集名字</td>
+</tr>
+</tbody></table>
+<p>调用存储过程（某些数据库允许存储过程返回多个结果集，或一次性执行多个语句，每个语句返回一个结果集）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultSets</span>=<span class="string">"blogs,authors"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span> <span class="attr">statementType</span>=<span class="string">"CALLABLE"</span>&gt;</span></span><br><span class="line">  &#123;call getBlogsAndAuthors(#&#123;id,jdbcType=INTEGER,mode=IN&#125;)&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"title"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">resultSet</span>=<span class="string">"authors"</span> <span class="attr">column</span>=<span class="string">"author_id"</span> <span class="attr">foreignColumn</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"password"</span> <span class="attr">column</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"email"</span> <span class="attr">column</span>=<span class="string">"email"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"bio"</span> <span class="attr">column</span>=<span class="string">"bio"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Post&gt; posts;</span><br></pre></td></tr></table></figure>
+
+<p>xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">ofType</span>=<span class="string">"domain.blog.Post"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"post_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"subject"</span> <span class="attr">column</span>=<span class="string">"post_subject"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"body"</span> <span class="attr">column</span>=<span class="string">"post_body"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="集合的嵌套-Select-查询"><a href="#集合的嵌套-Select-查询" class="headerlink" title="集合的嵌套 Select 查询"></a>集合的嵌套 Select 查询</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">javaType</span>=<span class="string">"ArrayList"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">ofType</span>=<span class="string">"Post"</span> <span class="attr">select</span>=<span class="string">"selectPostsForBlog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectPostsForBlog"</span> <span class="attr">resultType</span>=<span class="string">"Post"</span>&gt;</span></span><br><span class="line">  SELECT * FROM POST WHERE BLOG_ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>ofType=&quot;Post&quot;</code> 读作 “posts 是一个存储 Post 的 ArrayList 集合”</p>
+</blockquote>
+<p>在一般情况下，MyBatis 可以推断 javaType 属性，因此并不需要填写。所以很多时候你可以简略成：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">ofType</span>=<span class="string">"Post"</span> <span class="attr">select</span>=<span class="string">"selectPostsForBlog"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="集合的嵌套结果映射"><a href="#集合的嵌套结果映射" class="headerlink" title="集合的嵌套结果映射"></a>集合的嵌套结果映射</h5><p>集合的嵌套结果映射是怎样工作的——除了新增的 “ofType” 属性，它和关联的完全相同</p>
+<h5 id="集合的多结果集（ResultSet）"><a href="#集合的多结果集（ResultSet）" class="headerlink" title="集合的多结果集（ResultSet）"></a>集合的多结果集（ResultSet）</h5><p>像关联元素那样，可以通过执行存储过程实现，它会执行两个查询并返回两个结果集</p>
 
       
 
@@ -1098,339 +1812,6 @@
 
 
   
-    <article id="post-mysql-数据库设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">mysql-数据库设计</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  	<time datetime="2020-04-09T14:00:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="规范数据库设计"><a href="#规范数据库设计" class="headerlink" title="规范数据库设计"></a>规范数据库设计</h2><blockquote>
-<p>当数据库比较复杂的时候，就需要设计</p>
-</blockquote>
-<h3 id="糟糕的设计"><a href="#糟糕的设计" class="headerlink" title="糟糕的设计"></a>糟糕的设计</h3><ul>
-<li>数据冗余，浪费空间</li>
-<li>数据库插入和删除都会非常麻烦异常【屏蔽使用物理外键】</li>
-<li>程序的性能差</li>
-</ul>
-<h3 id="良好的设计"><a href="#良好的设计" class="headerlink" title="良好的设计"></a>良好的设计</h3><ul>
-<li>节省空间</li>
-<li>保证数据库的完整性</li>
-<li>方便系统开发</li>
-</ul>
-<h3 id="设计数据库"><a href="#设计数据库" class="headerlink" title="设计数据库"></a>设计数据库</h3><ul>
-<li>分析需求：分析业务和需要处理的数据库需求</li>
-<li>概要设计：设计关系图 E-R 图</li>
-<li>创建表：字段名，字段类型等</li>
-</ul>
-<h2 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h2><h3 id="为什么需要数据规范化"><a href="#为什么需要数据规范化" class="headerlink" title="为什么需要数据规范化"></a>为什么需要数据规范化</h3><ul>
-<li>信息重复</li>
-<li>更新异常</li>
-<li>插入异常<ul>
-<li>无法正常显示信息</li>
-</ul>
-</li>
-<li>删除异常<ul>
-<li>丢失有效信息</li>
-</ul>
-</li>
-</ul>
-<h3 id="三大范式-1"><a href="#三大范式-1" class="headerlink" title="三大范式"></a>三大范式</h3><h4 id="第一范式（1NF）"><a href="#第一范式（1NF）" class="headerlink" title="第一范式（1NF）"></a>第一范式（1NF）</h4><blockquote>
-<p>原子性：要求数据库表的每一列都是不可分割的原子数据项</p>
-</blockquote>
-<h4 id="第二范式（2NF）"><a href="#第二范式（2NF）" class="headerlink" title="第二范式（2NF）"></a>第二范式（2NF）</h4><p>前提：满足第一范式</p>
-<blockquote>
-<p>确保表中的每一列都和主键相关，而不能只与主键的某一部分相关</p>
-<p>（每张表只描述一件事情）</p>
-</blockquote>
-<h4 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h4><p>前提：满足第一范式和第二范式</p>
-<blockquote>
-<p>确保表中的每一列数据都和主键直接相关，而不能间接相关</p>
-</blockquote>
-<h3 id="规范性和性能问题"><a href="#规范性和性能问题" class="headerlink" title="规范性和性能问题"></a>规范性和性能问题</h3><p><strong>关联查询的表不得超过三张表</strong></p>
-<ul>
-<li>考虑商业化的需求和目标，数据库的性能更加重要</li>
-<li>在性能和规范需求最优解</li>
-<li>估计增加一些冗余字段（多变变单表查询）</li>
-<li>故意增加计算列（从大数据量降低为小数据量查询）</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-用户管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">mysql-用户管理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-09T13:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="新增用户"><a href="#新增用户" class="headerlink" title="新增用户"></a>新增用户</h3><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql-索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/">mysql-索引</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/" class="archive-article-date">
-  	<time datetime="2020-04-09T08:40:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>查询表的索引信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM &#96;表名&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
-<li>主键索引（<code>PRIMARY KEY</code>）<ul>
-<li>唯一标识，主键不可重复</li>
-</ul>
-</li>
-<li>唯一索引 (<code>UNIQUE KEY</code>)<ul>
-<li>当前字段不可重复</li>
-</ul>
-</li>
-<li>常规索引 (<code>KEY/INDEX</code>)<ul>
-<li>默认的</li>
-</ul>
-</li>
-<li>全文索引 (<code>FullText</code>)<ul>
-<li>快速定位数据</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>存储过程</p>
-</blockquote>
-<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
-<li>索引不是越多越好</li>
-<li>不要对经常变动的数据加索引</li>
-<li>小数据量的表不需要加索引</li>
-<li>索引一般加在常用来查询的字段</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/mysql-%E7%B4%A2%E5%BC%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1536,10 +1917,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -1548,11 +1925,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习计划</a>
               </li>
             
             <div class="clearfix"></div>
