@@ -10,9 +10,23 @@ import java.util.List;
  */
 public interface DepartmentMapper {
   /**
-   * 查询所有的部门
+   * 查询所有的部门（嵌套select）
    *
    * @return
    */
   List<Department> selectList();
+
+  /**
+   * 查询所有的部门（嵌套select）
+   *
+   * @return
+   */
+  List<Department> selectList2();
+
+  /**
+   * 查询所有的部门（结果嵌套）
+   *
+   * @return
+   */
+  List<Department> select3();
 }

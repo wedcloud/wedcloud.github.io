@@ -2,6 +2,8 @@ package club.wedcloud.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  *
  *
@@ -23,4 +25,6 @@ public class Department {
   private Integer cancel;
   private String createdAt;
   private String modifiedAt;
+  private List<UserDepartment> list;
+  private List<SysUser> listUser;
 }

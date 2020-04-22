@@ -6,6 +6,7 @@
     <!-- 引用外部配置文件 -->
     <properties resource="application.properties"/>
     <settings>
+        <setting name="cacheEnabled" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>

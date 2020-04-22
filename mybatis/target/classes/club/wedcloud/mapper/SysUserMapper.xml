@@ -14,7 +14,7 @@
         <association property="department" column="did" javaType="department" select="selectDepart"/>
     </resultMap>
 
-    <!-- 一对一查询 select嵌套查询 -->
+    <!-- 一对一(多对一)查询 select嵌套查询 -->
     <select id="selectList" resultMap="sysUserMap">
         select id, name, passwd, phone, cancel, created_at, modified_at
         from wedcloud_dev.sys_user
@@ -33,7 +33,7 @@
     </select>
 
     <!-- ============================================================= -->
-
+    <!-- 结果嵌套 -->
     <resultMap id="resultMapUser" type="sysUser">
         <result property="id" column="id"/>
         <result property="name" column="name"/>

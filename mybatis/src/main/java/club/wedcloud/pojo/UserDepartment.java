@@ -2,6 +2,8 @@ package club.wedcloud.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  *
  *
@@ -22,4 +24,5 @@ public class UserDepartment {
   private Integer did;
   private Integer uid;
   private Department department;
+  private List<SysUser> list;
 }

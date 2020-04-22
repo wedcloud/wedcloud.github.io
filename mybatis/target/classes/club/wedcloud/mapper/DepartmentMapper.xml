@@ -4,4 +4,62 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="club.wedcloud.mapper.DepartmentMapper">
     <!-- 一对多查询 -->
+    <!-- 嵌套select 1-->
+    <resultMap id="departmentMap" type="department">
+        <result property="id" column="id"/>
+        <collection property="list" column="id" ofType="userDepartment" select="selectOne"/>
+    </resultMap>
+    <resultMap id="selectOneMap" type="userDepartment">
+        <result property="uid" column="uid"/>
+        <collection property="list" column="uid" ofType="sysUser" select="selectListUser"/>
+    </resultMap>
+
+    <select id="selectList" resultMap="departmentMap">
+        select id, name, cancel, created_at, modified_at
+        from wedcloud_dev.department
+    </select>
+
+    <select id="selectOne" resultMap="selectOneMap">
+        select id, did, uid
+        from wedcloud_dev.user_department
+        where did = #{id}
+    </select>
+
+    <select id="selectListUser" resultType="sysUser">
+        select id, name, passwd, phone, cancel, created_at, modified_at
+        from wedcloud_dev.sys_user
+        where id = #{id}
+    </select>
+
+    <!-- 嵌套select 2 -->
+    <resultMap id="departmentTwoMap" type="department">
+        <result property="id" column="id"/>
+        <collection property="listUser" column="id" ofType="sysUser" select="selectListUser2"/>
+    </resultMap>
+    <select id="selectList2" resultMap="departmentTwoMap">
+        select id, name, cancel, created_at, modified_at
+        from wedcloud_dev.department
+    </select>
+    <select id="selectListUser2" resultType="sysUser">
+        select su.*
+        from wedcloud_dev.user_department ud
+                 left join wedcloud_dev.sys_user su on su.id = ud.uid
+        where ud.did = #{id}
+    </select>
+
+    <!-- 结果嵌套查询（推荐） -->
+    <resultMap id="departMap" type="department">
+        <result property="id" column="dis"/>
+        <result property="name" column="dname"/>
+        <collection property="listUser" ofType="sysUser">
+            <result property="id" column="uid"/>
+            <result property="name" column="uname"/>
+        </collection>
+    </resultMap>
+    <select id="select3" resultMap="departMap">
+        select d.id as did, d.name as dname, su.id as uid, su.name as uname
+        from wedcloud_dev.department d
+                 left join wedcloud_dev.user_department ud on ud.did = d.id
+                 left join wedcloud_dev.sys_user su on ud.uid = su.id
+    </select>
 </mapper>
