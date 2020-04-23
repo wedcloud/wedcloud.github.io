@@ -10,6 +10,7 @@
         <module name="spring-aop" />
         <module name="spring" />
         <module name="spring-javaconfig" />
+        <module name="springboot" />
         <module name="mybatis" />
       </profile>
     </annotationProcessing>
@@ -19,11 +20,13 @@
       <module name="spring" target="1.5" />
       <module name="spring-aop" target="6" />
       <module name="spring-javaconfig" target="1.5" />
+      <module name="springboot" target="1.8" />
       <module name="wedcloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot" options="-parameters" />
       <module name="wedcloud" options="-parameters" />
     </option>
   </component>
