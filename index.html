@@ -177,6 +177,350 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-开源项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/22/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/22/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
+  	<time datetime="2020-04-22T07:53:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p><a href="https://github.com/qiurunze123/miaosha" target="_blank" rel="noopener">https://github.com/qiurunze123/miaosha</a></p>
+<blockquote>
+<p>秒杀系统设计与实现.互联网工程师进阶与分析</p>
+</blockquote>
+<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><p><a href="https://doocs.github.io/advanced-java" target="_blank" rel="noopener">https://doocs.github.io/advanced-java</a></p>
+<blockquote>
+<p>消息队列、分布式等，互联网 Java 工程师进阶知识完全扫盲</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开源项目</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/开源项目//" class="article-tag-list-link color5">开源项目</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/22/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis-缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/22/mybatis-%E7%BC%93%E5%AD%98/">mybatis-缓存</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/22/mybatis-%E7%BC%93%E5%AD%98/" class="archive-article-date">
+  	<time datetime="2020-04-22T05:22:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><h3 id="开启缓存"><a href="#开启缓存" class="headerlink" title="开启缓存"></a>开启缓存</h3><p>默认情况下，只启用了本地的会话缓存，它仅仅对一个会话中的数据进行缓存。 要启用全局的二级缓存，先开启全局缓存</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在你的 SQL 映射文件中添加一行</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="缓存规则"><a href="#缓存规则" class="headerlink" title="缓存规则"></a>缓存规则</h3><ul>
+<li>映射语句文件中的所有 select 语句的结果将会被缓存。</li>
+<li>映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。</li>
+<li>缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。</li>
+<li>缓存不会定时进行刷新（也就是说，没有刷新间隔）。</li>
+<li>缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。</li>
+<li>缓存会被视为读/写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改</li>
+</ul>
+<blockquote>
+<p>缓存只作用于 cache 标签所在的映射文件中的语句。如果你混合使用 Java API 和 XML 映射文件，在共用接口中的语句将不会被默认缓存。你需要使用 @CacheNamespaceRef 注解指定缓存作用域 </p>
+</blockquote>
+<h3 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h3><p>工作机制</p>
+<ul>
+<li>会话查询的数据会被放到当前的一级缓存中</li>
+<li>如果当前会话关闭，若是开启了二级缓存，则会将一级缓存的数据保存到二级缓存</li>
+<li>新查询就会从二级缓存中获取内容</li>
+<li>不同的mapper对应的缓存空间也不同（一个namespace对应一个二级缓存）</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span></span></span><br><span class="line"><span class="tag">  <span class="attr">eviction</span>=<span class="string">"FIFO"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushInterval</span>=<span class="string">"60000"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">size</span>=<span class="string">"512"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">readOnly</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>创建了一个 FIFO 缓存，每隔 60 秒刷新，最多可以存储结果对象或列表的 512 个引用，而且返回的对象被认为是只读的，此对它们进行修改可能会在不同线程中的调用者产生冲突</p>
+<p><strong>清除策略</strong></p>
+<ul>
+<li><code>LRU</code> – 最近最少使用：移除最长时间不被使用的对象。</li>
+<li><code>FIFO</code> – 先进先出：按对象进入缓存的顺序来移除它们。</li>
+<li><code>SOFT</code> – 软引用：基于垃圾回收器状态和软引用规则移除对象。</li>
+<li><code>WEAK</code> – 弱引用：更积极地基于垃圾收集器状态和弱引用规则移除对象。</li>
+</ul>
+<p>flushInterval（刷新间隔）属性可以被设置为任意的正整数，设置的值应该是一个以毫秒为单位的合理时间量。 默认情况是不设置，也就是没有刷新间隔，缓存仅仅会在调用语句时刷新。</p>
+<p>size（引用数目）属性可以被设置为任意正整数，要注意欲缓存对象的大小和运行环境中可用的内存资源。默认值是 1024。</p>
+<p>readOnly（只读）属性可以被设置为 true 或 false。只读的缓存会给所有调用者返回缓存对象的相同实例。 因此这些对象不能被修改。这就提供了可观的性能提升。而可读写的缓存会（通过序列化）返回缓存对象的拷贝。 速度上会慢一些，但是更安全，因此默认值是 false</p>
+<blockquote>
+<p>二级缓存是事务性的。这意味着，当 SqlSession 完成并提交时，或是完成并回滚，但没有执行 flushCache=true 的 insert/delete/update 语句时，缓存会获得更新</p>
+</blockquote>
+<h3 id="自定义缓存"><a href="#自定义缓存" class="headerlink" title="自定义缓存"></a>自定义缓存</h3><p>引入自定义缓存</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span> <span class="attr">type</span>=<span class="string">"com.domain.something.MyCustomCache"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>type 属性指定的类必须实现 org.apache.ibatis.cache.Cache 接口，且提供一个接受 String 参数作为 id 的构造器。</p>
+<p>缓存的配置和缓存实例会被绑定到 SQL 映射文件的命名空间。</p>
+<p>每条语句可以自定义与缓存交互的方式，或将它们完全排除于缓存之外，这可以通过在每条语句上使用两个简单属性来达成。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">...</span> <span class="attr">flushCache</span>=<span class="string">"false"</span> <span class="attr">useCache</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">...</span> <span class="attr">flushCache</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">...</span> <span class="attr">flushCache</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">delete</span> <span class="attr">...</span> <span class="attr">flushCache</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>改变默认的行为，只需要设置 flushCache 和 useCache 属性</p>
+</blockquote>
+<blockquote>
+<p>使用缓存时，将需要缓存的实体类实现序列化，否则会报错</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis/缓存//" class="article-tag-list-link color3">缓存</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/22/mybatis-%E7%BC%93%E5%AD%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis-动态sql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/22/mybatis-%E5%8A%A8%E6%80%81sql/">mybatis-动态sql</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/22/mybatis-%E5%8A%A8%E6%80%81sql/" class="archive-article-date">
+  	<time datetime="2020-04-22T02:11:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="动态sql"><a href="#动态sql" class="headerlink" title="动态sql"></a>动态sql</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findActiveBlogWithTitleLike"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG</span><br><span class="line">  WHERE state = ‘ACTIVE’</span><br><span class="line">  <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"title != null"</span>&gt;</span></span><br><span class="line">    AND title like #&#123;title&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="choose-when-otherwise"><a href="#choose-when-otherwise" class="headerlink" title="choose (when, otherwise)"></a>choose (when, otherwise)</h3><p>从多个条件中选择一个使用，针对这种情况，MyBatis 提供了 choose 元素，它有点像 Java 中的 switch 语句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findActiveBlogLike"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG WHERE state = ‘ACTIVE’</span><br><span class="line">  <span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"title != null"</span>&gt;</span></span><br><span class="line">      AND title like #&#123;title&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"author != null and author.name != null"</span>&gt;</span></span><br><span class="line">      AND author_name like #&#123;author.name&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">otherwise</span>&gt;</span></span><br><span class="line">      AND featured = 1</span><br><span class="line">    <span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="trim、where、set"><a href="#trim、where、set" class="headerlink" title="trim、where、set"></a>trim、where、set</h3><h5 id="动态查询"><a href="#动态查询" class="headerlink" title="动态查询"></a>动态查询</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findActiveBlogLike"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG</span><br><span class="line">  <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"state != null"</span>&gt;</span></span><br><span class="line">         state = #&#123;state&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"title != null"</span>&gt;</span></span><br><span class="line">        AND title like #&#123;title&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"author != null and author.name != null"</span>&gt;</span></span><br><span class="line">        AND author_name like #&#123;author.name&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>where</em> 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。而且，若子句的开头为 “AND” 或 “OR”，where 元素也会将它们去除</p>
+<p>如果 <em>where</em> 元素与你期望的不太一样，可以通过自定义 trim 元素来定制 <em>where</em> 元素的功能：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"WHERE"</span> <span class="attr">prefixOverrides</span>=<span class="string">"AND |OR "</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">trim</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>prefixOverrides</em> 属性会忽略通过管道符分隔的文本序列（注意此例中的空格是必要的）。上述例子会移除所有 <em>prefixOverrides</em> 属性中指定的内容，并且插入 <em>prefix</em> 属性中指定的内容。</p>
+<h5 id="动态更新"><a href="#动态更新" class="headerlink" title="动态更新"></a>动态更新</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateAuthorIfNecessary"</span>&gt;</span></span><br><span class="line">  update Author</span><br><span class="line">    <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"username != null"</span>&gt;</span>username=#&#123;username&#125;,<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"password != null"</span>&gt;</span>password=#&#123;password&#125;,<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"email != null"</span>&gt;</span>email=#&#123;email&#125;,<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"bio != null"</span>&gt;</span>bio=#&#123;bio&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">  where id=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>set</em> 元素会动态地在行首插入 SET 关键字，并会删掉额外的逗号（这些逗号是在使用条件语句给列赋值时引入的）</p>
+<h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectPostIn"</span> <span class="attr">resultType</span>=<span class="string">"domain.blog.Post"</span>&gt;</span></span><br><span class="line">  SELECT *</span><br><span class="line">  FROM POST P</span><br><span class="line">  WHERE ID in</span><br><span class="line">  <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"list"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">        #&#123;item&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>foreach</em> 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及集合项迭代之间的分隔符；</p>
+<p>可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象作为集合参数传递给 <em>foreach</em>。当使用可迭代对象或者数组时，index 是当前迭代的序号，item 的值是本次迭代获取到的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值</p>
+<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><p>要在带注解的映射器接口类中使用动态 SQL，可以使用 <em>script</em> 元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Update</span>(&#123;<span class="string">"&lt;script&gt;"</span>,</span><br><span class="line">  <span class="string">"update Author"</span>,</span><br><span class="line">  <span class="string">"  &lt;set&gt;"</span>,</span><br><span class="line">  <span class="string">"    &lt;if test='username != null'&gt;username=#&#123;username&#125;,&lt;/if&gt;"</span>,</span><br><span class="line">  <span class="string">"    &lt;if test='password != null'&gt;password=#&#123;password&#125;,&lt;/if&gt;"</span>,</span><br><span class="line">  <span class="string">"    &lt;if test='email != null'&gt;email=#&#123;email&#125;,&lt;/if&gt;"</span>,</span><br><span class="line">  <span class="string">"    &lt;if test='bio != null'&gt;bio=#&#123;bio&#125;&lt;/if&gt;"</span>,</span><br><span class="line">  <span class="string">"  &lt;/set&gt;"</span>,</span><br><span class="line">  <span class="string">"where id=#&#123;id&#125;"</span>,</span><br><span class="line">  <span class="string">"&lt;/script&gt;"</span>&#125;)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateAuthorValues</span><span class="params">(Author author)</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis/sql//" class="article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/22/mybatis-%E5%8A%A8%E6%80%81sql/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-学习计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -206,6 +550,12 @@
 <li>操作系统</li>
 <li>数据库</li>
 <li>设计模式</li>
+</ul>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><ul>
+<li>mysql引擎</li>
+<li>InnoDB底层原理</li>
+<li>索引</li>
+<li>索引优化</li>
 </ul>
 
       
@@ -727,13 +1077,15 @@
 <td>可选 STATEMENT，PREPARED 或 CALLABLE，默认：PREPARED</td>
 </tr>
 </tbody></table>
-<h5 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h5><p>这个元素可以用来定义可重用的 SQL 代码片段，以便在其它语句中使用。 参数可以静态地（在加载的时候）确定下来，并且可以在不同的 include 元素中定义不同的参数值</p>
+<h5 id="SQL（比较重要，组件化）"><a href="#SQL（比较重要，组件化）" class="headerlink" title="SQL（比较重要，组件化）"></a>SQL（比较重要，组件化）</h5><p>这个元素可以用来定义可重用的 SQL 代码片段，以便在其它语句中使用。 参数可以静态地（在加载的时候）确定下来，并且可以在不同的 include 元素中定义不同的参数值</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"userColumns"</span>&gt;</span> $&#123;alias&#125;.id,$&#123;alias&#125;.username,$&#123;alias&#125;.password <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">  select</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>,</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">  from some_table t1</span><br><span class="line">    cross join some_table t2</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
+<blockquote>
+<p>1、最好基于单表来定义SQL判断</p>
+<p>2、不要存在where标签</p>
+</blockquote>
 <h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>Map传递参数时，直接在sql中取出key即可【parameterType=”map”】</p>
 <p>对象传递参数时，直接在sqk中取出对象的属性即可【parameterType=”pojo”】</p>
 <p>只有一个基本参数的情况下，可以直接在sql中取到【parameterType 可以不写】</p>
@@ -854,7 +1206,7 @@
 <p>这个问题会导致成百上千的 SQL 语句被执行</p>
 </blockquote>
 <p>MyBatis 能够对这样的查询进行延迟加载，因此可以将大量语句同时运行的开销分散开来。 然而，如果你加载记录列表之后立刻就遍历列表以获取嵌套的数据，就会触发所有的延迟加载查询，性能可能会变得很糟糕</p>
-<h5 id="嵌套结果映射"><a href="#嵌套结果映射" class="headerlink" title="嵌套结果映射"></a>嵌套结果映射</h5><table>
+<h5 id="嵌套结果映射（推荐）"><a href="#嵌套结果映射（推荐）" class="headerlink" title="嵌套结果映射（推荐）"></a>嵌套结果映射（推荐）</h5><table>
 <thead>
 <tr>
 <th>属性</th>
@@ -923,7 +1275,7 @@
 <p>在一般情况下，MyBatis 可以推断 javaType 属性，因此并不需要填写。所以很多时候你可以简略成：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">ofType</span>=<span class="string">"Post"</span> <span class="attr">select</span>=<span class="string">"selectPostsForBlog"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="集合的嵌套结果映射"><a href="#集合的嵌套结果映射" class="headerlink" title="集合的嵌套结果映射"></a>集合的嵌套结果映射</h5><p>集合的嵌套结果映射是怎样工作的——除了新增的 “ofType” 属性，它和关联的完全相同</p>
+<h5 id="集合的嵌套结果映射（推荐）"><a href="#集合的嵌套结果映射（推荐）" class="headerlink" title="集合的嵌套结果映射（推荐）"></a>集合的嵌套结果映射（推荐）</h5><p>集合的嵌套结果映射是怎样工作的——除了新增的 “ofType” 属性，它和关联的完全相同</p>
 <h5 id="集合的多结果集（ResultSet）"><a href="#集合的多结果集（ResultSet）" class="headerlink" title="集合的多结果集（ResultSet）"></a>集合的多结果集（ResultSet）</h5><p>像关联元素那样，可以通过执行存储过程实现，它会执行两个查询并返回两个结果集</p>
 
       
@@ -1377,441 +1729,6 @@
 
 
   
-    <article id="post-spring-IOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/spring-IOC/">spring-IOC</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/spring-IOC/" class="archive-article-date">
-  	<time datetime="2020-04-12T05:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><h3 id="广义的IOC"><a href="#广义的IOC" class="headerlink" title="广义的IOC"></a>广义的IOC</h3><ul>
-<li><p>IOC(Inversion of control) 控制反转，即“不用打电话过来，我们会打给你”</p>
-<p>两种实现： 依赖查找（DL）和依赖注入（DI）<br>IOC 和 DI 、DL 的关系（这个 DL，Avalon 和 EJB 就是使用的这种方式实现的 IoC）:</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4236553-c415d1c39ed74772.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
-</li>
-<li><p>DL 已经被抛弃，因为他需要用户自己去使用API 进行查找资源好组装对象，也就是说这个是有入侵性的</p>
-</li>
-<li><p>DI 是 Spring 使用的方式，容器负责组件的装配</p>
-</li>
-</ul>
-<blockquote>
-<p>注意：Java 使用 DI 方式实现 IoC 的不止 Spring，包括 Google 的 Guice，还有一个冷门的 PicoContainer（极度轻量，但只提供 IoC）</p>
-</blockquote>
-<h2 id="Spring-的-IOC"><a href="#Spring-的-IOC" class="headerlink" title="Spring 的 IOC"></a>Spring 的 IOC</h2><p>Spring 的 IoC 设计支持以下功能:</p>
-<ul>
-<li>依赖注入</li>
-<li>依赖检查</li>
-<li>自动装配</li>
-<li>支持集合</li>
-<li>指定初始化方法和销毁方法</li>
-<li>支持回调某些方法（但是需要实现Spring 接口，略有入侵性）</li>
-</ul>
-<blockquote>
-<p>其中，最重要的就是依赖注入，从 XML 的配置上说， 即 ref 标签。对应 Spring RuntimeBeanReference 对象</p>
-</blockquote>
-<p>对于 IoC 来说，最重要的就是容器。容器管理着 Bean 的生命周期，控制着 Bean 的依赖注入。</p>
-<h3 id="那么，-Spring-如何设计容器的呢？"><a href="#那么，-Spring-如何设计容器的呢？" class="headerlink" title="那么， Spring 如何设计容器的呢？"></a>那么， Spring 如何设计容器的呢？</h3><p>Spring 作者 Rod Johnson 设计了两个接口用以表示容器:</p>
-<ul>
-<li>BeanFactory</li>
-<li>ApplicationContext</li>
-</ul>
-<p>BeanFactory 粗暴简单，可以理解为就是个 HashMap，Key 是 BeanName，Value 是 Bean 实例。通常只提供注册（put），获取（get）这两个功能。我们可以称之为 <strong><code>低级容器</code></strong></p>
-<p>ApplicationContext 可以称之为 <strong><code>高级容器</code></strong>。因为他比 BeanFactory 多了更多的功能。他继承了多个接口。因此具备了更多的功能。例如资源的获取，支持多种消息（例如 JSP tag 的支持），对 BeanFactory 多了工具级别的支持等待。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。该接口定义了一个 refresh 方法，此方法是所有阅读 Spring 源码的人的最熟悉的方法，用于刷新整个容器，即重新加载/刷新所有的 bean</p>
-<p>为了更直观的展示 “低级容器” 和 “高级容器” 的关系，我这里通过常用的 ClassPathXmlApplicationContext 类，来展示整个容器的层级 UML 关系</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4236553-1e6ca4c8a58c9e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1170/format/webp" alt=""></p>
-<p>ApplicationContext 粉红色的 “高级容器”，依赖着 “低级容器”，这里说的是依赖，不是继承，他依赖着 “低级容器” 的 getBean 功能。而高级容器有更多的功能：支持不同的信息源头，可以访问文件资源，支持应用事件（Observer 模式）</p>
-<p>左边灰色区域的是 “低级容器”， 只负载加载 Bean，获取 Bean。</p>
-<h3 id="IoC-启动过程"><a href="#IoC-启动过程" class="headerlink" title="IoC 启动过程"></a>IoC 启动过程</h3><p><img src="https://upload-images.jianshu.io/upload_images/4236553-db065eecf16176c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
-<blockquote>
-<p>注意，这里为了理解方便，有所简化</p>
-</blockquote>
-<h4 id="用文字来描述这个过程"><a href="#用文字来描述这个过程" class="headerlink" title="用文字来描述这个过程"></a>用文字来描述这个过程</h4><ol>
-<li>用户构造 ClassPathXmlApplicationContext（简称 CPAC）</li>
-<li>CPAC 首先访问了 “抽象高级容器” 的 final 的 refresh 方法，这个方法是模板方法。所以要回调子类（低级容器）的 refreshBeanFactory 方法，这个方法的作用是使用低级容器加载所有 BeanDefinition 和  Properties 到容器中</li>
-<li>低级容器加载成功后，高级容器开始处理一些回调，例如 Bean 后置处理器。回调 setBeanFactory 方法。或者注册监听器等，发布事件，实例化单例 Bean 等等功能</li>
-</ol>
-<p>简单说就是:</p>
-<ul>
-<li>低级容器 加载配置文件（从 XML，数据库，Applet），并解析成 BeanDefinition 到低级容器中</li>
-<li>加载成功后，高级容器启动高级功能，例如接口回调，监听器，自动实例化单例，发布事件等等功能</li>
-</ul>
-<blockquote>
-<p>所以，一定要把 “低级容器” 和“高级容器” 的区别弄清楚。不能一叶障目不见泰山</p>
-</blockquote>
-<p>当我们创建好容器，就会使用 getBean 方法，获取 Bean，而 getBean 的流程如下:</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4236553-da9a2f92e4dfa9db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/530/format/webp" alt=""></p>
-<h6 id="从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"><a href="#从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？" class="headerlink" title="从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"></a>从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？</h6><p>假设 ： 当 Bean_A 依赖着 Bean_B，而这个 Bean_A 在加载的时候，其配置的 ref = “Bean_B” 在解析的时候只是一个占位符，被放入了 Bean_A 的属性集合中，当调用 getBean 时，需要真正 Bean_B 注入到 Bean_A 内部时，就需要从容器中获取这个 Bean_B，因此产生了递归。</p>
-<p>为什么不是在加载的时候，就直接注入呢？因为加载的顺序不同，很可能 Bean_A 依赖的 Bean_B 还没有加载好，也就无法从容器中获取，你不能要求用户把 Bean 的加载顺序排列好，这是不人道的。</p>
-<p>所以，Spring 将其分为了 2 个步骤:</p>
-<ol>
-<li><p>加载所有的 Bean 配置成 BeanDefinition 到容器中，如果 Bean 有依赖关系，则使用占位符暂时代替</p>
-</li>
-<li><p>在调用 getBean 的时候，进行真正的依赖注入，即如果碰到了属性是 ref 的（占位符），那么就从容器里获取这个 Bean，然后注入到实例中 —— 称之为依赖注入</p>
-</li>
-</ol>
-<blockquote>
-<p>可以看到，依赖注入实际上，只需要 “低级容器” 就可以实现</p>
-</blockquote>
-<p>所以 ApplicationContext refresh 方法里面的操作不只是 IoC，是高级容器的所有功能（包括 IoC），IoC 的功能在低级容器里就可以实现</p>
-<p><strong>控制反转 是一种通过描述（XML或注解）并通过第三方去生产或获取特定对象的方式，在Spring 中实现控制反转的是IOC容器，其实现方法时依赖注入（Dependency Injection，DI）</strong></p>
-<h3 id="IOC创建初始化对象"><a href="#IOC创建初始化对象" class="headerlink" title="IOC创建初始化对象"></a>IOC创建初始化对象</h3><p>默认使用对象的无参构造器进行初始化对象，也可以手动调用有参或无参构造函数初始化对象；</p>
-<h6 id="初始化时期"><a href="#初始化时期" class="headerlink" title="初始化时期"></a>初始化时期</h6><p>在xml文件加载的时候，容器中管理的对象就已经初始化了，而且是单例的；</p>
-<h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><h3 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h3><h3 id="Set方式注入"><a href="#Set方式注入" class="headerlink" title="Set方式注入"></a>Set方式注入</h3><ul>
-<li>依赖注入：Set注入<ul>
-<li>依赖：bean对象的创建依赖于容器</li>
-<li>注入：bean对象中的所有属性，有容器来注入</li>
-</ul>
-</li>
-</ul>
-<h3 id="bean-作用域"><a href="#bean-作用域" class="headerlink" title="bean 作用域"></a>bean 作用域</h3><ul>
-<li>singleton（单例）</li>
-<li>prototype（原型【多例】）</li>
-<li>request</li>
-<li>session</li>
-<li>application</li>
-<li>websocket</li>
-</ul>
-<h2 id="Bean的自动装配"><a href="#Bean的自动装配" class="headerlink" title="Bean的自动装配"></a>Bean的自动装配</h2><ul>
-<li>自动装配是Spring满足bean依赖的一种方式</li>
-<li>Spring会在上下文中自动查找，并给bean自动装配属性</li>
-</ul>
-<p>Spring三种装配方式：</p>
-<ol>
-<li>在XML中显示的配置</li>
-<li>在java中显示配置</li>
-<li>隐式的自动装配bean</li>
-</ol>
-<p>自动装配方式:byName和byType；</p>
-<p>byName 保证bean id 唯一，id与属性名一致；</p>
-<p>byType:保证bean的class唯一，class与属性类型一致</p>
-<h2 id="注解实现自动装配"><a href="#注解实现自动装配" class="headerlink" title="注解实现自动装配"></a>注解实现自动装配</h2><p>@Autowired是Spring提供的注解，只按照ByType注入；</p>
-<p>默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用</p>
-<blockquote>
-<p>@Autowired(required=false) 说明该注入对象可以为null</p>
-<p>@Qualifier(value=”name”) 指定注入对象的bean的name</p>
-</blockquote>
-<p>@Resource 是J2EE支持（jdk1.6）</p>
-<p>@Resource装配顺序：</p>
-<p>①如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常。</p>
-<p>②如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常。</p>
-<p>③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。</p>
-<p>④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。</p>
-<p>@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入</p>
-<p>扩展：</p>
-<blockquote>
-<p>@Nullable 表示标注字段可以为null</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/spring/ioc//" class="article-tag-list-link color4">ioc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/spring-IOC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Arthas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/10/Arthas/">Arthas</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/10/Arthas/" class="archive-article-date">
-  	<time datetime="2020-04-10T05:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Arthas"><a href="#Arthas" class="headerlink" title="Arthas"></a>Arthas</h2><h3 id="启动-arthas-boot"><a href="#启动-arthas-boot" class="headerlink" title="启动 arthas-boot"></a>启动 arthas-boot</h3><ul>
-<li><p>下载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;alibaba.github.io&#x2F;arthas&#x2F;arthas-boot.jar</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar arthas-boot.jar --target-ip 0.0.0.0</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>选择进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 输入&#96;1&#96;</span><br><span class="line">2. Enter&#x2F;回车</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-</li>
-</ul>
-<h3 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h3><p><code>dashboard</code> 查看当前系统的实时数据面板</p>
-<p><code>Q</code>或者<code>Ctrl+C</code>退出<code>dashboard</code></p>
-<h3 id="thread"><a href="#thread" class="headerlink" title="thread"></a>thread</h3><p> 通过thread命令来获取到<code>arthas-demo</code>进程的Main Class</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ thread 1 | grep &#39;main(&#39;</span><br><span class="line">	at demo.MathGame.main(MathGame.java:17)</span><br></pre></td></tr></table></figure>
-
-<h3 id="jad-反编译"><a href="#jad-反编译" class="headerlink" title="jad 反编译"></a>jad 反编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">$ jad demo.MathGame</span><br><span class="line"></span><br><span class="line">ClassLoader:</span><br><span class="line">+-sun.misc.Launcher$AppClassLoader@3d4eac69</span><br><span class="line">  +-sun.misc.Launcher$ExtClassLoader@66350f69</span><br><span class="line"> </span><br><span class="line">Location:</span><br><span class="line">&#x2F;tmp&#x2F;arthas-demo.jar</span><br><span class="line"> </span><br><span class="line">&#x2F;*</span><br><span class="line"> * Decompiled with CFR 0_132.</span><br><span class="line"> *&#x2F;</span><br><span class="line">package demo;</span><br><span class="line"> </span><br><span class="line">import java.io.PrintStream;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"> </span><br><span class="line">public class MathGame &#123;</span><br><span class="line">    private static Random random &#x3D; new Random();</span><br><span class="line">    private int illegalArgumentCount &#x3D; 0;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        MathGame game &#x3D; new MathGame();</span><br><span class="line">        do &#123;</span><br><span class="line">            game.run();</span><br><span class="line">            TimeUnit.SECONDS.sleep(1L);</span><br><span class="line">        &#125; while (true);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void run() throws InterruptedException &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int number &#x3D; random.nextInt();</span><br><span class="line">            List&lt;Integer&gt; primeFactors &#x3D; this.primeFactors(number);</span><br><span class="line">            MathGame.print(number, primeFactors);</span><br><span class="line">        &#125;</span><br><span class="line">        catch (Exception e) &#123;</span><br><span class="line">            System.out.println(String.format(&quot;illegalArgumentCount:%3d, &quot;, this.illegalArgumentCount) + e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void print(int number, List&lt;Integer&gt; primeFactors) &#123;</span><br><span class="line">        StringBuffer sb &#x3D; new StringBuffer(&quot;&quot; + number + &quot;&#x3D;&quot;);</span><br><span class="line">        Iterator&lt;Integer&gt; iterator &#x3D; primeFactors.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            int factor &#x3D; iterator.next();</span><br><span class="line">            sb.append(factor).append(&#39;*&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (sb.charAt(sb.length() - 1) &#x3D;&#x3D; &#39;*&#39;) &#123;</span><br><span class="line">            sb.deleteCharAt(sb.length() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public List&lt;Integer&gt; primeFactors(int number) &#123;</span><br><span class="line">        if (number &lt; 2) &#123;</span><br><span class="line">            ++this.illegalArgumentCount;</span><br><span class="line">            throw new IllegalArgumentException(&quot;number is: &quot; + number + &quot;, need &gt;&#x3D; 2&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        ArrayList&lt;Integer&gt; result &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        while (i &lt;&#x3D; number) &#123;</span><br><span class="line">            if (number % i &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                result.add(i);</span><br><span class="line">                number &#x2F;&#x3D; i;</span><br><span class="line">                i &#x3D; 2;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Affect(row-cnt:1) cost in 970 ms.</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>通过<a href="https://alibaba.github.io/arthas/watch.html" target="_blank" rel="noopener">watch</a>命令来查看<code>demo.MathGame#primeFactors</code>函数的返回值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ watch demo.MathGame primeFactors returnObj</span><br><span class="line">Press Ctrl+C to abort.</span><br><span class="line">Affect(class-cnt:1 , method-cnt:1) cost in 107 ms.</span><br><span class="line">ts&#x3D;2018-11-28 19:22:30; [cost&#x3D;1.715367ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:31; [cost&#x3D;0.185203ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:32; [cost&#x3D;19.012416ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[47],</span><br><span class="line">    @Integer[2675531],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:33; [cost&#x3D;0.311395ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[317],</span><br><span class="line">    @Integer[503],</span><br><span class="line">    @Integer[887],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:34; [cost&#x3D;10.136007ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[31],</span><br><span class="line">    @Integer[717593],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:35; [cost&#x3D;29.969732ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[29],</span><br><span class="line">    @Integer[7651739],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="退出arthas"><a href="#退出arthas" class="headerlink" title="退出arthas"></a>退出arthas</h3><p>如果只是退出当前的连接，可以用<code>quit</code>或者<code>exit</code>命令。Attach到目标进程上的arthas还会继续运行，端口会保持开放，下次连接时可以直接连接上。</p>
-<p>如果想完全退出arthas，可以执行<code>stop</code>命令</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Arthas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Arthas//" class="article-tag-list-link color2">Arthas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/10/Arthas/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/10/spring/">spring</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/10/spring/" class="archive-article-date">
-  	<time datetime="2020-04-10T00:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><blockquote>
-<p>解决企业级开发的复杂性，使现有的技术更加容易使用</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>Spring 开源免费的框架（容器）</li>
-<li>轻量级、非入侵式的框架</li>
-<li>控制翻转（<code>IOC</code>），面向切面编程（<code>AOP</code>）</li>
-<li>支持事务</li>
-<li>框架整合的支持</li>
-</ul>
-<h3 id="7大模块"><a href="#7大模块" class="headerlink" title="7大模块"></a>7大模块</h3><p><img src="spring/image-20200410090322458.png" alt="image-20200410090322458"></p>
-<ol>
-<li>核心容器：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 <code>BeanFactory</code>，它是工厂模式的实现。<code>BeanFactory</code> 使用控制反转 （<code>IOC</code>） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开</li>
-<li><code>Spring</code> 上下文：Spring 上下文是一个配置文件，向 Spring 框架提供上下文信息。Spring 上下文包括企业服务，例如 <code>JNDI</code>、<code>EJB</code>、电子邮件、国际化、校验和调度功能</li>
-<li><code>Spring AOP</code>：通过配置管理特性，<code>Spring AOP</code> 模块直接将面向方面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 <code>AOP</code>。<code>Spring AOP</code> 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。通过使用 <code>Spring AOP</code>，不用依赖<code>EJB</code> 组件，就可以将声明性事务管理集成到应用程序中</li>
-<li><code>Spring DAO</code>：<code>JDBC DAO</code> 抽象层提供了有意义的异常层次结构，可用该结构来管理异常处理和不同数据库供应商抛出的错误消息。异常层次结构简化了错误处理，并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）。<code>Spring DAO</code> 的面向 <code>JDBC</code>的异常遵从通用的 <code>DAO</code> 异常层次结构</li>
-<li><code>Spring ORM</code>：Spring 框架插入了若干个<code>ORM</code> 框架，从而提供了 <code>ORM</code> 的对象关系工具，其中包括 <code>JDO</code>、<code>Hibernate</code> 和 <code>iBatis SQL Map</code>。所有这些都遵从 Spring 的通用事务和 <code>DAO</code> 异常层次结构</li>
-<li><code>Spring Web</code> 模块：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作</li>
-<li><code>Spring MVC</code> 框架：<code>MVC</code> 框架是一个全功能的构建 Web 应用程序的 <code>MVC</code> 实现。通过策略接口，<code>MVC</code> 框架变成为高度可配置的，<code>MVC</code> 容纳了大量视图技术，其中包括 <code>JSP</code>、<code>Velocity</code>、<code>Tiles</code>、<code>iText</code> 和 <code>POI</code></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/10/spring/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1913,10 +1830,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -1929,11 +1842,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1942,6 +1859,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
               </li>
             
             <div class="clearfix"></div>
