@@ -13,7 +13,7 @@ public class SysUserMapperTest {
   public void selectList() {
     try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
       SysUserMapper mapper = sqlSession.getMapper(SysUserMapper.class);
-      List<SysUser> list = mapper.selectList();
+      List<SysUser> list = mapper.selectList2();
       list.forEach(u -> System.out.println(u));
     } catch (Exception e) {
       e.printStackTrace();
@@ -36,7 +36,7 @@ public class SysUserMapperTest {
   public void update() {
     try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
       SysUserMapper mapper = sqlSession.getMapper(SysUserMapper.class);
-      SysUser user = SysUser.builder().name("赵柳123").passwd("1111").phone("111232").id(3).build();
+      SysUser user = SysUser.builder().name("术印").id(3).build();
       int result = mapper.modify(user);
       sqlSession.commit();
     } catch (Exception e) {

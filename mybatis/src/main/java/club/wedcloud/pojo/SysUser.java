@@ -19,9 +19,12 @@ import lombok.*;
 @Builder
 public class SysUser {
   private Integer id;
+  private Integer cancel;
   private String name;
   private String passwd;
   private String phone;
   private String createdAt;
   private String modifiedAt;
+  private String dname;
+  private UserDepartment userDepartment;
 }

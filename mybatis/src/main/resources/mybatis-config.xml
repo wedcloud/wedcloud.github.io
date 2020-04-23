@@ -6,7 +6,9 @@
     <!-- 引用外部配置文件 -->
     <properties resource="application.properties"/>
     <settings>
+        <setting name="cacheEnabled" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
     <!-- 给指定实体类包下的所有类起别名，别名默认为类名首字母小写 -->
     <typeAliases>
@@ -25,6 +27,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="club/wedcloud/mapper/SysUser.xml"/>
+        <mapper resource="club/wedcloud/mapper/SysUserMapper.xml"/>
+        <mapper resource="club/wedcloud/mapper/DepartmentMapper.xml"/>
     </mappers>
 </configuration>

@@ -67,3 +67,77 @@ public class Author {
 | useGeneratedKeys         | 允许 JDBC 支持自动生成主键                                   | true/false | false  |
 | mapUnderscoreToCamelCase | 是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn | true/false | false  |
 
+### 映射器
+
+```xml
+<!-- 使用相对于类路径的资源引用（推荐使用） -->
+<mappers>
+  <mapper resource="org/mybatis/builder/AuthorMapper.xml"/>
+  <mapper resource="org/mybatis/builder/BlogMapper.xml"/>
+  <mapper resource="org/mybatis/builder/PostMapper.xml"/>
+</mappers>
+```
+
+```xml
+<!-- 不要使用 --->
+<!-- 使用完全限定资源定位符（URL） -->
+<mappers>
+  <mapper url="file:///var/mappers/AuthorMapper.xml"/>
+  <mapper url="file:///var/mappers/BlogMapper.xml"/>
+  <mapper url="file:///var/mappers/PostMapper.xml"/>
+</mappers>
+```
+
+```xml
+<!-- 使用映射器接口实现类的完全限定类名 -->
+<mappers>
+  <mapper class="org.mybatis.builder.AuthorMapper"/>
+  <mapper class="org.mybatis.builder.BlogMapper"/>
+  <mapper class="org.mybatis.builder.PostMapper"/>
+</mappers>
+<!-- 
+注意：
+1.接口和对应的Mapper.xml文件必须同名
+2.接口和Mapper.xml必须在同一个包下
+-->
+```
+
+```xml
+<!-- 将包内的映射器接口实现全部注册为映射器 -->
+<mappers>
+  <package name="org.mybatis.builder"/>
+</mappers>
+<!-- 
+注意：
+1.接口和对应的Mapper.xml文件必须同名
+2.接口和Mapper.xml必须在同一个包下
+-->
+```
+
+
+
+### 作用域
+
+作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的`并发问题`
+
+**SqlSessionFactoryBuilder**
+
+> 1.只需要创建一次
+>
+> 2.最佳作用域是方法作用域（也就是局部方法变量）
+
+**SqlSessionFactory**
+
+> 1.创建后就一直存在
+>
+> 2.最佳作用域是应用作用域（application 全局）
+>
+> 3.最简单的就是使用单例模式或者静态单例模式
+
+**SqlSession**
+
+> 1.SqlSession 的实例不是线程安全的，所以每个线程都应该有自己的SqlSession 
+>
+> 2.最佳的作用域是请求或方法作用域
+>
+> 3.使用后需要及时关闭，避免资源长期占有
