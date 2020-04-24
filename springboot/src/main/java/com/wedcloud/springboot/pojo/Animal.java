@@ -1,7 +1,9 @@
 package com.wedcloud.springboot.pojo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import java.util.Map;
@@ -13,8 +15,10 @@ import java.util.Map;
  */
 @Component
 @ConfigurationProperties(prefix = "animal")
+@Validated
 public class Animal {
-  private String name;
+  @NonNull private String name;
+
   private Integer age;
   private Map<String, String> map;
   private List<String> list;

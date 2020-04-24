@@ -1,6 +1,7 @@
 server:
   port: 9090
 
+
 animal:
   name: 华硕
   age: 10
@@ -12,3 +13,21 @@ animal:
   person:
     name: 小明
     age: 30
+
+spring:
+  datasource:
+    username: wedcloud
+    password: Xu18100792153@
+    url: jdbc:mysql://148.70.116.45:3306/wedcloud_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.wedcloud.springboot.pojo
+  mapper-locations: mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com:
+      wedcloud:
+        springboot: debug

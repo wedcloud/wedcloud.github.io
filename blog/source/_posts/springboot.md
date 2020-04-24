@@ -12,10 +12,11 @@ date: 2020-04-23 14:35:56
 
 @SpringBootApplication
 
+* @ComponentScan：扫描范围->同级包以及所有的子包
 * @SpringBootConfiguration ：表示该类是spring组件
-* @EnableAutoConfiguration ：开启自动装配
+* @EnableAutoConfiguration ：开启自动配置（扫包范围默认当前类）
   * @AutoConfigurationPackage ：添加该注解的类所在的packag 作为自动配置package到spring容器中
-    * @Import(AutoConfigurationPackages.Registrar.class)：将组件注册到spring中
+    * @Import(AutoConfigurationPackages.Registrar.class)：自动搜索当前类所在包下的注解实体
   * @Import(AutoConfigurationImportSelector.class) ：导入组件的选择器
 
 > 怎么过滤：
