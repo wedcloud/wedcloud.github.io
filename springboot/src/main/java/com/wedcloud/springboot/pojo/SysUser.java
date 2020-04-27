@@ -1,5 +1,7 @@
 package com.wedcloud.springboot.pojo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  *
  *
@@ -10,10 +12,12 @@ package com.wedcloud.springboot.pojo;
  * @author : 许先生
  * @date : 2020-04-24 16:36
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SysUser {
   private Integer id;
   private String name;
   private String passwd;
+  private String passwdSalt;
   private String phone;
   private Integer cancel;
   private String createdAt;
@@ -42,6 +46,14 @@ public class SysUser {
         + modifiedAt
         + '\''
         + '}';
+  }
+
+  public String getPasswdSalt() {
+    return passwdSalt;
+  }
+
+  public void setPasswdSalt(String passwdSalt) {
+    this.passwdSalt = passwdSalt;
   }
 
   public Integer getId() {
