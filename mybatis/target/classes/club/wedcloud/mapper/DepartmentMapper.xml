@@ -49,7 +49,7 @@
 
     <!-- 结果嵌套查询（推荐） -->
     <resultMap id="departMap" type="department">
-        <result property="id" column="dis"/>
+        <result property="id" column="did"/>
         <result property="name" column="dname"/>
         <collection property="listUser" ofType="sysUser">
             <result property="id" column="uid"/>
