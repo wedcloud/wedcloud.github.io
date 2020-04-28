@@ -1,0 +1,14 @@
+com\wedcloud\springapiaop\log\LogAfter.class
+com\wedcloud\dynamicproxy\Host.class
+com\wedcloud\dynamicproxy\Rent.class
+com\wedcloud\springapiaop\service\UserService.class
+com\wedcloud\springapiaop\service\impl\UserServiceImpl.class
+com\wedcloud\springapiaop\log\LogAspect.class
+com\wedcloud\proxy\Proxy.class
+com\wedcloud\dynamicproxy\Client.class
+com\wedcloud\proxy\Client.class
+com\wedcloud\proxy\Rent.class
+com\wedcloud\dynamicproxy\MyInvocationHandler.class
+com\wedcloud\springapiaop\log\LogBefore.class
+com\wedcloud\springapiaop\log\AnnotationLogAspect.class
+com\wedcloud\proxy\Host.class

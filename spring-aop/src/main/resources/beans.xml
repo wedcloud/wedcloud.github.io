@@ -17,7 +17,8 @@
         <aop:advisor advice-ref="before" pointcut-ref="pointcut"/> -->
         <!-- 切面 -->
         <aop:aspect id="logAspect" ref="aspect">
-            <aop:pointcut id="point" expression="execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"/>
+            <aop:pointcut id="point"
+                          expression="execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"/>
             <aop:after method="after" pointcut-ref="point"/>
             <aop:before method="before" pointcut-ref="point"/>
         </aop:aspect>

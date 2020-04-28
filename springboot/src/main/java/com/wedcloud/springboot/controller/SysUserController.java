@@ -2,6 +2,7 @@ package com.wedcloud.springboot.controller;
 
 import com.wedcloud.springboot.mapper.SysUserMapper;
 import com.wedcloud.springboot.pojo.SysUser;
+import com.wedcloud.springboot.util.ResponseBean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +28,8 @@ public class SysUserController {
   @Resource private SysUserMapper mapper;
 
   @GetMapping("/user")
-  public ResponseEntity<Object> getUser() {
+  public ResponseEntity<ResponseBean> getUser() {
     List<SysUser> userList = mapper.findByAll();
-    return ResponseEntity.ok(userList);
+    return ResponseEntity.ok(ResponseBean.ok(userList));
   }
 }
