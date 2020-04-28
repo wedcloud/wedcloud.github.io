@@ -1,14 +1,12 @@
 package com.wedcloud.springboot.config;
 
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
 /**
  * @Author 许海斌
  *
  * @create 2020/4/25 0025 21:52
  */
-// @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+// @EnableWebSecurity extends WebSecurityConfigurerAdapter
+public class SecurityConfig {
   //  @Resource DataSource dataSource;
   //
   //  @Override
