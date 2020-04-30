@@ -1,6 +1,10 @@
 package com.wedcloud.springboot.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import org.springframework.lang.NonNull;
+import org.springframework.validation.annotation.Validated;
 
 /**
  *
@@ -13,14 +17,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @date : 2020-04-24 16:36
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Validated
 public class SysUser {
+  @NonNull
+  @ApiModelProperty("ID")
   private Integer id;
+
+  @ApiModelProperty("ID")
   private String name;
+  @ApiModelProperty("密码")
   private String passwd;
+  @ApiModelProperty("密码盐值")
   private String passwdSalt;
+  @ApiModelProperty("手机号码")
   private String phone;
+  @ApiModelProperty("标识 0未删除 1已删除")
   private Integer cancel;
+  @ApiModelProperty("创建时间")
   private String createdAt;
+  @ApiModelProperty("修改时间")
   private String modifiedAt;
 
   @Override

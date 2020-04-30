@@ -16,20 +16,37 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <io.springfox>2.9.2</io.springfox>
+        <fastjson>1.2.68</fastjson>
+        <shiro>1.5.2</shiro>
+        <mybatis.spring>2.1.2</mybatis.spring>
     </properties>
 
     <dependencies>
 
         <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${io.springfox}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${io.springfox}</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.68</version>
+            <version>${fastjson}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
-            <version>1.5.2</version>
+            <version>${shiro}</version>
         </dependency>
 
 
@@ -57,7 +74,7 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.2</version>
+            <version>${mybatis.spring}</version>
         </dependency>
 
         <dependency>

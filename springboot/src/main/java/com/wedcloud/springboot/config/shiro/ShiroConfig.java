@@ -54,7 +54,8 @@ public class ShiroConfig {
     /** ** 增加从数据库查询出角色 ** */
     /** ************************* */
     // 主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截
-    filterMap.put("/**", "authc");
+//    filterMap.put("/**", "authc");
+    filterMap.put("/**", "anon");
     return filterMap;
   }
 

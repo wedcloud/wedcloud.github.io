@@ -1,18 +1,5 @@
 server:
-  port: 9090
-
-
-animal:
-  name: 华硕
-  age: 10
-  map: {k1: v1,k2: v2}
-  list:
-    - haha
-    - qiqi
-    - body
-  person:
-    name: 小明
-    age: 30
+  port: 8080
 
 spring:
   datasource:
@@ -31,3 +18,4 @@ logging:
     com:
       wedcloud:
         springboot: debug
+

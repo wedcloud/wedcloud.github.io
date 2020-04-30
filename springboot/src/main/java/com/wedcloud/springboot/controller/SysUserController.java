@@ -3,6 +3,8 @@ package com.wedcloud.springboot.controller;
 import com.wedcloud.springboot.mapper.SysUserMapper;
 import com.wedcloud.springboot.pojo.SysUser;
 import com.wedcloud.springboot.util.ResponseBean;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +30,8 @@ public class SysUserController {
   @Resource private SysUserMapper mapper;
 
   @GetMapping("/user")
-  public ResponseEntity<ResponseBean> getUser() {
+  @ApiOperation("用户列表查询")
+  public ResponseEntity<ResponseBean<List<SysUser>>> getUser() {
     List<SysUser> userList = mapper.findByAll();
     return ResponseEntity.ok(ResponseBean.ok(userList));
   }

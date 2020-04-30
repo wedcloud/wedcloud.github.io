@@ -1,6 +1,9 @@
 package com.wedcloud.springboot.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  *
@@ -13,10 +16,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @date : 2020-04-27 09:31
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResponseBean {
+public class ResponseBean<T> {
+  @ApiModelProperty("返回码")
   private String code;
+  @ApiModelProperty("返回信息")
   private String message;
-  private Object data;
+  @ApiModelProperty("返回数据")
+  private T data;
 
   public static ResponseBean body(String code, String message, Object data) {
     return new ResponseBean(code, message, data);
@@ -42,7 +48,7 @@ public class ResponseBean {
     return new ResponseBean("3000", "失败", data);
   }
 
-  private ResponseBean(String code, String message, Object data) {
+  private ResponseBean(String code, String message, T data) {
     this.code = code;
     this.message = message;
     this.data = data;
@@ -61,7 +67,7 @@ public class ResponseBean {
     return message;
   }
 
-  public Object getData() {
+  public T getData() {
     return data;
   }
 
