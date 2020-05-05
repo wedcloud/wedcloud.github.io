@@ -7,6 +7,22 @@ spring:
     password: Xu18100792153@
     url: jdbc:mysql://148.70.116.45:3306/wedcloud_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    username: 1007518009@qq.com
+    password: dtfanxzfoipobebf
+    host: smtp.qq.com
+    port: 465
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      enabled: true
+      max-request-size: 1024MB
 
 mybatis:
   type-aliases-package: com.wedcloud.springboot.pojo

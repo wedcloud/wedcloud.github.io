@@ -66,3 +66,20 @@ PathSelectors
 
 > 启动类或swagger对应的config类上注解@EnableSwagger2
 
+### 配置分组
+
+> Docket.groupName(组名)
+
+#### 配置多个分组
+
+![image-20200501125324046](swagger/image-20200501125324046.png)
+
+多个`Docket`的`bean`实例即可；
+
+### Swagger 小结
+
+* 增加注释信息
+* 接口文档是实时更新
+* 在线测试
+
+> 注意： 正式发布时，关闭Swagger，一方面是安全，另一方面是可以节省运行内存

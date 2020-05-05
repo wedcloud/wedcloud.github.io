@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
@@ -75,13 +76,13 @@ public class ControllerAspect {
         requestLog
             .append(paramNames[i])
             .append("=")
-            .append(JSONObject.toJSONString(paramValues[i]))
+            .append(JSONObject.toJSONString("multipartFiles".equals(paramNames[i])?"":paramValues[i]))
             .append(",");
       }
       requestLog
           .append(paramNames[paramLength - 1])
           .append("=")
-          .append(JSONObject.toJSONString(paramValues[paramLength - 1]))
+          .append(JSONObject.toJSONString("multipartFiles".equals(paramNames[paramLength - 1])?"":paramValues[paramLength - 1]))
           .append("]");
     }
     logger.info(requestLog.toString());
