@@ -1,10 +1,9 @@
 package com.wedcloud.springboot.service.impl;
 
 import com.wedcloud.springboot.service.HelloService;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Author 许海斌
@@ -12,14 +11,16 @@ import java.util.concurrent.TimeUnit;
  */
 @Service
 public class HelloServiceImpl implements HelloService {
+
     @Override
     @Async
-    public void getHello() {
+    @CachePut(value = "hello",key = "#id")
+    public String getHello(String id) {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("hello..."+Thread.currentThread().getName());
+        return "hello..."+Thread.currentThread().getName();
     }
 }

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
@@ -34,7 +33,7 @@ import java.util.List;
 @Aspect
 @Component
 public class ControllerAspect {
-  private final Logger logger = LoggerFactory.getLogger(this.getClass());
+  private static final Logger LOG= LoggerFactory.getLogger(ControllerAspect.class);
 
   @Pointcut("execution(* com.wedcloud.springboot.controller.*.*(..))")
   public void pointCut() {}
@@ -85,7 +84,7 @@ public class ControllerAspect {
           .append(JSONObject.toJSONString("multipartFiles".equals(paramNames[paramLength - 1])?"":paramValues[paramLength - 1]))
           .append("]");
     }
-    logger.info(requestLog.toString());
+    LOG.info(requestLog.toString());
   }
 
   @After("pointCut()")
@@ -101,13 +100,13 @@ public class ControllerAspect {
 
   @AfterReturning(pointcut = "pointCut()", returning = "response")
   public void afterReturning(ResponseEntity response) {
-    logger.info("请求结果：" + response.getBody());
+    LOG.info("请求结果：" + response.getBody());
   }
 
   @AfterThrowing(pointcut = "pointCut()", throwing = "ex")
   public void afterThrowing(JoinPoint joinPoint, Exception ex) {
     String methodName = joinPoint.getSignature().getName();
     List<Object> args = Arrays.asList(joinPoint.getArgs());
-    logger.error("连接点方法为：{},参数为：{},异常为：{}", methodName, args, ex);
+    LOG.error("连接点方法为：{},参数为：{},异常为：{}", methodName, args, ex);
   }
 }
