@@ -40,3 +40,55 @@ date: 2020-04-23 14:35:56
 - loadFactoryNames：加载指定的factoryClass的名称集合。
 - instantiateFactory：对指定的factoryClass进行实例化。
 
+
+
+## redis
+
+springDataRedis
+
+1.X版本使用jedis
+
+> jedis:采用直连，多个线程操作的话，是不安全的，避免多线程不安全需要使用jedis pool连接池
+
+2.x版本使用lettuce
+
+> lettuce：使用netty，示例可以在多个线程中进行共享，不存在线程不安全的情况，可以减少线程数据
+
+### redisConfig
+
+```java
+@Configuration // redis配置类
+@EnableCaching // 开启缓存
+public class RedisConfig extends CachingConfigurerSupport {
+    @Bean
+    public RedisTemplate<String, Serializable> redisTemplate(LettuceConnectionFactory connectionFactory){
+        RedisTemplate<String, Serializable> redisTemplate = new RedisTemplate<>();
+        // StringRedisSerializer 简单的字符串序列化
+        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setHashKeySerializer(stringRedisSerializer);
+
+        // FastJsonRedisSerializer 阿里巴巴 fastjosn
+        FastJsonRedisSerializer jsonRedisSerializer = new FastJsonRedisSerializer(Object.class);
+        redisTemplate.setValueSerializer(jsonRedisSerializer);
+        redisTemplate.setHashValueSerializer(jsonRedisSerializer);
+
+        redisTemplate.setConnectionFactory(connectionFactory);
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
+}
+```
+
+### 配置文件
+
+```yaml
+spring:
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    database: 0
+    timeout: 1000
+```
+
