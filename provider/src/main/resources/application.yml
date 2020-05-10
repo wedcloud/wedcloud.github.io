@@ -1,0 +1,10 @@
+dubbo:
+  application:
+    name: provider
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.wedcloud.service
+
+server:
+  port: 9090
