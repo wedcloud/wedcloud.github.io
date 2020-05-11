@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceConsumer {
-    @Reference(version = "1.0.0")
+    @Reference
     private UserService service;
 
     public String getUser(){

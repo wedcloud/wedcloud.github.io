@@ -1,4 +1,4 @@
-package com.wecloud.service;
+package com.wedcloud.service;
 
 /**
  * @Author 许海斌
