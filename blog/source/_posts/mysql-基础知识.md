@@ -279,7 +279,7 @@ CREATE TABLE [IF NOT EXISTS] `表名` (
    >1. truncate 会将自增列计数器归零
    >
    >     		 2. truncate 不会影响事务，也就是删除了数据无法回滚
-   >          		 3. 性能：truncate > delete
+   >                		 3. 性能：truncate > delete
 
 ### 查询
 
