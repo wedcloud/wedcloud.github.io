@@ -2,13 +2,12 @@ package ioc;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Controller;
 import pojo.Hello;
 
 /**
  * @Author 许海斌
  * @create 2020/4/12 0012 15:19
- * @deprecated 使用xml控制反转生产bean
+ * 使用xml控制反转生产bean
  */
 public class HelloController {
   public static void main(String[] args) {
