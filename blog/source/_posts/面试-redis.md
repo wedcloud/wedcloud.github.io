@@ -44,23 +44,74 @@ date: 2020-05-06 09:23:12
 
 6. Redis的5种Value类型你用过几种，能举例吗？
 
-   >string、list、set、sorted_set、hash，大家都懂，不想写一堆废话来举例。说下原理吧
+   >string(字符串)、list(列表)、set(集合)、sortedSet(有序集合)、hash(字典)、HyperLogLog、Geo、Pub/Sub，大家都懂，不想写一堆废话来举例。说下原理吧
    >string：int、raw、embstr
    >list：ziplist、linkedlist
    >hash：ziplist、hashtable
    >set：intset、hashtable
-   >sorted set：ziplist、skiplist+dict
+   >sortedSet：ziplist、skiplist+dict
 
 7. 100万并发4G数据，10万并发400G数据，如何设计Redis存储方式？
 
    >[一文掌握Redis的主从复制原理到实战](https://blog.csdn.net/ctwctw/article/details/105223070)
    >[一文掌握Redis的哨兵Sentinel原理到实战](https://blog.csdn.net/ctwctw/article/details/105243302)
 
-8. 3
+## redis(一)
 
-9. 3
+1. 为啥用Redis
 
-10. 3
+   > 因为传统的关系型数据库如Mysql已经不能适用所有的场景了，比如秒杀的库存扣减，APP首页的访问流量高峰等等，都很容易把数据库打崩，所以引入了缓存中间件，目前市面上比较常用的缓存中间件有Redis 和 Memcached 不过中和考虑了他们的优缺点，最后选择了Redis
 
-11. 3
+2. Redis Model
+
+   > BloomFilter(布隆过滤器): 防止缓存击穿
+   >
+   > RedisSearch:
+   >
+   > Redis-ML:
+
+3. 缓存雪崩
+
+   > 如果大量的Key过期时间过于集中，等到了过期时间点，redis可能会出现短暂的卡顿现象，严重的会出现`缓存雪崩`
+
+   **解决：**设置过期时间时加上一个随机值，使得过期时间分散些
+
+4. Redis分布式锁
+
+   > 通常情况：先拿setnx来争抢锁，抢到之后，再用expire给锁加一个过期时间防止锁忘记了释放；
+   >
+   > 如果在setnx之后执行expire之前进程意外crash或者要重启维护了，就会导致锁永远无法释放，
+   >
+   > `解决:使用set命令可以同时把setnx和expire合成一条指令来用的,原子化结合起来`
+
+5. 使用Redis做异步队列
+
+   > 一般使用list结构作为队列，`rpush`生产消息，`lpop`消费消息。当lpop没有消息的时候，要适当sleep一会再重试；
+   >
+   > 如果不想使用`sleep`，list还有一个指令`blpop`，没有消息时会阻塞；
+
+6. 生产一次，多次消费
+
+   > 使用pub/sub主题订阅，可以实现1：N消息队列；
+   >
+   > 但是消费者下线情况时，生产消息会丢失，此时可以考虑消息队列；
+
+7. Redis实现延时队列
+
+   >使用sortedset，拿时间戳作为score，消息内容作为key调用zadd来生产消息，消费者用`zrangebyscore`指令获取N秒之前的数据轮询进行处理
+
+8. Redis数据持久化
+
+   > 1. RDB 做镜像全量持久化，AOF做增量持久化
+   > 2. RDB持久化耗费时间较长，不实时，在突然断电或停机时会导致大量数据丢失，AOF在恢复时需要一条一条的执行写操作，也比较耗时
+   > 3. 所以需要RDB和AOF结合使用，使用RDB持久化文件重新构建内存，再使用AOF重放近期的操作指令来实现完整恢复重启之前的状态
+   > 4. redis本身机制是：AOF持久化开启且存在AOF文件时，优先加载AOF文件；AOF关闭或者AOF文件不存在时，加载RDB文件；加载AOF/RDB文件城后，Redis启动成功； AOF/RDB文件存在错误时，Redis启动失败并打印错误信息
+
+9. 
+
+10. 
+
+11. 
+
+12. 3
 
