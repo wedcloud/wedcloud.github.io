@@ -177,344 +177,1597 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-mysql-基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">mysql-基础知识</a>
+      <a class="article-title" href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">学习计划</a>
     </h1>
   
 
         
-        <a href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-04-08T01:30:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+        <a href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-04-21T05:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ol>
-<li><p>连接数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p&lt;密码&gt;;</span><br></pre></td></tr></table></figure>
+        <p><strong>拒绝封闭学习</strong></p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
+<li>语言本身</li>
+<li>数据结构</li>
+<li>算法</li>
+<li>计算机网络协议</li>
+<li>操作系统</li>
+<li>数据库</li>
+<li>设计模式</li>
+</ul>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><ul>
+<li>mysql引擎</li>
+<li>InnoDB底层原理</li>
+<li>索引</li>
+<li>索引优化</li>
+</ul>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><ul>
+<li>Spring<ul>
+<li>spring</li>
+<li>springboot</li>
+<li>springcloud</li>
+</ul>
 </li>
-<li><p>修改密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
+<li>缓存、消息中间件</li>
+<li>RPC/微服务</li>
+</ul>
+<h3 id="调优"><a href="#调优" class="headerlink" title="调优"></a>调优</h3><ul>
+<li>JVM调优</li>
+</ul>
+<h3 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h3>
+      
 
-<blockquote>
-<p>注意：数据库存储密码时，需要加密</p>
-</blockquote>
-</li>
-<li><p>刷新权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示数据库中所有的表的信息</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &#96;表名&#96;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出连接</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注释</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释 -- 注释内容</span><br><span class="line">多行注释 &#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>EXPLAIN</code> 分析SQL</p>
-</li>
-</ol>
-<blockquote>
-<p>所有的语句都需要使用 ； 分好结尾</p>
-</blockquote>
-<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="操作数据库-1"><a href="#操作数据库-1" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>1、创建数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;数据库名&#96;；</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习计划</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-<p>2、删除数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;数据库名&#96;</span><br></pre></td></tr></table></figure>
-<p>3、查看所有的数据库</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习计划//" class="article-tag-list-link color5">学习计划</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-<p>4、使用数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &#96;数据库名&#96;;</span><br></pre></td></tr></table></figure>
 
-<p>5、数据库排序规则</p>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis-配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/">mybatis-配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-20T14:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mybatis-配置"><a href="#mybatis-配置" class="headerlink" title="mybatis 配置"></a>mybatis 配置</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><img src="mybatis-%E9%85%8D%E7%BD%AE/image-20200420231109395.png" alt="image-20200420231109395"></p>
+<p>引用</p>
+<p><img src="mybatis-%E9%85%8D%E7%BD%AE/image-20200420231217964.png" alt="image-20200420231217964"></p>
+<p>MyBatis 将按照下面的顺序来加载：</p>
 <ul>
-<li>特征<ul>
-<li>两个不同的字符集不能有相同的排序规则</li>
-<li>两个字符集有一个默认的排序规则</li>
-<li>有一些常用的命名规则。如_ci结尾表示大小写不敏感（caseinsensitive）,_cs表示大小写敏感（case sensitive）,_bin表示二进制的比较（binary）</li>
+<li>首先读取在 properties 元素体内指定的属性。</li>
+<li>然后根据 properties 元素中的 resource 属性读取类路径下属性文件，或根据 url 属性指定的路径读取属性文件，并覆盖之前读取过的同名属性。</li>
+<li>最后读取作为方法参数传递的属性，并覆盖之前读取过的同名属性。</li>
 </ul>
-</li>
-<li>区别<ul>
-<li>utf8_general_ci 不区分大小写，这个你在注册用户名和邮箱的时候就要使用</li>
-<li>utf8_general_cs 区分大小写，如果用户名和邮箱用这个 就会照成不良后果</li>
-<li>utf8_bin:字符串每个字符串用二进制数据编译存储。 区分大小写，而且可以存二进制的内容</li>
-<li>utf8_general_ci校对速度快，但准确度稍差</li>
-<li>utf8_unicode_ci准确度高，但校对速度稍慢</li>
-</ul>
-</li>
-<li>使用情况<br>utf8_unicode_ci比较准确，utf8_general_ci速度比较快。通常情况下，新建数据库时一般选用utf8_general_ci就可以了</li>
-</ul>
-<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><ol>
-<li><p>用户权限赋值</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on &#39;表名&#39;.* to &#39;用户名&#39;@&#39;%&#39;;</span><br></pre></td></tr></table></figure>
-<h3 id="所用"><a href="#所用" class="headerlink" title="所用"></a>所用</h3></li>
-<li><p>普通索引</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#39;表名&#39; ADD INDEX 索引名(&#96;字段名&#96;);</span><br></pre></td></tr></table></figure>
+<p>因此，通过方法参数传递的属性具有最高优先级，resource/url 属性中指定的配置文件次之，最低优先级的则是 properties 元素中指定的属性。</p>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>类型别名可为 Java 类型设置一个缩写名字。 它仅用于 XML 配置，意在降低冗余的全限定类名书写</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Author"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Author"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Blog"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Blog"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Comment"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Comment"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Post"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Post"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Section"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Section"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Tag"</span> <span class="attr">type</span>=<span class="string">"domain.blog.Tag"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"domain.blog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>每一个在包 <code>domain.blog</code> 中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。 比如 <code>domain.blog.Author</code> 的别名为 <code>author</code>；若有注解，则别名为其注解值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Alias</span>(<span class="string">"author"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Author</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><table>
+<thead>
+<tr>
+<th>设置名</th>
+<th>描述</th>
+<th>有效值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cacheEnabled</td>
+<td>全局性地开启或关闭所有映射器配置文件中已配置的任何缓存</td>
+<td>true/false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>lazyLoadingEnabled</td>
+<td>延迟加载的全局开关。<br />当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 <code>fetchType</code> 属性来覆盖该项的开关状态</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>useGeneratedKeys</td>
+<td>允许 JDBC 支持自动生成主键</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>mapUnderscoreToCamelCase</td>
+<td>是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id="映射器"><a href="#映射器" class="headerlink" title="映射器"></a>映射器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用相对于类路径的资源引用（推荐使用） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/AuthorMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/builder/PostMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 不要使用 ---&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用完全限定资源定位符（URL） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/AuthorMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/PostMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用映射器接口实现类的完全限定类名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.AuthorMapper"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.BlogMapper"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"org.mybatis.builder.PostMapper"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">注意：</span></span><br><span class="line"><span class="comment">1.接口和对应的Mapper.xml文件必须同名</span></span><br><span class="line"><span class="comment">2.接口和Mapper.xml必须在同一个包下</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 将包内的映射器接口实现全部注册为映射器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"org.mybatis.builder"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">注意：</span></span><br><span class="line"><span class="comment">1.接口和对应的Mapper.xml文件必须同名</span></span><br><span class="line"><span class="comment">2.接口和Mapper.xml必须在同一个包下</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
-<p>数值</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的<code>并发问题</code></p>
+<p><strong>SqlSessionFactoryBuilder</strong></p>
+<blockquote>
+<p>1.只需要创建一次</p>
+<p>2.最佳作用域是方法作用域（也就是局部方法变量）</p>
 </blockquote>
+<p><strong>SqlSessionFactory</strong></p>
+<blockquote>
+<p>1.创建后就一直存在</p>
+<p>2.最佳作用域是应用作用域（application 全局）</p>
+<p>3.最简单的就是使用单例模式或者静态单例模式</p>
+</blockquote>
+<p><strong>SqlSession</strong></p>
+<blockquote>
+<p>1.SqlSession 的实例不是线程安全的，所以每个线程都应该有自己的SqlSession </p>
+<p>2.最佳的作用域是请求或方法作用域</p>
+<p>3.使用后需要及时关闭，避免资源长期占有</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/20/mybatis-%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lombok" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/20/lombok/">lombok</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/20/lombok/" class="archive-article-date">
+  	<time datetime="2020-04-20T01:32:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><h3 id="常规注解"><a href="#常规注解" class="headerlink" title="常规注解"></a>常规注解</h3><ul>
+<li><p>@Data</p>
+<blockquote>
+<p>注解在类上，会为类的所有属性自动生成setter/getter、equals、canEqual、hashCode、toString方法，如为final属性，则不会为该属性生成setter方法</p>
+</blockquote>
+</li>
+<li><p>@Getter/@Setter</p>
+<blockquote>
+<p>注解在属性上，可以为相应的属性自动生成Getter/Setter方法</p>
+</blockquote>
+</li>
+<li><p>@NonNull</p>
+<blockquote>
+<p>注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针</p>
+</blockquote>
+</li>
+<li><p>@Cleanup</p>
+<blockquote>
+<p>注解能帮助我们自动调用close()方法，很大的简化了代码</p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">@Cleanup</span> InputStream in = <span class="keyword">new</span> FileInputStream(args[<span class="number">0</span>]);</span><br><span class="line">  <span class="meta">@Cleanup</span> OutputStream out = <span class="keyword">new</span> FileOutputStream(args[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>@EqualsAndHashCode</p>
+<blockquote>
+<p>注解在类上，默认情况下，会使用所有非静态（non-static）和非瞬态（non-transient）属性来生成equals和hasCode，也能通过exclude注解来排除一些属性</p>
+<p>例：@EqualsAndHashCode(exclude={“id”, “shape”})</p>
+</blockquote>
+</li>
+<li><p>@ToString</p>
+<blockquote>
+<p>类使用@ToString注解，Lombok会生成一个toString()方法，默认情况下，会输出类名、所有属性（会按照属性定义顺序），用逗号来分割</p>
+<p>通过将<code>includeFieldNames</code>参数设为true，就能明确的输出toString()属性</p>
+</blockquote>
+</li>
+<li><p>@NoArgsConstructor，@RequiredArgsConstructor ，@AllArgsConstructor</p>
+<blockquote>
+<p>无参构造器、部分参数构造器、全参构造器</p>
+<p>注意：Lombok没法实现多种参数构造器的重载</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">lombok</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/lombok//" class="article-tag-list-link color2">lombok</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/20/lombok/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/19/mybatis/">mybatis</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/19/mybatis/" class="archive-article-date">
+  	<time datetime="2020-04-19T14:22:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h2><ul>
+<li>MyBatis 是一款优秀的<code>持久层框架</code></li>
+<li>它支持自定义 SQL、存储过程以及高级映射</li>
+<li>MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作</li>
+<li>MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录</li>
+</ul>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>简单易学</li>
+<li>灵活</li>
+<li>sql与代码分离，提高可维护性</li>
+<li>提供映射标签，支持对象与数据库的orm关系映射</li>
+<li>提供对象关系映射标签，支持对象关系组维护</li>
+<li>提供xml标签，支持编写动态sql</li>
+</ul>
+<h3 id="mybatis-XML"><a href="#mybatis-XML" class="headerlink" title="mybatis XML"></a>mybatis XML</h3><ul>
+<li>namespace 与 Mapper接口全限定名一直（<code>com.mypackage.UserMapper</code>）</li>
+</ul>
+<h4 id="XML标签"><a href="#XML标签" class="headerlink" title="XML标签"></a>XML标签</h4><ul>
+<li>cache - 该命名空间的缓存配置</li>
+<li>cache-ref  - 引用其他命名空间的缓存配置</li>
+<li>resultMap - 描述如何从数据库结果集中加载对象，是最复杂也是最强大的元素</li>
+<li>sql - 可被其它语句引用的可重用语句块</li>
+<li>insert - 映射插入语句</li>
+<li>update - 映射更新语句</li>
+<li>delete - 映射删除语句</li>
+<li>select - 映射查询语句</li>
+</ul>
+<h5 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"selectPerson"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"int"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterMap</span>=<span class="string">"deprecated"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultType</span>=<span class="string">"hashmap"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultMap</span>=<span class="string">"personResultMap"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">useCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"10"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">fetchSize</span>=<span class="string">"256"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultSetType</span>=<span class="string">"FORWARD_ONLY"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th>数据类型</th>
-<th>数据大小</th>
-<th>字节</th>
+<th>属性</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>tinyint</td>
-<td>十分小的数据库</td>
-<td>1</td>
+<td>id</td>
+<td>在命名空间中唯一的标识符，可以被用来引用这条语句</td>
 </tr>
 <tr>
-<td>smallint</td>
-<td>较小数据</td>
-<td>2</td>
+<td>parameterType</td>
+<td>将会传入这条语句的参数的类全限定名或别名（可选）</td>
 </tr>
 <tr>
-<td>mediumint</td>
-<td>中等</td>
-<td>3</td>
+<td>resultType</td>
+<td>返回结果的类全限定名或别名。 <br/>注意，如果返回的是集合，那应该设置为集合包含的类型，而不是集合本身的类型。<br/> resultType 和 resultMap 之间只能同时使用一个</td>
 </tr>
 <tr>
-<td><strong>int</strong></td>
-<td><strong>标准</strong></td>
-<td><strong>4</strong></td>
+<td>resultMap</td>
+<td>对外部 resultMap 的命名引用。结果映射是 MyBatis 最强大的特性， resultType 和 resultMap 之间只能同时使用一个</td>
 </tr>
 <tr>
-<td>bigint</td>
-<td>较大</td>
-<td>8</td>
+<td>flushCache</td>
+<td>将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被<code>清空</code>，默认值：false</td>
 </tr>
 <tr>
-<td>float</td>
-<td>浮点</td>
-<td>4</td>
+<td>useCache</td>
+<td>将其设置为 true 后，将会导致本条语句的结果被二级缓存<code>缓存</code>起来，默认值：对 select 元素为 true</td>
 </tr>
 <tr>
-<td>double</td>
-<td>浮点</td>
-<td>8</td>
+<td>timeout</td>
+<td>这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为未设置（unset）（依赖数据库驱动）</td>
 </tr>
 <tr>
-<td>decimal</td>
-<td>字符串形式浮点数（精度）</td>
-<td></td>
+<td>statementType</td>
+<td>可选 <br />STATEMENT（直接操作sql，不进行预编译，获取数据：$），<br />PREPARED（预处理，参数，进行预编译，获取数据：# ），<br /> CALLABLE（执行存储过程）<br />默认值：PREPARED</td>
 </tr>
 </tbody></table>
-<p><strong>注意</strong></p>
-<p>​    int(a)，a只与<code>Zerofill</code>(0填充) 有关</p>
-<blockquote>
-<p>字符串</p>
-</blockquote>
+<h5 id="insert-update-和-delete"><a href="#insert-update-和-delete" class="headerlink" title="insert , update 和 delete"></a>insert , update 和 delete</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"insertAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyProperty</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyColumn</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">useGeneratedKeys</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">update</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"updateAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">delete</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"deleteAuthor"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">parameterType</span>=<span class="string">"domain.blog.Author"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">flushCache</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeout</span>=<span class="string">"20"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th>数据类型</th>
-<th>数据解释</th>
-<th>字节</th>
+<th>属性</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>char</td>
-<td>定长字符串</td>
-<td>0~255</td>
+<td>id</td>
+<td>在命名空间中唯一的标识符，可以被用来引用这条语句</td>
 </tr>
 <tr>
-<td><strong>varchar</strong></td>
-<td><strong>可变字符串</strong></td>
-<td><strong>0~65535</strong></td>
+<td>parameterType</td>
+<td>将会传入这条语句的参数的类全限定名或别名（可选）</td>
 </tr>
 <tr>
-<td>tinytext</td>
-<td>微型文本</td>
-<td>2^8-1</td>
+<td>flushCache</td>
+<td>将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被清空，默认值：（对 insert、update 和 delete 语句）true</td>
 </tr>
 <tr>
-<td><strong>text</strong></td>
-<td><strong>文本串</strong></td>
-<td><strong>2^16-1</strong></td>
+<td>timeout</td>
+<td>在抛出异常前，等待超时设置</td>
+</tr>
+<tr>
+<td>statementType</td>
+<td>可选 STATEMENT，PREPARED 或 CALLABLE，默认：PREPARED</td>
+</tr>
+<tr>
+<td>useGeneratedKeys</td>
+<td>（仅适用于 insert 和 update）这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键，默认：false</td>
+</tr>
+<tr>
+<td>keyProperty</td>
+<td>（仅适用于 insert 和 update）指定能够唯一识别对象的属性，MyBatis 会使用 getGeneratedKeys 的返回值或 insert 语句的 selectKey 子元素设置它的值，如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>keyColumn</td>
+<td>（仅适用于 insert 和 update）设置生成键值在表中的列名，在某些数据库（像 PostgreSQL）中，当主键列不是表中的第一列的时候，是必须设置的。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
+</tr>
+<tr>
+<td>databaseId</td>
+<td>如果配置了数据库厂商标识（databaseIdProvider），MyBatis 会加载所有不带 databaseId 或匹配当前 databaseId 的语句；如果带和不带的语句都有，则不带的会被忽略</td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>时间日期</p>
-</blockquote>
+<h5 id="selectKey"><a href="#selectKey" class="headerlink" title="selectKey"></a>selectKey</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selectKey</span></span></span><br><span class="line"><span class="tag">  <span class="attr">keyProperty</span>=<span class="string">"id"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">resultType</span>=<span class="string">"int"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">order</span>=<span class="string">"BEFORE"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">statementType</span>=<span class="string">"PREPARED"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th>数据类型</th>
-<th>解释</th>
-<th>格式</th>
+<th>属性</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>date</td>
-<td>日期</td>
-<td>YYYY-MM-DD</td>
+<td>keyProperty</td>
+<td><code>selectKey</code> 语句结果应该被设置到的目标属性。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
 </tr>
 <tr>
-<td>time</td>
-<td>时间</td>
-<td>HH:mm:ss</td>
+<td>keyColumn</td>
+<td>返回结果集中生成列属性的列名。如果生成列不止一个，可以用逗号分隔多个属性名称</td>
 </tr>
 <tr>
-<td>datetime</td>
-<td>日期+时间</td>
-<td>YYYY-MM-DD HH:mm:ss</td>
+<td>resultType</td>
+<td>结果的类型</td>
 </tr>
 <tr>
-<td>timestamp</td>
-<td>时间戳</td>
-<td>1970.1.1到现在的毫秒数</td>
+<td>order</td>
+<td>可以设置为 <code>BEFORE</code> 或 <code>AFTER</code>。如果设置为 <code>BEFORE</code>，那么它首先会生成主键，设置 <code>keyProperty</code> 再执行插入语句。如果设置为 <code>AFTER</code>，那么先执行插入语句，然后是 <code>selectKey</code> 中的语句</td>
+</tr>
+<tr>
+<td>statementType</td>
+<td>可选 STATEMENT，PREPARED 或 CALLABLE，默认：PREPARED</td>
 </tr>
 </tbody></table>
+<h5 id="SQL（比较重要，组件化）"><a href="#SQL（比较重要，组件化）" class="headerlink" title="SQL（比较重要，组件化）"></a>SQL（比较重要，组件化）</h5><p>这个元素可以用来定义可重用的 SQL 代码片段，以便在其它语句中使用。 参数可以静态地（在加载的时候）确定下来，并且可以在不同的 include 元素中定义不同的参数值</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"userColumns"</span>&gt;</span> $&#123;alias&#125;.id,$&#123;alias&#125;.username,$&#123;alias&#125;.password <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">  select</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>,</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">  from some_table t1</span><br><span class="line">    cross join some_table t2</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>null</p>
+<p>1、最好基于单表来定义SQL判断</p>
+<p>2、不要存在where标签</p>
 </blockquote>
-<ul>
-<li>没有值</li>
-<li>==不要使用NULL进行运算，NULL参与运算结果始终为NULL==</li>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>Map传递参数时，直接在sql中取出key即可【parameterType=”map”】</p>
+<p>对象传递参数时，直接在sqk中取出对象的属性即可【parameterType=”pojo”】</p>
+<p>只有一个基本参数的情况下，可以直接在sql中取到【parameterType 可以不写】</p>
+<h3 id="结果映射"><a href="#结果映射" class="headerlink" title="结果映射"></a>结果映射</h3><ul>
+<li><code>constructor</code> - 用于在实例化类时，注入结果到构造方法中<ul>
+<li><code>idArg</code> - ID 参数；标记出作为 ID 的结果可以帮助提高整体性能</li>
+<li><code>arg</code> - 将被注入到构造方法的一个普通结果</li>
 </ul>
-<h2 id="数据字段属性"><a href="#数据字段属性" class="headerlink" title="数据字段属性"></a>数据字段属性</h2><ul>
-<li>默认 ，不设置值时，数据库会自动在当前字段添加上默认值</li>
-<li>主键</li>
-<li>非空</li>
-<li>Unsigned 无符号，字段要求是整形</li>
-<li>自增</li>
-<li>Zerofill  不足位数使用0填充，字段要求是整形</li>
+</li>
+<li><code>id</code> – 一个 ID 结果；标记出作为 ID 的结果可以帮助提高整体性能</li>
+<li><code>result</code> – 注入到字段或 JavaBean 属性的普通结果</li>
+<li><code>association</code> – 一个复杂类型的关联；许多结果将包装成这种类型<ul>
+<li>嵌套结果映射 – 关联可以是 <code>resultMap</code> 元素，或是对其它结果映射的引用</li>
 </ul>
-<h2 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [IF NOT EXISTS] &#96;表名&#96; (</span><br><span class="line">  &#96;id&#96; bigint(20) NOT NULL AUTO_INCREMENT COMMENT &#39;ID&#39;,</span><br><span class="line">  &#96;name&#96; varchar(100) COLLATE utf8mb4_bin DEFAULT &#39;匿名&#39; COMMENT &#39;名字&#39;,</span><br><span class="line">  &#96;cancel&#96; int(11) DEFAULT &#39;0&#39; COMMENT &#39;0位删除 1已删除&#39;,</span><br><span class="line">  &#96;created_at&#96; datetime NOT NULL COMMENT &#39;创建时间&#39;,</span><br><span class="line">  &#96;modified_at&#96; datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,</span><br><span class="line">  PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;124 DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_bin ROW_FORMAT&#x3D;COMPACT COMMENT&#x3D;&#39;中文表名&#39;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><code>IF NOT EXISTS</code>  如果不存在</li>
-<li><code>IF EXISTS</code> 如果存在</li>
-<li><code>AUTO_INCREMENT</code> 自增关键字</li>
-<li><code>DEFAULT</code> 默认值设置</li>
-<li><code>COMMENT</code> 备注</li>
-<li><code>PRIMARY KEY (字段名)</code>设置主键</li>
-<li><code>ENGINE</code>设置表引擎</li>
-<li><code>AUTO_INCREMENT</code> 自增主键初始值</li>
-<li><code>CHARSET</code>字符集</li>
+</li>
+<li><code>collection</code> – 一个复杂类型的集合<ul>
+<li>嵌套结果映射 – 集合可以是 <code>resultMap</code> 元素，或是对其它结果映射的引用</li>
 </ul>
-<h3 id="InnoDB和MyISAM"><a href="#InnoDB和MyISAM" class="headerlink" title="InnoDB和MyISAM"></a>InnoDB和MyISAM</h3><table>
+</li>
+<li><code>discriminator</code> – 使用结果值来决定使用哪个<code>resultMap</code><ul>
+<li><code>case</code> – 基于某些值的结果映射<ul>
+<li>嵌套结果映射 – <code>case</code> 也是一个结果映射，因此具有相同的结构和元素；或者引用其它的结果映射</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="id-amp-result"><a href="#id-amp-result" class="headerlink" title="id &amp; result"></a>id &amp; result</h4><table>
 <thead>
 <tr>
-<th>功能</th>
-<th>MyISAM</th>
-<th>InnoDB</th>
+<th>属性</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>事务支持</td>
-<td>不支持</td>
-<td>支持</td>
+<td>property</td>
+<td>映射到列结果的字段或属性</td>
 </tr>
 <tr>
-<td>数据行锁定</td>
-<td>不支持</td>
-<td>支持</td>
+<td>column</td>
+<td>数据库中的列名，或者是列的别名</td>
 </tr>
 <tr>
-<td>外键约束</td>
-<td>不支持</td>
-<td>支持</td>
+<td>javaType</td>
+<td>一个 Java 类的全限定名，或一个类型别名</td>
 </tr>
 <tr>
-<td>全文索引</td>
-<td>支持</td>
-<td>不支持</td>
+<td>jdbcType</td>
+<td>JDBC 类型，所支持的 JDBC 类型参见这个表格之后的“支持的 JDBC 类型”</td>
 </tr>
 <tr>
-<td>表空间大小</td>
-<td>较小</td>
-<td>较大，约MyISAM的2倍</td>
+<td>typeHandler</td>
+<td>属性值是一个类型处理器实现类的全限定名，或者是类型别名</td>
 </tr>
 </tbody></table>
-<p>常规操作：</p>
+<p>id 和 result 元素都将一个列的值映射到一个属性字段，id 元素对应的属性会被标记为对象的标识符，在比较对象实例时使用。 这样可以提高整体的性能，尤其是进行缓存和嵌套结果映射（也就是连接映射）的时候。</p>
+<h4 id="关联（association）"><a href="#关联（association）" class="headerlink" title="关联（association）"></a>关联（association）</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"blog_author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"author_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"author_username"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>property</td>
+<td>映射到列结果的字段或属性</td>
+</tr>
+<tr>
+<td>javaType</td>
+<td>一个 Java 类的全限定名，或一个类型别名</td>
+</tr>
+<tr>
+<td>jdbcType</td>
+<td>JDBC 类型</td>
+</tr>
+<tr>
+<td>typeHandler</td>
+<td>属性值是一个类型处理器实现类的全限定名，或者是类型别名</td>
+</tr>
+</tbody></table>
+<p>MyBatis 有两种不同的方式加载关联：</p>
 <ul>
-<li>MyISAM 节约空间，速度快</li>
-<li>INNODB 安全性高，事务的处理，多表多用户操作</li>
+<li>嵌套 Select 查询：通过执行另外一个 SQL 映射语句来加载期望的复杂类型</li>
+<li>嵌套结果映射：使用嵌套的结果映射来处理连接结果的重复子集</li>
 </ul>
-<h3 id="表的修改与删除"><a href="#表的修改与删除" class="headerlink" title="表的修改与删除"></a>表的修改与删除</h3><ol>
-<li><p>修改表名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;旧表名&#96; rename as &#96;新表名&#96;</span><br></pre></td></tr></table></figure>
+<h5 id="嵌套-Select-查询"><a href="#嵌套-Select-查询" class="headerlink" title="嵌套 Select 查询"></a>嵌套 Select 查询</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>column</td>
+<td>数据库中的列名，或者是列的别名。<br />一般情况下，这和传递给 <code>resultSet.getString(columnName)</code> 方法的参数一样</td>
+</tr>
+<tr>
+<td>select</td>
+<td>用于加载复杂类型属性的映射语句的 ID，它会从 column 属性指定的列中检索数据，作为参数传递给目标 select 语句</td>
+</tr>
+<tr>
+<td>fetchType</td>
+<td>可选的。有效值为 <code>lazy</code> 和 <code>eager</code>。 指定属性后，将在映射中忽略全局配置参数 <code>lazyLoadingEnabled</code>，使用属性的值</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：在使用复合主键的时候，你可以使用 <code>column=&quot;{prop1=col1,prop2=col2}&quot;</code> 这样的语法来指定多个传递给嵌套 Select 查询语句的列名。这会使得 <code>prop1</code> 和 <code>prop2</code> 作为参数对象，被设置为对应嵌套 Select 语句的参数</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">select</span>=<span class="string">"selectAuthor"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAuthor"</span> <span class="attr">resultType</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  SELECT * FROM AUTHOR WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式虽然很简单，但在大型数据集或大型数据表上表现不佳。这个问题被称为<code>“N+1 查询问题”</code></p>
+<blockquote>
+<p><code>N+1</code>问题:</p>
+<p>1.你执行了一个单独的 SQL 语句来获取结果的一个列表（就是“+1”）</p>
+<p>2.对列表返回的每条记录，你执行一个 select 查询语句来为每条记录加载详细信息（就是“N”）</p>
+<p>这个问题会导致成百上千的 SQL 语句被执行</p>
+</blockquote>
+<p>MyBatis 能够对这样的查询进行延迟加载，因此可以将大量语句同时运行的开销分散开来。 然而，如果你加载记录列表之后立刻就遍历列表以获取嵌套的数据，就会触发所有的延迟加载查询，性能可能会变得很糟糕</p>
+<h5 id="嵌套结果映射（推荐）"><a href="#嵌套结果映射（推荐）" class="headerlink" title="嵌套结果映射（推荐）"></a>嵌套结果映射（推荐）</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>resultMap</td>
+<td>1.结果映射的 ID，可以将此关联的嵌套结果集映射到一个合适的对象树中。<br /> 2.它可以作为使用额外 select 语句的替代方案。它可以将多表连接操作的结果映射成一个单一的 <code>ResultSet</code>。这样的 <code>ResultSet</code> 有部分数据是重复的。<br /> 3.为了将结果集正确地映射到嵌套的对象树中, MyBatis 允许你“串联”结果映射，以便解决嵌套结果集的问题</td>
+</tr>
+<tr>
+<td>columnPrefix</td>
+<td>1.当连接多个表时，你可能会不得不使用列别名来避免在 <code>ResultSet</code> 中产生重复的列名<br />2.指定 columnPrefix 列名前缀允许你将带有这些前缀的列映射到一个外部的结果映射中</td>
+</tr>
+<tr>
+<td>notNullColumn</td>
+<td>1.默认情况下，在至少一个被映射到属性的列不为空时，子对象才会被创建<br />2.你可以在这个属性上指定非空的列来改变默认行为，指定后，Mybatis 将只在这些列非空时才创建一个子对象。可以使用逗号分隔来指定多个列。默认值：未设置（unset）。</td>
+</tr>
+<tr>
+<td>autoMapping</td>
+<td>1.如果设置这个属性，MyBatis 将会为本结果映射开启或者关闭自动映射。 这个属性会覆盖全局的属性 autoMappingBehavior。<br />2.注意，本属性对外部的结果映射无效，所以不能搭配 <code>select</code> 或 <code>resultMap</code> 元素使用。<br />3.默认值：未设置（unset）。</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id="selectBlog" resultMap="blogResult"&gt;</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">    B.id            <span class="keyword">as</span> blog_id,</span><br><span class="line">    B.title         <span class="keyword">as</span> blog_title,</span><br><span class="line">    B.author_id     <span class="keyword">as</span> blog_author_id,</span><br><span class="line">    A.id            <span class="keyword">as</span> author_id,</span><br><span class="line">    A.username      <span class="keyword">as</span> author_username,</span><br><span class="line">    A.password      <span class="keyword">as</span> author_password,</span><br><span class="line">    A.email         <span class="keyword">as</span> author_email,</span><br><span class="line">    A.bio           <span class="keyword">as</span> author_bio</span><br><span class="line">  <span class="keyword">from</span> Blog B <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> Author A <span class="keyword">on</span> B.author_id = A.id</span><br><span class="line">  <span class="keyword">where</span> B.id = <span class="comment">#&#123;id&#125;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"blog_id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"blog_title"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"blog_author_id"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">resultMap</span>=<span class="string">"authorResult"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"authorResult"</span> <span class="attr">type</span>=<span class="string">"Author"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"author_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"author_username"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"password"</span> <span class="attr">column</span>=<span class="string">"author_password"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"email"</span> <span class="attr">column</span>=<span class="string">"author_email"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"bio"</span> <span class="attr">column</span>=<span class="string">"author_bio"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="关联的多结果集（ResultSet）"><a href="#关联的多结果集（ResultSet）" class="headerlink" title="关联的多结果集（ResultSet）"></a>关联的多结果集（ResultSet）</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>column</td>
+<td>当使用多个结果集时，该属性指定结果集中用于与 <code>foreignColumn</code> 匹配的列（多个列名以逗号隔开），以识别关系中的父类型与子类型</td>
+</tr>
+<tr>
+<td>foreignColumn</td>
+<td>指定外键对应的列名，指定的列将与父类型中 <code>column</code> 的给出的列进行匹配</td>
+</tr>
+<tr>
+<td>resultSet</td>
+<td>指定用于加载复杂类型的结果集名字</td>
+</tr>
+</tbody></table>
+<p>调用存储过程（某些数据库允许存储过程返回多个结果集，或一次性执行多个语句，每个语句返回一个结果集）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultSets</span>=<span class="string">"blogs,authors"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span> <span class="attr">statementType</span>=<span class="string">"CALLABLE"</span>&gt;</span></span><br><span class="line">  &#123;call getBlogsAndAuthors(#&#123;id,jdbcType=INTEGER,mode=IN&#125;)&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"title"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">javaType</span>=<span class="string">"Author"</span> <span class="attr">resultSet</span>=<span class="string">"authors"</span> <span class="attr">column</span>=<span class="string">"author_id"</span> <span class="attr">foreignColumn</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"password"</span> <span class="attr">column</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"email"</span> <span class="attr">column</span>=<span class="string">"email"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"bio"</span> <span class="attr">column</span>=<span class="string">"bio"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Post&gt; posts;</span><br></pre></td></tr></table></figure>
+
+<p>xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">ofType</span>=<span class="string">"domain.blog.Post"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"post_id"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"subject"</span> <span class="attr">column</span>=<span class="string">"post_subject"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"body"</span> <span class="attr">column</span>=<span class="string">"post_body"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="2">
-<li><p>增加表字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; add &#96;字段名&#96; &#96;列属性（int（11））&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>修改表字段</p>
-<ul>
-<li><p>修改约束</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; modify &#96;字段名&#96; &#96;新的列属性&#96;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字段重命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; change &#96;旧字段名&#96; &#96;新字段名&#96; [&#96;新的列属性&#96;]</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-<ol start="4">
-<li><p>删除表字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &#96;表名&#96; drop &#96;字段名&#96;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table &#96;表名&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="6">
-<li><p>清空表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate &#96;表名&#96;</span><br></pre></td></tr></table></figure>
+<h5 id="集合的嵌套-Select-查询"><a href="#集合的嵌套-Select-查询" class="headerlink" title="集合的嵌套 Select 查询"></a>集合的嵌套 Select 查询</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResult"</span> <span class="attr">type</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">javaType</span>=<span class="string">"ArrayList"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">ofType</span>=<span class="string">"Post"</span> <span class="attr">select</span>=<span class="string">"selectPostsForBlog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultMap</span>=<span class="string">"blogResult"</span>&gt;</span></span><br><span class="line">  SELECT * FROM BLOG WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectPostsForBlog"</span> <span class="attr">resultType</span>=<span class="string">"Post"</span>&gt;</span></span><br><span class="line">  SELECT * FROM POST WHERE BLOG_ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>delete和truncate区别</p>
-<p>相同点：都不会删除表结构，只会删除数据</p>
-<p>不同： </p>
+<p><code>ofType=&quot;Post&quot;</code> 读作 “posts 是一个存储 Post 的 ArrayList 集合”</p>
+</blockquote>
+<p>在一般情况下，MyBatis 可以推断 javaType 属性，因此并不需要填写。所以很多时候你可以简略成：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"posts"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">ofType</span>=<span class="string">"Post"</span> <span class="attr">select</span>=<span class="string">"selectPostsForBlog"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="集合的嵌套结果映射（推荐）"><a href="#集合的嵌套结果映射（推荐）" class="headerlink" title="集合的嵌套结果映射（推荐）"></a>集合的嵌套结果映射（推荐）</h5><p>集合的嵌套结果映射是怎样工作的——除了新增的 “ofType” 属性，它和关联的完全相同</p>
+<h5 id="集合的多结果集（ResultSet）"><a href="#集合的多结果集（ResultSet）" class="headerlink" title="集合的多结果集（ResultSet）"></a>集合的多结果集（ResultSet）</h5><p>像关联元素那样，可以通过执行存储过程实现，它会执行两个查询并返回两个结果集</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/19/mybatis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-aop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-aop/">spring-aop</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-aop/" class="archive-article-date">
+  	<time datetime="2020-04-16T08:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Spring AOP 底层 – 代理模式</p>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><h4 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h4><p>角色分析：</p>
+<ul>
+<li>抽象角色：一般使用接口或者抽象类来解决</li>
+<li>真实角色：被代理的角色</li>
+<li>代理角色：代理真实角色，代理真实角色之后，通常还会做一些附属操作（公共的业务）</li>
+</ul>
+<p>静态代理模式的好处：</p>
+<ul>
+<li>使真实角色的操作更加纯粹</li>
+<li>公共业务交给代理角色，实现业务分工</li>
+<li>公共业务发生扩展的时候，方便集中管理</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>一个真实角色就会产生一个代理角色，代码量大，开发效率低</li>
+</ul>
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><ul>
+<li>动态代理和静态代理角色一样</li>
+<li>动态代理的代理类是动态生成的，不是我们直接写好的</li>
+<li>动态代理分为两大类：基于接口的动态代理，基于类动态代理<ul>
+<li>基于接口的：JDK动态代理【常用】</li>
+<li>基于类： cglib</li>
+<li>Java字节码实现：Javasist</li>
+</ul>
+</li>
+</ul>
+<p>好处：</p>
+<ul>
+<li>使真实角色的操作更加纯粹</li>
+<li>公共业务交给代理角色，实现业务分工</li>
+<li>公共业务发生扩展的时候，方便集中管理</li>
+<li>一个动态代理类，代理的是一个接口，一般每一个接口对应的就是一类业务</li>
+<li>一个动态代理类，可以代理多个类，只要实现统一接口即可</li>
+</ul>
+<h3 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h3><ul>
+<li><p>AOP（Aspect Oriented Programming）称为面向切面编程，在程序开发中主要用来解决一些系统层面上的问题，比如日志，事务，权限等待，Struts2的拦截器设计就是基于AOP的思想，是个比较经典的例子。</p>
+</li>
+<li><p>在不改变原有的逻辑的基础上，增加一些额外的功能。代理也是这个功能，读写分离也能用aop来做。</p>
+</li>
+<li><p>AOP可以说是OOP（Object Oriented Programming，面向对象编程）的补充和完善。OOP引入封装、继承、多态等概念来建立一种对象层次结构，用于模拟公共行为的一个集合。不过OOP允许开发者定义纵向的关系，但并不适合定义横向的关系，例如日志功能。日志代码往往横向地散布在所有对象层次中，而与它对应的对象的核心功能毫无关系对于其他类型的代码，如安全性、异常处理和透明的持续性也都是如此，这种散布在各处的无关的代码被称为横切（cross cutting），在OOP设计中，它导致了大量代码的重复，而不利于各个模块的重用</p>
+</li>
+<li><p>AOP技术恰恰相反，它利用一种称为”横切”的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其命名为”Aspect”，即切面。所谓”切面”，简单说就是那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低模块之间的耦合度，并有利于未来的可操作性和可维护性</p>
+</li>
+<li><p>使用”横切”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处基本相似，比如权限认证、日志、事物。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来</p>
+</li>
+</ul>
+<h3 id="AOP相关概念"><a href="#AOP相关概念" class="headerlink" title="AOP相关概念"></a>AOP相关概念</h3><ol>
+<li>横切关注点：对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点</li>
+<li>Aspect(切面):通常是一个类，里面可以定义切入点和通知</li>
+<li>JointPoint(连接点):程序执行过程中明确的点，一般是方法的调用。被拦截到的点，因为Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器</li>
+<li>Advice(通知):AOP在特定的切入点上执行的增强处理，有before(前置),after(后置),afterReturning(最终),afterThrowing(异常),around(环绕)</li>
+<li>Pointcut(切入点):就是带有通知的连接点，在程序中主要体现为书写切入点表达式</li>
+<li>weave(织入)：将切面应用到目标对象并导致代理对象创建的过程</li>
+<li>introduction(引入)：在不修改代码的前提下，引入可以在<strong>运行期</strong>为类动态地添加一些方法或字段</li>
+<li>AOP代理(AOP Proxy)：AOP框架创建的对象，代理就是目标对象的加强。Spring中的AOP代理可以使JDK动态代理，也可以是CGLIB代理，前者基于接口，后者基于子类</li>
+<li>目标对象（Target Object）: 包含连接点的对象。也被称作被通知或被代理对象</li>
+</ol>
+<h3 id="Advice-类型"><a href="#Advice-类型" class="headerlink" title="Advice 类型"></a>Advice 类型</h3><ol>
+<li><p>Before:在目标方法被调用之前做增强处理,@Before只需要指定切入点表达式即可</p>
+</li>
+<li><p>AfterReturning:在目标方法正常完成后做增强,@AfterReturning除了指定切入点表达式后，还可以指定一个返回值形参名returning,代表目标方法的返回值</p>
+</li>
+<li><p>AfterThrowing:主要用来处理程序中未处理的异常,@AfterThrowing除了指定切入点表达式后，还可以指定一个throwing的返回值形参名,可以通过该形参名来访问目标方法中所抛出的异常对象</p>
+</li>
+<li><p>After:在目标方法完成之后做增强，无论目标方法时候成功完成。@After可以指定一个切入点表达式</p>
+</li>
+<li><p>Around:环绕通知,在目标方法完成前后做增强处理,环绕通知是最重要的通知类型,像事务,日志等都是环绕通知,注意编程中核心是一个ProceedingJoinPoint</p>
+</li>
+</ol>
+<h3 id="AOP-场景"><a href="#AOP-场景" class="headerlink" title="AOP 场景"></a>AOP 场景</h3><blockquote>
+<p><em>Authentication 权限</em><br> <em>Caching 缓存</em><br> <em>Context passing 内容传递</em><br> <em>Error handling 错误处理</em><br> <em>Lazy loading　懒加载</em><br> <em>Debugging　　调试</em><br> <em>logging, tracing, profiling and monitoring　记录跟踪　优化　校准</em><br> <em>Performance optimization　性能优化</em><br> <em>Persistence　　持久化</em><br> <em>Resource pooling　资源池</em><br> <em>Synchronization　同步</em><br> <em>Transactions 事务</em></p>
+</blockquote>
+<h3 id="AOP依赖包"><a href="#AOP依赖包" class="headerlink" title="AOP依赖包"></a>AOP依赖包</h3><p>使用aop依赖包除了Spring提供给开发者的jar包外，还需额外上网下载两个jar包：<br>1、aopalliance.jar<br>2、aspectjweaver.jar</p>
+<h3 id="使用AOP方式"><a href="#使用AOP方式" class="headerlink" title="使用AOP方式"></a>使用AOP方式</h3><ol>
+<li><p>经典的基于代理的AOP</p>
+</li>
+<li><p>@AspectJ注解驱动的切面</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnotationLogAspect</span> </span>&#123;</span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"after"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wedcloud.springapiaop.service.impl.UserServiceImpl.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"before"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>XML开启注解AOP</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:aspectj-autoproxy/&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>纯POJO切面（纯粹通过<a href="aop:fonfig">aop:fonfig</a>标签配置）</p>
+<p><img src="spring-aop/image-20200417143720315.png" alt="image-20200417143720315"></p>
+</li>
+<li><p>注入式AspectJ切面<br><img src="spring-aop/image-20200417143907193.png" alt="image-20200417143907193"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/aop//" class="article-tag-list-link color4">aop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-aop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-java实现配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/">spring-java实现配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-16T06:57:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用Java的方式配置Spring"><a href="#使用Java的方式配置Spring" class="headerlink" title="使用Java的方式配置Spring"></a>使用Java的方式配置Spring</h2><p>POJO</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"123"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>CONFIG</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> User();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Test</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfigTest</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      ApplicationContext context = <span class="keyword">new</span> AnnotationConfigApplicationContext(JavaConfig<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">      User user = context.getBean(<span class="string">"getUser"</span>,User<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">      System.out.println(user);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/javaConfig//" class="article-tag-list-link color1">javaConfig</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-java%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/">spring-注解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-16T06:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>使用注解开发，必须导入AOP的包；</p>
+<p>@component （把普通pojo实例化到spring容器中，相当于配置文件中的<code>&lt;bean id=&quot;&quot; class=&quot;&quot;/&gt;</code>）</p>
+<blockquote>
+<p>@component衍生注解：</p>
+<ul>
+<li>dao层 【@Repository】</li>
+<li>service层 【@Service】</li>
+<li>controller层 【@Controller】</li>
+</ul>
+<p>这四个注解都是一样的，都代表将某个类注册到spring容器中，装配bean</p>
+</blockquote>
+<p>@Value(“value”) 将value注入到属性中 </p>
+<p>@Scope 配置作用域 （<code>singleton</code>,<code>prototype</code>等）</p>
+<h3 id="xml-与-注解"><a href="#xml-与-注解" class="headerlink" title="xml 与 注解"></a>xml 与 注解</h3><p>xml使用面广，适用于任何场合，维护简单方便</p>
+<p>注解只能使用自己的类，维护相对复杂</p>
+<p>XML与注解最佳实践：</p>
+<ul>
+<li>xml管理bean</li>
+<li>注解只负责完成属性注入</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/注解//" class="article-tag-list-link color3">注解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/spring-%E6%B3%A8%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-IOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/spring-IOC/">spring-IOC</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/spring-IOC/" class="archive-article-date">
+  	<time datetime="2020-04-12T05:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><h3 id="广义的IOC"><a href="#广义的IOC" class="headerlink" title="广义的IOC"></a>广义的IOC</h3><ul>
+<li><p>IOC(Inversion of control) 控制反转，即“不用打电话过来，我们会打给你”</p>
+<p>两种实现： 依赖查找（DL）和依赖注入（DI）<br>IOC 和 DI 、DL 的关系（这个 DL，Avalon 和 EJB 就是使用的这种方式实现的 IoC）:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-c415d1c39ed74772.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
+</li>
+<li><p>DL 已经被抛弃，因为他需要用户自己去使用API 进行查找资源好组装对象，也就是说这个是有入侵性的</p>
+</li>
+<li><p>DI 是 Spring 使用的方式，容器负责组件的装配</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：Java 使用 DI 方式实现 IoC 的不止 Spring，包括 Google 的 Guice，还有一个冷门的 PicoContainer（极度轻量，但只提供 IoC）</p>
+</blockquote>
+<h2 id="Spring-的-IOC"><a href="#Spring-的-IOC" class="headerlink" title="Spring 的 IOC"></a>Spring 的 IOC</h2><p>Spring 的 IoC 设计支持以下功能:</p>
+<ul>
+<li>依赖注入</li>
+<li>依赖检查</li>
+<li>自动装配</li>
+<li>支持集合</li>
+<li>指定初始化方法和销毁方法</li>
+<li>支持回调某些方法（但是需要实现Spring 接口，略有入侵性）</li>
+</ul>
+<blockquote>
+<p>其中，最重要的就是依赖注入，从 XML 的配置上说， 即 ref 标签。对应 Spring RuntimeBeanReference 对象</p>
+</blockquote>
+<p>对于 IoC 来说，最重要的就是容器。容器管理着 Bean 的生命周期，控制着 Bean 的依赖注入。</p>
+<h3 id="那么，-Spring-如何设计容器的呢？"><a href="#那么，-Spring-如何设计容器的呢？" class="headerlink" title="那么， Spring 如何设计容器的呢？"></a>那么， Spring 如何设计容器的呢？</h3><p>Spring 作者 Rod Johnson 设计了两个接口用以表示容器:</p>
+<ul>
+<li>BeanFactory</li>
+<li>ApplicationContext</li>
+</ul>
+<p>BeanFactory 粗暴简单，可以理解为就是个 HashMap，Key 是 BeanName，Value 是 Bean 实例。通常只提供注册（put），获取（get）这两个功能。我们可以称之为 <strong><code>低级容器</code></strong></p>
+<p>ApplicationContext 可以称之为 <strong><code>高级容器</code></strong>。因为他比 BeanFactory 多了更多的功能。他继承了多个接口。因此具备了更多的功能。例如资源的获取，支持多种消息（例如 JSP tag 的支持），对 BeanFactory 多了工具级别的支持等待。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。该接口定义了一个 refresh 方法，此方法是所有阅读 Spring 源码的人的最熟悉的方法，用于刷新整个容器，即重新加载/刷新所有的 bean</p>
+<p>为了更直观的展示 “低级容器” 和 “高级容器” 的关系，我这里通过常用的 ClassPathXmlApplicationContext 类，来展示整个容器的层级 UML 关系</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-1e6ca4c8a58c9e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1170/format/webp" alt=""></p>
+<p>ApplicationContext 粉红色的 “高级容器”，依赖着 “低级容器”，这里说的是依赖，不是继承，他依赖着 “低级容器” 的 getBean 功能。而高级容器有更多的功能：支持不同的信息源头，可以访问文件资源，支持应用事件（Observer 模式）</p>
+<p>左边灰色区域的是 “低级容器”， 只负载加载 Bean，获取 Bean。</p>
+<h3 id="IoC-启动过程"><a href="#IoC-启动过程" class="headerlink" title="IoC 启动过程"></a>IoC 启动过程</h3><p><img src="https://upload-images.jianshu.io/upload_images/4236553-db065eecf16176c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt=""></p>
+<blockquote>
+<p>注意，这里为了理解方便，有所简化</p>
+</blockquote>
+<h4 id="用文字来描述这个过程"><a href="#用文字来描述这个过程" class="headerlink" title="用文字来描述这个过程"></a>用文字来描述这个过程</h4><ol>
+<li>用户构造 ClassPathXmlApplicationContext（简称 CPAC）</li>
+<li>CPAC 首先访问了 “抽象高级容器” 的 final 的 refresh 方法，这个方法是模板方法。所以要回调子类（低级容器）的 refreshBeanFactory 方法，这个方法的作用是使用低级容器加载所有 BeanDefinition 和  Properties 到容器中</li>
+<li>低级容器加载成功后，高级容器开始处理一些回调，例如 Bean 后置处理器。回调 setBeanFactory 方法。或者注册监听器等，发布事件，实例化单例 Bean 等等功能</li>
+</ol>
+<p>简单说就是:</p>
+<ul>
+<li>低级容器 加载配置文件（从 XML，数据库，Applet），并解析成 BeanDefinition 到低级容器中</li>
+<li>加载成功后，高级容器启动高级功能，例如接口回调，监听器，自动实例化单例，发布事件等等功能</li>
+</ul>
+<blockquote>
+<p>所以，一定要把 “低级容器” 和“高级容器” 的区别弄清楚。不能一叶障目不见泰山</p>
+</blockquote>
+<p>当我们创建好容器，就会使用 getBean 方法，获取 Bean，而 getBean 的流程如下:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4236553-da9a2f92e4dfa9db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/530/format/webp" alt=""></p>
+<h6 id="从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"><a href="#从图中可以看出，getBean-的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？" class="headerlink" title="从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？"></a>从图中可以看出，getBean 的操作都是在低级容器里操作的。其中有个递归操作，这个是什么意思呢？</h6><p>假设 ： 当 Bean_A 依赖着 Bean_B，而这个 Bean_A 在加载的时候，其配置的 ref = “Bean_B” 在解析的时候只是一个占位符，被放入了 Bean_A 的属性集合中，当调用 getBean 时，需要真正 Bean_B 注入到 Bean_A 内部时，就需要从容器中获取这个 Bean_B，因此产生了递归。</p>
+<p>为什么不是在加载的时候，就直接注入呢？因为加载的顺序不同，很可能 Bean_A 依赖的 Bean_B 还没有加载好，也就无法从容器中获取，你不能要求用户把 Bean 的加载顺序排列好，这是不人道的。</p>
+<p>所以，Spring 将其分为了 2 个步骤:</p>
 <ol>
-<li><p>truncate 会将自增列计数器归零</p>
-<pre><code>2. truncate 不会影响事务，也就是删除了数据无法回滚
-     3. 性能：truncate &gt; delete</code></pre></li>
-</ol>
-</blockquote>
+<li><p>加载所有的 Bean 配置成 BeanDefinition 到容器中，如果 Bean 有依赖关系，则使用占位符暂时代替</p>
+</li>
+<li><p>在调用 getBean 的时候，进行真正的依赖注入，即如果碰到了属性是 ref 的（占位符），那么就从容器里获取这个 Bean，然后注入到实例中 —— 称之为依赖注入</p>
 </li>
 </ol>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ol>
-<li>去重：<code>distinct</code></li>
-<li>查询版本 : <code>select version()</code></li>
-<li>计算：`select 100*3-1</li>
+<blockquote>
+<p>可以看到，依赖注入实际上，只需要 “低级容器” 就可以实现</p>
+</blockquote>
+<p>所以 ApplicationContext refresh 方法里面的操作不只是 IoC，是高级容器的所有功能（包括 IoC），IoC 的功能在低级容器里就可以实现</p>
+<p><strong>控制反转 是一种通过描述（XML或注解）并通过第三方去生产或获取特定对象的方式，在Spring 中实现控制反转的是IOC容器，其实现方法时依赖注入（Dependency Injection，DI）</strong></p>
+<h3 id="IOC创建初始化对象"><a href="#IOC创建初始化对象" class="headerlink" title="IOC创建初始化对象"></a>IOC创建初始化对象</h3><p>默认使用对象的无参构造器进行初始化对象，也可以手动调用有参或无参构造函数初始化对象；</p>
+<h6 id="初始化时期"><a href="#初始化时期" class="headerlink" title="初始化时期"></a>初始化时期</h6><p>在xml文件加载的时候，容器中管理的对象就已经初始化了，而且是单例的；</p>
+<h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><h3 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h3><h3 id="Set方式注入"><a href="#Set方式注入" class="headerlink" title="Set方式注入"></a>Set方式注入</h3><ul>
+<li>依赖注入：Set注入<ul>
+<li>依赖：bean对象的创建依赖于容器</li>
+<li>注入：bean对象中的所有属性，有容器来注入</li>
+</ul>
+</li>
+</ul>
+<h3 id="bean-作用域"><a href="#bean-作用域" class="headerlink" title="bean 作用域"></a>bean 作用域</h3><ul>
+<li>singleton（单例）</li>
+<li>prototype（原型【多例】）</li>
+<li>request</li>
+<li>session</li>
+<li>application</li>
+<li>websocket</li>
+</ul>
+<h2 id="Bean的自动装配"><a href="#Bean的自动装配" class="headerlink" title="Bean的自动装配"></a>Bean的自动装配</h2><ul>
+<li>自动装配是Spring满足bean依赖的一种方式</li>
+<li>Spring会在上下文中自动查找，并给bean自动装配属性</li>
+</ul>
+<p>Spring三种装配方式：</p>
+<ol>
+<li>在XML中显示的配置</li>
+<li>在java中显示配置</li>
+<li>隐式的自动装配bean</li>
+</ol>
+<p>自动装配方式:byName和byType；</p>
+<p>byName 保证bean id 唯一，id与属性名一致；</p>
+<p>byType:保证bean的class唯一，class与属性类型一致</p>
+<h2 id="注解实现自动装配"><a href="#注解实现自动装配" class="headerlink" title="注解实现自动装配"></a>注解实现自动装配</h2><p>@Autowired是Spring提供的注解，只按照ByType注入；</p>
+<p>默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用</p>
+<blockquote>
+<p>@Autowired(required=false) 说明该注入对象可以为null</p>
+<p>@Qualifier(value=”name”) 指定注入对象的bean的name</p>
+</blockquote>
+<p>@Resource 是J2EE支持（jdk1.6）</p>
+<p>@Resource装配顺序：</p>
+<p>①如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常。</p>
+<p>②如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常。</p>
+<p>③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。</p>
+<p>④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。</p>
+<p>@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入</p>
+<p>扩展：</p>
+<blockquote>
+<p>@Nullable 表示标注字段可以为null</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring/ioc//" class="article-tag-list-link color4">ioc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/spring-IOC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Arthas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/10/Arthas/">Arthas</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/10/Arthas/" class="archive-article-date">
+  	<time datetime="2020-04-10T05:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Arthas"><a href="#Arthas" class="headerlink" title="Arthas"></a>Arthas</h2><h3 id="启动-arthas-boot"><a href="#启动-arthas-boot" class="headerlink" title="启动 arthas-boot"></a>启动 arthas-boot</h3><ul>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;alibaba.github.io&#x2F;arthas&#x2F;arthas-boot.jar</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar arthas-boot.jar --target-ip 0.0.0.0</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>选择进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 输入&#96;1&#96;</span><br><span class="line">2. Enter&#x2F;回车</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+<h3 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h3><p><code>dashboard</code> 查看当前系统的实时数据面板</p>
+<p><code>Q</code>或者<code>Ctrl+C</code>退出<code>dashboard</code></p>
+<h3 id="thread"><a href="#thread" class="headerlink" title="thread"></a>thread</h3><p> 通过thread命令来获取到<code>arthas-demo</code>进程的Main Class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ thread 1 | grep &#39;main(&#39;</span><br><span class="line">	at demo.MathGame.main(MathGame.java:17)</span><br></pre></td></tr></table></figure>
+
+<h3 id="jad-反编译"><a href="#jad-反编译" class="headerlink" title="jad 反编译"></a>jad 反编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">$ jad demo.MathGame</span><br><span class="line"></span><br><span class="line">ClassLoader:</span><br><span class="line">+-sun.misc.Launcher$AppClassLoader@3d4eac69</span><br><span class="line">  +-sun.misc.Launcher$ExtClassLoader@66350f69</span><br><span class="line"> </span><br><span class="line">Location:</span><br><span class="line">&#x2F;tmp&#x2F;arthas-demo.jar</span><br><span class="line"> </span><br><span class="line">&#x2F;*</span><br><span class="line"> * Decompiled with CFR 0_132.</span><br><span class="line"> *&#x2F;</span><br><span class="line">package demo;</span><br><span class="line"> </span><br><span class="line">import java.io.PrintStream;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"> </span><br><span class="line">public class MathGame &#123;</span><br><span class="line">    private static Random random &#x3D; new Random();</span><br><span class="line">    private int illegalArgumentCount &#x3D; 0;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        MathGame game &#x3D; new MathGame();</span><br><span class="line">        do &#123;</span><br><span class="line">            game.run();</span><br><span class="line">            TimeUnit.SECONDS.sleep(1L);</span><br><span class="line">        &#125; while (true);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void run() throws InterruptedException &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int number &#x3D; random.nextInt();</span><br><span class="line">            List&lt;Integer&gt; primeFactors &#x3D; this.primeFactors(number);</span><br><span class="line">            MathGame.print(number, primeFactors);</span><br><span class="line">        &#125;</span><br><span class="line">        catch (Exception e) &#123;</span><br><span class="line">            System.out.println(String.format(&quot;illegalArgumentCount:%3d, &quot;, this.illegalArgumentCount) + e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void print(int number, List&lt;Integer&gt; primeFactors) &#123;</span><br><span class="line">        StringBuffer sb &#x3D; new StringBuffer(&quot;&quot; + number + &quot;&#x3D;&quot;);</span><br><span class="line">        Iterator&lt;Integer&gt; iterator &#x3D; primeFactors.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            int factor &#x3D; iterator.next();</span><br><span class="line">            sb.append(factor).append(&#39;*&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (sb.charAt(sb.length() - 1) &#x3D;&#x3D; &#39;*&#39;) &#123;</span><br><span class="line">            sb.deleteCharAt(sb.length() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public List&lt;Integer&gt; primeFactors(int number) &#123;</span><br><span class="line">        if (number &lt; 2) &#123;</span><br><span class="line">            ++this.illegalArgumentCount;</span><br><span class="line">            throw new IllegalArgumentException(&quot;number is: &quot; + number + &quot;, need &gt;&#x3D; 2&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        ArrayList&lt;Integer&gt; result &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        while (i &lt;&#x3D; number) &#123;</span><br><span class="line">            if (number % i &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                result.add(i);</span><br><span class="line">                number &#x2F;&#x3D; i;</span><br><span class="line">                i &#x3D; 2;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Affect(row-cnt:1) cost in 970 ms.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>通过<a href="https://alibaba.github.io/arthas/watch.html" target="_blank" rel="noopener">watch</a>命令来查看<code>demo.MathGame#primeFactors</code>函数的返回值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ watch demo.MathGame primeFactors returnObj</span><br><span class="line">Press Ctrl+C to abort.</span><br><span class="line">Affect(class-cnt:1 , method-cnt:1) cost in 107 ms.</span><br><span class="line">ts&#x3D;2018-11-28 19:22:30; [cost&#x3D;1.715367ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:31; [cost&#x3D;0.185203ms] result&#x3D;null</span><br><span class="line">ts&#x3D;2018-11-28 19:22:32; [cost&#x3D;19.012416ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[47],</span><br><span class="line">    @Integer[2675531],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:33; [cost&#x3D;0.311395ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[317],</span><br><span class="line">    @Integer[503],</span><br><span class="line">    @Integer[887],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:34; [cost&#x3D;10.136007ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[2],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[3],</span><br><span class="line">    @Integer[31],</span><br><span class="line">    @Integer[717593],</span><br><span class="line">]</span><br><span class="line">ts&#x3D;2018-11-28 19:22:35; [cost&#x3D;29.969732ms] result&#x3D;@ArrayList[</span><br><span class="line">    @Integer[5],</span><br><span class="line">    @Integer[29],</span><br><span class="line">    @Integer[7651739],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="退出arthas"><a href="#退出arthas" class="headerlink" title="退出arthas"></a>退出arthas</h3><p>如果只是退出当前的连接，可以用<code>quit</code>或者<code>exit</code>命令。Attach到目标进程上的arthas还会继续运行，端口会保持开放，下次连接时可以直接连接上。</p>
+<p>如果想完全退出arthas，可以执行<code>stop</code>命令</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Arthas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Arthas//" class="article-tag-list-link color2">Arthas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/10/Arthas/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/10/spring/">spring</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/10/spring/" class="archive-article-date">
+  	<time datetime="2020-04-10T00:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><blockquote>
+<p>解决企业级开发的复杂性，使现有的技术更加容易使用</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>Spring 开源免费的框架（容器）</li>
+<li>轻量级、非入侵式的框架</li>
+<li>控制反转（<code>IOC</code>），面向切面编程（<code>AOP</code>）</li>
+<li>支持事务</li>
+<li>框架整合的支持</li>
+</ul>
+<h3 id="7大模块"><a href="#7大模块" class="headerlink" title="7大模块"></a>7大模块</h3><p><img src="spring/image-20200410090322458.png" alt="image-20200410090322458"></p>
+<ol>
+<li>核心容器：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 <code>BeanFactory</code>，它是工厂模式的实现。<code>BeanFactory</code> 使用控制反转 （<code>IOC</code>） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开</li>
+<li><code>Spring</code> 上下文：Spring 上下文是一个配置文件，向 Spring 框架提供上下文信息。Spring 上下文包括企业服务，例如 <code>JNDI</code>、<code>EJB</code>、电子邮件、国际化、校验和调度功能</li>
+<li><code>Spring AOP</code>：通过配置管理特性，<code>Spring AOP</code> 模块直接将面向方面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 <code>AOP</code>。<code>Spring AOP</code> 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。通过使用 <code>Spring AOP</code>，不用依赖<code>EJB</code> 组件，就可以将声明性事务管理集成到应用程序中</li>
+<li><code>Spring DAO</code>：<code>JDBC DAO</code> 抽象层提供了有意义的异常层次结构，可用该结构来管理异常处理和不同数据库供应商抛出的错误消息。异常层次结构简化了错误处理，并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）。<code>Spring DAO</code> 的面向 <code>JDBC</code>的异常遵从通用的 <code>DAO</code> 异常层次结构</li>
+<li><code>Spring ORM</code>：Spring 框架插入了若干个<code>ORM</code> 框架，从而提供了 <code>ORM</code> 的对象关系工具，其中包括 <code>JDO</code>、<code>Hibernate</code> 和 <code>iBatis SQL Map</code>。所有这些都遵从 Spring 的通用事务和 <code>DAO</code> 异常层次结构</li>
+<li><code>Spring Web</code> 模块：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作</li>
+<li><code>Spring MVC</code> 框架：<code>MVC</code> 框架是一个全功能的构建 Web 应用程序的 <code>MVC</code> 实现。通过策略接口，<code>MVC</code> 框架变成为高度可配置的，<code>MVC</code> 容纳了大量视图技术，其中包括 <code>JSP</code>、<code>Velocity</code>、<code>Tiles</code>、<code>iText</code> 和 <code>POI</code></li>
 </ol>
 
       
@@ -529,7 +1782,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
         		</li>
       		
 		</ul>
@@ -541,7 +1794,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
         		</li>
       		
 		</ul>
@@ -550,875 +1803,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/08/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JMM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/JMM/">JMM</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/03/JMM/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:44:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JMM内存模型"><a href="#JMM内存模型" class="headerlink" title="JMM内存模型"></a>JMM内存模型</h2><p><img src="/image/111.jpg" alt="&quot;JMM&quot;" title="JMM"></p>
-<h2 id="内存交互操作"><a href="#内存交互操作" class="headerlink" title="内存交互操作"></a>内存交互操作</h2><p>内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）</p>
-<ul>
-<li>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态</li>
-<li>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
-<li>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
-<li>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中</li>
-<li>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令</li>
-<li>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中</li>
-<li>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用</li>
-<li>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
-</ul>
-<p>　　JMM对这八种指令的使用，制定了如下规则：</p>
-<ul>
-<li>不允许read和load、store和write操作之一单独出现。即使用了read必须load，使用了store必须write</li>
-<li>不允许线程丢弃他最近的assign操作，即工作变量的数据改变了之后，必须告知主存</li>
-<li>不允许一个线程将没有assign的数据从工作内存同步回主内存</li>
-<li>一个新的变量必须在主内存中诞生，不允许工作内存直接使用一个未被初始化的变量。就是怼变量实施use、store操作之前，必须经过assign和load操作</li>
-<li>一个变量同一时间只有一个线程能对其进行lock。多次lock后，必须执行相同次数的unlock才能解锁</li>
-<li>如果对一个变量进行lock操作，会清空所有工作内存中此变量的值，在执行引擎使用这个变量前，必须重新load或assign操作初始化变量的值</li>
-<li>如果一个变量没有被lock，就不能对其进行unlock操作。也不能unlock一个被其他线程锁住的变量</li>
-<li>对一个变量进行unlock操作之前，必须把此变量同步回主内存</li>
-</ul>
-<h2 id="模型特征"><a href="#模型特征" class="headerlink" title="模型特征"></a>模型特征</h2><p>　　<strong>原子性</strong>：例如上面八项操作，在操作系统里面是不可分割的单元。被synchronized关键字或其他锁包裹起来的操作也可以认为是原子的。从一个线程观察另外一个线程的时候，看到的都是一个个原子性的操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1         synchronized (this) &#123;</span><br><span class="line">2             a&#x3D;1;</span><br><span class="line">3             b&#x3D;2;</span><br><span class="line">4         &#125;</span><br></pre></td></tr></table></figure>
-<p>　　例如一个线程观察另外一个线程执行上面的代码，只能看到a、b都被赋值成功结果，或者a、b都尚未被赋值的结果。</p>
-<p>　　<strong>可见性</strong>：每个工作线程都有自己的工作内存，所以当某个线程修改完某个变量之后，在其他的线程中，未必能观察到该变量已经被修改。volatile关键字要求被修改之后的变量要求立即更新到主内存，每次使用前从主内存处进行读取。因此volatile可以保证可见性。除了volatile以外，synchronized和final也能实现可见性。synchronized保证unlock之前必须先把变量刷新回主内存。final修饰的字段在构造器中一旦完成初始化，并且构造器没有this逸出，那么其他线程就能看到final字段的值。</p>
-<p>　　<strong>有序性</strong>：java的有序性跟线程相关。如果在线程内部观察，会发现当前线程的一切操作都是有序的。如果在线程的外部来观察的话，会发现线程的所有操作都是无序的。因为JMM的工作内存和主内存之间存在延迟，而且java会对一些指令进行重新排序。volatile和synchronized可以保证程序的有序性，很多程序员只理解这两个关键字的执行互斥，而没有很好的理解到volatile和synchronized也能保证指令不进行重排序</p>
-<h2 id="Final域的内存语义"><a href="#Final域的内存语义" class="headerlink" title="Final域的内存语义"></a>Final域的内存语义</h2><p>　　被final修饰的变量，相比普通变量，内存语义有一些不同。具体如下：</p>
-<p>JMM禁止把Final域的写重排序到构造器的外部。<br>在一个线程中，初次读该对象和读该对象下的Final域，JMM禁止处理器重新排序这两个操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> 1 public class FinalConstructor &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     final int a;</span><br><span class="line"> 4 </span><br><span class="line"> 5     int b;</span><br><span class="line"> 6 </span><br><span class="line"> 7     static FinalConstructor finalConstructor;</span><br><span class="line"> 8 </span><br><span class="line"> 9     public FinalConstructor() &#123;</span><br><span class="line">10         a &#x3D; 1;</span><br><span class="line">11         b &#x3D; 2;</span><br><span class="line">12     &#125;</span><br><span class="line">13 </span><br><span class="line">14     public static void write() &#123;</span><br><span class="line">15         finalConstructor &#x3D; new FinalConstructor();</span><br><span class="line">16     &#125;</span><br><span class="line">17 </span><br><span class="line">18     public static void read() &#123;</span><br><span class="line">19         FinalConstructor constructor &#x3D; finalConstructor;</span><br><span class="line">20         int A &#x3D; constructor.a;</span><br><span class="line">21         int B &#x3D; constructor.b;</span><br><span class="line">22     &#125;</span><br><span class="line">23 &#125;</span><br></pre></td></tr></table></figure>
-<p>　　假设现在有线程A执行FinalConstructor.write()方法，线程B执行FinalConstructor.read()方法。</p>
-<p>　　对应上述的Final的第一条规则，因为JMM禁止把Final域的写重排序到构造器的外部，而对普通变量没有这种限制，所以变量A=1，而变量B可能会等于2（构造完成），也有可能等于0（第11行代码被重排序到构造器的外部）。</p>
-<p> 　　对应上述的Final的第二条规则，如果constructor的引用不为null，A必然为1，要么constructor为null，抛出空指针异常。保证读final域之前，一定会先读该对象的引用。但是普通对象就没有这种规则</p>
-<h2 id="Happen-Before（先行发生规则）"><a href="#Happen-Before（先行发生规则）" class="headerlink" title="Happen-Before（先行发生规则）"></a>Happen-Before（先行发生规则）</h2><p>　　在常规的开发中，如果我们通过上述规则来分析一个并发程序是否安全，估计脑壳会很疼。因为更多时候，我们是分析一个并发程序是否安全，其实都依赖Happen-Before原则进行分析。Happen-Before被翻译成先行发生原则，意思就是当A操作先行发生于B操作，则在发生B操作的时候，操作A产生的影响能被B观察到，“影响”包括修改了内存中的共享变量的值、发送了消息、调用了方法等。</p>
-<h3 id="Happen-Before的规则有以下几条"><a href="#Happen-Before的规则有以下几条" class="headerlink" title="Happen-Before的规则有以下几条"></a>Happen-Before的规则有以下几条</h3><ul>
-<li><p>程序次序规则（Program Order Rule）：在一个线程内，程序的执行规则跟程序的书写规则是一致的，从上往下执行。</p>
-</li>
-<li><p>管程锁定规则（Monitor Lock Rule）：一个Unlock的操作肯定先于下一次Lock的操作。这里必须是同一个锁。同理我们可以认为在synchronized同步同一个锁的时候，锁内先行执行的代码，对后续同步该锁的线程来说是完全可见的。</p>
-</li>
-<li><p>volatile变量规则（volatile Variable Rule）：对同一个volatile的变量，先行发生的写操作，肯定早于后续发生的读操作</p>
-</li>
-<li><p>线程启动规则（Thread Start Rule）：Thread对象的start()方法先行发生于此线程的没一个动作</p>
-</li>
-<li><p>线程中止规则（Thread Termination Rule）：Thread对象的中止检测（如：Thread.join()，Thread.isAlive()等）操作，必行晚于线程中所有操作</p>
-</li>
-<li><p>线程中断规则（Thread Interruption Rule）：对线程的interruption（）调用，先于被调用的线程检测中断事件(Thread.interrupted())的发生</p>
-</li>
-<li><p>对象中止规则（Finalizer Rule）：一个对象的初始化方法先于一个方法执行Finalizer()方法</p>
-</li>
-<li><p>传递性（Transitivity）：如果操作A先于操作B、操作B先于操作C,则操作A先于操作C</p>
-</li>
-</ul>
-<p>以上就是Happen-Before中的规则。通过这些条件的判定，仍然很难判断一个线程是否能安全执行，毕竟在我们的时候线程安全多数依赖于工具类的安全性来保证。想提高自己对线程是否安全的判断能力，必然需要理解所使用的框架或者工具的实现，并积累线程安全的经验</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JMM//" class="article-tag-list-link color4">JMM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/JMM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java并发编程实战-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">Java并发编程实战-02</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:49:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="线程的安装型"><a href="#线程的安装型" class="headerlink" title="线程的安装型"></a>线程的安装型</h2><p>要编写线程安全的代码，其核心在于对状态访问操作进行管理，特别是对共享（Shared）和可变的（Mutable）状态的访问</p>
-<p>“共享”意味着变量可以由多个线程同时访问<br>“可变”意味着变量的值在其生命周期内可以发生变化</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java并发编程实战-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">Java并发编程实战-01</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/" class="archive-article-date">
-  	<time datetime="2020-03-29T12:55:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>编写正确的程序很难，而编写正确的并发程序则是难上加难</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发//" class="article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/并发/多线程//" class="article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/29/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-分支管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">Git-分支管理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-03-27T05:50:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><p>命令：<code>git branch</code> </p>
-<blockquote>
-<blockquote>
-<p><code>--merged</code> （已合并） 与 <code>--no-merged</code> （未合并） 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支</p>
-</blockquote>
-</blockquote>
-<p>注意 </p>
-<blockquote>
-<blockquote>
-<p><code>master</code> 分支前的 <code>*</code> 字符：它代表现在检出的那一个分支（也就是说，当前 HEAD 指针所指向的分支）</p>
-</blockquote>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/Git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E5%88%86%E6%94%AF/">Git-分支</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E5%88%86%E6%94%AF/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:59:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="创建分支的意义"><a href="#创建分支的意义" class="headerlink" title="创建分支的意义"></a>创建分支的意义</h2><p>可以将各自的工作从开发主线上分离开来，以免影响开发主线</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E5%88%86%E6%94%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-别名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/">Git-别名</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:41:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Git-别名"><a href="#Git-别名" class="headerlink" title="Git 别名"></a>Git 别名</h2><h3 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h3><p>命令：<code>git config</code><br>例子：</p>
-<ul>
-<li>$ <code>git config --global alias.co checkout</code></li>
-<li>$ <code>git config --global alias.br branch</code></li>
-<li>$ <code>git config --global alias.ci commit</code></li>
-<li>$ <code>git config --global alias.st status</code></li>
-</ul>
-<p>当要输入 git commit 时，只需要输入 git ci</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E5%88%AB%E5%90%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-打标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/">Git-打标签</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:15:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="列出标签"><a href="#列出标签" class="headerlink" title="列出标签"></a>列出标签</h2><p>命令：<code>git tag</code> （可带上可选的 -l 选项 –list）</p>
-<h3 id="轻量标签（lightweight）"><a href="#轻量标签（lightweight）" class="headerlink" title="轻量标签（lightweight）"></a>轻量标签（lightweight）</h3><p>轻量标签很像一个不会改变的分支——它只是某个特定提交的引用</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E6%89%93%E6%A0%87%E7%AD%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-远程仓库的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">Git-远程仓库的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h2><p> 查看已经配置好了的远程仓库,命令：<code>git remote</code>。</p>
-<p> 如果你已经克隆了自己的仓库，那么至少应该能看到 <code>origin</code> ——这是 Git 给你克隆的仓库服务器的默认名字。</p>
-<p> 指定选项 -v，会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-撤销操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/">Git-撤销操作</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-03-26T13:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="修补提交"><a href="#修补提交" class="headerlink" title="修补提交"></a>修补提交</h2><p>有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了，<br>可以使用 <code>--amend</code> 选项来重新提交<br><code>git commit --amend</code> <br>这个命令会将暂存区中的文件提交。<br>如果自上次提交以来你还未做任何修改， 那么快照会保持不变，而你所修改的只是提交信息;<br>如果提交后对已跟踪的文件做了修改，使用 <code>--amend</code> ，则第二次提交将 <strong>替换</strong> 掉第一次提交结果；</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Git-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/10/spring/">展开全文 >></a>
         </p>
       
 
@@ -1450,7 +1835,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1549,6 +1934,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Hystrix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -1557,15 +1946,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
+                <a href="javascript:void(0)" class="js-tag color1">feign</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1577,11 +1982,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习计划</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">springcloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zuul</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Arthas</a>
               </li>
             
             <div class="clearfix"></div>
